@@ -5,7 +5,7 @@ gem 'heroku'
 gem 'haml'
 gem 'lemonade'
 gem 'pg'
-gem 'hassle', :require => false
+gem 'hassle', :git => 'https://github.com/jasoncodes/hassle.git'
 
 # Deploy with Capistrano
 # gem 'capistrano'
