@@ -8,9 +8,17 @@
 </head>
 <body>
 
-<%= render :partial => '/partials/header' %>
+<div id="page_header">
+  <%= render :partial => '/partials/header' %>
+</div>
 
-<%= yield %>
+<div id="page_body">
+  <%= yield %>
+</div>
+
+<div id="page_footer">
+  <%= render :partial => '/partials/footer' %>
+</div>
 
 </body>
 </html>
