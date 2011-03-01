@@ -41,6 +41,9 @@ GEM
     fastthread (1.0.7)
     gem_plugin (0.2.3)
     haml (3.0.25)
+    hassle (0.0.1)
+      haml
+      rack
     heroku (1.18.0)
       json (~> 1.5.1)
       launchy (~> 0.3.2)
@@ -98,6 +101,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  hassle
   heroku
   lemonade
   mongrel

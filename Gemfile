@@ -5,6 +5,7 @@ gem 'heroku'
 gem 'haml'
 gem 'lemonade'
 gem 'pg'
+gem 'hassle'
 
 # Deploy with Capistrano
 # gem 'capistrano'

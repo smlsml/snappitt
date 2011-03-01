@@ -8,3 +8,5 @@ tmp/
 
 # RVM files
 .rvmrc
+
+public/stylesheets/application.css
