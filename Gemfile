@@ -4,7 +4,6 @@ gem 'rails', '3.0.5'
 gem 'heroku'
 gem 'haml'
 gem 'pg'
-gem 'hassle', :git => 'https://github.com/jasoncodes/hassle.git', :require => false
 
 # Deploy with Capistrano
 # gem 'capistrano'
