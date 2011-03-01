@@ -39,9 +39,6 @@ GEM
     arel (2.0.9)
     builder (2.1.2)
     cgi_multipart_eof_fix (2.5.0)
-    chunky_png (0.12.0)
-    compass (0.10.6)
-      haml (>= 3.0.4)
     configuration (1.2.0)
     daemons (1.1.0)
     erubis (2.6.6)
@@ -58,10 +55,6 @@ GEM
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
-    lemonade (0.3.4)
-      chunky_png (>= 0.8.0)
-      compass (>= 0.10.0)
-      haml (>= 3.0.0)
     mail (2.2.15)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -108,7 +101,6 @@ DEPENDENCIES
   haml
   hassle!
   heroku
-  lemonade
   mongrel
   pg
   rails (= 3.0.5)
