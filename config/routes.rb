@@ -1,4 +1,8 @@
 Photo::Application.routes.draw do
+  root :to => "welcome#index"
+
+  get "home" => "home#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -45,8 +49,6 @@ Photo::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 
