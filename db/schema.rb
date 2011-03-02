@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302002927) do
+ActiveRecord::Schema.define(:version => 20110302003846) do
 
   create_table "experiences", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(:version => 20110302002927) do
     t.integer  "caption_id"
     t.float    "lat"
     t.float    "lng"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "realname",             :limit => 100
+    t.datetime "birthday"
+    t.integer  "location_id_hometown"
+    t.integer  "location_id_current"
+    t.string   "website"
+    t.string   "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
