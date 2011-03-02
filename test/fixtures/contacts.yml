@@ -1,0 +1,15 @@
+one:
+  name: MyString
+  email: MyString
+  facebook: MyString
+  twitter: MyString
+  phone: MyString
+  skype: MyString
+
+two:
+  name: MyString
+  email: MyString
+  facebook: MyString
+  twitter: MyString
+  phone: MyString
+  skype: MyString

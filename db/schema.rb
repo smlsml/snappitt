@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302005601) do
+ActiveRecord::Schema.define(:version => 20110302010504) do
+
+  create_table "contacts", :force => true do |t|
+    t.string   "name",       :limit => 100
+    t.string   "email",      :limit => 200
+    t.string   "facebook",   :limit => 50
+    t.string   "twitter",    :limit => 50
+    t.string   "phone",      :limit => 20
+    t.string   "skype",      :limit => 50
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "experiences", :force => true do |t|
     t.string   "title"
@@ -55,6 +66,12 @@ ActiveRecord::Schema.define(:version => 20110302005601) do
     t.integer  "location_id_current"
     t.string   "website"
     t.string   "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "things", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
