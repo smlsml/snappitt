@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302002526) do
+ActiveRecord::Schema.define(:version => 20110302002927) do
 
   create_table "experiences", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20110302002526) do
     t.integer  "caption_id"
     t.float    "lat"
     t.float    "lng"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username",   :limit => 25
+    t.string   "password",   :limit => 100
+    t.string   "role",       :limit => 20,  :default => "user"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

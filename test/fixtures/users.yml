@@ -1,0 +1,9 @@
+one:
+  username: one
+  password: password
+  role: user
+
+two:
+  username: two
+  password: password
+  role: user
