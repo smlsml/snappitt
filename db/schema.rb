@@ -10,12 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302003846) do
+ActiveRecord::Schema.define(:version => 20110302004805) do
 
   create_table "experiences", :force => true do |t|
     t.string   "title"
     t.integer  "user_id_creator"
     t.string   "visibility"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city",         :limit => 100
+    t.string   "state",        :limit => 2
+    t.string   "zip",          :limit => 10
+    t.string   "precision",    :limit => 30,  :default => "unknown"
+    t.float    "lat"
+    t.float    "lng"
+    t.integer  "meter_radius"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

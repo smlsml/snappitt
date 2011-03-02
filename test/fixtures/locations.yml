@@ -1,0 +1,23 @@
+one:
+  name: Denver, CO
+  address1:
+  address2:
+  city: Denver
+  state: CO
+  zip: 80225
+  precision: city
+  lat: 1.5
+  lng: 1.5
+  meter_radius: 50
+
+two:
+  name: Westword
+  address1: 969 Broadway
+  address2:
+  city: Denver
+  state: CO
+  zip: 80206
+  precision: street
+  lat: 1.5
+  lng: 1.5
+  meter_radius: 1
