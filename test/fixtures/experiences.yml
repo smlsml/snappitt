@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+private:
+  title: Private Experience
+  user_id_creator: 1
+  visibility: private
+
+public:
+  title: Public Experience
+  user_id_creator: 1
+  visibility: public
+
+group:
+  title: Group Experience
+  user_id_creator: 1
+  visibility: group
