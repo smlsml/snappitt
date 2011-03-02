@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id_creator: 1
+  thing_id: 1
+  location_id: 1
+  caption_id: 1
+  lat: 1.5
+  lng: 1.5
+
+two:
+  user_id_creator: 1
+  thing_id: 1
+  location_id: 1
+  caption_id: 1
+  lat: 1.5
+  lng: 1.5

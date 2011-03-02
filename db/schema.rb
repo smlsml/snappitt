@@ -10,12 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302001413) do
+ActiveRecord::Schema.define(:version => 20110302002526) do
 
   create_table "experiences", :force => true do |t|
     t.string   "title"
     t.integer  "user_id_creator"
     t.string   "visibility"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "moments", :force => true do |t|
+    t.integer  "user_id_creator"
+    t.integer  "thing_id"
+    t.integer  "location_id"
+    t.integer  "caption_id"
+    t.float    "lat"
+    t.float    "lng"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
