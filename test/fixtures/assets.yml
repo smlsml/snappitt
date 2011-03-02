@@ -9,3 +9,9 @@ two:
   source_id: 1
   type:
   original_filename: MyString
+
+photo:
+  user_id_creator: 1
+  source_id: 1
+  type: PhotoAsset
+  original_filename: MyString
