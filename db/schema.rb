@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302221820) do
+ActiveRecord::Schema.define(:version => 20110302222120) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(:version => 20110302221820) do
     t.string   "twitter",    :limit => 50
     t.string   "phone",      :limit => 20
     t.string   "skype",      :limit => 50
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "event_locations", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
