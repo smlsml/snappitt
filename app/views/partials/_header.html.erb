@@ -1,9 +1,9 @@
 <h1><%= t(:app_name) %></h1>
 
 <ul>
-  <li>Home</li>
-  <li>Me</li>
-  <li>Capture</li>
-  <li>Network</li>
-  <li>Settings</li>
+  <li><%= link_to('Home', root_path) %></li>
+  <li><%= link_to('Me', user_path(User.first)) %></li>
+  <li><%= link_to('Capture', new_experience_path) %></li>
+  <li><%= link_to('Network', user_network_path(User.first)) %></li>
+  <li><%= link_to('Settings', user_settings_path(User.first)) %></li>
 </ul>
