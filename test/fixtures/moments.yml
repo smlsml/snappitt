@@ -1,19 +1,10 @@
-one:
-  user_id_creator: 1
-  thing_id: 1
-  location_id: 1
-  caption_id: 1
+eat:
+  creator: snoop # user
+  thing: burger # thing
+  location: westword # location
+  comment: snoop_says
   lat: 1.5
   lng: 1.5
-  source: one
+  source: website # source
   asset: photo
-
-freestyling:
-  user_id_creator: 1
-  thing_id: 1
-  location_id: 1
-  caption_id: 1
-  lat: 1.5
-  lng: 1.5
-  source: one
-  asset: photo
+  experience: group # experience

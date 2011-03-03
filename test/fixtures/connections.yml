@@ -1,7 +1,7 @@
-one:
-  user_id_from: 1
-  user_id_to: 1
+snoop_dre:
+  from: snoop # user
+  to: dre # user
 
-two:
-  user_id_from: 1
-  user_id_to: 1
+dre_snoop:
+  from: dre # user
+  to: snoop # user

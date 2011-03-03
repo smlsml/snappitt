@@ -1,14 +1,14 @@
 private:
   title: Private Experience
-  user_id_creator: 1
+  creator: snoop # user
   visibility: private
 
 public:
   title: Public Experience
-  user_id_creator: 1
+  creator: dre # user
   visibility: public
 
 group:
   title: Group Experience
-  user_id_creator: 1
+  creator: snoop # user
   visibility: group

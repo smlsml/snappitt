@@ -2,17 +2,28 @@ require 'test_helper'
 
 class MomentTest < ActiveSupport::TestCase
 
+  def setup
+    @eat = moments(:eat)
+  end
+
   test "fixture" do
-    one = moments(:one)
-    assert_kind_of(Moment, one)
+    assert_kind_of(Moment, @eat)
   end
 
-  test "has_one source" do
-    assert_kind_of(Source, moments(:one).source)
+  test "source association" do
+    assert_kind_of(Source, @eat.source)
   end
 
-  test "has_one photo" do
-    assert_kind_of(PhotoAsset, moments(:one).asset)
+  test "photo association" do
+    assert_kind_of(PhotoAsset, @eat.asset)
+  end
+
+  test "thing association" do
+    assert_kind_of(Thing, @eat.thing)
+  end
+
+  test "location association" do
+    assert_kind_of(Location, @eat.location)
   end
 
 end

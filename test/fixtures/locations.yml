@@ -1,4 +1,4 @@
-one:
+denver:
   name: Denver, CO
   address1:
   address2:
@@ -8,9 +8,21 @@ one:
   precision: city
   lat: 1.5
   lng: 1.5
-  meter_radius: 50
+  meter_radius: 40000
 
-two:
+longbeach:
+  name: Long Beach
+  address1:
+  address2:
+  city: Long Beach
+  state: CA
+  zip: 90808
+  precision: city
+  lat: 33.81778
+  lng: -118.15167
+  meter_radius: 40000
+
+westword:
   name: Westword
   address1: 969 Broadway
   address2:

@@ -1,12 +1,5 @@
-one:
-  user_id: 1
+facebook:
+  user: snoop # user
   id_external: 1
   type:
-  token: MyString
-
-
-two:
-  user_id: 1
-  id_external: 1
-  type:
-  token: MyString
+  token: abc123def

@@ -1,17 +1,5 @@
-one:
-  user_id_creator: 1
-  source_id: 1
-  type:
-  original_filename: MyString
-
-two:
-  user_id_creator: 1
-  source_id: 1
-  type:
-  original_filename: MyString
-
 photo:
-  user_id_creator: 1
-  source_id: 1
+  creator: snoop # user
+  source: website # source
   type: PhotoAsset
-  original_filename: MyString
+  original_filename:

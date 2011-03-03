@@ -2,8 +2,14 @@ require 'test_helper'
 
 class AssetTest < ActiveSupport::TestCase
 
-  test "fixture" do
-    one = assets(:one)
-    assert_kind_of(Asset, one)
+  def setup
+    @asset = assets(:photo)
   end
+
+  test "fixture" do
+    assert_kind_of(Asset, @asset)
+    assert_kind_of(User, @asset.creator)
+    assert_kind_of(Source, @asset.source)
+  end
+
 end

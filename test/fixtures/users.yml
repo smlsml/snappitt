@@ -2,5 +2,12 @@ snoop:
   username: snoop_dogg
   password: password
   role: user
-  contact: snoop # contact_id
-  profile: snoop # profile_id
+  contact: snoop # contact
+  profile: snoop # profile
+
+dre:
+  username: dre
+  password: password
+  role: user
+  contact: dre # contact
+  profile: dre # profile

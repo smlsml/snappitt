@@ -1,5 +1,2 @@
-one:
-  name: MyString
-
-two:
-  name: MyString
+burger:
+  name: Hamburger

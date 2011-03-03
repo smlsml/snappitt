@@ -1,7 +1,3 @@
-one:
-  event: one
-  location: one
-
-two:
-  event: one
-  location: one
+artopia_denver:
+  event: artopia # event
+  location: denver # location

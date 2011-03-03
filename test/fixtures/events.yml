@@ -1,11 +1,5 @@
-one:
-  name: MyString
+artopia:
+  name: Artopia
   start_at: 2011-03-02 15:14:11
   end_at: 2011-03-02 15:14:11
-  experience: group
-
-two:
-  name: MyString
-  start_at: 2011-03-02 15:14:11
-  end_at: 2011-03-02 15:14:11
-  experience: group
+  experience: group # experience

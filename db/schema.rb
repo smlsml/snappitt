@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110303005259) do
+ActiveRecord::Schema.define(:version => 20110303025745) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(:version => 20110303005259) do
     t.integer  "user_id_creator"
     t.integer  "thing_id"
     t.integer  "location_id"
-    t.integer  "caption_id"
     t.float    "lat"
     t.float    "lng"
     t.datetime "created_at"
@@ -105,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20110303005259) do
     t.integer  "experience_id"
     t.integer  "source_id"
     t.integer  "asset_id"
+    t.integer  "comment_id"
   end
 
   create_table "profiles", :force => true do |t|
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20110303005259) do
     t.string   "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "gender",               :limit => 7,   :default => "unknown"
   end
 
   create_table "services", :force => true do |t|

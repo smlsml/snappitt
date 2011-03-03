@@ -1,3 +1,2 @@
 class PhotoAsset < Asset
-
 end

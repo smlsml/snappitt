@@ -2,16 +2,18 @@ require 'test_helper'
 
 class EventTest < ActiveSupport::TestCase
 
+  def setup
+    @artopia = events(:artopia)
+  end
+
   test "fixture" do
-    one = events(:one)
-    assert_kind_of(Event, one)
+    assert_kind_of(Event, @artopia)
   end
 
   test "experience association" do
-    event = events(:one)
-    exp = events(:one).experience
+    exp = @artopia.experience
     assert_kind_of(Experience, exp)
-    assert event === exp.event
+    assert @artopia === exp.event
   end
 
 end

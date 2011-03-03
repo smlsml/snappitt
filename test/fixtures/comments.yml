@@ -1,9 +1,4 @@
-one:
-  user_id: 1
+snoop_says:
+  creator: snoop # user
   type:
-  text: MyText
-
-two:
-  user_id: 1
-  type:
-  text: MyText
+  text: Fo Shizzle!

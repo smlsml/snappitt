@@ -1,7 +1,17 @@
 snoop:
   realname: Calvin Broadus
   birthday: 1971-10-20 17:38:46
-  location_id_hometown: 1
-  location_id_current: 1
+  hometown: longbeach # location
+  current_location: denver # location
   website: http://www.snoopdogg.com/
   bio: Bow-wow-wow-yippie-yo-yippie-yay
+  gender: male
+
+dre:
+  realname: Andre Romelle Young
+  birthday: 1965-02-18 17:38:46
+  hometown: longbeach # location
+  current_location: denver # location
+  website: http://www.drdre.com/
+  bio: Youse a soldier, you're probably packin heat up there
+  gender: male

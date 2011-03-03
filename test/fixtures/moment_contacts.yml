@@ -1,7 +1,3 @@
-one:
-  moment: freestyling
-  contact: snoop
-
-two:
-  moment: freestyling
-  contact: dre
+eat_snoop:
+  moment: eat # moment
+  contact: snoop # contact

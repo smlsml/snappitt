@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class LocationTest < ActiveSupport::TestCase
+
   test "fixture" do
-    one = locations(:one)
-    assert_kind_of(Location, one)
-    assert_equal "Denver", one.city
+    den = locations(:denver)
+    assert_kind_of(Location, den)
+    assert_equal "Denver", den.city
   end
+
 end
