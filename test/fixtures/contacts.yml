@@ -1,15 +1,15 @@
-one:
-  name: MyString
-  email: MyString
-  facebook: MyString
-  twitter: MyString
-  phone: MyString
-  skype: MyString
+snoop:
+  name: Snoop Dee-Oh-Double-G
+  email: snoop@example.com
+  facebook:
+  twitter:
+  phone:
+  skype:
 
-two:
-  name: MyString
-  email: MyString
-  facebook: MyString
-  twitter: MyString
-  phone: MyString
-  skype: MyString
+dre:
+  name: Dr. Dre
+  email: dre@example.com
+  facebook:
+  twitter: drdre
+  phone:
+  skype:

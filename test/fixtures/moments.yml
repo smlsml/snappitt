@@ -8,7 +8,7 @@ one:
   source: one
   asset: photo
 
-two:
+freestyling:
   user_id_creator: 1
   thing_id: 1
   location_id: 1

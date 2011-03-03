@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302233313) do
+ActiveRecord::Schema.define(:version => 20110303002753) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -82,6 +82,13 @@ ActiveRecord::Schema.define(:version => 20110302233313) do
     t.float    "lat"
     t.float    "lng"
     t.integer  "meter_radius"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "moment_contacts", :force => true do |t|
+    t.integer  "moment_id"
+    t.integer  "contact_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
