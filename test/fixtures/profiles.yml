@@ -1,15 +1,7 @@
-one:
-  realname: MyString
-  birthday: 2011-03-01 17:38:46
+snoop:
+  realname: Calvin Broadus
+  birthday: 1971-10-20 17:38:46
   location_id_hometown: 1
   location_id_current: 1
-  website: MyString
-  bio: MyString
-
-two:
-  realname: MyString
-  birthday: 2011-03-01 17:38:46
-  location_id_hometown: 1
-  location_id_current: 1
-  website: MyString
-  bio: MyString
+  website: http://www.snoopdogg.com/
+  bio: Bow-wow-wow-yippie-yo-yippie-yay

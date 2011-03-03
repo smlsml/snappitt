@@ -1,9 +1,6 @@
-one:
-  username: one
+snoop:
+  username: snoop_dogg
   password: password
   role: user
-
-two:
-  username: two
-  password: password
-  role: user
+  contact: snoop # contact_id
+  profile: snoop # profile_id
