@@ -1,9 +1,23 @@
 <h1><%= t(:app_name) %></h1>
 
+<% if User.first %>
+
+<ul>
+ <li><%= link_to('Home', root_path) %></li>
+ <li><%= link_to('Me', user_path(User.first)) %></li>
+ <li><%= link_to('Capture', new_experience_path) %></li>
+ <li><%= link_to('Network', user_network_path(User.first)) %></li>
+ <li><%= link_to('Settings', user_settings_path(User.first)) %></li>
+</ul>
+
+<% else %>
+
 <ul>
   <li><%= link_to('Home', root_path) %></li>
-  <li><%= link_to('Me', user_path(User.first)) %></li>
-  <li><%= link_to('Capture', new_experience_path) %></li>
-  <li><%= link_to('Network', user_network_path(User.first)) %></li>
-  <li><%= link_to('Settings', user_settings_path(User.first)) %></li>
+  <li><%= link_to('Me', root_path) %></li>
+  <li><%= link_to('Capture', root_path) %></li>
+  <li><%= link_to('Network', root_path) %></li>
+  <li><%= link_to('Settings', root_path) %></li>
 </ul>
+
+<% end %>
