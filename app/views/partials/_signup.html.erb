@@ -1,0 +1,13 @@
+<div id="#page_signup">
+
+  <%= form_for(User.new) do |u| %>
+    <%= u.label :username, 'Nickname' %>:
+    <%= u.text_field :username %>
+
+    <%= u.label :password, 'Password' %>:
+    <%= u.text_field :password %><br />
+
+    <%= submit_tag 'Create' %>
+  <% end %>
+
+</div>

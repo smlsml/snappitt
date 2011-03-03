@@ -1,6 +1,8 @@
 Photo::Application.routes.draw do
   root :to => "home#index"
 
+  resources :people, :controller => 'Users', :as => 'users'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

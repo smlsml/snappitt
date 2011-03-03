@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :services
 
+  def to_param
+    username
+  end
+
 end
