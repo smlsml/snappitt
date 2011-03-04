@@ -9,7 +9,8 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    @experience = Experience.new(params[:experience])
+    @experience = Experience.create!(params[:experience])
+    render :show
   end
 
 end
