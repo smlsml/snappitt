@@ -1,13 +1,6 @@
 <div id="#page_signup">
 
-  <%= form_for(User.new) do |u| %>
-    <%= u.label :username, 'Nickname' %>:
-    <%= u.text_field :username %>
-
-    <%= u.label :password, 'Password' %>:
-    <%= u.text_field :password %><br />
-
-    <%= submit_tag 'Create' %>
-  <% end %>
+  <%= link_to "Login", new_user_session_path %> |
+  <%= link_to "Signup!", new_user_registration_path %>
 
 </div>

@@ -1,14 +1,18 @@
 <h1><%= t(:app_name) %></h1>
 
-<% if User.first %>
+<% if user_signed_in? %>
 
 <ul>
  <li><%= link_to('Home', root_path) %></li>
- <li><%= link_to('Me', user_path(User.first)) %></li>
+ <li><%= link_to('Me', user_path(current_user)) %></li>
  <li><%= link_to('Capture', new_experience_path) %></li>
- <li><%= link_to('Network', user_network_path(User.first)) %></li>
- <li><%= link_to('Settings', user_settings_path(User.first)) %></li>
+ <li><%= link_to('Network', user_network_path(current_user)) %></li>
+ <li><%= link_to('Settings', user_settings_path(current_user)) %></li>
 </ul>
+
+<div id="page_logout">
+  <%= link_to t(:logout), destroy_user_session_path %>
+</div>
 
 <% else %>
 

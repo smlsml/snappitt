@@ -1,17 +1,17 @@
 development:
   adapter: postgresql
   database: photo_dev
-  username: postgres
-  password: west10port
+  username: LM_Dev
+  password:
   encoding: unicode
-  pool: 5
+  pool: 3
   timeout: 1000
 
 test:
   adapter: postgresql
   database: photo_test
-  username: postgres
-  password: west10port
+  username: LM_Dev
+  password:
   encoding: unicode
-  pool: 5
+  pool: 3
   timeout: 1000

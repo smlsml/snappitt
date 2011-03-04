@@ -1,4 +1,6 @@
 Photo::Application.routes.draw do
+  devise_for :users
+
   root :to => "home#index"
 
   resources :people, :controller => 'Users', :as => 'users' do

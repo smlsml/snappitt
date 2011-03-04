@@ -4,4 +4,5 @@
 en:
   app_name: "PhotoApp"
   hello: "Hello world"
+  logout: "Logout!"
 

@@ -4,6 +4,7 @@ gem 'rails', '3.0.5'
 gem 'heroku'
 gem 'haml'
 gem 'pg'
+gem 'devise'
 
 # Deploy with Capistrano
 # gem 'capistrano'
