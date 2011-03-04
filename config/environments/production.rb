@@ -36,7 +36,7 @@ Photo::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'llm.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'snappitt.com' }
 
   # Enable threaded mode
   # config.threadsafe!
@@ -47,4 +47,7 @@ Photo::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.autoload_paths += %W( #{ config.root }/lib/middleware )
+  config.middleware.use "NoWWW"
 end
