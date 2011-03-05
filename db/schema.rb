@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110303212859) do
+ActiveRecord::Schema.define(:version => 20110304223550) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(:version => 20110303212859) do
     t.string   "original_filename"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.datetime "data_updated_at"
   end
 
   create_table "comments", :force => true do |t|
@@ -46,6 +50,21 @@ ActiveRecord::Schema.define(:version => 20110303212859) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "event_locations", :force => true do |t|
     t.integer  "event_id"

@@ -9,7 +9,8 @@ gem 'paperclip'
 gem 'delayed_job'
 gem 'meta_where'
 gem 'compass'
-gem "flutie", "~> 1.1"
+gem 'flutie', "~> 1.1"
+gem 'aws-s3'
 
 # Deploy with Capistrano
 # gem 'capistrano'
