@@ -2,7 +2,13 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  app_name: "PhotoApp"
-  hello: "Hello world"
-  logout: "Logout!"
+  app:
+    name: 'Snappitt'
+  nav:
+    home: 'Home'
+    me: 'Me'
+    capture: 'Capture'
+    network: 'Network'
+    settings: 'Settings'
+    logout: 'Logout!'
 

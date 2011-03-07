@@ -1,27 +1,27 @@
-<h1><%= t(:app_name) %></h1>
+<h1><%= t('app.name') %></h1>
 
 <% if user_signed_in? %>
 
 <ul>
- <li><%= link_to('Home', root_path) %></li>
- <li><%= link_to('Me', user_path(current_user)) %></li>
- <li><%= link_to('Capture', new_experience_path) %></li>
- <li><%= link_to('Network', user_network_path(current_user)) %></li>
- <li><%= link_to('Settings', user_settings_path(current_user)) %></li>
+ <li><%= link_to( t('nav.home'), root_path ) %></li>
+ <li><%= link_to( t('nav.me'), user_path(current_user) ) %></li>
+ <li><%= link_to( t('nav.capture'), new_experience_path ) %></li>
+ <li><%= link_to( t('nav.network'), user_network_path(current_user) ) %></li>
+ <li><%= link_to( t('nav.settings'), user_settings_path(current_user) ) %></li>
 </ul>
 
 <div id="page_logout">
-  <%= link_to t(:logout), destroy_user_session_path %>
+  <%= link_to t('nav.logout'), destroy_user_session_path %>
 </div>
 
 <% else %>
 
 <ul>
-  <li><%= link_to('Home', root_path) %></li>
-  <li><%= link_to('Me', root_path) %></li>
-  <li><%= link_to('Capture', root_path) %></li>
-  <li><%= link_to('Network', root_path) %></li>
-  <li><%= link_to('Settings', root_path) %></li>
+  <li><%= link_to( t('nav.home'), root_path ) %></li>
+  <li><%= link_to( t('nav.me'), root_path ) %></li>
+  <li><%= link_to( t('nav.capture'), root_path ) %></li>
+  <li><%= link_to( t('nav.network'), root_path ) %></li>
+  <li><%= link_to( t('nav.settings'), root_path ) %></li>
 </ul>
 
 <% end %>

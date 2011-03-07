@@ -9,4 +9,6 @@ class Moment < ActiveRecord::Base
   belongs_to :experience
   belongs_to :comment
 
+  accepts_nested_attributes_for :experience, :comment
+
 end

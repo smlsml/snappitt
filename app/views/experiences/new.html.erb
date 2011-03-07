@@ -1,5 +1,30 @@
-<% form_for @experience do |e| %>
-<%= e.label 'Title' %>
-<%= e.text_field :title %>
-<%= submit_tag 'Create Experience' %>
+<% form_for @moment, :url => experiences_path do |m| %>
+
+  <%= m.fields_for :experience do |e| %>
+    <%= e.label 'title', 'Experience Title:' %>
+    <%= e.text_field :title %><br/>
+  <% end %>
+
+  <%= fields_for :thing do |t| %>
+    <%= t.label 'name', 'What:' %>
+    <%= t.text_field :name %><br/>
+  <% end %>
+
+  <%= fields_for :location do |l| %>
+    <%= l.label 'name', 'Where:' %>
+    <%= l.text_field :name %><br/>
+  <% end %>
+
+  <%= m.fields_for :comment do |c| %>
+    <%= c.label 'text', 'Comment:' %>
+    <%= c.text_area :text %><br/>
+  <% end %>
+
+  <%#= fields_for :tags do |t| %>
+    <%#= t.label 'people' %>
+    <%#= t.text_field :people %><br/>
+  <%# end %>
+
+  <%= submit_tag 'Create Experience' %>
+
 <% end %>

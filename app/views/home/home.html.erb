@@ -1,1 +1,8 @@
-<p>User logged-in home</p>
+<% last_date = nil %>
+<% @feed.each do |e| %>
+  <% if last_date != e.updated_at.to_formatted_s(:mdy) %>
+    <h2><%= e.updated_at.to_formatted_s(:mdy) %></h2>
+    <% last_date = e.updated_at.to_formatted_s(:mdy) %>
+  <% end %>
+  <%= render :partial => 'experience', :locals => {:exp => e} %>
+<% end %>

@@ -4,6 +4,14 @@ body {
   font-family: Helvetica Neue;
   font-size: 14px; }
 
+.home_controller h2 {
+  clear: both;
+  font-family: georgia;
+  font-style: italic;
+  font-size: 22px;
+  color: gray;
+  text-decoration: underline; }
+
 #page_header {
   background-color: #333333;
   color: white;
@@ -35,7 +43,21 @@ body {
 
 #page_body {
   margin-top: 150px;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 50px; }
+
+#page_footer {
+  background-color: whiteSmoke;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 35px; }
+
+.experience_card {
+  width: 300px;
+  height: 200px;
+  float: left; }
 
 /*
   html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
