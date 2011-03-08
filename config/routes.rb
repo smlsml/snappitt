@@ -4,8 +4,8 @@ Photo::Application.routes.draw do
   root :to => "home#index"
 
   resources :people, :controller => 'Users', :as => 'users' do
-    resource :network, :only => [:show], :controller => 'network', :module => 'user'
-    resource :settings, :only => [:show], :module => 'user'
+    resource :network, :only => [:show], :controller => 'network', :module => 'users'
+    resource :settings, :only => [:show], :module => 'users'
   end
 
   resources :experiences

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @feed = Experience.by_user(@user)
+    @experiences = Experience.by_user(@user)
   end
 
 end
