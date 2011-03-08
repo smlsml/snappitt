@@ -10,4 +10,9 @@ class Experience < ActiveRecord::Base
     order('updated_at DESC')
   }
 
+  scope :by_user, lambda { |user|
+    where('user_id_creator = ?', user.id).
+    order('updated_at DESC')
+  }
+
 end

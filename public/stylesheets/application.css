@@ -4,14 +4,6 @@ body {
   font-family: Helvetica Neue;
   font-size: 14px; }
 
-.home_controller h2 {
-  clear: both;
-  font-family: georgia;
-  font-style: italic;
-  font-size: 22px;
-  color: gray;
-  text-decoration: underline; }
-
 #page_header {
   background-color: #333333;
   color: white;
@@ -53,6 +45,14 @@ body {
   width: 100%;
   bottom: 0;
   height: 35px; }
+
+h2.feed_date {
+  clear: both;
+  font-family: georgia;
+  font-style: italic;
+  font-size: 22px;
+  color: gray;
+  text-decoration: underline; }
 
 .experience_card {
   width: 300px;
