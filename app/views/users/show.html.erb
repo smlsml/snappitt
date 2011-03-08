@@ -1,2 +1,10 @@
-<%= @user.inspect %>
+<div class="user_card">
+<ul>
+  <li>id: <%= @user.id %></li>
+  <li>email: <%= @user.email %></li>
+  <li>bio: <%= @user.profile.bio %></li>
+</ul>
+</div>
+
+
 <%= render @experiences %>

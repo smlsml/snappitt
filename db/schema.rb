@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110308003920) do
+ActiveRecord::Schema.define(:version => 20110308194153) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -165,7 +165,6 @@ ActiveRecord::Schema.define(:version => 20110308003920) do
 
   create_table "users", :force => true do |t|
     t.string   "username",             :limit => 25
-    t.string   "password",             :limit => 100
     t.string   "role",                 :limit => 20,  :default => "user"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -11,13 +11,25 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  belongs_to :profile, :inverse_of => :user
+  after_create :setup_profile
+
+  has_one :profile, :inverse_of => :user
   belongs_to :contact, :inverse_of => :user
 
   has_many :services
 
   def to_s
     email
+  end
+
+  protected
+
+  def setup_profile
+    Profile.create!(:user_id => self.id)
+  end
+
+  def create_contact
+    Contact.create!(:user_id => self.id, :email => self.email)
   end
 
 end

@@ -21,4 +21,8 @@ class Experience < ActiveRecord::Base
     m && a ? a.data.url(:feed) : 'none'
   end
 
+  def moments_status
+    '%s moment%s' % [self.moments.count, 1 == self.moments.count ? '':'s']
+  end
+
 end

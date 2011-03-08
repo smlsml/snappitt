@@ -4,13 +4,13 @@
 <% @last_feed_date = experience_date; end %>
 
 <div class="experience_card">
-  <ul>
-    <li>Title: <%= link_to( experience.title, experience_path(experience)) %></li>
-    <li>Image: <%= image_tag(experience.photo_url) %></li>
-    <li>User: <%= experience.creator %></li>
-    <li>Moments: <%= experience.moments.count %></li>
-    <li>Views: <%= experience.view_count %></li>
-    <li>Likes: <%#= experience.likes %></li>
-    <li>Comments: <%= experience.comments.count %></li>
-  </ul>
+  <div class="cover">
+    <%= image_tag(experience.photo_url) %>
+    <div class="user"><%= experience.creator %></div>
+    <div class="moments"><%= experience.moments_status %></div>
+  </div>
+  <h3><%= link_to( experience.title, experience_path(experience)) %></h3>
+  <div class="stats">
+    Views: <%= experience.view_count %> | Likes: <%#= experience.likes %> | Comments: <%= experience.comments.count %>
+  </div>
 </div>
