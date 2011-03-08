@@ -2,13 +2,16 @@ private:
   title: Private Experience
   creator: snoop # user
   visibility: private
+  view_count: 1
 
 public:
   title: Public Experience
   creator: dre # user
   visibility: public
+  view_count: 5
 
 group:
   title: Group Experience
   creator: snoop # user
   visibility: group
+  view_count: 100

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110304223550) do
+ActiveRecord::Schema.define(:version => 20110308003920) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(:version => 20110304223550) do
     t.string   "visibility"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "view_count",      :default => 0
+    t.integer  "moments_count",   :default => 0
   end
 
   create_table "locations", :force => true do |t|
