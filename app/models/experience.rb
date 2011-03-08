@@ -15,4 +15,10 @@ class Experience < ActiveRecord::Base
     order('updated_at DESC')
   }
 
+  def photo_url
+    m = moments.first
+    a = m.asset if m
+    m && a ? a.data.url(:feed) : 'none'
+  end
+
 end

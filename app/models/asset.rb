@@ -5,6 +5,11 @@ class Asset < ActiveRecord::Base
 
   if Rails.env == 'production'
     has_attached_file :data,
+                      :styles => {:tiny => "24x24#",
+                                  :thumb => "48x48#",
+                                  :feed => "280x157#",
+                                  :preview => '300x300>'},
+                      :convert_options => {:feed => '-gravity center -extent 280x157' },
                       :storage => :s3,
                       :s3_credentials => "#{Rails.root}/config/s3.yml",
                       :path => ":id/:style_:extension",
@@ -13,7 +18,12 @@ class Asset < ActiveRecord::Base
                         "snappitt#{i}"
                       end
   else
-    has_attached_file :data
+    has_attached_file :data,
+                      :styles => {:tiny => "24x24#",
+                                  :thumb => "48x48#",
+                                  :feed => "280x157#",
+                                  :preview => '300x300>'},
+                      :convert_options => {:feed => '-gravity center -extent 280x157' }
   end
 
 end

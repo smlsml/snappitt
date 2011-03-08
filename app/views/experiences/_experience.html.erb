@@ -6,7 +6,7 @@
 <div class="experience_card">
   <ul>
     <li>Title: <%= link_to( experience.title, experience_path(experience)) %></li>
-    <li>Image: </li>
+    <li>Image: <%= image_tag(experience.photo_url) %></li>
     <li>User: <%= experience.creator %></li>
     <li>Moments: <%= experience.moments.count %></li>
     <li>Views: <%= experience.view_count %></li>

@@ -1,4 +1,8 @@
-<% form_for @moment, :url => experiences_path do |m| %>
+<% form_for @moment, :url => experiences_path, :html => { :multipart => true } do |m| %>
+
+  <%= fields_for :asset do |a| %>
+    <%= a.file_field :data %>
+  <% end %>
 
   <%= m.fields_for :experience do |e| %>
     <%= e.label 'title', 'Experience Title:' %>
