@@ -1,16 +1,19 @@
 Photo::Application.routes.draw do
 
+  root :to => "home#index"
+
   devise_for :users,
              :path => "accounts",
              :path_names => {:sign_in => 'login',
                              :sign_out => 'logout',
-                             :sign_up => 'join' }
+                             :sign_up => 'join'}
 
-  root :to => "home#index"
-
-  resources :people, :controller => 'Users', :as => 'users' do
+  resources :people,
+            :controller => 'Users',
+            :only => [:show]
+            :as => 'users' do
     resource :network, :only => [:show], :controller => 'network', :module => 'users'
-    resource :settings, :only => [:show], :module => 'users'
+    resource :settings, :only => [:show, :update], :module => 'users'
   end
 
   resources :experiences

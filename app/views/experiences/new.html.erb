@@ -1,12 +1,8 @@
 <% form_for @moment, :url => experiences_path, :html => { :multipart => true } do |m| %>
 
   <%= fields_for :asset do |a| %>
+    <%= a.label :data, 'Photo:' %>
     <%= a.file_field :data %>
-  <% end %>
-
-  <%= m.fields_for :experience do |e| %>
-    <%= e.label 'title', 'Experience Title:' %>
-    <%= e.text_field :title %><br/>
   <% end %>
 
   <%= fields_for :thing do |t| %>
@@ -20,8 +16,8 @@
   <% end %>
 
   <%= m.fields_for :comment do |c| %>
-    <%= c.label 'text', 'Comment:' %>
-    <%= c.text_area :text %><br/>
+    <%= c.label 'text', 'Caption:' %>
+    <%= c.text_area :text, :size => '20x2' %><br/>
   <% end %>
 
   <%#= fields_for :tags do |t| %>
@@ -29,6 +25,19 @@
     <%#= t.text_field :people %><br/>
   <%# end %>
 
-  <%= submit_tag 'Create Experience' %>
+  <% last = Experience.by_user(current_user).first %>
+  <% if last %>
+    <input type="hidden" name="last_moment" value=<%= last.id %>
+    <%= submit_tag('Add moment to: %s' % last.title, :name => 'add_moment') %>
+  <% end %>
+
+  <h2>or</h2>
+
+  <%= submit_tag 'Create New Experience' %>
+
+  <%= fields_for :experience do |e| %>
+    <%#= e.label 'title', 'Experience Title:' %>
+    <%#= e.text_field :title %><br/>
+  <% end %>
 
 <% end %>

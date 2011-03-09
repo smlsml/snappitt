@@ -1,1 +1,7 @@
-<%= @experience.inspect %>
+<%= render @experience.creator %>
+
+<h2><%= @experience.title %></h2>
+
+<% @experience.moments.each do |m| %>
+  <%= image_tag(m.asset.data.url) %>
+<% end %>

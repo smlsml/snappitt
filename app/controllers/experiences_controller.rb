@@ -17,20 +17,31 @@ class ExperiencesController < ApplicationController
     @moment.creator = current_user
     @moment.thing = Thing.find_or_create_by_name(params[:thing]) if params[:thing]
     @moment.location = Location.find_or_create_by_name(params[:location]) if params[:location]
-    @moment.experience.creator = current_user
     @moment.source = @source
     @moment.comment.creator = current_user
 
-    @asset = PhotoAsset.new(params[:asset])
-    @asset.creator = current_user
-    @asset.source = @source
+    if params[:asset]
+      @asset = PhotoAsset.new(params[:asset])
+      @asset.creator = current_user
+      @asset.source = @source
 
-    @moment.asset = @asset
+      @moment.asset = @asset
+    end
+
+    if params[:add_moment]
+      @experience = Experience.find(params[:last_moment])
+    else
+      @experience = Experience.new(:title => '%s @ %s' % [@moment.thing.name, @moment.location.name])
+    end
+
+    @moment.experience = @experience
+    @moment.experience.creator = current_user
 
     if @moment.save
-      flash[:success] = "Created experience!"
+      flash[:success] = "Experience Created!"
+      redirect_to experience_path(@experience)
     else
-      flash[:error] = "Error!"
+      flash.now[:error] = "Error!"
     end
 
 #    params[:people].to_a.compact.uniq.each do |p|

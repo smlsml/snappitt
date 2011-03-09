@@ -74,7 +74,8 @@ h2.feed_date {
       width: 48px;
       height: 48px;
       background-color: white;
-      -moz-border-radius: 6px; }
+      -moz-border-radius: 6px;
+      -moz-box-shadow: 0px 0px 5px black; }
     .experience_card .cover .moments {
       position: absolute;
       background-color: black;
@@ -88,6 +89,14 @@ h2.feed_date {
   .experience_card .stats {
     border-top: 1px solid #999999;
     margin-top: 10px;
+    padding: 10px; }
+
+.user_card {
+  text-align: left;
+  margin-left: 25px; }
+  .user_card h2 img {
+    margin: 0;
+    vertical-align: middle;
     padding: 10px; }
 
 /*

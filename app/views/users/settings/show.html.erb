@@ -1,1 +1,34 @@
-Settings
+<h1>Settings</h1>
+
+<% form_for @profile, :url => user_settings_path, :html => { :multipart => true } do |p| %>
+
+  <%= image_tag( @profile.photo_url ) %>
+  <%= fields_for :asset do |a| %>
+    <%= a.label :data, 'Profile Picture:' %>
+    <%= a.file_field :data %>
+  <% end %><br/><br/>
+
+  <%= p.label 'realname', 'Name:' %>
+  <%= p.text_field :realname %><br/><br/>
+
+  <%= p.label 'birthday', 'Birthday:' %>
+  <%= p.date_select :birthday %><br/><br/>
+
+  <%= p.fields_for :hometown do |h| %>
+    <%= h.label 'name', 'Hometown:' %>
+    <%= h.text_field :name %><br/><br/>
+  <% end %>
+
+  <%= p.label 'bio', 'Blurb:' %>
+  <%= p.text_field :bio %><br/><br/>
+
+  <%= p.label 'gender_m', 'Guy:' %>
+  <%= p.radio_button :gender, 'm' %><br/>
+  <%= p.label 'gender_f', 'Girl:' %>
+  <%= p.radio_button :gender, 'f' %><br/>
+
+  <br/>
+
+  <%= submit_tag 'Update Profile' %>
+
+<% end %>

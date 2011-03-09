@@ -9,6 +9,6 @@ class Moment < ActiveRecord::Base
   belongs_to :experience, :counter_cache => true
   belongs_to :comment
 
-  accepts_nested_attributes_for :experience, :comment
+  accepts_nested_attributes_for :comment
 
 end

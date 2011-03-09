@@ -10,13 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110308194153) do
+ActiveRecord::Schema.define(:version => 20110309002016) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
     t.integer  "source_id"
     t.string   "type",              :limit => 30
-    t.string   "original_filename"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "data_file_name"
@@ -139,6 +138,7 @@ ActiveRecord::Schema.define(:version => 20110308194153) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gender",               :limit => 7,   :default => "unknown"
+    t.integer  "photo_asset_id"
   end
 
   create_table "services", :force => true do |t|
@@ -182,6 +182,8 @@ ActiveRecord::Schema.define(:version => 20110308194153) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "contact_id"
+    t.integer  "profile_id"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
