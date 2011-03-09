@@ -3,5 +3,5 @@
 <h2><%= @experience.title %></h2>
 
 <% @experience.moments.each do |m| %>
-  <%= image_tag(m.asset.data.url) %>
+  <%= image_tag(m.asset.data.url(:large)) %>
 <% end %>

@@ -27,7 +27,7 @@
 
   <% last = Experience.by_user(current_user).first %>
   <% if last %>
-    <input type="hidden" name="last_moment" value=<%= last.id %>
+    <input type="hidden" name="last_moment" value="<%= last.id %>" />
     <%= submit_tag('Add moment to: %s' % last.title, :name => 'add_moment') %>
   <% end %>
 
