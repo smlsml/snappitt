@@ -3,7 +3,7 @@ class Asset < ActiveRecord::Base
   belongs_to :creator, :class_name => 'User', :foreign_key => 'user_id_creator'
   belongs_to :source
 
-  #if Rails.env == 'production'
+  if Rails.env == 'production'
     has_attached_file :data,
                       :styles => {:tiny => "24x24#",
                                   :thumb => "48x48#",
@@ -14,16 +14,16 @@ class Asset < ActiveRecord::Base
                       :s3_credentials => "#{Rails.root}/config/s3.yml",
                       :path => ":id/:style_:extension",
                       :bucket => lambda { |attachment|
-                        i = attachment.instance.id % 3
+                        i = attachment.instance.id.to_i % 3
                         "snappitt#{i}"
                       }
-#  else
-#    has_attached_file :data,
-#                      :styles => {:tiny => "24x24#",
-#                                  :thumb => "48x48#",
-#                                  :feed => "280x157#",
-#                                  :preview => '300x300>'},
-#                      :convert_options => {:feed => '-gravity center -extent 280x157' }
-#  end
+  else
+    has_attached_file :data,
+                      :styles => {:tiny => "24x24#",
+                                  :thumb => "48x48#",
+                                  :feed => "280x157#",
+                                  :preview => '300x300>'},
+                      :convert_options => {:feed => '-gravity center -extent 280x157' }
+  end
 
 end
