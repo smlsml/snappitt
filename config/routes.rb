@@ -10,7 +10,7 @@ Photo::Application.routes.draw do
 
   resources :people,
             :controller => 'Users',
-            :only => [:show]
+            :only => [:show],
             :as => 'users' do
     resource :network, :only => [:show], :controller => 'network', :module => 'users'
     resource :settings, :only => [:show, :update], :module => 'users'
