@@ -29,9 +29,8 @@
   <% if last %>
     <input type="hidden" name="last_moment" value="<%= last.id %>" />
     <%= submit_tag('Add moment to: %s' % last.title, :name => 'add_moment') %>
+    <h2>or</h2>
   <% end %>
-
-  <h2>or</h2>
 
   <%= submit_tag 'Create New Experience' %>
 
