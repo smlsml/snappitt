@@ -12,7 +12,7 @@
   <%= p.text_field :realname %><br/><br/>
 
   <%= p.label 'birthday', 'Birthday:' %>
-  <%= p.date_select :birthday %><br/><br/>
+  <%= p.date_select :birthday, :start_year => 1925, :end_year => Time.now.year, :default => Time.now - 20.years %><br/><br/>
 
   <%= p.fields_for :hometown do |h| %>
     <%= h.label 'name', 'Hometown:' %>
