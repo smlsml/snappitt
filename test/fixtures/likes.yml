@@ -1,0 +1,7 @@
+snoop_likes_eat:
+  user: snoop # user
+  moment: eat # moment
+
+dre_likes_eat:
+  user: dre # user
+  moment: eat #moment

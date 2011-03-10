@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   belongs_to :contact, :inverse_of => :user
 
   has_many :services
+  has_many :likes, :inverse_of => :user
 
   def to_s
     out = profile.realname if profile

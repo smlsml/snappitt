@@ -3,15 +3,19 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   test "fixture" do
-    assert_kind_of(User, users(:snoop))
+    @snoop = users(:snoop)
+    assert_kind_of(User, @snoop)
+    assert_kind_of(Profile, @snoop.profile)
+    assert_kind_of(Contact, @snoop.contact)
   end
 
-  test "profile association" do
-    assert_kind_of(Profile, users(:snoop).profile)
-  end
+  test "like counter" do
+    @snoop = users(:snoop)
+    Like.create!(:moment_id => moments(:eat).id, :user_id => @snoop.id)
 
-  test "contact association" do
-    assert_kind_of(Contact, users(:snoop).contact)
+    @snoop.reload
+
+    assert @snoop.likes_count > 0
   end
 
 end

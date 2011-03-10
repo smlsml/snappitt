@@ -1,13 +1,13 @@
 snoop:
   username: snoop_dogg
-  password: password
+  email: snoop@example.com
   role: user
   contact: snoop # contact
   profile: snoop # profile
 
 dre:
   username: dre
-  password: password
+  email: dre@example.com
   role: user
   contact: dre # contact
   profile: dre # profile

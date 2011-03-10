@@ -9,6 +9,8 @@ class Moment < ActiveRecord::Base
   belongs_to :experience, :counter_cache => true
   belongs_to :comment
 
+  has_many :likes, :inverse_of => :moment
+
   accepts_nested_attributes_for :comment
 
 end

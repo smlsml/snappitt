@@ -2,28 +2,25 @@ require 'test_helper'
 
 class MomentTest < ActiveSupport::TestCase
 
-  def setup
-    @eat = moments(:eat)
-  end
-
   test "fixture" do
+    @eat = moments(:eat)
     assert_kind_of(Moment, @eat)
-  end
-
-  test "source association" do
     assert_kind_of(Source, @eat.source)
-  end
-
-  test "photo association" do
     assert_kind_of(PhotoAsset, @eat.asset)
-  end
-
-  test "thing association" do
     assert_kind_of(Thing, @eat.thing)
+    assert_kind_of(Location, @eat.location)
+    assert_kind_of(Like, @eat.likes.first)
+
+    assert @eat == @eat.likes.first.moment # inverse_of
   end
 
-  test "location association" do
-    assert_kind_of(Location, @eat.location)
+  test "like counter" do
+    @eat = moments(:eat)
+    Like.create!(:moment_id => @eat.id, :user_id => users(:snoop).id)
+
+    @eat.reload
+
+    assert @eat.likes_count > 0
   end
 
 end
