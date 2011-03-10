@@ -1,42 +1,46 @@
-<% form_for @moment, :url => experiences_path, :html => { :multipart => true } do |m| %>
+<fieldset class="capture">
+  <legend>Capture a Moment</legend>
+  <% form_for @moment, :url => experiences_path, :html => { :multipart => true } do |m| %>
 
-  <%= fields_for :asset do |a| %>
-    <%= a.label :data, 'Photo:' %>
-    <%= a.file_field :data %>
+    <%= fields_for :asset do |a| %>
+      <%= a.label :data, 'Photo:' %>
+      <%= a.file_field :data %>
+    <% end %>
+
+    <%= fields_for :thing do |t| %>
+      <%= t.label 'name', 'What:' %>
+      <%= t.text_field :name %><br/>
+    <% end %>
+
+    <%= fields_for :location do |l| %>
+      <%= l.label 'name', 'Where:' %>
+      <%= l.text_field :name %><br/>
+    <% end %>
+
+    <%= m.fields_for :comment do |c| %>
+      <%= c.label 'text', 'Caption:' %>
+      <%= c.text_area :text, :size => '50x2' %><br/>
+    <% end %>
+
+    <%#= fields_for :tags do |t| %>
+      <%#= t.label 'people' %>
+      <%#= t.text_field :people %><br/>
+    <%# end %>
+
+    <% last = Experience.by_user(current_user).first %>
+    <% if last %>
+      <input type="hidden" name="last_moment" value="<%= last.id %>" />
+      <%= submit_tag('Add moment to: %s' % last.title, :name => 'add_moment') %>
+      <h2>or</h2>
+    <% end %>
+
+    <%= submit_tag 'Create New Experience' %>
+
+    <%= fields_for :experience do |e| %>
+      <%#= e.label 'title', 'Experience Title:' %>
+      <%#= e.text_field :title %><br/>
+    <% end %>
+
   <% end %>
 
-  <%= fields_for :thing do |t| %>
-    <%= t.label 'name', 'What:' %>
-    <%= t.text_field :name %><br/>
-  <% end %>
-
-  <%= fields_for :location do |l| %>
-    <%= l.label 'name', 'Where:' %>
-    <%= l.text_field :name %><br/>
-  <% end %>
-
-  <%= m.fields_for :comment do |c| %>
-    <%= c.label 'text', 'Caption:' %>
-    <%= c.text_area :text, :size => '20x2' %><br/>
-  <% end %>
-
-  <%#= fields_for :tags do |t| %>
-    <%#= t.label 'people' %>
-    <%#= t.text_field :people %><br/>
-  <%# end %>
-
-  <% last = Experience.by_user(current_user).first %>
-  <% if last %>
-    <input type="hidden" name="last_moment" value="<%= last.id %>" />
-    <%= submit_tag('Add moment to: %s' % last.title, :name => 'add_moment') %>
-    <h2>or</h2>
-  <% end %>
-
-  <%= submit_tag 'Create New Experience' %>
-
-  <%= fields_for :experience do |e| %>
-    <%#= e.label 'title', 'Experience Title:' %>
-    <%#= e.text_field :title %><br/>
-  <% end %>
-
-<% end %>
+</fieldset>

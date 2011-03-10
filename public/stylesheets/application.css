@@ -4,7 +4,15 @@ body {
   font-family: Helvetica Neue;
   font-size: 14px; }
 
+.experience_controller fieldset.capture {
+  width: 600px;
+  margin: 0 auto; }
+  .experience_controller fieldset.capture textarea {
+    width: auto;
+    height: auto; }
+
 #page_header {
+  z-index: 100;
   background-color: #333333;
   color: white;
   position: fixed;
@@ -24,14 +32,19 @@ body {
     padding: 0; }
   #page_header ul {
     margin: 0 auto;
-    width: 850px;
-    padding: 0; }
+    padding: 0;
+    max-width: 950px;
+    min-width: 300px; }
     #page_header ul li {
-      width: 160px;
+      width: 20%;
       float: left;
       margin: 0;
       padding: 0;
       list-style: none; }
+  #page_header #page_logout {
+    position: absolute;
+    right: 50px;
+    top: 25px; }
 
 #page_body {
   margin-top: 150px;
@@ -54,12 +67,18 @@ h2.feed_date {
   color: gray;
   text-decoration: underline; }
 
-.experience_card {
-  width: 300px;
-  height: 200px;
+table.feed {
+  margin: 0 auto;
+  width: auto;
+  max-width: 980px; }
+  table.feed td {
+    text-align: center; }
+
+div.experience_card {
+  width: 292px;
   float: left;
-  padding: 20px; }
-  .experience_card .cover {
+  padding: 15px; }
+  div.experience_card .cover {
     border: 6px solid whiteSmoke;
     -moz-border-radius: 6px;
     position: relative;
@@ -67,7 +86,7 @@ h2.feed_date {
     height: 157px;
     overflow: hidden;
     margin-bottom: 10px; }
-    .experience_card .cover .user {
+    div.experience_card .cover .user {
       position: absolute;
       right: 10px;
       top: 10px;
@@ -76,7 +95,7 @@ h2.feed_date {
       background-color: white;
       -moz-border-radius: 6px;
       -moz-box-shadow: 0px 0px 5px black; }
-    .experience_card .cover .moments {
+    div.experience_card .cover .moments {
       position: absolute;
       background-color: black;
       opacity: 0.7;
@@ -86,7 +105,7 @@ h2.feed_date {
       color: white;
       font-size: 10px;
       padding: 3px; }
-  .experience_card .stats {
+  div.experience_card .stats {
     border-top: 1px solid #999999;
     margin-top: 10px;
     padding: 10px; }
