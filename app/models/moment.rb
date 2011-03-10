@@ -7,10 +7,11 @@ class Moment < ActiveRecord::Base
   belongs_to :thing
   belongs_to :location
   belongs_to :experience, :counter_cache => true
-  belongs_to :comment
+  belongs_to :caption, :class_name => 'CaptionComment'#, :inverse_of => :moment
 
   has_many :likes, :inverse_of => :moment
+  has_many :comments, :class_name => 'MomentComment', :inverse_of => :moment
 
-  accepts_nested_attributes_for :comment
+  accepts_nested_attributes_for :caption
 
 end

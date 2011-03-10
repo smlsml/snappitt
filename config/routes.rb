@@ -1,5 +1,7 @@
 Photo::Application.routes.draw do
 
+  get "moments/show"
+
   root :to => "home#index"
 
   devise_for :users,
@@ -16,7 +18,11 @@ Photo::Application.routes.draw do
     resource :settings, :only => [:show, :update], :module => 'users'
   end
 
-  resources :experiences
+  resources :experiences do
+    resources :moments, :only => [:show] do
+      get 'like', :on => :member
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,4 +1,10 @@
-snoop_says:
+snoop_caption:
   creator: snoop # user
-  type:
+  type: CaptionComment
   text: Fo Shizzle!
+
+snoop_comment:
+  creator: snoop # user
+  type: MomentComment
+  text: Now this is a cool experience!
+  moment: eat

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110310190528) do
+ActiveRecord::Schema.define(:version => 20110310194105) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20110310190528) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "moment_id"
   end
 
   create_table "connections", :force => true do |t|
@@ -87,7 +88,7 @@ ActiveRecord::Schema.define(:version => 20110310190528) do
     t.string   "visibility"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "view_count",      :default => 0
+    t.integer  "views",           :default => 0
     t.integer  "moments_count",   :default => 0
   end
 
@@ -131,8 +132,9 @@ ActiveRecord::Schema.define(:version => 20110310190528) do
     t.integer  "experience_id"
     t.integer  "source_id"
     t.integer  "asset_id"
-    t.integer  "comment_id"
-    t.integer  "likes_count"
+    t.integer  "caption_id"
+    t.integer  "likes_count",     :default => 0
+    t.integer  "comments_count",  :default => 0
   end
 
   create_table "profiles", :force => true do |t|
@@ -192,7 +194,7 @@ ActiveRecord::Schema.define(:version => 20110310190528) do
     t.datetime "confirmation_sent_at"
     t.integer  "contact_id"
     t.integer  "profile_id"
-    t.integer  "likes_count"
+    t.integer  "likes_count",                         :default => 0
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

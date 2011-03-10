@@ -17,7 +17,7 @@
       <%= l.text_field :name %><br/>
     <% end %>
 
-    <%= m.fields_for :comment do |c| %>
+    <%= m.fields_for :caption do |c| %>
       <%= c.label 'text', 'Caption:' %>
       <%= c.text_area :text, :size => '50x2' %><br/>
     <% end %>

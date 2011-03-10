@@ -2,12 +2,12 @@ class ExperiencesController < ApplicationController
 
   def new
     @moment = Moment.new
-    @moment.comment = Comment.new
-    @moment.experience = Experience.new
+    @moment.caption = CaptionComment.new
   end
 
   def show
     @experience = Experience.find(params[:id])
+    @experience.increment!(:views, 1)
   end
 
   def create
@@ -18,7 +18,7 @@ class ExperiencesController < ApplicationController
     @moment.thing = Thing.find_or_create_by_name(params[:thing]) if params[:thing]
     @moment.location = Location.find_or_create_by_name(params[:location]) if params[:location]
     @moment.source = @source
-    @moment.comment.creator = current_user
+    @moment.caption.creator = current_user
 
     if params[:asset]
       @asset = PhotoAsset.new(params[:asset])

@@ -11,6 +11,6 @@
   </div>
   <h3><%= link_to( experience.title, experience_path(experience)) %></h3>
   <div class="stats">
-    Views: <%= experience.view_count %> | Likes: <%#= experience.likes %> | Comments: <%= experience.comments.count %>
+    Views: <%= experience.views %> | Likes: <%= experience.likes.count %> | Comments: <%= experience.comments.count %>
   </div>
 </div>

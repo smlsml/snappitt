@@ -1,7 +1,7 @@
 class AddLikeCountToMoment < ActiveRecord::Migration
 
   def self.up
-    add_column :moments, :likes_count, :integer
+    add_column :moments, :likes_count, :integer, :default => 0
   end
 
   def self.down

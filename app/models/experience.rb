@@ -5,6 +5,7 @@ class Experience < ActiveRecord::Base
 
   has_many :moments
   has_many :comments, :through => :moments, :readonly => true
+  has_many :likes, :through => :moments, :readonly => true
 
   scope :user_feed, lambda { |user|
     order('updated_at DESC')
@@ -12,7 +13,7 @@ class Experience < ActiveRecord::Base
 
   scope :by_user, lambda { |user|
     where('user_id_creator = ?', user.id).
-    order('updated_at DESC')
+    order('created_at DESC')
   }
 
   def photo_url

@@ -10,6 +10,8 @@ class MomentTest < ActiveSupport::TestCase
     assert_kind_of(Thing, @eat.thing)
     assert_kind_of(Location, @eat.location)
     assert_kind_of(Like, @eat.likes.first)
+    assert_kind_of(CaptionComment, @eat.caption)
+    assert_kind_of(MomentComment, @eat.comments.first)
 
     assert @eat == @eat.likes.first.moment # inverse_of
   end
