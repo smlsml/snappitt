@@ -8,7 +8,7 @@ class Experience < ActiveRecord::Base
   has_many :likes, :through => :moments, :readonly => true
 
   scope :user_feed, lambda { |user|
-    order('updated_at DESC')
+    order('created_at DESC')
   }
 
   scope :by_user, lambda { |user|

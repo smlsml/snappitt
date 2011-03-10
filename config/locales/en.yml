@@ -7,7 +7,7 @@ en:
   nav:
     home: 'Home'
     me: 'Me'
-    capture: 'Capture'
+    upload: 'Upload'
     network: 'Network'
     settings: 'Settings'
     logout: 'Logout!'

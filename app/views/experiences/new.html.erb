@@ -1,5 +1,5 @@
-<fieldset class="capture">
-  <legend>Capture a Moment</legend>
+<fieldset class="upload">
+  <legend>Upload a Moment</legend>
   <% form_for @moment, :url => experiences_path, :html => { :multipart => true } do |m| %>
 
     <%= fields_for :asset do |a| %>
@@ -44,3 +44,5 @@
   <% end %>
 
 </fieldset>
+
+<br/><br/>

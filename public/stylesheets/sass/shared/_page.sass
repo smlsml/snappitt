@@ -10,7 +10,7 @@ body
   background-color: #333
   color: white
   position: fixed
-  height: 125px
+  height: 135px
   top: 0
   left: 0
   width: 100%
@@ -23,51 +23,61 @@ body
     color: white
     font-family: Georgia, Helvetica Neue
     font-style: italic
-    margin: 18px
+    margin: 15px
     padding: 0
   ul
     margin: 0 auto
     padding: 0
     max-width: 950px
     min-width: 300px
+    a span
+      display: none
+    &:hover
+      a span
+        display: inline
     li
       width: 20%
       float: left
       margin: 0
       padding: 0
       list-style: none
-      div
-        background: url(/images/header-icons.png) no-repeat 0 0
-        width: 50px
-        height: 50px
-        margin: 0 auto
-        &.home
-          background-position: -30px -15px
-          &:hover
-            background-position: -150px -15px
-        &.me
-          background-position: -30px -125px
-          &:hover
-            background-position: -150px -125px
-        &.capture
-          width: 75px
-          background-position: -20px -240px
-          &:hover
-            background-position: -20px -240px
-        &.network
-          background-position: -30px -350px
-          &:hover
-            background-position: -150px -350px
-        &.settings
-          background-position: -30px -467px
-          &:hover
-            background-position: -150px -467px
-    a
-      display: none
-    &:hover
       a
-        display: inline
+        background: url(/images/header-icons.png) no-repeat 0 0
+        width: 60px
+        height: 70px
+        margin: 0 auto
+        display: block
         text-decoration: none
+        &:hover
+          span
+            color: #188AAD
+        span
+          text-decoration: none
+          background: black
+          -moz-border-radius: 6px
+          -moz-box-shadow: 0 0 2px black
+          padding: 2px 4px
+        &.home
+          background-position: -26px 2px
+          &:hover
+            background-position: -146px 2px
+        &.me
+          background-position: -26px -110px
+          &:hover
+            background-position: -146px -110px
+        &.upload
+          width: 98px
+          background-position: -8px -230px
+          &:hover
+            background-position: -8px -230px
+        &.network
+          background-position: -26px -336px
+          &:hover
+            background-position: -146px -336px
+        &.settings
+          background-position: -26px -450px
+          &:hover
+            background-position: -146px -450px
 
   #page_logout
     position: absolute

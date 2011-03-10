@@ -1,7 +1,7 @@
-.experience_controller fieldset.capture {
+.experience_controller fieldset.upload {
   width: 600px;
   margin: 0 auto; }
-  .experience_controller fieldset.capture textarea {
+  .experience_controller fieldset.upload textarea {
     width: auto;
     height: auto; }
 
@@ -17,7 +17,7 @@ body {
   background-color: #333333;
   color: white;
   position: fixed;
-  height: 125px;
+  height: 135px;
   top: 0;
   left: 0;
   width: 100%;
@@ -30,50 +30,59 @@ body {
     color: white;
     font-family: Georgia, Helvetica Neue;
     font-style: italic;
-    margin: 18px;
+    margin: 15px;
     padding: 0; }
   #page_header ul {
     margin: 0 auto;
     padding: 0;
     max-width: 950px;
     min-width: 300px; }
+    #page_header ul a span {
+      display: none; }
+    #page_header ul:hover a span {
+      display: inline; }
     #page_header ul li {
       width: 20%;
       float: left;
       margin: 0;
       padding: 0;
       list-style: none; }
-      #page_header ul li div {
+      #page_header ul li a {
         background: url(/images/header-icons.png) no-repeat 0 0;
-        width: 50px;
-        height: 50px;
-        margin: 0 auto; }
-        #page_header ul li div.home {
-          background-position: -30px -15px; }
-          #page_header ul li div.home:hover {
-            background-position: -150px -15px; }
-        #page_header ul li div.me {
-          background-position: -30px -125px; }
-          #page_header ul li div.me:hover {
-            background-position: -150px -125px; }
-        #page_header ul li div.capture {
-          width: 75px;
-          background-position: -25px -240px; }
-          #page_header ul li div.capture:hover {
-            background-position: -25px -240px; }
-        #page_header ul li div.network {
-          background-position: -30px -350px; }
-          #page_header ul li div.network:hover {
-            background-position: -150px -350px; }
-        #page_header ul li div.settings {
-          background-position: -30px -467px; }
-          #page_header ul li div.settings:hover {
-            background-position: -150px -467px; }
-    #page_header ul a {
-      display: none; }
-    #page_header ul:hover a {
-      display: inline;
-      text-decoration: none; }
+        width: 60px;
+        height: 70px;
+        margin: 0 auto;
+        display: block;
+        text-decoration: none; }
+        #page_header ul li a:hover span {
+          color: #188aad; }
+        #page_header ul li a span {
+          text-decoration: none;
+          background: black;
+          -moz-border-radius: 6px;
+          -moz-box-shadow: 0 0 2px black;
+          padding: 2px 4px; }
+        #page_header ul li a.home {
+          background-position: -26px 2px; }
+          #page_header ul li a.home:hover {
+            background-position: -146px 2px; }
+        #page_header ul li a.me {
+          background-position: -26px -110px; }
+          #page_header ul li a.me:hover {
+            background-position: -146px -110px; }
+        #page_header ul li a.upload {
+          width: 98px;
+          background-position: -8px -230px; }
+          #page_header ul li a.upload:hover {
+            background-position: -8px -230px; }
+        #page_header ul li a.network {
+          background-position: -26px -336px; }
+          #page_header ul li a.network:hover {
+            background-position: -146px -336px; }
+        #page_header ul li a.settings {
+          background-position: -26px -450px; }
+          #page_header ul li a.settings:hover {
+            background-position: -146px -450px; }
   #page_header #page_logout {
     position: absolute;
     right: 50px;

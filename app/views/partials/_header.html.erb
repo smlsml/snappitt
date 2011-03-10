@@ -1,39 +1,39 @@
 <h1><%= t('app.name') %></h1>
 
-<% if user_signed_in? %>
+<% @in = user_signed_in? %>
 
 <ul>
  <li>
-   <div class="home"><%= link_to( t('nav.home'), root_path ) %></div>
-
+   <a href="<%= root_path %>" class="home">
+     <span><%= t('nav.home') %></span>
+   </a>
  </li>
  <li>
-   <div class="me"><%= link_to( t('nav.me'), user_path(current_user) ) %></div>
-
+   <a href="<%= @in ? user_path(current_user) : root_path %>" class="me">
+     <span><%= t('nav.me') %></span>
+   </a>
  </li>
  <li>
-   <div class="capture"><%= link_to( t('nav.capture'), new_experience_path ) %></div>
+   <a href="<%= @in ? new_experience_path : root_path %>" class="upload">
+     <span><%= t('nav.upload') %></span>
+   </a>
  </li>
  <li>
-   <div class="network"><%= link_to( t('nav.network'), user_network_path(current_user) ) %></div>
+   <a href="<%= @in ? user_network_path(current_user) : root_path %>" class="network">
+     <span><%= t('nav.network') %></span>
+   </a>
  </li>
  <li>
-   <div class="settings"><%= link_to( t('nav.settings'), user_settings_path(current_user) ) %></div>
+   <a href="<%= @in ? user_settings_path(current_user) : root_path %>" class="settings">
+     <span><%= t('nav.settings') %></span>
+   </a>
  </li>
 </ul>
+
+<% if @in %>
 
 <div id="page_logout">
   <%= link_to t('nav.logout'), destroy_user_session_path %>
 </div>
-
-<% else %>
-
-<ul>
-  <li><%= link_to( t('nav.home'), root_path ) %></li>
-  <li><%= link_to( t('nav.me'), root_path ) %></li>
-  <li><%= link_to( t('nav.capture'), root_path ) %></li>
-  <li><%= link_to( t('nav.network'), root_path ) %></li>
-  <li><%= link_to( t('nav.settings'), root_path ) %></li>
-</ul>
 
 <% end %>
