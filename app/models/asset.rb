@@ -8,8 +8,8 @@ class Asset < ActiveRecord::Base
                       :styles => {:tiny => "24x24#",
                                   :thumb => "48x48#",
                                   :feed => "280x157#",
-                                  :preview => '300x300>',
-                                  :large => '650x650>'},
+                                  :preview => ['300x300>', :jpg],
+                                  :large => ['650x650>', :jpg]},
                       :convert_options => {:feed => '-gravity center -extent 280x157' },
                       :storage => :s3,
                       :s3_credentials => "#{Rails.root}/config/s3.yml",
@@ -20,8 +20,8 @@ class Asset < ActiveRecord::Base
                       :styles => {:tiny => "24x24#",
                                   :thumb => "48x48#",
                                   :feed => "280x157#",
-                                  :preview => '300x300>',
-                                  :large => '650x650>'},
+                                  :preview => ['300x300>', :jpg],
+                                  :large => ['650x650>', :jpg]},
                       :convert_options => {:feed => '-gravity center -extent 280x157' }
   end
 
