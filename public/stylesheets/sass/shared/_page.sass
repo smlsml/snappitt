@@ -5,6 +5,10 @@ body
   font-size: 14px !important
   background-color: whiteSmoke !important
 
+table
+  td
+    border: none !important
+
 #page_header
   z-index: 100
   background-color: #333
@@ -16,6 +20,7 @@ body
   width: 100%
   text-align: center
   background-image: url(/images/header-bg.jpg)
+  -moz-box-shadow: 0 2px 4px #2C2C2C
   a
     color: white
   h1
@@ -53,7 +58,6 @@ body
           padding: 2px 4px
         &:hover
           span
-            color: #188AAD
             display: inline
         &.home
           background-position: -60px -8px
@@ -65,7 +69,7 @@ body
             background-position: -60px -128px
           &:active
             background-position: -60px -248px
-        &.me
+        &.profile
           background-position: -260px -8px
           &.selected
             background-position: -260px -368px
@@ -82,7 +86,7 @@ body
             background-position: -448px -8px
           &:active
             background-position: -448px -8px
-        &.users_network
+        &.users
           background-position: -660px -8px
           &.selected
             background-position: -660px -368px
@@ -109,13 +113,16 @@ body
     position: absolute
     right: 50px
     top: 25px
+    small
+      font-size: 10px
+      color: #999
 
 #page_body
   margin-top: 135px
   text-align: center
-  margin-bottom: 50px
   background-color: white
-  padding-top: 20px
+  padding-top: 25px
+  padding-bottom: 50px
 
 #page_footer
   text-align: center

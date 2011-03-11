@@ -1,0 +1,2 @@
+module Users::FollowHelper
+end

@@ -1,7 +1,5 @@
 Photo::Application.routes.draw do
 
-  get "moments/show"
-
   root :to => "home#index"
 
   devise_for :users,
@@ -12,10 +10,10 @@ Photo::Application.routes.draw do
 
   resources :people,
             :controller => 'Users',
-            :only => [:show],
+            :only => [:index, :show],
             :as => 'users' do
-    resource :network, :only => [:show], :controller => 'network', :module => 'users'
     resource :settings, :only => [:show, :update], :module => 'users'
+    resources :follow, :controller => 'follow', :module => 'users'
   end
 
   resources :experiences do

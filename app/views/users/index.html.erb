@@ -1,0 +1,16 @@
+<h1>People</h1>
+
+<%= render(:partial => '/users/follow/network', :locals => {:user => current_user}) if user_signed_in? %>
+
+<br/><br/><br/>
+
+<table class="network">
+  <tr>
+    <th><h2>Newest</h2></th>
+    <th><h2>Popular</h2></th>
+  </tr>
+  <tr>
+    <td><% User.order('created_at DESC').limit(10).each{ |u| concat render :partial => '/users/user', :locals => {:user => u} }%></td>
+    <td><% User.order('likes_count DESC').limit(10).each{ |u| concat render :partial => '/users/user', :locals => {:user => u} }%></td>
+  </tr>
+</table>

@@ -1,4 +1,4 @@
-<% experience_date = experience.updated_at.to_formatted_s(:mdy) %>
+<% experience_date = experience.created_at.to_formatted_s(:mdy) %>
 <% if @last_feed_date != experience_date; %>
   <h2 class="feed_date"><%= experience_date %></h2>
 <% @last_feed_date = experience_date; end %>

@@ -6,7 +6,7 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body class="<%= controller.css_name %>">
+<body class="<%= controller_css_name %>">
 
 <div id="page_header">
   <%= render :partial => '/partials/header' %>
@@ -15,7 +15,7 @@
 <div id="page_body">
   <%= render_flash_messages %>
 
-  <%= render :partial => '/partials/signup' unless user_signed_in? || controller.is_account_page? %>
+  <%= render :partial => '/partials/signup' unless user_signed_in? || is_account_page? %>
 
   <div id="page_content">
     <%= yield %>

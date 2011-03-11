@@ -1,0 +1,10 @@
+<table class="network">
+  <tr>
+    <th><h2>Following</h2></th>
+    <th><h2>Followers</h2></th>
+  </tr>
+  <tr>
+    <td><% user.following.each{ |u| concat render :partial => '/users/user', :locals => {:user => u} }%></td>
+    <td><% user.followers.each{ |u| concat render :partial => '/users/user', :locals => {:user => u} }%></td>
+  </tr>
+</table>

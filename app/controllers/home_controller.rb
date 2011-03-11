@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  helper :home
+  before_filter :authenticate_user!, :only => [:home]
 
   def index
     return(self.home) if user_signed_in?

@@ -1,4 +1,5 @@
 class ExperiencesController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new, :create]
 
   def new
     @moment = Moment.new
@@ -7,7 +8,7 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
-    @experience.increment!(:views, 1)
+    @experience.increment!(:views, 1) unless is_bot?
   end
 
   def create

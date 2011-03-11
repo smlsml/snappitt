@@ -1,4 +1,19 @@
 <div class="user_card">
-  <h2><%= image_tag(user.profile.photo_url) %><%= user %></h2>
-  <q>&ldquo;<%= user.profile.bio %>&rdquo;</q>
+  <h2><%= link_to(image_tag(user.profile.photo_url,
+                            :width => 48,
+                            :height => 48,
+                            :alt => user),
+                  user_path(user)) %>
+       <%= link_to(user, user_path(user)) %>
+  </h2>
+  <% unless current_user == user || !user_signed_in? %>
+    <% if current_user.follows(user) %>
+      <%= link_to( t(:unfollow), user_follow_path(user, current_user), :method => :delete) %><br/>
+    <% else %>
+      <%= link_to( t(:follow), user_follow_index_path(user), :method => :post)  %><br/>
+    <% end %>
+  <% end %>
+  <p><%= 'Experiences: %s | Likes: %s | Followers: %s' % [user.experiences.count, user.likes.count, user.followers.count] %></p>
+  <q><%= t(:lq).html_safe << user.profile.bio.to_s << t(:rq).html_safe %></q>
+
 </div>

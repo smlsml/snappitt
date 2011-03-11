@@ -9,18 +9,18 @@
    </a>
  </li>
  <li>
-   <a href="<%= @in ? user_path(current_user) : root_path %>"<%= nav_class(:me) %>>
-     <span><%= t('nav.me') %></span>
+   <a href="<%= users_path %>"<%= nav_class(:users) %>>
+     <span><%= t('nav.people') %></span>
    </a>
  </li>
  <li>
-   <a href="<%= @in ? new_experience_path : root_path %>"<%= nav_class(:upload) %>>
+   <a href="<%= new_experience_path %>"<%= nav_class(:upload) %>>
      <span><%= t('nav.upload') %></span>
    </a>
  </li>
  <li>
-   <a href="<%= @in ? user_network_path(current_user) : root_path %>"<%= nav_class(:users_network) %>>
-     <span><%= t('nav.network') %></span>
+   <a href="<%= @in ? user_path(current_user) : root_path %>"<%= nav_class(:profile) %>>
+     <span><%= t('nav.profile') %></span>
    </a>
  </li>
  <li>
@@ -33,7 +33,7 @@
 <% if @in %>
 
 <div id="page_logout">
-  <%= link_to t('nav.logout'), destroy_user_session_path %>
+  <%= ('Hi %s <small>(%s)</small>' % [current_user, current_user.email]).html_safe %> :: <%= link_to t('nav.logout'), destroy_user_session_path %>
 </div>
 
 <% end %>

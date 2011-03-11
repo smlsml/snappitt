@@ -6,9 +6,13 @@ en:
     name: 'Snappitt'
   nav:
     home: 'Home'
-    me: 'Me'
+    profile: 'Profile'
     upload: 'Upload'
-    network: 'Network'
+    people: 'People'
     settings: 'Settings'
-    logout: 'Logout!'
-
+    logout: 'Logout'
+  follow: '(Follow)'
+  unfollow: '(Unfollow)'
+  hi: 'Hi'
+  lq: '&ldquo;'
+  rq: '&rdquo;'

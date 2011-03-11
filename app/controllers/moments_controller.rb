@@ -1,4 +1,5 @@
 class MomentsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:like]
 
   def show
   end

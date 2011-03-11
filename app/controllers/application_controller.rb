@@ -3,18 +3,18 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_nav
 
-  def css_name
-    '%s_controller' % controller_name.singularize.gsub('-', '_')
-  end
-
-  def is_account_page?
-    request.path.starts_with?('/accounts')
-  end
-
   protected
 
-  def set_nav
-    @nav_location = self.class.name.to_s.gsub('Controller', '').gsub('::','_').downcase
-  end
+    def is_bot?
+      request.user_agent.to_s.include?('bot')
+    end
+
+    def set_nav
+      @nav_location = self.class.name.to_s.gsub('Controller', '').gsub('::','_').downcase
+    end
+
+    def previous_page
+      request.referrer if request.referrer.to_s.gsub('http://','').gsub('http://','').starts_with?(request.env['HTTP_HOST'].to_s)
+    end
 
 end
