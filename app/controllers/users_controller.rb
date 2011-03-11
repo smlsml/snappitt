@@ -10,4 +10,10 @@ class UsersController < ApplicationController
     @experiences = Experience.by_user(@user)
   end
 
+  protected
+
+  def set_nav
+    @nav_location = "me"
+  end
+
 end

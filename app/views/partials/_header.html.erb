@@ -4,27 +4,27 @@
 
 <ul>
  <li>
-   <a href="<%= root_path %>" class="home">
+   <a href="<%= root_path %>"<%= nav_class(:home) %>>
      <span><%= t('nav.home') %></span>
    </a>
  </li>
  <li>
-   <a href="<%= @in ? user_path(current_user) : root_path %>" class="me">
+   <a href="<%= @in ? user_path(current_user) : root_path %>"<%= nav_class(:me) %>>
      <span><%= t('nav.me') %></span>
    </a>
  </li>
  <li>
-   <a href="<%= @in ? new_experience_path : root_path %>" class="upload">
+   <a href="<%= @in ? new_experience_path : root_path %>"<%= nav_class(:upload) %>>
      <span><%= t('nav.upload') %></span>
    </a>
  </li>
  <li>
-   <a href="<%= @in ? user_network_path(current_user) : root_path %>" class="network">
+   <a href="<%= @in ? user_network_path(current_user) : root_path %>"<%= nav_class(:users_network) %>>
      <span><%= t('nav.network') %></span>
    </a>
  </li>
  <li>
-   <a href="<%= @in ? user_settings_path(current_user) : root_path %>" class="settings">
+   <a href="<%= @in ? user_settings_path(current_user) : root_path %>"<%= nav_class(:users_settings) %>>
      <span><%= t('nav.settings') %></span>
    </a>
  </li>

@@ -8,4 +8,8 @@ module ApplicationHelper
     content_tag(:div, result, {:class => 'message', :id => 'flash_message', :style => (result) ? '' : 'display:none;'}, false)
   end
 
+  def nav_class(item)
+    (' class="%s%s"' % [item, @nav_location == item.to_s ? ' selected' : '']).html_safe
+  end
+
 end

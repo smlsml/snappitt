@@ -23,18 +23,13 @@ body
     color: white
     font-family: Georgia, Helvetica Neue
     font-style: italic
-    margin: 15px
-    padding: 0
+    margin: 0
+    padding: 15px 0 5px
   ul
     margin: 0 auto
     padding: 0
     max-width: 950px
     min-width: 300px
-    a span
-      display: none
-    &:hover
-      a span
-        display: inline
     li
       width: 20%
       float: left
@@ -43,41 +38,72 @@ body
       list-style: none
       a
         background: url(/images/header-icons.png) no-repeat 0 0
-        width: 60px
-        height: 70px
+        width: 80px
+        height: 80px
         margin: 0 auto
         display: block
         text-decoration: none
-        &:hover
-          span
-            color: #188AAD
+        outline: none
         span
+          display: none
           text-decoration: none
           background: black
           -moz-border-radius: 6px
           -moz-box-shadow: 0 0 2px black
           padding: 2px 4px
+        &:hover
+          span
+            color: #188AAD
+            display: inline
         &.home
-          background-position: -26px 2px
-          &:hover
-            background-position: -146px 2px
+          background-position: -60px -8px
+          &.selected
+            background-position: -60px -368px
+            &:hover, &:focus
+              background-position: -60px -368px
+          &:hover, &:focus
+            background-position: -60px -128px
+          &:active
+            background-position: -60px -248px
         &.me
-          background-position: -26px -110px
-          &:hover
-            background-position: -146px -110px
+          background-position: -260px -8px
+          &.selected
+            background-position: -260px -368px
+            &:hover, &:focus
+              background-position: -260px -368px
+          &:hover, &:focus
+            background-position: -260px -128px
+          &:active
+            background-position: -260px -248px
         &.upload
-          width: 98px
-          background-position: -8px -230px
-          &:hover
-            background-position: -8px -230px
-        &.network
-          background-position: -26px -336px
-          &:hover
-            background-position: -146px -336px
-        &.settings
-          background-position: -26px -450px
-          &:hover
-            background-position: -146px -450px
+          width: 105px
+          background-position: -448px -8px
+          &:hover, &:focus
+            background-position: -448px -8px
+          &:active
+            background-position: -448px -8px
+        &.users_network
+          background-position: -660px -8px
+          &.selected
+            background-position: -660px -368px
+            &:hover, &:focus
+              background-position: -660px -368px
+          &:hover, &:focus
+            background-position: -660px -128px
+          &:active
+            background-position: -660px -248px
+            &:hover
+              background-position: -660px -248px
+        &.users_settings
+          background-position: -860px -8px
+          &.selected
+            background-position: -860px -368px
+            &:hover, &:focus
+              background-position: -860px -368px
+          &:hover, &:focus
+            background-position: -860px -128px
+          &:active
+            background-position: -860px -248px
 
   #page_logout
     position: absolute
@@ -85,7 +111,7 @@ body
     top: 25px
 
 #page_body
-  margin-top: 125px
+  margin-top: 135px
   text-align: center
   margin-bottom: 50px
   background-color: white
