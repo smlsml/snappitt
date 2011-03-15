@@ -7,10 +7,10 @@ class ExperiencesController < ApplicationController
   end
 
   def create_mail
-    Rails.logger.log('Received experience email...')
-    Rails.logger.log('- plain: %s' % params[:plain].to_s)
-    Rails.logger.log('- from: %s' % params[:from].to_s)
-    Rails.logger.log('- subject: %s' % params[:subject].to_s)
+    #Rails.logger.log('Received experience email...')
+    #Rails.logger.log('- plain: %s' % params[:plain].to_s)
+    #Rails.logger.log('- from: %s' % params[:from].to_s)
+    #Rails.logger.log('- subject: %s' % params[:subject].to_s)
     #Rails.logger.log('- attachments: %s' % params[:attachments].inspect.to_s)
 
     @user = User.find_by_email(params[:from])
