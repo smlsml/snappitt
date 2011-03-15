@@ -21,10 +21,11 @@ class ExperiencesController < ApplicationController
     #  params[:attachments]['0'][:file_name],
     #  'snappitt2')
 
-    a = Mail.new(params[:message])
-    Rails.logger.warn "Did I get attachments? a = #{a.attachments}"
+    #a = Mail.new(params[:message])
+    #Rails.logger.warn "Did I get attachments? a = #{a.attachments}"
 
-    #@user = User.find_by_email(params[:from])
+    @user = User.find_by_email(params[:from])
+    @asset = PhotoAsset.new(:data => a.attachments.first)
     #@asset = PhotoAsset.from_url(AWS::S3::S3Object.url_for(params[:attachments]['0'][:file_name], 'snappitt2'))
 
     #create
