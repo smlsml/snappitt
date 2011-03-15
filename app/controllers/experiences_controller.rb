@@ -8,10 +8,10 @@ class ExperiencesController < ApplicationController
 
   def create_mail
     Rails.logger.log('Received experience email...')
-    Rails.logger.log('- plain: %s' % params[:plain])
-    Rails.logger.log('- from: %s' % params[:from])
-    Rails.logger.log('- subject: %s' % params[:subject])
-    Rails.logger.log('- attachments: %s' % params[:attachments].inspect)
+    Rails.logger.log('- plain: %s' % params[:plain].to_s)
+    Rails.logger.log('- from: %s' % params[:from].to_s)
+    Rails.logger.log('- subject: %s' % params[:subject].to_s)
+    #Rails.logger.log('- attachments: %s' % params[:attachments].inspect.to_s)
 
     @user = User.find_by_email(params[:from])
     @asset = PhotoAsset.from_url(params[:attachments]['0'][:url])
