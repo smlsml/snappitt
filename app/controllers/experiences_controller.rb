@@ -1,3 +1,4 @@
+require "aws/s3"
 class ExperiencesController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create]
 
@@ -7,14 +8,18 @@ class ExperiencesController < ApplicationController
   end
 
   def create_mail
-    #Rails.logger.log('Received experience email...')
-    #Rails.logger.log('- plain: %s' % params[:plain].to_s)
-    #Rails.logger.log('- from: %s' % params[:from].to_s)
-    #Rails.logger.log('- subject: %s' % params[:subject].to_s)
-    #Rails.logger.log('- attachments: %s' % params[:attachments].inspect.to_s)
+    a = YAML.load_file('config/s3.yml')
 
+    connection = AWS::S3::Base.establish_connection!(
+      :access_key_id =>  a["production"]["access_key_id"],
+      :secret_access_key => a["production"]["secret_access_key"]
+    )
+
+    #params[:junk] = ::AWS::S3::S3Object.url_for(
+    #  params[:attachments]['0'][:file_name],
+    #  'snappitt2')
     @user = User.find_by_email(params[:from])
-    @asset = PhotoAsset.from_url(params[:attachments]['0'][:url])
+    @asset = PhotoAsset.from_url(AWS::S3::S3Object.url_for(params[:attachments]['0'][:file_name], 'snappitt2'))
 
     create
   end
