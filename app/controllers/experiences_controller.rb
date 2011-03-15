@@ -1,6 +1,8 @@
-require "aws/s3"
+require 'mail'
+
 class ExperiencesController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create]
+  skip_before_filter :verify_authenticity_token
 
   def new
     @moment = Moment.new
@@ -8,20 +10,24 @@ class ExperiencesController < ApplicationController
   end
 
   def create_mail
-    a = YAML.load_file('config/s3.yml')
+    #a = YAML.load_file('config/s3.yml')
 
-    connection = AWS::S3::Base.establish_connection!(
-      :access_key_id =>  a["production"]["access_key_id"],
-      :secret_access_key => a["production"]["secret_access_key"]
-    )
+    #connection = AWS::S3::Base.establish_connection!(
+    #  :access_key_id =>  a["production"]["access_key_id"],
+    #  :secret_access_key => a["production"]["secret_access_key"]
+    #)
 
     #params[:junk] = ::AWS::S3::S3Object.url_for(
     #  params[:attachments]['0'][:file_name],
     #  'snappitt2')
-    @user = User.find_by_email(params[:from])
-    @asset = PhotoAsset.from_url(AWS::S3::S3Object.url_for(params[:attachments]['0'][:file_name], 'snappitt2'))
 
-    create
+    a = Mail.new(params[:message])
+    Rails.logger.warn "Did I get attachments? a = #{a.attachments}"
+
+    #@user = User.find_by_email(params[:from])
+    #@asset = PhotoAsset.from_url(AWS::S3::S3Object.url_for(params[:attachments]['0'][:file_name], 'snappitt2'))
+
+    #create
   end
 
   def show
