@@ -21,7 +21,7 @@ class ExperiencesController < ApplicationController
     #  params[:attachments]['0'][:file_name],
     #  'snappitt2')
 
-    #a = Mail.new(params[:message])
+    a = Mail.new(params[:message])
     #Rails.logger.warn "Did I get attachments? a = #{a.attachments}"
 
     @user = User.find_by_email(params[:from])
