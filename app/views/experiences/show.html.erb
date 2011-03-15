@@ -4,7 +4,7 @@
 
 <% @experience.moments.each do |m| %>
   <div class="moment_card">
-    <%= image_tag(m.asset.data.url(:large)) %>
+    <%= image_tag(m.photo_url(:large)) %>
     <%= link_to('Like', like_experience_moment_path(@experience, m)) %><br/><br/>
   </div>
 <% end %>
