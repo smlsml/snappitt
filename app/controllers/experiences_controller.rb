@@ -6,6 +6,12 @@ class ExperiencesController < ApplicationController
     @moment.caption = CaptionComment.new
   end
 
+  def create_mail
+    @p = params
+    #@user = User.find_by_email(params[])
+    #create
+  end
+
   def show
     @experience = Experience.find(params[:id])
     @experience.increment!(:views, 1) unless is_bot?
