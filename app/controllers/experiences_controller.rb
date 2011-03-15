@@ -7,9 +7,16 @@ class ExperiencesController < ApplicationController
   end
 
   def create_mail
-    @p = params
-    #@user = User.find_by_email(params[])
-    #create
+    Rails.logger.log('Received experience email...')
+    Rails.logger.log('- plain: %s' % params[:plain])
+    Rails.logger.log('- from: %s' % params[:from])
+    Rails.logger.log('- subject: %s' % params[:subject])
+    Rails.logger.log('- attachments: %s' % params[:attachments].inspect)
+
+    @user = User.find_by_email(params[:from])
+    @asset = PhotoAsset.from_url(params[:attachments]['0'][:url])
+
+    create
   end
 
   def show
@@ -18,18 +25,23 @@ class ExperiencesController < ApplicationController
   end
 
   def create
+    @user = current_user unless @user
+
     @moment = Moment.create(params[:moment])
     @source = Source.find_or_create_from_request(request)
 
-    @moment.creator = current_user
+    @moment.creator = @user
     @moment.thing = Thing.find_or_create_by_name(params[:thing]) if params[:thing]
     @moment.location = Location.find_or_create_by_name(params[:location]) if params[:location]
     @moment.source = @source
-    @moment.caption.creator = current_user
+    @moment.caption.creator = @user
 
     if params[:asset]
       @asset = PhotoAsset.new(params[:asset])
-      @asset.creator = current_user
+    end
+
+    if @asset
+      @asset.creator = @user
       @asset.source = @source
 
       @moment.asset = @asset
@@ -42,13 +54,14 @@ class ExperiencesController < ApplicationController
     end
 
     @moment.experience = @experience
-    @moment.experience.creator = current_user
+    @moment.experience.creator = @user
 
     if @moment.save
       flash[:success] = "Experience Created!"
       redirect_to experience_path(@experience)
     else
       flash.now[:error] = "Error!"
+      render :create
     end
 
 #    params[:people].to_a.compact.uniq.each do |p|
