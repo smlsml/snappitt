@@ -21,7 +21,7 @@ class ExperiencesController < ApplicationController
     @moment = Moment.new
     @moment.create_caption(:text => params[:plain])
 
-    @experience = Experience.where(:creator => @user.id, :title => params[:subject]).order('created_at DESC').first
+    @experience = Experience.where(:creator => @user, :title => params[:subject]).order('created_at DESC').first
     @experience = Experience.new(:title => params[:subject]) unless @experience
 
     @asset = PhotoAsset.new(:data => file)
