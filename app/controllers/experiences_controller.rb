@@ -18,7 +18,8 @@ class ExperiencesController < ApplicationController
 
     @user = User.find_by_email(params[:from])
     Rails.logger.info('User is %s' % @user)
-    params[:moment] = {:caption => params[:plain]}
+    @moment = Moment.new
+    @moment.create_caption(:text => params[:plain])
 
     @asset = PhotoAsset.new(:data => file)
 
@@ -35,8 +36,13 @@ class ExperiencesController < ApplicationController
   def create
     @user = current_user unless @user
 
-    @moment = Moment.create(params[:moment])
+    if params[:moment]
+      @moment = Moment.create(params[:moment])
+    end
+
     @source = Source.find_or_create_from_request(request)
+
+    return head :bad_request unless @moment
 
     @moment.creator = @user
     @moment.thing = Thing.find_or_create_by_name(params[:thing]) if params[:thing]
