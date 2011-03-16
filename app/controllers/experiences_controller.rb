@@ -17,7 +17,11 @@ class ExperiencesController < ApplicationController
     file.content_type = attachment.mime_type
 
     @user = User.find_by_email(params[:from])
+    Rails.logger.info('User is %s' % @user)
+    params[:moment] = {:caption => params[:plain]}
+
     @asset = PhotoAsset.new(:data => file)
+
     #@asset = PhotoAsset.from_url(AWS::S3::S3Object.url_for(params[:attachments]['0'][:file_name], 'snappitt2'))
 
     create
@@ -65,6 +69,7 @@ class ExperiencesController < ApplicationController
       redirect_to experience_path(@experience)
     else
       flash.now[:error] = "Error!"
+      Rails.logger.info('error creating moment')
       render :create
     end
 
