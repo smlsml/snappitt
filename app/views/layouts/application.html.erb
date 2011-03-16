@@ -12,12 +12,12 @@
   <%= render :partial => '/partials/header' %>
 </div>
 
-<div id="page_body">
+<div id="page_middle">
   <%= render_flash_messages %>
 
   <%= render :partial => '/partials/signup' unless user_signed_in? || is_account_page? %>
 
-  <div id="page_content">
+  <div id="page_center">
     <%= yield %>
   </div>
 </div>

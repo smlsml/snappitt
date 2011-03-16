@@ -21,10 +21,10 @@ class Asset < ActiveRecord::Base
     has_attached_file :data,
                       :styles => {:tiny => "24x24#",
                                   :thumb => "48x48#",
-                                  :feed => "280x157#",
+                                  :feed => "280x280^",
                                   :preview => ['300x300>', :jpg],
                                   :large => ['650x650>', :jpg]},
-                      :convert_options => {:all => '-auto-orient', :feed => '-gravity center -extent 280x157'}
+                      :convert_options => {:all => '-auto-orient', :feed => '-auto-orient -gravity center -extent 280x157'}
   end
 
   after_data_post_process :post_process
@@ -33,7 +33,7 @@ class Asset < ActiveRecord::Base
     imgfile = ::Magick::Image.read(data.queued_for_write[:original].path).first
 
     return unless imgfile
-    logger.info "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
+    logger.error "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
 
     #if logger.info?
     #  exifDate = imgfile.get_exif_by_entry('DateTime')[0][1]

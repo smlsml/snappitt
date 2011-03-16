@@ -2,13 +2,19 @@
 
 <% form_for @profile, :url => user_settings_path, :html => { :multipart => true } do |p| %>
 
-  <%= image_tag( @profile.photo_url ) %>
+  <%= p.label 'username', 'Username: %s' % @profile.user.username %>
+  <%= p.label 'email', 'Email: %s' % @profile.user.email %>
+  <%= p.label 'joined', 'Joined: %s' % @profile.user.created_at.to_formatted_s(:mdy) %>
+  <br/>
+
   <%= fields_for :asset do |a| %>
     <%= a.label :data, 'Profile Picture:' %>
     <%= a.file_field :data %>
   <% end %><br/><br/>
 
-  <%= p.label 'realname', 'Name:' %>
+  <%= image_tag( @profile.photo_url ) %><br/>
+
+  <%= p.label 'realname', 'Nickname:' %>
   <%= p.text_field :realname %><br/><br/>
 
   <%= p.label 'birthday', 'Birthday:' %>
@@ -19,7 +25,7 @@
     <%= h.text_field :name %><br/><br/>
   <% end %>
 
-  <%= p.label 'bio', 'Blurb:' %>
+  <%= p.label 'bio', 'Bio:' %>
   <%= p.text_field :bio %><br/><br/>
 
   <%= p.label 'gender_m', 'Guy:' %>

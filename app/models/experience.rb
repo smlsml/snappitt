@@ -16,6 +16,12 @@ class Experience < ActiveRecord::Base
     order('created_at DESC')
   }
 
+  scope :recent_groups, lambda {
+    where("visibility = 'group'").
+    order('created_at DESC').
+    limit(3)
+  }
+
   def photo_url
     m = moments.first
     a = m.asset if m

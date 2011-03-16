@@ -1,6 +1,16 @@
+<h1>Upload</h1>
+
 <fieldset class="upload">
-  <legend>Upload a Moment</legend>
-  <% form_for @moment, :url => experiences_path, :html => { :multipart => true } do |m| %>
+  <legend>Via Email</legend>
+  <h2><a href="mailto:post@snappitt.com">post@snappitt.com</a></h2>
+  <p>Send an email with a subject and attached photos</p>
+</fieldset>
+
+<br/>
+
+<fieldset class="upload">
+  <legend>Via Form</legend>
+  <%= form_for @moment, :url => experiences_path, :html => { :multipart => true } do |m| %>
 
     <%= fields_for :asset do |a| %>
       <%= a.label :data, 'Photo:' %>
@@ -30,7 +40,14 @@
     <% last = Experience.by_user(current_user).first %>
     <% if last %>
       <input type="hidden" name="last_moment" value="<%= last.id %>" />
-      <%= submit_tag('Add moment to: %s' % last.title, :name => 'add_moment') %>
+      <%= submit_tag('Add to last experience: %s' % last.title, :name => 'add_moment') %>
+      <h2>or</h2>
+    <% end %>
+
+    <% grp = Experience.recent_groups.first %>
+    <% if grp %>
+      <input type="hidden" name="last_moment" value="<%= grp.id %>" />
+      <%= submit_tag('Add to group experience: %s' % grp.title, :name => 'grp_moment') %>
       <h2>or</h2>
     <% end %>
 
