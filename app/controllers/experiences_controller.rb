@@ -23,7 +23,7 @@ class ExperiencesController < ApplicationController
 
     @experience = Experience.where(:creator => @user, :title => params[:subject]).order('created_at DESC').first
     @experience = Experience.new(:title => params[:subject]) unless @experience
-    @experience.visibility = 'group' if @from.include?('group')
+    @experience.visibility = 'group' if params[:to].to_s.downcase.include?('group')
 
     @message = Mail.new(params[:message])
 
