@@ -104,6 +104,7 @@ GEM
     rake (0.8.7)
     rest-client (1.6.1)
       mime-types (>= 1.16)
+    rmagick (2.13.1)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
       ruby-debug-base (~> 0.10.4.0)
@@ -133,4 +134,5 @@ DEPENDENCIES
   paperclip
   pg
   rails (= 3.0.5)
+  rmagick
   ruby-debug

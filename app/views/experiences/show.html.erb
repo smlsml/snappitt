@@ -6,7 +6,10 @@
   <div class="moment_card">
     <%= image_tag(m.photo_url(:large)) %>
     <h3><%= link_to('Like', like_experience_moment_path(@experience, m)) %></h3>
-    <p>Created: <%= m.created_at.to_formatted_s(:mdy) %><%= (' via %s' % m.source).html_safe if m.source %></p>
+    <p>
+      <%= t(:lq).html_safe %><%= m.caption %><%= t(:rq).html_safe %><br/>
+      Created: <%= m.created_at.to_formatted_s(:mdy) %><%= (' via %s' % m.source).html_safe if m.source %>
+    </p>
     <br/><br/>
   </div>
 <% end %>
