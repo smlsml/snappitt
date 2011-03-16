@@ -21,6 +21,9 @@ class ExperiencesController < ApplicationController
     @moment = Moment.new
     @moment.create_caption(:text => params[:plain])
 
+    @experience = Experience.find_by_user_id_and_title(@user.id, params[:subject])
+    @experience = Experience.new(:title => params[:subject]) unless @experience
+
     @asset = PhotoAsset.new(:data => file)
 
     #@asset = PhotoAsset.from_url(AWS::S3::S3Object.url_for(params[:attachments]['0'][:file_name], 'snappitt2'))
@@ -61,10 +64,14 @@ class ExperiencesController < ApplicationController
       @moment.asset = @asset
     end
 
-    if params[:add_moment]
-      @experience = Experience.find(params[:last_moment])
-    else
-      @experience = Experience.new(:title => '%s @ %s' % [@moment.thing.name, @moment.location.name])
+    unless @experience
+      if params[:add_moment]
+        @experience = Experience.find(params[:last_moment])
+      elsif @moment.thing && @moment.location
+        @experience = Experience.new(:title => '%s @ %s' % [@moment.thing.name, @moment.location.name])
+      else
+        @experience = Experience.new(:title => "none")
+      end
     end
 
     @moment.experience = @experience
