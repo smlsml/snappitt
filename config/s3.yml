@@ -7,6 +7,6 @@ test:
   access_key_id: 17JTTPKPT2F8YWCFVXG2
   secret_access_key: bYnK5X0NnObQI3R35LlHsEOrlu74mp4D7DuYMf5v
 production:
-  bucket: snappitt
+  bucket: snappitt0
   access_key_id: 17JTTPKPT2F8YWCFVXG2
   secret_access_key: bYnK5X0NnObQI3R35LlHsEOrlu74mp4D7DuYMf5v
