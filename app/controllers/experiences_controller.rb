@@ -14,7 +14,7 @@ class ExperiencesController < ApplicationController
     @user = User.find_by_email(@from)
 
     if !@user
-      password = User.genreate_password
+      password = User.generate_password
       logger.warn "Creating a new user: #{@from}"
       @user = User.create!(:email => @from, :password => password, :password_confirmation => password)
     end
