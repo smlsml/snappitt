@@ -8,31 +8,39 @@ class ExperiencesController < ApplicationController
   end
 
   def create_mail
-    message = Mail.new(params[:message])
-    attachment = message.attachments.first
-
-    file = StringIO.new(attachment.decoded)
-    file.class.class_eval { attr_accessor :original_filename, :content_type }
-    file.original_filename = attachment.filename
-    file.content_type = attachment.mime_type
-
     @user = User.find_by_email(params[:from])
-    Rails.logger.info('User is %s' % @user)
-    @moment = Moment.new
-    @moment.create_caption(:text => params[:plain])
+    @source = Source.find_or_create_from_request(request)
 
     @experience = Experience.where(:creator => @user, :title => params[:subject]).order('created_at DESC').first
     @experience = Experience.new(:title => params[:subject]) unless @experience
 
-    @asset = PhotoAsset.new(:data => file)
+    message = Mail.new(params[:message])
+    message.attachments.each do |attachment|
+      moment = Moment.new
+      moment.create_caption(:text => params[:plain])
+      moment.creator = @user
+      moment.source = @source
 
-    #@asset = PhotoAsset.from_url(AWS::S3::S3Object.url_for(params[:attachments]['0'][:file_name], 'snappitt2'))
+      file = StringIO.new(attachment.decoded)
+      file.class.class_eval { attr_accessor :original_filename, :content_type }
+      file.original_filename = attachment.filename
+      file.content_type = attachment.mime_type
 
-    ok = create_moment
+      asset = PhotoAsset.new(:data => file)
 
-    return head(:created) if ok
+      if asset
+        asset.creator = @user
+        asset.source = @source
+        moment.asset = asset
+      end
 
-    head 500
+      @experience.moments << moment
+    end
+
+    @experience.save!
+    ExperienceMailer.upload_notification(@experience).deliver
+
+    head(:created)
   end
 
   def show

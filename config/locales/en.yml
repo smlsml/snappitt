@@ -16,3 +16,6 @@ en:
   hi: 'Hi'
   lq: '&ldquo;'
   rq: '&rdquo;'
+  experience_mailer:
+    upload_notification:
+      subject: "Experience Captured!"
