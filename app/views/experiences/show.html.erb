@@ -5,6 +5,8 @@
 <% @experience.moments.each do |m| %>
   <div class="moment_card">
     <%= image_tag(m.photo_url(:large)) %>
-    <%= link_to('Like', like_experience_moment_path(@experience, m)) %><br/><br/>
+    <h3><%= link_to('Like', like_experience_moment_path(@experience, m)) %></h3>
+    <p>Created: <%= m.created_at.to_formatted_s(:mdy) %><%= (' via %s' % m.source).html_safe if m.source %></p>
+    <br/><br/>
   </div>
 <% end %>
