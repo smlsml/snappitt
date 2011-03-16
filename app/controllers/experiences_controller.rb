@@ -29,7 +29,7 @@ class ExperiencesController < ApplicationController
 
     return head(:bad_request) unless @message
 
-    logger.warn "Message headers: #{@message.field_summary}"
+    logger.warn "Message headers: #{@message.header.field_summary}"
     @message.attachments.each do |attachment|
       moment = Moment.new
       moment.create_caption(:text => params[:plain])
