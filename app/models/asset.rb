@@ -1,3 +1,5 @@
+require "RMagick"
+
 class Asset < ActiveRecord::Base
 
   belongs_to :creator, :class_name => 'User', :foreign_key => 'user_id_creator'
@@ -22,13 +24,13 @@ class Asset < ActiveRecord::Base
                                   :feed => "280x157#",
                                   :preview => ['300x300>', :jpg],
                                   :large => ['650x650>', :jpg]},
-                      :convert_options => {:feed => '-gravity center -extent 280x157'}
+                      :convert_options => {:all => '-auto-orient', :feed => '-gravity center -extent 280x157'}
   end
 
   after_data_post_process :post_process
 
   def post_process
-    imgfile = Magick::Image.read(data.queued_for_write[:original].path).first
+    imgfile = ::Magick::Image.read(data.queued_for_write[:original].path).first
 
     return unless imgfile
     logger.info "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
