@@ -37,6 +37,7 @@ class ExperiencesController < ApplicationController
       @experience.moments << moment
     end
 
+    @experience.creator = @user
     @experience.save!
     ExperienceMailer.upload_notification(@experience).deliver
 
