@@ -28,7 +28,11 @@ class ExperiencesController < ApplicationController
 
     #@asset = PhotoAsset.from_url(AWS::S3::S3Object.url_for(params[:attachments]['0'][:file_name], 'snappitt2'))
 
-    create
+    ok = create_moment
+
+    return head(:created) if ok
+
+    head 500
   end
 
   def show
@@ -37,6 +41,17 @@ class ExperiencesController < ApplicationController
   end
 
   def create
+    if create_moment
+      flash[:success] = "Experience Created!"
+      redirect_to experience_path(@experience)
+    else
+      flash.now[:error] = "Error!"
+      Rails.logger.info('error creating moment')
+      render :create
+    end
+  end
+
+  def create_moment
     @user = current_user unless @user
 
     if params[:moment]
@@ -77,14 +92,7 @@ class ExperiencesController < ApplicationController
     @moment.experience = @experience
     @moment.experience.creator = @user
 
-    if @moment.save
-      flash[:success] = "Experience Created!"
-      redirect_to experience_path(@experience)
-    else
-      flash.now[:error] = "Error!"
-      Rails.logger.info('error creating moment')
-      render :create
-    end
+    return @moment.save
 
 #    params[:people].to_a.compact.uniq.each do |p|
 #      c = Contact.create(:name => p[:tag])
