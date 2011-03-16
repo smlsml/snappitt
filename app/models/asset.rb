@@ -25,9 +25,9 @@ class Asset < ActiveRecord::Base
                       :convert_options => {:feed => '-gravity center -extent 280x157'}
   end
 
-  after_photo_post_process  :post_process_photo
+  after_data_post_process :post_process
 
-  def post_process_photo
+  def post_process
     imgfile = Magick::Image.read(data.queued_for_write[:original].path).first
 
     return unless imgfile
