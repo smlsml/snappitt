@@ -46,8 +46,8 @@
 
     <% grp = Experience.recent_groups.first %>
     <% if grp %>
-      <input type="hidden" name="last_moment" value="<%= grp.id %>" />
-      <%= submit_tag('Add to group experience: %s' % grp.title, :name => 'grp_moment') %>
+      <input type="hidden" name="grp_moment" value="<%= grp.id %>" />
+      <%= submit_tag('Add to group experience: %s' % grp.title, :name => 'add_grp_moment') %>
       <h2>or</h2>
     <% end %>
 

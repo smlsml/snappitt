@@ -40,6 +40,11 @@ class User < ActiveRecord::Base
     out || email
   end
 
+  def self.generate_password(len = 8)
+    chars = (('A'..'Z').to_a + ('0'..'9').to_a) - %w(i o 0 1 l 0)
+    (1..len).collect{|a| chars[rand(chars.size)] }.join
+  end
+
   protected
 
   def setup

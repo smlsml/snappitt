@@ -8,14 +8,29 @@ class ExperiencesController < ApplicationController
   end
 
   def create_mail
-    @user = User.find_by_email(params[:from])
     @source = Source.find_or_create_from_request(request)
+
+    @from = params[:from].to_s.downcase.strip
+    @user = User.find_by_email(@from)
+
+    if !@user
+      password = User.genreate_password
+      logger.warn "Creating a new user: #{@from}"
+      @user = User.create!(:email => @from, :password => password, :password_confirmation => password)
+    end
+
+    return head(:unauthorized) unless @user
 
     @experience = Experience.where(:creator => @user, :title => params[:subject]).order('created_at DESC').first
     @experience = Experience.new(:title => params[:subject]) unless @experience
+    @experience.visibility = 'group' if @from.include?('group')
 
-    message = Mail.new(params[:message])
-    message.attachments.each do |attachment|
+    @message = Mail.new(params[:message])
+
+    return head(:bad_request) unless @message
+
+    logger.warn "Message headers: #{@message.field_summary}"
+    @message.attachments.each do |attachment|
       moment = Moment.new
       moment.create_caption(:text => params[:plain])
       moment.creator = @user
@@ -91,8 +106,10 @@ class ExperiencesController < ApplicationController
     unless @experience
       if params[:add_moment]
         @experience = Experience.find(params[:last_moment])
+      elsif params[:add_grp_moment]
+        @experience = Experience.find(params[:grp_moment])
       elsif @moment.thing && @moment.location
-        @experience = Experience.new(:title => '%s @ %s' % [@moment.thing.name, @moment.location.name])
+        @experience = Experience.new(:title => '%s @ %s' % [@moment.thing, @moment.location])
       else
         @experience = Experience.new(:title => "none")
       end

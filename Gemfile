@@ -11,7 +11,7 @@ gem 'meta_where'
 gem 'compass'
 gem 'flutie', "~> 1.1"
 gem 'aws-s3'
-gem 'rmagick'
+gem 'rmagick', :require => false
 
 # Deploy with Capistrano
 # gem 'capistrano'

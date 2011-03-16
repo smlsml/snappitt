@@ -4,6 +4,7 @@ class ExperienceMailer < ActionMailer::Base
   def upload_notification(experience)
     @experience = experience
 
-    mail :to => @experience.creator.email
+    mail :to => @experience.creator.email,
+         :from => "Snappitt <reply-post@snappitt.com>"
   end
 end
