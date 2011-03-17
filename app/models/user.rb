@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
          :confirmable
 
   attr_accessor :login
-  attr_accessible :email, :username, :login, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :username, :login, :password, :remember_me
+
+  validates :username, :presence => true, :length => { :minimum => 2 }, :uniqueness => true
 
   before_create :lower_email
   after_create :setup
@@ -57,7 +59,7 @@ class User < ActiveRecord::Base
 
   def lower_email
     self.email.downcase!
-    self.confirmed_at = Time.now
+    #self.confirmed_at = Time.now
     true
   end
 
