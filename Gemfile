@@ -12,6 +12,8 @@ gem 'compass'
 gem 'flutie', "~> 1.1"
 gem 'aws-s3'
 gem 'rmagick', :require => false
+gem 'geokit'
+gem 'geokit-rails', '1.1.4'
 
 # Deploy with Capistrano
 # gem 'capistrano'
