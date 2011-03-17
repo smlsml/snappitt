@@ -33,11 +33,15 @@ class Asset < ActiveRecord::Base
     imgfile = ::Magick::Image.read(data.queued_for_write[:original].path).first
 
     return unless imgfile
-    logger.error "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
+    logger.info "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
 
     #if logger.info?
     #  exifDate = imgfile.get_exif_by_entry('DateTime')[0][1]
     #end
+  end
+
+  def self.default_url(type = :thumb)
+    '/images/default/%s/unknown.%s' % [type.to_s, type == 'large' || type == 'preview' ? 'jpg' : 'png']
   end
 
 end

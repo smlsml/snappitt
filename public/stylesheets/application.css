@@ -14,8 +14,19 @@ body {
   font-family: Helvetica Neue !important;
   font-size: 14px !important; }
 
+textarea.auto {
+  height: auto;
+  width: auto; }
+
 table td {
   border: none !important; }
+  table td img {
+    margin: 0; }
+table.comment {
+  width: auto;
+  margin: 0 auto; }
+  table.comment td {
+    text-align: left; }
 
 #page_header {
   z-index: 100;

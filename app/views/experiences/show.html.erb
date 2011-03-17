@@ -5,11 +5,51 @@
 <% @experience.moments.each do |m| %>
   <div class="moment_card">
     <%= image_tag(m.photo_url(:large)) %>
-    <h3><%= link_to('Like', like_experience_moment_path(@experience, m)) %></h3>
     <p>
       <%= t(:lq).html_safe %><%= m.caption %><%= t(:rq).html_safe %><br/>
       Created: <%= m.created_at.to_formatted_s(:mdy) %><%= (' via %s' % m.source).html_safe if m.source %>
     </p>
+
+    <fieldset>
+      <legend>Comments</legend>
+      <h3><%= link_to('Like', like_experience_moment_path(@experience, m)) %></h3>
+      <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
+        <textarea name="comment" rows="2" cols="50" class="auto"></textarea><br/>
+        <input type="submit" value="Add Comment"/><br/>
+      <% end %>
+
+      <table class="comment">
+      <% if m.likes.count > 0 %>
+      <% first_like = m.likes.first %>
+        <tr>
+          <td>
+            <%= link_to(image_tag(first_like.user.profile.photo_url,
+                                  :width => 24,
+                                  :height => 24,
+                                  :alt => first_like.user),
+                        user_path(first_like.user)) %>
+          </td>
+          <td><%= link_to(first_like.user, user_path(first_like.user)) %></td>
+          <td><%= m.likes.count > 1 ? (' and %s others' % (m.likes.count - 1)) : '' %> liked this moment</td>
+        </tr>
+      <% end %>
+      <% m.comments.each do |c| %>
+        <tr>
+          <td>
+            <%= link_to(image_tag(c.creator.profile.photo_url,
+                                  :width => 24,
+                                  :height => 24,
+                                 :alt => c.creator),
+                        user_path(c.creator)) %>
+          </td>
+          <td><%= link_to(c.creator, user_path(c.creator)) %></td>
+          <td>"<%= c.text %>"</td>
+        </tr>
+      <% end %>
+      </table>
+
+
+    </fieldset>
     <br/><br/>
   </div>
 <% end %>

@@ -1,5 +1,5 @@
 class MomentsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:like]
+  before_filter :authenticate_user!, :only => [:like, :comment]
 
   def show
   end
@@ -11,6 +11,17 @@ class MomentsController < ApplicationController
     Like.create!(:user_id => @user.id, :moment_id => @moment.id)
 
     flash[:success] = 'Liked Moment'
+
+    redirect_to experience_path(@moment.experience)
+  end
+
+  def comment
+    @user = current_user
+    @moment = Moment.find(params[:id])
+
+    MomentComment.create(:user_id => @user.id, :moment_id => @moment.id, :text => params[:comment].to_s.strip)
+
+    flash[:success] = 'Added comment'
 
     redirect_to experience_path(@moment.experience)
   end

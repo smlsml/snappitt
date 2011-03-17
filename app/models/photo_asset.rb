@@ -1,4 +1,5 @@
 require "open-uri"
+
 class PhotoAsset < Asset
 
   def self.from_url(url)
@@ -8,6 +9,5 @@ class PhotoAsset < Asset
     PhotoAsset.new(:data => io)
   #rescue # catch url errors with validations instead of exceptions (Errno::ENOENT, OpenURI::HTTPError, etc...)
   end
-
 
 end

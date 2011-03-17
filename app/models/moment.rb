@@ -14,8 +14,9 @@ class Moment < ActiveRecord::Base
 
   accepts_nested_attributes_for :caption
 
-  def photo_url(type)
-    self.asset ? self.asset.data.url(type.to_sym) : '/images/unknown.png'
+  def photo_url(type = :thumb)
+    url = asset.data.url(type) if asset
+    url || PhotoAsset.default_url(type)
   end
 
 end

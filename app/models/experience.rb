@@ -24,8 +24,8 @@ class Experience < ActiveRecord::Base
 
   def photo_url
     m = moments.first
-    a = m.asset if m
-    m && a ? a.data.url(:feed) : '/images/unknown.png'
+    m = Moment.new unless m
+    m.photo_url(:feed)
   end
 
   def moments_status
