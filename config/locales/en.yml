@@ -19,3 +19,7 @@ en:
   experience_mailer:
     upload_notification:
       subject: "Experience Captured!"
+  activerecord:
+    attributes:
+      user:
+        login: "Username or Email"

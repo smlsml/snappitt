@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
          :validatable,
          :confirmable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessor :login
+  attr_accessible :email, :username, :login, :password, :password_confirmation, :remember_me
 
   before_create :lower_email
   after_create :setup
@@ -47,6 +47,11 @@ class User < ActiveRecord::Base
     chars = (('A'..'Z').to_a + ('0'..'9').to_a) - %w(i o 0 1 l 0)
     (1..len).collect{|a| chars[rand(chars.size)] }.join
   end
+
+  def self.find_for_database_authentication(conditions)
+     login = conditions.delete(:login)
+     where(conditions).where(["username = :value OR email = :value", {:value => login }]).first
+   end
 
   protected
 
