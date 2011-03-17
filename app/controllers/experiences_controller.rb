@@ -15,8 +15,12 @@ class ExperiencesController < ApplicationController
 
     if !@user
       password = User.generate_password
-      logger.warn "Creating a new user: #{@from}"
-      @user = User.create!(:email => @from, :password => password, :password_confirmation => password)
+      logger.info "Creating a new user: #{@from}"
+      @user = User.create!(:email => @from,
+                           :password => password,
+                           :password_confirmation => password,
+                           :username => @from.to_s.downcase.strip.split('@')[0]
+      )
     end
 
     return head(:unauthorized) unless @user
