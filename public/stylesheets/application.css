@@ -161,7 +161,7 @@ div.experience_card {
   padding: 15px;
   margin-bottom: 25px; }
   div.experience_card .cover {
-    border: 6px solid whiteSmoke;
+    border: 6px solid #d0d0d0;
     -moz-border-radius: 6px;
     position: relative;
     width: 280px;

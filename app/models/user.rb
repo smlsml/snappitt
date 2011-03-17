@@ -1,16 +1,19 @@
 class User < ActiveRecord::Base
+
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable, :lockable and :timeoutable
+  # :token_authenticatable, :lockable and :timeoutable
   devise :database_authenticatable,
          :registerable,
          :recoverable,
          :rememberable,
          :trackable,
-         :validatable
+         :validatable,
+         :confirmable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
+  before_create :lower_email
   after_create :setup
 
   belongs_to :profile, :inverse_of => :user
@@ -46,6 +49,12 @@ class User < ActiveRecord::Base
   end
 
   protected
+
+  def lower_email
+    self.email.downcase!
+    self.confirmed_at = Time.now
+    true
+  end
 
   def setup
     self.create_profile()
