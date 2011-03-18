@@ -22,7 +22,7 @@ class ExperiencesController < ApplicationController
       @user = User.create!(:email => @from,
                            :password => password,
                            :password_confirmation => password,
-                           :username => @from.to_s.downcase.strip.split('@')[0])
+                           :username => username)
     end
 
     return head(:unauthorized) unless @user
