@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 
   def to_s
     out = '@%s' % username
-    out = '%s (@%s)' % [username, profile.realname] if profile && !profile.realname.empty?
+    out = '%s (@%s)' % [username, profile.realname] if profile && !profile.realname.blank?
     out
   end
 
