@@ -10,7 +10,16 @@ class ExperiencesController < ApplicationController
   def create_mail
     @source = Source.find_or_create_from_request(request)
 
+    @message = Mail.new(params[:message])
+    return head(:bad_request) unless @message
+
+    logger.warn "Message headers: #{@message.header.field_summary}"
+
     @from = params[:from].to_s.downcase.strip
+    @from = params[:x_sender].to_s.downcase.strip if params[:x_sender]
+    @from = params[:x_forwarded_for].to_s.downcase.strip if params[:x_forwarded_for]
+    @from = @message.header['Reply-to'].addresses.first.to_s.downcase if @message.header['Reply-to']
+
     @user = User.find_by_email(@from)
 
     if !@user
@@ -27,15 +36,14 @@ class ExperiencesController < ApplicationController
 
     return head(:unauthorized) unless @user
 
-    @experience = Experience.where(:creator => @user, :title => params[:subject]).order('created_at DESC').first
-    @experience = Experience.new(:title => params[:subject]) unless @experience
+    @subject = params[:subject].to_s.strip
+    while @subject.gsub!(/^re:/i,''); @subject.strip!; end
+    while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end
+
+    @experience = Experience.where(:creator => @user, :title => @subject).order('created_at DESC').first
+    @experience = Experience.new(:title => @subject) unless @experience
     @experience.visibility = 'group' if params[:to].to_s.downcase.include?('group')
 
-    @message = Mail.new(params[:message])
-
-    return head(:bad_request) unless @message
-
-    logger.warn "Message headers: #{@message.header.field_summary}"
     @message.attachments.each do |attachment|
       moment = Moment.new
       moment.create_caption(:text => params[:plain])
