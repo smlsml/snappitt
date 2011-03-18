@@ -34,22 +34,34 @@ class Asset < ActiveRecord::Base
 
     return unless imgfile
 
-    logger.info "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
+    exif = {}
+    keys = {
+      :lat => 'GPSLatitude',
+      :latref => 'GPSLatitudeRef',
+      :lng => 'GPSLongitude',
+      :lngref => 'GPSLongitudeRef',
+      :model => 'Model',
+      :make => 'Make',
+      :taken => 'DateTime'
+    }
 
-    exif_lat   = imgfile.get_exif_by_entry('GPSLatitude')
-    exif_lng   = imgfile.get_exif_by_entry('GPSLongitude')
-    exif_latr  = imgfile.get_exif_by_entry('GPSLatitudeRef')
-    exif_lngr  = imgfile.get_exif_by_entry('GPSLongitudeRef')
-    exif_date  = imgfile.get_exif_by_entry('DateTime')
-    exif_model = imgfile.get_exif_by_entry('Model')
-
-    if exif_lat && exif_lng && exif_latr && exif_lngr
-      self.lat = ddmmss_to_degree(exif_lat[0][1], exif_latr[0][1].to_s == 'S')
-      self.lng = ddmmss_to_degree(exif_lng[0][1], exif_lngr[0][1].to_s == 'W')
+    keys.each do |k, v|
+      result = imgfile.get_exif_by_entry(v)
+      pair = result[0] if result
+      exif[k] = pair[1].to_s if pair && pair.is_a?(Array) && !pair[1].blank?
     end
 
-    self.taken_at = DateTime.strptime(exif_date[0][1], '%Y:%m:%d %H:%M:%S') if exif_date
-    self.device = exif_model[0][1] if exif_model
+    p "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
+    #logger.info "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
+
+    if exif[:lat] && exif[:lng]
+      self.lat = ddmmss_to_degree(exif[:lat], exif[:latref].to_s == 'S')
+      self.lng = ddmmss_to_degree(exif[:lng], exif[:lngref].to_s == 'W')
+    end
+
+    self.taken_at = DateTime.strptime(exif[:taken], '%Y:%m:%d %H:%M:%S') if exif[:taken]
+    self.device = exif[:make] if exif[:make]
+    self.device = exif[:model] if exif[:model]
   end
 
   def self.default_url(type = :thumb)
@@ -57,11 +69,12 @@ class Asset < ActiveRecord::Base
   end
 
   def ddmmss_to_degree(str, negative = false)
+    p "str = #{str} for #{id}"
     sum = 0
     set = {:dd => 0, :mm => 0, :ss => 0}
     divby = {:dd => 1, :mm => 60, :ss => 3600}
 
-    set[:dd], set[:mm], set[:ss] = str.split(',')
+    set[:dd], set[:mm], set[:ss] = str.to_s.split(',')
 
     set.each do |k, v|
       number, precision = v.to_s.split('/')
