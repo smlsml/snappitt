@@ -7,7 +7,14 @@
     <%= image_tag(m.photo_url(:large)) %>
     <p>
       <%= t(:lq).html_safe %><%= m.caption %><%= t(:rq).html_safe %><br/>
-      Created: <%= m.created_at.to_formatted_s(:mdy) %><%= (' via %s' % m.source).html_safe if m.source %>
+      Created: <%= m.created_at.to_formatted_s(:mdy) %>
+      <%= (' via %s' % m.source).html_safe if m.source %>
+      <% if m.asset %>
+        <br/>
+        <%= 'Taken at %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
+        <%= ' with %s' % m.asset.device if m.asset.device %>
+        <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s, %s</a>' % [m.asset.lat, m.asset.lng, m.asset.lat, m.asset.lng]).html_safe if m.asset.lat %>
+      <% end %>
     </p>
 
     <fieldset>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110317022901) do
+ActiveRecord::Schema.define(:version => 20110318205916) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(:version => 20110317022901) do
     t.string   "data_content_type"
     t.integer  "data_file_size"
     t.datetime "data_updated_at"
+    t.float    "lat"
+    t.float    "lng"
+    t.datetime "taken_at"
+    t.string   "device"
   end
 
   create_table "comments", :force => true do |t|

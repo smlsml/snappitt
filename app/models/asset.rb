@@ -33,15 +33,42 @@ class Asset < ActiveRecord::Base
     imgfile = ::Magick::Image.read(data.queued_for_write[:original].path).first
 
     return unless imgfile
+
     logger.info "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
 
-    #if logger.info?
-    #  exifDate = imgfile.get_exif_by_entry('DateTime')[0][1]
-    #end
+    exif_lat   = imgfile.get_exif_by_entry('GPSLatitude')
+    exif_lng   = imgfile.get_exif_by_entry('GPSLongitude')
+    exif_latr  = imgfile.get_exif_by_entry('GPSLatitudeRef')
+    exif_lngr  = imgfile.get_exif_by_entry('GPSLongitudeRef')
+    exif_date  = imgfile.get_exif_by_entry('DateTime')
+    exif_model = imgfile.get_exif_by_entry('Model')
+
+    if exif_lat && exif_lng && exif_latr && exif_lngr
+      self.lat = ddmmss_to_degree(exif_lat[0][1], exif_latr[0][1].to_s == 'S')
+      self.lng = ddmmss_to_degree(exif_lng[0][1], exif_lngr[0][1].to_s == 'W')
+    end
+
+    self.taken_at = DateTime.strptime(exif_date[0][1], '%Y:%m:%d %H:%M:%S') if exif_date
+    self.device = exif_model[0][1] if exif_model
   end
 
   def self.default_url(type = :thumb)
     '/images/default/%s/unknown.%s' % [type.to_s, type == 'large' || type == 'preview' ? 'jpg' : 'png']
+  end
+
+  def ddmmss_to_degree(str, negative = false)
+    sum = 0
+    set = {:dd => 0, :mm => 0, :ss => 0}
+    divby = {:dd => 1, :mm => 60, :ss => 3600}
+
+    set[:dd], set[:mm], set[:ss] = str.split(',')
+
+    set.each do |k, v|
+      number, precision = v.to_s.split('/')
+      sum += (number.to_f / precision.to_f) / divby[k].to_f
+    end
+
+    sum.to_f * (negative ? -1 : 1)
   end
 
 end
