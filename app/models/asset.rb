@@ -60,8 +60,9 @@ class Asset < ActiveRecord::Base
     end
 
     self.taken_at = DateTime.strptime(exif[:taken], '%Y:%m:%d %H:%M:%S') if exif[:taken]
-    self.device = exif[:make] if exif[:make]
     self.device = exif[:model] if exif[:model]
+
+    self.save unless self.new_record?
   end
 
   def self.default_url(type = :thumb)
