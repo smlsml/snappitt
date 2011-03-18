@@ -22,6 +22,10 @@ class Experience < ActiveRecord::Base
     limit(3)
   }
 
+  def to_s
+    title
+  end
+
   def photo_url
     m = moments.first
     m = Moment.new unless m

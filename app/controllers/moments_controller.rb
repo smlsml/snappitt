@@ -26,4 +26,16 @@ class MomentsController < ApplicationController
     redirect_to experience_path(@moment.experience)
   end
 
+  def destroy
+    @user = current_user
+    @moment = Moment.find(params[:id])
+
+    @moment.destroy if @moment
+    flash[:success] = "Deleted Moment: #{@moment}" if @moment
+
+    url = experience_path(@moment.experience) if @moment && @moment.experience
+
+    redirect_to previous_page || url || root_path
+  end
+
 end

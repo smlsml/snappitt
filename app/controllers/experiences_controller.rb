@@ -135,8 +135,9 @@ class ExperiencesController < ApplicationController
   def destroy
     @experience = Experience.find_by_id(params[:id])
     @experience.destroy if @experience
-    flash[:success] = "Deleted" if @experience
-    redirect_to root_url
+
+    flash[:success] = "Deleted Experience: #{@experience}" if @experience
+    redirect_to previous_page || root_url
   end
 
 end

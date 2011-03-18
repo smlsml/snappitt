@@ -12,7 +12,10 @@
 
     <fieldset>
       <legend>Comments</legend>
-      <h3><%= link_to('Like', like_experience_moment_path(@experience, m)) %></h3>
+      <h3>
+        <%= link_to('Like', like_experience_moment_path(@experience, m)) %> -
+        <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete) %>
+      </h3>
       <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
         <textarea name="comment" rows="2" cols="50" class="auto"></textarea><br/>
         <input type="submit" value="Add Comment"/><br/>
@@ -53,4 +56,4 @@
   </div>
 <% end %>
 
-<%= link_to('Delete Experience', experience_path(@experience), :method => :delete, :html => {:rel => :nofollow}) %>
+<%= link_to('Delete Experience', experience_path(@experience), :method => :delete) %>

@@ -19,4 +19,12 @@ class Moment < ActiveRecord::Base
     url || PhotoAsset.default_url(type)
   end
 
+  def title
+    '%s @ %s' % [thing, location]
+  end
+
+  def to_s
+    title
+  end
+
 end
