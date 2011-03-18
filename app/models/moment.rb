@@ -2,15 +2,15 @@ class Moment < ActiveRecord::Base
 
   belongs_to :creator, :class_name => "User", :foreign_key => 'user_id_creator'
 
-  belongs_to :asset
+  belongs_to :asset, :dependent => :destroy
   belongs_to :source
   belongs_to :thing
   belongs_to :location
   belongs_to :experience, :counter_cache => true
-  belongs_to :caption, :class_name => 'CaptionComment'#, :inverse_of => :moment
+  belongs_to :caption, :class_name => 'CaptionComment', :dependent => :destroy#, :inverse_of => :moment
 
-  has_many :likes, :inverse_of => :moment
-  has_many :comments, :class_name => 'MomentComment', :inverse_of => :moment
+  has_many :likes, :inverse_of => :moment, :dependent => :destroy
+  has_many :comments, :class_name => 'MomentComment', :inverse_of => :moment, :dependent => :destroy
 
   accepts_nested_attributes_for :caption
 

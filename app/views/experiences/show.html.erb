@@ -48,8 +48,9 @@
       <% end %>
       </table>
 
-
     </fieldset>
     <br/><br/>
   </div>
 <% end %>
+
+<%= link_to('Delete Experience', experience_path(@experience), :method => :delete, :html => {:rel => :nofollow}) %>

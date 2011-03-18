@@ -132,4 +132,11 @@ class ExperiencesController < ApplicationController
 
   end
 
+  def destroy
+    @experience = Experience.find_by_id(params[:id])
+    @experience.destroy if @experience
+    flash[:success] = "Deleted" if @experience
+    redirect_to root_url
+  end
+
 end
