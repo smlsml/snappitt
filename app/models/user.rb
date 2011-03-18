@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   validates :username, :presence => true, :length => { :minimum => 2 }, :uniqueness => true
 
-  before_create :lower_email
+  before_create :downcase
   after_create :setup
 
   belongs_to :profile, :inverse_of => :user
@@ -41,8 +41,8 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    out = profile.realname if profile
-    out || email
+    out = '%s (@%s)' % [username, profile.realname] if profile && profile.realname
+    out || '@' % username
   end
 
   def self.generate_password(len = 8)
@@ -57,16 +57,16 @@ class User < ActiveRecord::Base
 
   protected
 
-  def lower_email
+  def downcase
     self.email.downcase!
-    #self.confirmed_at = Time.now
+    self.username.downcase!
     true
   end
 
   def setup
-    self.create_profile()
-    self.create_contact(:email => self.email, :name => :username)
-    self.save
+    self.create_profile(:realname => self.username)
+    self.create_contact(:email => self.email, :name => self.username)
+    self.save!
   end
 
 end
