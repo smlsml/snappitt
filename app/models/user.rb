@@ -41,8 +41,9 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    out = '%s (@%s)' % [username, profile.realname] if profile && profile.realname
-    out || '@' % username
+    out = '@%s' % username
+    out = '%s (@%s)' % [username, profile.realname] if profile && !profile.realname.empty?
+    out
   end
 
   def self.generate_password(len = 8)
