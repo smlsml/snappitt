@@ -13,7 +13,7 @@
       <%= link_to( t(:follow), user_follow_index_path(user), :method => :post)  %><br/>
     <% end %>
   <% end %>
-  <p><%= 'Experiences: %s | Likes: %s | Followers: %s' % [user.experiences.count, user.likes.count, user.followers.count] %></p>
+  <p><%= 'Experiences: %s | Likes: %s | Followers: %s' % [user.experiences.size, user.likes.size, user.followers.size] %></p>
   <q><%= t(:lq).html_safe << user.profile.bio.to_s << t(:rq).html_safe %></q>
 
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318230004) do
+ActiveRecord::Schema.define(:version => 20110319024608) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -94,6 +94,8 @@ ActiveRecord::Schema.define(:version => 20110318230004) do
     t.datetime "updated_at"
     t.integer  "views",           :default => 0
     t.integer  "moments_count",   :default => 0
+    t.integer  "likes_count",     :default => 0
+    t.integer  "comments_count",  :default => 0
   end
 
   create_table "likes", :force => true do |t|

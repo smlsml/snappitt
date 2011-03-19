@@ -27,4 +27,18 @@ class Moment < ActiveRecord::Base
     title
   end
 
+  def self.experience_id_for(moment_id)
+    Moment.find(moment_id, :select => 'experience_id').experience_id
+  end
+
+  def self.increment_counter(field, id)
+    super(field, id)
+    Experience.increment_counter(field, Moment.experience_id_for(id))
+  end
+
+  def self.decrement_counter(field, id)
+    super(field, id)
+    Experience.decrement_counter(field, Moment.experience_id_for(id))
+  end
+
 end

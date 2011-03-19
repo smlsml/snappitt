@@ -8,10 +8,12 @@ class Experience < ActiveRecord::Base
   has_many :likes, :through => :moments, :readonly => true
 
   scope :user_feed, lambda { |user|
+    includes(:creator => :profile, :moments => :asset).
     order('created_at DESC')
   }
 
   scope :by_user, lambda { |user|
+    includes(:creator => :profile, :moments => :asset).
     where('user_id_creator = ?', user.id).
     order('created_at DESC')
   }
@@ -37,7 +39,7 @@ class Experience < ActiveRecord::Base
   end
 
   def moments_status
-    '%s moment%s' % [self.moments.count, 1 == self.moments.count ? '':'s']
+    '%s moment%s' % [moments_count, 1 == moments_count ? '':'s']
   end
 
 end

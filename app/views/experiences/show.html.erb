@@ -63,4 +63,6 @@
   </div>
 <% end %>
 
+<%= link_to('Add Moment', edit_experience_path(@experience)) %>
+<br/><br/>
 <%= link_to('Delete Experience', experience_path(@experience), :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.creator) %>

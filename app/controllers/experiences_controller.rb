@@ -5,6 +5,14 @@ class ExperiencesController < ApplicationController
   def new
     @moment = Moment.new
     @moment.caption = CaptionComment.new
+    @upload_email = 'post@%s' % t('app.host')
+  end
+
+  def edit
+    @experience = Experience.find_by_id(params[:id])
+    new
+    @upload_email = ('exp%s@%s' % [@experience.id, t('app.host')]) if @experience
+    render :new
   end
 
   def create_mail
@@ -79,6 +87,7 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
+    return render :private if @experience.private? && !can_edit?(@experience.creator)
     @experience.increment!(:views, 1) unless is_bot?
   end
 

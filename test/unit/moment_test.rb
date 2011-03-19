@@ -23,6 +23,17 @@ class MomentTest < ActiveSupport::TestCase
     @eat.reload
 
     assert @eat.likes_count > 0
+    assert @eat.experience.likes_count > 0
+  end
+
+  test "comment counter" do
+    @eat = moments(:eat)
+    MomentComment.create!(:moment_id => @eat.id, :user_id => users(:snoop).id, :text => "whatever")
+
+    @eat.reload
+
+    assert @eat.comments_count > 0
+    assert @eat.experience.comments_count > 0
   end
 
 end

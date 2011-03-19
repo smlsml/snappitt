@@ -2,7 +2,7 @@
 
 <fieldset class="upload">
   <legend>Via Email</legend>
-  <h2><a href="mailto:post@snappitt.com">post@snappitt.com</a></h2>
+  <h2><a href="mailto:<%= @upload_email %>"><%= @upload_email %></a></h2>
   <p>Send an email with a subject and attached photos</p>
 </fieldset>
 
@@ -37,18 +37,24 @@
       <%#= t.text_field :people %><br/>
     <%# end %>
 
-    <% last = Experience.by_user(current_user).first %>
-    <% if last %>
-      <input type="hidden" name="last_moment" value="<%= last.id %>" />
-      <%= submit_tag('Add to last experience: %s' % last.title, :name => 'add_moment') %>
+    <% if @experience %>
+      <input type="hidden" name="last_moment" value="<%= @experience.id %>" />
+      <%= submit_tag('Add moment to experience: %s' % @experience.title, :name => 'add_moment') %>
       <h2>or</h2>
-    <% end %>
+    <% else %>
+      <% last = Experience.by_user(current_user).first %>
+      <% if last %>
+        <input type="hidden" name="last_moment" value="<%= last.id %>" />
+        <%= submit_tag('Add to last experience: %s' % last.title, :name => 'add_moment') %>
+        <h2>or</h2>
+      <% end %>
 
-    <% grp = Experience.recent_groups.first %>
-    <% if grp %>
-      <input type="hidden" name="grp_moment" value="<%= grp.id %>" />
-      <%= submit_tag('Add to group experience: %s' % grp.title, :name => 'add_grp_moment') %>
-      <h2>or</h2>
+      <% grp = Experience.recent_groups.first %>
+      <% if grp %>
+        <input type="hidden" name="grp_moment" value="<%= grp.id %>" />
+        <%= submit_tag('Add to group experience: %s' % grp.title, :name => 'add_grp_moment') %>
+        <h2>or</h2>
+      <% end %>
     <% end %>
 
     <%= submit_tag 'Create New Experience' %>
