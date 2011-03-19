@@ -9,7 +9,7 @@ class Experience < ActiveRecord::Base
 
   scope :user_feed, lambda { |user|
     includes(:creator => :profile, :moments => :asset).
-    where("visibility != 'private'").
+    where("visibility IS NULL").
     order('created_at DESC')
   }
 
