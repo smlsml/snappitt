@@ -69,7 +69,6 @@ class Asset < ActiveRecord::Base
   end
 
   def ddmmss_to_degree(str, negative = false)
-    p "str = #{str} for #{id}"
     sum = 0
     set = {:dd => 0, :mm => 0, :ss => 0}
     divby = {:dd => 1, :mm => 60, :ss => 3600}
