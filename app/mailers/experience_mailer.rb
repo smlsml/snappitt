@@ -3,10 +3,11 @@ class ExperienceMailer < ActionMailer::Base
 
   def upload_notification(experience)
     @experience = experience
-    @reply_to = 'exp%s@%s' % [@experience.id, I18n.translate('app.host')]
+    @group = 'exp%s@%s' % [@experience.id, I18n.translate('app.host')]
+    group = @group
 
     mail :to => @experience.creator.email,
-         :from => "%s on %s <%s>" % [@experience.creator, I18n.translate('app.name'), @reply_to],
-         :reply_to => @reply_to
+         :from => "%s on %s <%s>" % [@experience.creator, I18n.translate('app.name'), @group],
+         :reply_to => @group
   end
 end
