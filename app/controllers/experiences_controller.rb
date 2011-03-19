@@ -54,7 +54,7 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find_by_id($1) if @to =~ /exp([0-9]+)@/i
     @experience = Experience.where(:creator => @user, :title => @subject).order('created_at DESC').first unless @experience
     @experience = Experience.new(:title => @subject) unless @experience
-    @experience.visibility = 'private' unless params[:to].to_s.downcase.include?('private')
+    @experience.visibility = 'private' if params[:to].to_s.downcase.include?('private')
 
     @message.attachments.each do |attachment|
       moment = Moment.new
