@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
          :validatable,
          :confirmable
 
-  attr_accessor :login, :force_reset
+  attr_accessor :login
   attr_accessible :email, :username, :login, :password, :remember_me
 
   validates :username, :presence => true, :length => { :minimum => 2 }, :uniqueness => true
