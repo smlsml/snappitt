@@ -48,6 +48,28 @@ class ExperiencesController < ApplicationController
 
     return head(:unauthorized) unless @user
 
+    if @to == 'avatar@snappitt.com'
+      attachment = @message.attachments.first
+      return head(:bad_request) unless attachment
+
+      file = StringIO.new(attachment.decoded)
+      file.class.class_eval { attr_accessor :original_filename, :content_type }
+      file.original_filename = attachment.filename
+      file.content_type = attachment.mime_type
+
+      asset = PhotoAsset.new(:data => file)
+
+      if asset
+        asset.creator = @user
+        asset.source = @source
+        profile = @user.profile
+        profile.photo_asset = asset
+        profile.save!
+      end
+
+      return head(:created)
+    end
+
     @subject = params[:subject].to_s.strip
     while @subject.gsub!(/^re:/i,''); @subject.strip!; end
     while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end

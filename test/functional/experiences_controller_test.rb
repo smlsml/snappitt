@@ -73,7 +73,7 @@ class ExperiencesControllerTest < ActionController::TestCase
     assert_kind_of Experience, @experience
 
     @params[:plain] = 'second exp!'
-    @params[:to] = 'exp%s@%s' % [@experience.id, I18n.translate('app.host')]
+    @params[:to] = 'exp%s@snappitt.com' % @experience.id
     setup_mail
 
     post :create_mail, @params
@@ -83,6 +83,21 @@ class ExperiencesControllerTest < ActionController::TestCase
     assert_kind_of Experience, @second
     assert_equal @params[:plain], @experience.moments.second.caption.to_s
     assert_equal 2, @experience.moments.count
+  end
+
+  test "create_mail: avatar at snappitt updates user image" do
+    @params[:to] = 'avatar@snappitt.com'
+    setup_mail
+
+    assert_nil @user.profile.photo_asset
+
+    post :create_mail, @params
+    assert_response :success
+
+    @user.reload
+
+    assert_kind_of PhotoAsset, @user.profile.photo_asset
+    assert_nil get_experience
   end
 
 end
