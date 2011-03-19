@@ -41,7 +41,7 @@ class ExperiencesController < ApplicationController
                            :password => password,
                            :password_confirmation => password,
                            :username => username,
-                           :force_reset => 1)
+                           :force_reset => true)
       @new_user = @user
     end
 
