@@ -31,7 +31,7 @@ class ExperiencesController < ApplicationController
 
     if !@user
       password = User.generate_password
-      logger.info "Creating a new user: #{@from}"
+      p "Creating a new user: #{@from}"
       username = @from.to_s.downcase.strip.split('@')[0]
       username = username << Time.now().to_i.to_s if User.find_by_username(username)
 
@@ -46,8 +46,7 @@ class ExperiencesController < ApplicationController
 
     return head(:unauthorized) unless @user
 
-    p "what is to? #{@to}"
-    if @to == 'avatar@snappitt.com'
+    if @to =~ /avatar@snappitt.com/i
       attachment = @message.attachments.first
       return head(:bad_request) unless attachment
 
@@ -119,7 +118,6 @@ class ExperiencesController < ApplicationController
       redirect_to experience_path(@experience)
     else
       flash.now[:error] = "Error!"
-      Rails.logger.info('error creating moment')
       render :create
     end
   end
