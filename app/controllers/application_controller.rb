@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
     def force_reset
       if user_signed_in? && current_user.force_reset? && !is_account_page?
+        flash[:notice] = t('devise.confirmations.confirmed')
         flash[:error] = "You must set a password"
         redirect_to user_settings_path(current_user)
       end
