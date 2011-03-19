@@ -5,7 +5,7 @@ Your new experience can be seen at: <%= experience_url(@experience) %>
 <% if @experience.creator.force_reset %>
 ---
 
-We've created a new account for you using your email address: <%= @new_user.email %>
+We've created a new account for you using your email address: <%= @experience.creator.email %>
 You will recieve a second email with a link to activate your account.
 Once activated, you will be prompted to choose a password and provide other profile information.
 

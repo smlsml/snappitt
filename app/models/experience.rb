@@ -14,7 +14,7 @@ class Experience < ActiveRecord::Base
 
   scope :by_user, lambda { |user|
     includes(:creator => :profile, :moments => :asset).
-    where('user_id_creator = ?', user.id).
+    where("user_id_creator = ? AND visibility != 'private'", user.id).
     order('created_at DESC')
   }
 
