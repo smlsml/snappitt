@@ -5,7 +5,11 @@
   <%= p.label 'username', 'Username: %s' % @profile.user.username %>
   <%= p.label 'email', 'Email: %s' % @profile.user.email %>
   <%= p.label 'joined', 'Joined: %s' % @profile.user.created_at.to_formatted_s(:mdy) %>
-  <br/>
+
+  <%= label :password, :new, 'New Password:' %>
+  <%= password_field :password, :new %>
+
+  <br/><br/>
 
   <%= fields_for :asset do |a| %>
     <%= a.label :data, 'Profile Picture:' %>
@@ -36,5 +40,14 @@
   <br/>
 
   <%= submit_tag 'Update Profile' %>
+
+  <br/><br/>
+
+  <fieldset>
+    You've logged in <%= current_user.sign_in_count %> times!<br/>
+    Current login  at <%= current_user.current_sign_in_at %> from <%= current_user.current_sign_in_ip %><br/>
+    Previous login at <%= current_user.last_sign_in_at %> from <%= current_user.last_sign_in_ip %><br/>
+    Using <%= request.env['HTTP_USER_AGENT'] %>
+  </fieldset>
 
 <% end %>

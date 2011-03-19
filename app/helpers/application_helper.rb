@@ -20,4 +20,8 @@ module ApplicationHelper
     request.path.starts_with?('/accounts')
   end
 
+  def can_edit?(user)
+    user_signed_in? && ((user && user == current_user) || current_user.is_admin?)
+  end
+
 end

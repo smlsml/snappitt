@@ -1,1 +1,20 @@
+Thanks for using <%= I18n.translate('app.name') %>!
+
 Your new experience can be seen at: <%= experience_url(@experience) %>
+
+<% if @new_user %>
+---
+
+We've created a new account for you using your email address: <%= @new_user.email %>
+You will recieve a second email with a link to activate your account.
+Once activated, you will be prompted to choose a password and provide other profile information.
+
+<% unless @experience.private? %>
+[Did you know?]
+Your friends can reply to this email to add their own photos to your new experience.
+Forward this email or have them send attached photos to <%= @reply_to %>.
+
+<% end %>
+Happy Snapping!
+
+<% end %>

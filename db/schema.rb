@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318205916) do
+ActiveRecord::Schema.define(:version => 20110318230004) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -199,6 +199,7 @@ ActiveRecord::Schema.define(:version => 20110318205916) do
     t.integer  "contact_id"
     t.integer  "profile_id"
     t.integer  "likes_count",                         :default => 0
+    t.boolean  "force_reset"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

@@ -4,6 +4,7 @@ snoop:
   role: user
   contact: snoop # contact
   profile: snoop # profile
+  confirmed_at: 2010-01-01
 
 dre:
   username: dre
@@ -11,3 +12,4 @@ dre:
   role: user
   contact: dre # contact
   profile: dre # profile
+  confirmed_at: 2010-01-01

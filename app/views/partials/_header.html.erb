@@ -33,7 +33,7 @@
 <% if @in %>
 
 <div id="page_logout">
-  <%= ('Hi %s <small>(%s)</small>' % [current_user, current_user.email]).html_safe %> :: <%= link_to t('nav.logout'), destroy_user_session_path %>
+  <%= 'Hi %s' % current_user %> :: <%= link_to t('nav.logout'), destroy_user_session_path %>
 </div>
 
 <% end %>

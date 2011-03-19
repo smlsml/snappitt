@@ -4,6 +4,7 @@
 en:
   app:
     name: 'Snappitt'
+    host: 'snappitt.com'
   nav:
     home: 'Home'
     profile: 'Profile'

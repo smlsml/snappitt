@@ -5,13 +5,14 @@
 <% @experience.moments.each do |m| %>
   <div class="moment_card">
     <%= image_tag(m.photo_url(:large)) %>
+    <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.creator) %>
     <p>
       <%= t(:lq).html_safe %><%= m.caption %><%= t(:rq).html_safe %><br/>
       Created: <%= m.created_at.to_formatted_s(:mdy) %>
       <%= (' via %s' % m.source).html_safe if m.source %>
       <% if m.asset %>
         <br/>
-        <%= 'Taken at %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
+        <%= 'Taken on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
         <%= ' with %s' % m.asset.device if m.asset.device %>
         <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s, %s</a>' % [m.asset.lat, m.asset.lng, m.asset.lat, m.asset.lng]).html_safe if m.asset.lat %>
       <% end %>
@@ -20,8 +21,7 @@
     <fieldset>
       <legend>Comments</legend>
       <h3>
-        <%= link_to('Like', like_experience_moment_path(@experience, m)) %> -
-        <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete) %>
+        <%= link_to('Like', like_experience_moment_path(@experience, m)) %>
       </h3>
       <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
         <textarea name="comment" rows="2" cols="50" class="auto"></textarea><br/>
@@ -63,4 +63,4 @@
   </div>
 <% end %>
 
-<%= link_to('Delete Experience', experience_path(@experience), :method => :delete) %>
+<%= link_to('Delete Experience', experience_path(@experience), :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.creator) %>

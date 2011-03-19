@@ -51,7 +51,6 @@ class Asset < ActiveRecord::Base
       exif[k] = pair[1].to_s if pair && pair.is_a?(Array) && !pair[1].blank?
     end
 
-    p "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
     #logger.info "Photo EXIF: " + imgfile.get_exif_by_entry().inspect
 
     if exif[:lat] && exif[:lng]

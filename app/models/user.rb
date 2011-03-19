@@ -42,8 +42,12 @@ class User < ActiveRecord::Base
 
   def to_s
     out = '@%s' % username
-    out = '%s (@%s)' % [username, profile.realname] if profile && !profile.realname.blank?
+    out = '%s (@%s)' % [profile.realname, username] if profile && !profile.realname.blank?
     out
+  end
+
+  def is_admin?
+    role == 'admin'
   end
 
   def self.generate_password(len = 8)

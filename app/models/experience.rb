@@ -22,6 +22,10 @@ class Experience < ActiveRecord::Base
     limit(3)
   }
 
+  def private?
+    'private' == visibility
+  end
+
   def to_s
     title
   end

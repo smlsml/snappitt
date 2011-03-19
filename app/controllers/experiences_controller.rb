@@ -15,6 +15,7 @@ class ExperiencesController < ApplicationController
 
     logger.warn "Message headers: #{@message.header.field_summary}"
 
+    @to   = params[:to].to_s.downcase.strip
     @from = params[:from].to_s.downcase.strip
     @from = params[:x_sender].to_s.downcase.strip if params[:x_sender]
     @from = params[:x_forwarded_for].to_s.downcase.strip if params[:x_forwarded_for]
@@ -31,7 +32,9 @@ class ExperiencesController < ApplicationController
       @user = User.create!(:email => @from,
                            :password => password,
                            :password_confirmation => password,
-                           :username => username)
+                           :username => username,
+                           :force_reset => 1)
+      @new_user = @user
     end
 
     return head(:unauthorized) unless @user
@@ -40,9 +43,10 @@ class ExperiencesController < ApplicationController
     while @subject.gsub!(/^re:/i,''); @subject.strip!; end
     while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end
 
-    @experience = Experience.where(:creator => @user, :title => @subject).order('created_at DESC').first
+    @experience = Experience.find_by_id($1) if @to =~ /exp([0-9]+)@/i
+    @experience = Experience.where(:creator => @user, :title => @subject).order('created_at DESC').first unless @experience
     @experience = Experience.new(:title => @subject) unless @experience
-    @experience.visibility = 'group' if params[:to].to_s.downcase.include?('group')
+    @experience.visibility = 'private' unless params[:to].to_s.downcase.include?('private')
 
     @message.attachments.each do |attachment|
       moment = Moment.new
@@ -145,7 +149,7 @@ class ExperiencesController < ApplicationController
     @experience.destroy if @experience
 
     flash[:success] = "Deleted Experience: #{@experience}" if @experience
-    redirect_to previous_page || root_url
+    redirect_to root_url
   end
 
 end
