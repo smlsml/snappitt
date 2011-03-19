@@ -37,12 +37,13 @@ class ExperiencesController < ApplicationController
       username = @from.to_s.downcase.strip.split('@')[0]
       username = username << Time.now().to_i.to_s if User.find_by_username(username)
 
-      @user = User.create!(:email => @from,
-                           :password => password,
-                           :password_confirmation => password,
-                           :username => username,
-                           :force_reset => 1)
-      @new_user = @user
+      @user = User.new(:email => @from,
+                       :password => password,
+                       :password_confirmation => password,
+                       :username => username)
+
+      @user.force_reset = 1 # not working in .new, wtf?
+      @user.save!
     end
 
     return head(:unauthorized) unless @user
