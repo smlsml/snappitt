@@ -21,8 +21,6 @@ class ExperiencesController < ApplicationController
     @message = Mail.new(params[:message])
     return head(:bad_request) unless @message
 
-    logger.warn "Message headers: #{@message.header.field_summary}"
-
     @to   = params[:to].to_s.downcase.strip
     @from = params[:from].to_s.downcase.strip
     @from = params[:x_sender].to_s.downcase.strip if params[:x_sender]
@@ -48,6 +46,7 @@ class ExperiencesController < ApplicationController
 
     return head(:unauthorized) unless @user
 
+    p "what is to? #{@to}"
     if @to == 'avatar@snappitt.com'
       attachment = @message.attachments.first
       return head(:bad_request) unless attachment
