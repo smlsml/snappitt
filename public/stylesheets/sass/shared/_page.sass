@@ -51,6 +51,8 @@ table
       margin: 0
       padding: 0
       list-style: none
+      &:hover a span
+        display: inline
       a
         background: url(/images/header-icons.png) no-repeat 0 0
         width: 80px
@@ -66,7 +68,7 @@ table
           -moz-border-radius: 6px
           -moz-box-shadow: 0 0 2px black
           padding: 2px 4px
-        &:hover
+        &.selected
           span
             display: inline
         &.home

@@ -60,6 +60,8 @@ table.comment {
       margin: 0;
       padding: 0;
       list-style: none; }
+      #page_header ul li:hover a span {
+        display: inline; }
       #page_header ul li a {
         background: url(/images/header-icons.png) no-repeat 0 0;
         width: 80px;
@@ -75,7 +77,7 @@ table.comment {
           -moz-border-radius: 6px;
           -moz-box-shadow: 0 0 2px black;
           padding: 2px 4px; }
-        #page_header ul li a:hover span {
+        #page_header ul li a.selected span {
           display: inline; }
         #page_header ul li a.home {
           background-position: -60px -8px; }
