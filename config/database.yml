@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   database: photo_dev
-  username: LM_Dev
+  username: stevehurd
   password:
   encoding: unicode
   pool: 3
@@ -10,7 +10,7 @@ development:
 test:
   adapter: postgresql
   database: photo_test
-  username: LM_Dev
+  username: stevehurd
   password:
   encoding: unicode
   pool: 3

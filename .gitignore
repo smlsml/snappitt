@@ -10,3 +10,6 @@ tmp/
 .rvmrc
 
 public/system
+
+# databse config
+config/database.yml
