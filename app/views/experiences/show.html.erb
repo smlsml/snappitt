@@ -1,6 +1,24 @@
-<%= render @experience.creator %>
+<div class="experience_header">
+  <img src="<%= @experience.creator.profile.photo_url %>"/>
+  <h1><%= @experience.title %></h1>
+  <p>
+  <strong><%= @experience.moments_count %></strong> moments at
+  <strong>X</strong> place with
+  <strong>X</strong> people and
+  <strong>X</strong> things
+  </p>
 
-<h2><%= @experience.title %></h2>
+  By <%= link_to(@experience.creator, user_path(@experience.creator), :title => @experience.creator.profile.realname) %> &nbsp;
+  <%= @experience.creator.experiences_count %> Experiences &bull;
+  <%= @experience.creator.followers.count %> Followers<br/>
+  <div class="stats">
+    <strong><%= @experience.views %></strong> Views
+    <strong><%= @experience.likes_count %></strong> Likes
+    <strong><%= @experience.comments_count %></strong> Comments<br/>
+    fb:share - twitter:share
+  </div>
+  <br style="clear: both"/>
+</div>
 
 <% @experience.moments.each do |m| %>
   <div class="moment_card">

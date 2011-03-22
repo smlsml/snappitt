@@ -724,19 +724,22 @@ table.comment {
       font-size: 10px;
       color: #999999; }
 
-#page_account table.signin {
-  width: auto;
-  margin: 0 auto; }
-  #page_account table.signin label {
-    display: inline; }
+#page_account {
+  padding: 10px;
+  background-color: lightGrey; }
+  #page_account table.signin {
+    width: auto;
+    margin: 0 auto; }
+    #page_account table.signin label {
+      display: inline; }
 
 #page_middle {
   margin-top: 135px;
   text-align: center;
-  padding-top: 25px;
   padding-bottom: 50px;
   background-color: whiteSmoke; }
   #page_middle #page_center {
+    padding-top: 25px;
     max-width: 980px;
     margin: 0 auto; }
 
@@ -812,6 +815,20 @@ div.experience_card {
   div.experience_card .stats {
     border-top: 1px solid #999999;
     margin-top: 10px;
+    padding: 10px; }
+
+.experience_header {
+  position: relative;
+  text-align: left; }
+  .experience_header img {
+    float: left;
+    padding: 10px; }
+  .experience_header .stats {
+    position: absolute;
+    width: 200px;
+    top: 0;
+    right: 0;
+    border: 1px solid red;
     padding: 10px; }
 
 .user_card {

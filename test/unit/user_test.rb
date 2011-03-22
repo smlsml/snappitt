@@ -9,13 +9,30 @@ class UserTest < ActiveSupport::TestCase
     assert_kind_of(Contact, @snoop.contact)
   end
 
-  test "like counter" do
+  test "likes_count: cached count of likes" do
     @snoop = users(:snoop)
-    Like.create!(:moment_id => moments(:eat).id, :user_id => @snoop.id)
+    cnt = @snoop.likes_count
+    like = Like.create!(:moment_id => moments(:eat).id, :user_id => @snoop.id)
 
     @snoop.reload
+    assert_equal cnt + 1, @snoop.likes_count
 
-    assert @snoop.likes_count > 0
+    like.destroy
+    @snoop.reload
+    assert_equal cnt, @snoop.likes_count
+  end
+
+  test "experiences_count: cached count of experiences" do
+    @snoop = users(:snoop)
+    cnt = @snoop.experiences_count
+    exp = Experience.create!(:title => 'Some experience', :user_id_creator => @snoop.id)
+
+    @snoop.reload
+    assert_equal cnt + 1, @snoop.experiences_count
+
+    exp.destroy
+    @snoop.reload
+    assert_equal cnt, @snoop.experiences_count
   end
 
 end

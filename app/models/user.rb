@@ -41,9 +41,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    out = '@%s' % username
-    out = '%s (@%s)' % [profile.realname, username] if profile && !profile.realname.blank?
-    out
+    username
   end
 
   def is_admin?
