@@ -72,6 +72,10 @@ class ExperiencesControllerTest < ActionController::TestCase
     @experience = get_experience
     assert_kind_of Experience, @experience
 
+    @snoop = users(:snoop)
+    sign_in(@snoop)
+
+    @params[:from] = @snoop.email
     @params[:plain] = 'second exp!'
     @params[:to] = 'exp%s@snappitt.com' % @experience.id
     setup_mail
@@ -79,10 +83,11 @@ class ExperiencesControllerTest < ActionController::TestCase
     post :create_mail, @params
     assert_response :success
 
-    @second = get_experience
+    @second = get_experience(:creator => @user)
     assert_kind_of Experience, @second
     assert_equal @params[:plain], @experience.moments.second.caption.to_s
     assert_equal 2, @experience.moments.count
+    assert_equal @snoop, @experience.moments.second.creator
   end
 
   test "create_mail: avatar at snappitt updates user image" do

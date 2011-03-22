@@ -3,7 +3,7 @@ class Experience < ActiveRecord::Base
   has_one :event, :inverse_of => :experience
   belongs_to :creator, :class_name => 'User', :foreign_key => 'user_id_creator', :counter_cache => true
 
-  has_many :moments, :dependent => :destroy
+  has_many :moments, :order => 'moments.id', :dependent => :destroy
   has_many :comments, :through => :moments, :readonly => true
   has_many :likes, :through => :moments, :readonly => true
 

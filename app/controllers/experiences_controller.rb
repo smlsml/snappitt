@@ -73,8 +73,7 @@ class ExperiencesController < ApplicationController
     while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end
 
     @experience = Experience.find_by_id($1) if @to =~ /exp([0-9]+)@/i
-    @experience = Experience.where(:creator => @user, :title => @subject).order('created_at DESC').first unless @experience
-    @experience = Experience.new(:title => @subject) unless @experience
+    @experience = Experience.new(:title => @subject, :creator => @user) unless @experience
     @experience.visibility = 'private' if params[:to].to_s.downcase.include?('private')
 
     @message.attachments.each do |attachment|
@@ -99,7 +98,6 @@ class ExperiencesController < ApplicationController
       @experience.moments << moment
     end
 
-    @experience.creator = @user
     @experience.save!
     ExperienceMailer.upload_notification(@experience).deliver
 
