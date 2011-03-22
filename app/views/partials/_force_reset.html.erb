@@ -1,0 +1,8 @@
+<div id="page_account">
+
+<%= form_for(:password, :url => user_settings_path(current_user), :html => { :method => :put }) do |f| %>
+  <%= f.label :new, 'You must set a password!' %> <%= f.password_field :new %>
+  <%= f.submit "Set Password" %>
+<% end %>
+
+</div>

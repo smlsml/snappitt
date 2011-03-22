@@ -16,6 +16,7 @@
   <%= render_flash_messages %>
 
   <%= render :partial => '/partials/signup' unless user_signed_in? || is_account_page? %>
+  <%= render :partial => '/partials/force_reset' if @force_reset %>
 
   <div id="page_center">
     <%= yield %>
