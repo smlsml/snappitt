@@ -19,8 +19,11 @@ en:
   rq: '&rdquo;'
   experience_mailer:
     upload_notification:
-      subject: "Experience Captured!"
+      subject: 'Experience Captured!'
   activerecord:
     attributes:
       user:
-        login: "Username or Email"
+        login: 'Username or Email'
+  footer:
+    moment_count: 'Moments Snapped:'
+    developed_in: 'Designed and Developed in Denver, CO'

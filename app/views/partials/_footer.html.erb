@@ -1,4 +1,18 @@
-<br/>Next:<br/>
+<div class="footer">
+
+<p class="links">
+  <a href="/">Home</a> <br/>
+  <%= t('footer.developed_in') %>
+</p>
+
+<dl class="stats">
+  <dt><%= t('footer.moment_count')%></dt>
+  <dd><%= Moment.count %></dd>
+</dl>
+
+</div>
+
+<br/>ToDo:<br/>
 added moments by other users should not steal creator,
 add experience count to users,
 log out other user before confirm,
@@ -14,4 +28,3 @@ include experience stats in confirmation email,
 wrap whole create process in a transaction,
 user search,
 audit language localization (slacked in a few places)
-<br/><br/>

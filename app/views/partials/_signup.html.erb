@@ -1,4 +1,23 @@
-<div id="page_signup">
+<div id="page_account">
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <table class="signin">
+    <tr>
+      <td>
+        <%= f.label :login %><br/><%= f.text_field :login %>
+      </td>
+      <td>
+        <%= f.label :password %><br/><%= f.password_field :password %>
+      </td>
+      <td>
+        <%= f.submit "Sign in" %><br/>
+        <% if devise_mapping.rememberable? -%>
+          <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+        <% end -%>
+      </td>
+    </tr>
+  </table>
+<% end %>
 
   <%= link_to "Login", new_user_session_path %> |
   <%= link_to "Signup!", new_user_registration_path %>
