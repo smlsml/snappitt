@@ -32,10 +32,8 @@
   <%= p.label 'bio', 'Introduction:' %>
   <%= p.text_field :bio %><br/><br/>
 
-  <%= p.label 'gender_m', 'Guy:' %>
-  <%= p.radio_button :gender, 'm' %><br/>
-  <%= p.label 'gender_f', 'Girl:' %>
-  <%= p.radio_button :gender, 'f' %><br/>
+  <%= p.label 'gender', 'Sex:' %>
+  <%= p.select :gender, {'Yes!' => 'X','Guy' => 'M','Girl' => 'F'}, :include_blank => true %><br/>
 
   <br/>
 
