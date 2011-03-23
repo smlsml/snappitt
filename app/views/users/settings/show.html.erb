@@ -7,7 +7,7 @@
   <%= p.label 'joined', 'Joined: %s' % @profile.user.created_at.to_formatted_s(:mdy) %>
 
   <%= label :password, :new, 'New Password:' %>
-  <%= password_field :password, :new %>
+  <%= password_field :password, :new, :value => '' %>
 
   <br/><br/>
 
