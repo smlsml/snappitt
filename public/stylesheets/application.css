@@ -587,11 +587,76 @@ ol ol, ol ul, ul ul, ul ol {
     width: auto;
     height: auto; }
 
+.session_controller #page_center input[type="text"] {
+  -moz-transition-duration: 0.1s;
+  -moz-transition-property: border-color;
+  -moz-transition-timing-function: linear;
+  background: none repeat scroll 0 0 white;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px 4px 4px 4px;
+  font: 13px/18px "Helvetica Neue", Arial, sans-serif;
+  height: 24px;
+  outline: medium none;
+  padding: 5px 9px;
+  vertical-align: bottom; }
+.session_controller #page_center input[type="password"] {
+  -moz-transition-duration: 0.1s;
+  -moz-transition-property: border-color;
+  -moz-transition-timing-function: linear;
+  background: none repeat scroll 0 0 white;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px 4px 4px 4px;
+  font: 13px/18px "Helvetica Neue", Arial, sans-serif;
+  height: 24px;
+  outline: medium none;
+  padding: 5px 9px;
+  vertical-align: bottom; }
+.session_controller #page_center input[type="submit"] {
+  background: none repeat scroll 0 0 #97ca00;
+  border-radius: 4px 4px 4px 4px;
+  border: none;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 15px;
+  color: white;
+  display: absolute;
+  font-weight: bold;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px 0 10px 2px;
+  padding: 0 18px; }
+  .session_controller #page_center input[type="submit"]:hover {
+    background: none repeat scroll 0 0 #90c100; }
+
 body {
   margin: 0;
   padding: 0;
   font-family: Helvetica Neue !important;
-  font-size: 14px !important; }
+  font-size: 15px !important;
+  color: #999999; }
+
+h1 {
+  font-size: 24px;
+  color: #666666;
+  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3); }
+
+h2 {
+  font-size: 20px;
+  color: #666666;
+  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3); }
+
+a, a:link {
+  color: #009ad7;
+  text-decoration: none; }
+
+a:visited {
+  color: #009ad7; }
+
+a:hover {
+  color: #009ad7;
+  text-decoration: underline; }
+
+a:focus {
+  color: #009ad7; }
 
 textarea.auto {
   height: auto;
@@ -626,14 +691,13 @@ table.comment {
   left: 0;
   width: 100%;
   text-align: center;
-  background-image: url(/images/header-bg.jpg);
-  -moz-box-shadow: 0 2px 4px #2c2c2c; }
+  background-image: url(/images/header-bg.jpg); }
   #page_header a {
-    color: white; }
+    color: #999999; }
   #page_header h1 {
     font-size: 28px;
-    color: white;
-    font-family: Georgia, Helvetica Neue;
+    color: #f5f5f5;
+    font-family: Georgia;
     font-style: italic;
     margin: 0;
     padding: 15px 0 5px; }
@@ -649,7 +713,9 @@ table.comment {
       padding: 0;
       list-style: none; }
       #page_header ul li:hover a span {
-        display: inline; }
+        display: block;
+        font-size: 13px;
+        color: #f5f5f5; }
       #page_header ul li a {
         background: url(/images/header-icons.png) no-repeat 0 0;
         width: 80px;
@@ -662,11 +728,14 @@ table.comment {
           display: none;
           text-decoration: none;
           background: black;
+          opacity: 0.9;
           -moz-border-radius: 6px;
-          -moz-box-shadow: 0 0 2px black;
-          padding: 2px 4px; }
+          -moz-box-shadow: 0 0 2px rgba 0, 0, 0, 0.4;
+          padding: 4px 10px; }
         #page_header ul li a.selected span {
-          display: inline; }
+          display: block;
+          font-size: 13px;
+          color: #f5f5f5; }
         #page_header ul li a.home {
           background-position: -60px -8px; }
           #page_header ul li a.home.selected {
@@ -719,10 +788,11 @@ table.comment {
   #page_header #page_logout {
     position: absolute;
     right: 50px;
-    top: 25px; }
+    top: 25px;
+    color: #666666; }
     #page_header #page_logout small {
       font-size: 10px;
-      color: #999999; }
+      color: #666666; }
 
 #page_account {
   padding: 10px;
@@ -745,6 +815,8 @@ table.comment {
 
 #page_footer {
   text-align: center;
+  color: #999999;
+  border-top: 1px solid #d9d9d9;
   width: 100%;
   bottom: 0;
   height: 35px;
@@ -769,9 +841,10 @@ h2.feed_date {
   clear: both;
   font-family: georgia;
   font-style: italic;
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: normal;
   color: gray;
-  text-decoration: underline; }
+  text-decoration: none; }
 
 table.feed {
   margin: 0 auto;
@@ -785,8 +858,10 @@ div.experience_card {
   float: left;
   padding: 15px;
   margin-bottom: 25px; }
+  div.experience_card h3 {
+    font-size: 18px; }
   div.experience_card .cover {
-    border: 6px solid #d0d0d0;
+    border: 6px solid #e7e7e7;
     -moz-border-radius: 6px;
     position: relative;
     width: 280px;
@@ -808,12 +883,13 @@ div.experience_card {
       opacity: 0.7;
       right: 10px;
       bottom: 10px;
-      -moz-border-radius: 6px;
+      -moz-border-radius: 4px;
       color: white;
       font-size: 10px;
-      padding: 3px; }
+      padding: 3px 10px; }
   div.experience_card .stats {
     border-top: 1px solid #999999;
+    color: #999999;
     margin-top: 10px;
     padding: 10px; }
 
@@ -834,11 +910,14 @@ div.experience_card {
 .user_card {
   margin-bottom: 20px;
   text-align: left;
-  margin-left: 25px; }
+  margin-left: 0px; }
   .user_card h2 img {
     margin: 0;
     vertical-align: middle;
-    padding: 10px; }
+    padding-top: 10px; }
 
 table.network th {
   text-align: left; }
+
+.moment_card p {
+  font-size: 13px; }
