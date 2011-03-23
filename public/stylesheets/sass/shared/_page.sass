@@ -55,7 +55,7 @@ table
 div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert
   border-left: none
   border-right: none
-  @import border_radius(0px)
+  @include border_radius(0px)
   margin-bottom: 0
 
 div.alert, #flash_alert
@@ -113,7 +113,7 @@ div.alert a, #flash_alert a
           text-decoration: none
           background: #040404
           opacity: .6
-          @import border_radius(6px)
+          @include border_radius(6px)
           -moz-box-shadow: 0 0 2px rgba (0, 0, 0, 0.4)
           padding: 4px 8px
         &.selected
@@ -179,7 +179,7 @@ div.alert a, #flash_alert a
     a
       background-clip: padding-box
       border: 1px solid #000000
-      @import border_radius(4px)
+      @include border_radius(4px)
       box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px #333333
       background-image: -moz-linear-gradient(center top , #505050 0pt, #333333 50%, #272727 50%, #111111 100%)
       text-shadow: 0 1px 1px #000000

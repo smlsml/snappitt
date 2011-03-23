@@ -593,7 +593,9 @@ ol ol, ol ul, ul ul, ul ol {
   -moz-transition-timing-function: linear;
   background: none repeat scroll 0 0 white;
   border: 1px solid #b3b3b3;
-  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   width: 220px;
   font: 15px/18px "Helvetica Neue", Arial, sans-serif;
   height: 24px;
@@ -611,7 +613,9 @@ ol ol, ol ul, ul ul, ul ol {
   -moz-transition-timing-function: linear;
   background: none repeat scroll 0 0 white;
   border: 1px solid #b3b3b3;
-  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   width: 220px;
   font: 15px/18px "Helvetica Neue", Arial, sans-serif;
   height: 24px;
@@ -625,7 +629,9 @@ ol ol, ol ul, ul ul, ul ol {
     box-shadow: 0 0 5px 0 #b5dff1; }
 .session_controller #page_center input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
-  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   border: none;
   font-family: Helvetica Neue, Arial, sans-serif;
   font-size: 15px;
@@ -696,9 +702,9 @@ table.comment {
 div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert {
   border-left: none;
   border-right: none;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
   margin-bottom: 0; }
 
 div.alert, #flash_alert {
@@ -757,6 +763,8 @@ div.alert a, #flash_alert a {
           background: #040404;
           opacity: 0.6;
           -moz-border-radius: 6px;
+          -webkit-border-radius: 6px;
+          border-radius: 6px;
           -moz-box-shadow: 0 0 2px rgba 0, 0, 0, 0.4;
           padding: 4px 8px; }
         #page_header ul li a.selected span {
@@ -820,7 +828,9 @@ div.alert a, #flash_alert a {
     #page_header #page_logout a {
       background-clip: padding-box;
       border: 1px solid black;
-      border-radius: 4px 4px 4px 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
       box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px #333333;
       background-image: -moz-linear-gradient(center top, #505050 0pt, #333333 50%, #272727 50%, #111111 100%);
       text-shadow: 0 1px 1px black;
@@ -912,6 +922,8 @@ div.experience_card {
   div.experience_card .cover {
     border: 6px solid #e7e7e7;
     -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
     position: relative;
     width: 280px;
     height: 157px;
@@ -925,6 +937,8 @@ div.experience_card {
       height: 48px;
       background-color: white;
       -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      border-radius: 6px;
       -moz-box-shadow: 0px 0px 5px black; }
     div.experience_card .cover .moments {
       position: absolute;
@@ -933,6 +947,8 @@ div.experience_card {
       right: 10px;
       bottom: 10px;
       -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
       color: white;
       font-size: 10px;
       padding: 3px 10px; }
@@ -977,7 +993,9 @@ form input[type="text"] {
   -moz-transition-timing-function: linear;
   background: none repeat scroll 0 0 white;
   border: 1px solid #b3b3b3;
-  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   width: 180px;
   font: 15px/18px "Helvetica Neue", Arial, sans-serif;
   height: 24px;
@@ -995,7 +1013,9 @@ form input[type="password"] {
   -moz-transition-timing-function: linear;
   background: none repeat scroll 0 0 white;
   border: 1px solid #b3b3b3;
-  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   width: 180px;
   font: 15px/18px "Helvetica Neue", Arial, sans-serif;
   height: 24px;
@@ -1009,7 +1029,9 @@ form input[type="password"] {
     box-shadow: 0 0 5px 0 #b5dff1; }
 form input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
-  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   border: none;
   font-family: Helvetica Neue, Arial, sans-serif;
   font-size: 15px;
