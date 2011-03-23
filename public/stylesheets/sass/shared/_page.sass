@@ -2,7 +2,31 @@ body
   margin: 0
   padding: 0
   font-family: Helvetica Neue !important
-  font-size: 14px !important
+  font-size: 15px !important
+  color: #999
+
+h1
+  font-size: 24px
+  color: #666
+  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3)
+h2
+  font-size: 20px
+  color: #666
+  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3)
+    
+a, a:link
+  color: #009ad7
+  text-decoration: none
+
+a:visited
+  color: #009ad7
+
+a:hover
+  color: #009ad7
+  text-decoration: underline
+
+a:focus
+  color: #009ad7
 
 textarea.auto
   height: auto
@@ -39,13 +63,12 @@ table
   width: 100%
   text-align: center
   background-image: url(/images/header-bg.jpg)
-  -moz-box-shadow: 0 2px 4px #2C2C2C
   a
-    color: white
+    color: #999999
   h1
     font-size: 28px
-    color: white
-    font-family: Georgia, Helvetica Neue
+    color: #f5f5f5
+    font-family: Georgia
     font-style: italic
     margin: 0
     padding: 15px 0 5px
@@ -61,7 +84,9 @@ table
       padding: 0
       list-style: none
       &:hover a span
-        display: inline
+        display: block
+        font-size: 13px
+        color: #f5f5f5
       a
         background: url(/images/header-icons.png) no-repeat 0 0
         width: 80px
@@ -74,12 +99,15 @@ table
           display: none
           text-decoration: none
           background: black
+          opacity: .9
           -moz-border-radius: 6px
-          -moz-box-shadow: 0 0 2px black
-          padding: 2px 4px
+          -moz-box-shadow: 0 0 2px rgba (0, 0, 0, 0.4)
+          padding: 4px 10px
         &.selected
           span
-            display: inline
+            display: block
+            font-size: 13px
+            color: #f5f5f5
         &.home
           background-position: -60px -8px
           &.selected
@@ -134,9 +162,10 @@ table
     position: absolute
     right: 50px
     top: 25px
+    color: #666666
     small
       font-size: 10px
-      color: #999
+      color: #666
 
 #page_account
   padding: 10px
@@ -159,6 +188,8 @@ table
 
 #page_footer
   text-align: center
+  color: #999999
+  border-top: 1px solid #d9d9d9
   width: 100%
   bottom: 0
   height: 35px

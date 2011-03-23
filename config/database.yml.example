@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  database: photo_dev
+  username: stevehurd
+  password:
+  encoding: unicode
+  pool: 3
+  timeout: 1000
+
+test:
+  adapter: postgresql
+  database: photo_test
+  username: stevehurd
+  password:
+  encoding: unicode
+  pool: 3
+  timeout: 1000
