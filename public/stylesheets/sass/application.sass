@@ -1,5 +1,10 @@
 $asset_url: 'http://snappitt-assets.s3.amazonaws.com'
 
+@mixin border_radius($radius)
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+  border-radius: $radius
+
 @import "flutie"
 @import controllers/home
 @import controllers/experience
