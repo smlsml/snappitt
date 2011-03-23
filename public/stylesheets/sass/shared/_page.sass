@@ -52,6 +52,22 @@ table
     td
       text-align: left
 
+div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert
+  border-left: none
+  border-right: none
+  -moz-border-radius: 0
+  -webkit-border-radius: 0
+  border-radius: 0
+  margin-bottom: 0
+
+div.alert, #flash_alert
+  background: #FBE3E4
+  border-color: #FBC2C4
+  color: #D12F19
+
+div.alert a, #flash_alert a
+  color: #D12F19
+
 #page_header
   z-index: 100
   background-color: #333
@@ -163,13 +179,36 @@ table
     right: 50px
     top: 25px
     color: #666666
+    a
+      background-clip: padding-box
+      border: 1px solid #000000
+      border-radius: 4px 4px 4px 4px
+      box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px #333333
+      background-image: -moz-linear-gradient(center top , #505050 0pt, #333333 50%, #272727 50%, #111111 100%)
+      text-shadow: 0 1px 1px #000000
+      color: #FFFFFF
+      font-family: "helvetica neue",helvetica,Arial,sans-serif
+      font-size: 11px
+      font-weight: bold
+      line-height: 20px
+      outline: medium none
+      padding: 5px 20px
+      text-align: center
+      text-decoration: none
+      &:hover
+        background-image: -moz-linear-gradient(center top , #5C5C5C 0pt, #333333 50%, #272727 50%, #111111 100%)
+      &:active
+        background-image: -moz-linear-gradient(center top , #111111 0pt, #333333 100%)
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 1px #333333
     small
       font-size: 10px
       color: #666
 
+
 #page_account
-  padding: 10px
-  background-color: lightGrey
+  padding: 20px
+  background-color: white
+  border-bottom: 1px solid #d9d9d9
   table.signin
     width: auto
     margin: 0 auto

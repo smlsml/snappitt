@@ -10,8 +10,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Success, error & notice boxes for messages and errors. */
-div.error, div.notice, div.success,
-#flash_failure, #flash_success, #flash_notice {
+div.error, div.notice, div.success, div.alert,
+#flash_failure, #flash_alert #flash_success, #flash_notice {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border: 1px solid #ddd;
