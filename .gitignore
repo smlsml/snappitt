@@ -11,5 +11,5 @@ tmp/
 
 public/system
 
-# databse config
+# database config
 config/database.yml

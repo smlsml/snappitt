@@ -27,3 +27,5 @@ en:
   footer:
     moment_count: 'Moments Snapped:'
     developed_in: 'Designed and Developed in Denver, CO'
+  sign:
+    in: 'Sign In'

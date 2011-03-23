@@ -4,21 +4,23 @@
   <table class="signin">
     <tr>
       <td>
-        <%= f.label :login %><br/><%= f.text_field :login %>
+        <%= f.label :login %>
       </td>
-      <td>
-        <%= f.label :password %><br/><%= f.password_field :password %>
-      </td>
-      <td>
+      <td class="remember">
         <% if devise_mapping.rememberable? %>
-          <%= f.label :remember_me %><br/>
           <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
         <% end %>
       </td>
-      <td>
-        <%= f.submit "Sign in" %><br/>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= f.text_field :login %>
+        <%= f.password_field :password %>
+        <%= f.submit t('sign.in') %>
       </td>
-      <td>
+      <td class="side">
         <%= link_to "Signup!", new_user_registration_path %>
       </td>
     </tr>
