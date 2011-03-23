@@ -9,8 +9,8 @@ class Experience < ActiveRecord::Base
 
   scope :user_feed, lambda { |user|
     includes(:creator => :profile, :moments => :asset).
-    where("visibility IS NULL").
-    order('created_at DESC')
+    where(:visibility.ne => 'private', :users => {:confirmed_at.ne => nil}).
+    order('experiences.created_at DESC')
   }
 
   scope :by_user, lambda { |user|

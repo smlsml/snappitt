@@ -54,7 +54,6 @@ table
 
 #page_header
   z-index: 100
-  background-color: #333
   color: white
   position: fixed
   height: 135px
@@ -62,7 +61,7 @@ table
   left: 0
   width: 100%
   text-align: center
-  background-image: url(/images/header-bg.jpg)
+  background: url('#{$asset_url}/header/header-bg.jpg') #333
   a
     color: #999999
   h1
@@ -83,38 +82,38 @@ table
       margin: 0
       padding: 0
       list-style: none
-      &:hover a span
-        display: block
-        font-size: 13px
-        color: #f5f5f5
       a
-        background: url(/images/header-icons.png) no-repeat 0 0
+        background: url(#{$asset_url}/header/header-icons.png) no-repeat 0 0
         width: 80px
         height: 80px
         margin: 0 auto
         display: block
         text-decoration: none
         outline: none
+        &:hover span
+          display: inline
+          font-size: 13px
+          color: #f5f5f5
         span
           display: none
           text-decoration: none
-          background: black
-          opacity: .9
+          background: #040404
+          opacity: .6
           -moz-border-radius: 6px
           -moz-box-shadow: 0 0 2px rgba (0, 0, 0, 0.4)
-          padding: 4px 10px
+          padding: 4px 8px
         &.selected
           span
-            display: block
+            display: inline
             font-size: 13px
             color: #f5f5f5
         &.home
           background-position: -60px -8px
           &.selected
             background-position: -60px -368px
-            &:hover, &:focus
+            &:hover
               background-position: -60px -368px
-          &:hover, &:focus
+          &:hover
             background-position: -60px -128px
           &:active
             background-position: -60px -248px
@@ -122,16 +121,16 @@ table
           background-position: -260px -8px
           &.selected
             background-position: -260px -368px
-            &:hover, &:focus
+            &:hover
               background-position: -260px -368px
-          &:hover, &:focus
+          &:hover
             background-position: -260px -128px
           &:active
             background-position: -260px -248px
         &.upload
           width: 105px
           background-position: -448px -8px
-          &:hover, &:focus
+          &:hover
             background-position: -448px -8px
           &:active
             background-position: -448px -8px
@@ -139,9 +138,9 @@ table
           background-position: -660px -8px
           &.selected
             background-position: -660px -368px
-            &:hover, &:focus
+            &:hover
               background-position: -660px -368px
-          &:hover, &:focus
+          &:hover
             background-position: -660px -128px
           &:active
             background-position: -660px -248px
@@ -151,9 +150,9 @@ table
           background-position: -860px -8px
           &.selected
             background-position: -860px -368px
-            &:hover, &:focus
+            &:hover
               background-position: -860px -368px
-          &:hover, &:focus
+          &:hover
             background-position: -860px -128px
           &:active
             background-position: -860px -248px

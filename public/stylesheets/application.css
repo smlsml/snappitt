@@ -683,7 +683,6 @@ table.comment {
 
 #page_header {
   z-index: 100;
-  background-color: #333333;
   color: white;
   position: fixed;
   height: 135px;
@@ -691,7 +690,7 @@ table.comment {
   left: 0;
   width: 100%;
   text-align: center;
-  background-image: url(/images/header-bg.jpg); }
+  background: url("http://snappitt-assets.s3.amazonaws.com/header/header-bg.jpg") #333333; }
   #page_header a {
     color: #999999; }
   #page_header h1 {
@@ -712,37 +711,37 @@ table.comment {
       margin: 0;
       padding: 0;
       list-style: none; }
-      #page_header ul li:hover a span {
-        display: block;
-        font-size: 13px;
-        color: #f5f5f5; }
       #page_header ul li a {
-        background: url(/images/header-icons.png) no-repeat 0 0;
+        background: url(http://snappitt-assets.s3.amazonaws.com/header/header-icons.png) no-repeat 0 0;
         width: 80px;
         height: 80px;
         margin: 0 auto;
         display: block;
         text-decoration: none;
         outline: none; }
+        #page_header ul li a:hover span {
+          display: inline;
+          font-size: 13px;
+          color: #f5f5f5; }
         #page_header ul li a span {
           display: none;
           text-decoration: none;
-          background: black;
-          opacity: 0.9;
+          background: #040404;
+          opacity: 0.6;
           -moz-border-radius: 6px;
           -moz-box-shadow: 0 0 2px rgba 0, 0, 0, 0.4;
-          padding: 4px 10px; }
+          padding: 4px 8px; }
         #page_header ul li a.selected span {
-          display: block;
+          display: inline;
           font-size: 13px;
           color: #f5f5f5; }
         #page_header ul li a.home {
           background-position: -60px -8px; }
           #page_header ul li a.home.selected {
             background-position: -60px -368px; }
-            #page_header ul li a.home.selected:hover, #page_header ul li a.home.selected:focus {
+            #page_header ul li a.home.selected:hover {
               background-position: -60px -368px; }
-          #page_header ul li a.home:hover, #page_header ul li a.home:focus {
+          #page_header ul li a.home:hover {
             background-position: -60px -128px; }
           #page_header ul li a.home:active {
             background-position: -60px -248px; }
@@ -750,16 +749,16 @@ table.comment {
           background-position: -260px -8px; }
           #page_header ul li a.profile.selected {
             background-position: -260px -368px; }
-            #page_header ul li a.profile.selected:hover, #page_header ul li a.profile.selected:focus {
+            #page_header ul li a.profile.selected:hover {
               background-position: -260px -368px; }
-          #page_header ul li a.profile:hover, #page_header ul li a.profile:focus {
+          #page_header ul li a.profile:hover {
             background-position: -260px -128px; }
           #page_header ul li a.profile:active {
             background-position: -260px -248px; }
         #page_header ul li a.upload {
           width: 105px;
           background-position: -448px -8px; }
-          #page_header ul li a.upload:hover, #page_header ul li a.upload:focus {
+          #page_header ul li a.upload:hover {
             background-position: -448px -8px; }
           #page_header ul li a.upload:active {
             background-position: -448px -8px; }
@@ -767,9 +766,9 @@ table.comment {
           background-position: -660px -8px; }
           #page_header ul li a.users.selected {
             background-position: -660px -368px; }
-            #page_header ul li a.users.selected:hover, #page_header ul li a.users.selected:focus {
+            #page_header ul li a.users.selected:hover {
               background-position: -660px -368px; }
-          #page_header ul li a.users:hover, #page_header ul li a.users:focus {
+          #page_header ul li a.users:hover {
             background-position: -660px -128px; }
           #page_header ul li a.users:active {
             background-position: -660px -248px; }
@@ -779,9 +778,9 @@ table.comment {
           background-position: -860px -8px; }
           #page_header ul li a.users_settings.selected {
             background-position: -860px -368px; }
-            #page_header ul li a.users_settings.selected:hover, #page_header ul li a.users_settings.selected:focus {
+            #page_header ul li a.users_settings.selected:hover {
               background-position: -860px -368px; }
-          #page_header ul li a.users_settings:hover, #page_header ul li a.users_settings:focus {
+          #page_header ul li a.users_settings:hover {
             background-position: -860px -128px; }
           #page_header ul li a.users_settings:active {
             background-position: -860px -248px; }
@@ -901,10 +900,10 @@ div.experience_card {
     padding: 10px; }
   .experience_header .stats {
     position: absolute;
-    width: 200px;
+    width: 300px;
     top: 0;
     right: 0;
-    border: 1px solid red;
+    border: 1px solid gray;
     padding: 10px; }
 
 .user_card {

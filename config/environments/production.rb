@@ -50,4 +50,6 @@ Photo::Application.configure do
 
   config.autoload_paths += %W( #{ config.root }/lib/middleware )
   config.middleware.use "NoWWW"
+
+  config.site_assets_prefix = 'http://snappitt-assets.s3.amazonaws.com'
 end

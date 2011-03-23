@@ -107,6 +107,12 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     return render :private if @experience.private? && !can_edit?(@experience.creator)
+
+    unless @experience.creator.confirmed?
+      return render :confirm unless can_edit?(@experience.creator)
+      flash.now[:notice] = 'You must confirm your account before others can view your experiences'
+    end
+
     @experience.increment!(:views, 1) unless is_bot?
   end
 

@@ -12,11 +12,9 @@
 
 </div>
 
+<% if Rails.env != 'production' %>
 <br/>ToDo:<br/>
-log out other user before confirm,
-experiences not public till account confirmed,
 tag people - also triggers an invite,
-redo icon hovers (no more double click on iphone),
 feed is only followers and events,
 notifications,
 facebook share,
@@ -25,3 +23,4 @@ include experience stats in confirmation email,
 wrap whole create process in a transaction,
 user search,
 audit language localization (slacked in a few places)
+<% end %>
