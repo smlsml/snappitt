@@ -88,8 +88,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "helvetica neue", Helvetica, arial, sans-serif; }
 
 /* Success, error & notice boxes for messages and errors. */
-div.error, div.notice, div.success,
-#flash_failure, #flash_success, #flash_notice {
+div.error, div.notice, div.success, div.alert,
+#flash_failure, #flash_alert #flash_success, #flash_notice {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border: 1px solid #ddd;
@@ -594,11 +594,17 @@ ol ol, ol ul, ul ul, ul ol {
   background: none repeat scroll 0 0 white;
   border: 1px solid #b3b3b3;
   border-radius: 4px 4px 4px 4px;
-  font: 13px/18px "Helvetica Neue", Arial, sans-serif;
+  width: 220px;
+  font: 15px/18px "Helvetica Neue", Arial, sans-serif;
   height: 24px;
   outline: medium none;
   padding: 5px 9px;
   vertical-align: bottom; }
+  .session_controller #page_center input[type="text"]:hover {
+    border-color: #8c8c8c; }
+  .session_controller #page_center input[type="text"]:focus {
+    border-color: #39b2e5;
+    box-shadow: 0 0 5px 0 #b5dff1; }
 .session_controller #page_center input[type="password"] {
   -moz-transition-duration: 0.1s;
   -moz-transition-property: border-color;
@@ -606,11 +612,17 @@ ol ol, ol ul, ul ul, ul ol {
   background: none repeat scroll 0 0 white;
   border: 1px solid #b3b3b3;
   border-radius: 4px 4px 4px 4px;
-  font: 13px/18px "Helvetica Neue", Arial, sans-serif;
+  width: 220px;
+  font: 15px/18px "Helvetica Neue", Arial, sans-serif;
   height: 24px;
   outline: medium none;
   padding: 5px 9px;
   vertical-align: bottom; }
+  .session_controller #page_center input[type="password"]:hover {
+    border-color: #8c8c8c; }
+  .session_controller #page_center input[type="password"]:focus {
+    border-color: #39b2e5;
+    box-shadow: 0 0 5px 0 #b5dff1; }
 .session_controller #page_center input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
   border-radius: 4px 4px 4px 4px;
@@ -620,9 +632,9 @@ ol ol, ol ul, ul ul, ul ol {
   color: white;
   display: absolute;
   font-weight: bold;
-  height: 30px;
+  height: 35px;
   line-height: 30px;
-  margin: 10px 0 10px 2px;
+  margin: 10px 0 -8px 2px;
   padding: 0 18px; }
   .session_controller #page_center input[type="submit"]:hover {
     background: none repeat scroll 0 0 #90c100; }
@@ -680,6 +692,22 @@ table.comment {
   margin: 0 auto; }
   table.comment td {
     text-align: left; }
+
+div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert {
+  border-left: none;
+  border-right: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  margin-bottom: 0; }
+
+div.alert, #flash_alert {
+  background: #fbe3e4;
+  border-color: #fbc2c4;
+  color: #d12f19; }
+
+div.alert a, #flash_alert a {
+  color: #d12f19; }
 
 #page_header {
   z-index: 100;
@@ -789,13 +817,35 @@ table.comment {
     right: 50px;
     top: 25px;
     color: #666666; }
+    #page_header #page_logout a {
+      background-clip: padding-box;
+      border: 1px solid black;
+      border-radius: 4px 4px 4px 4px;
+      box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px #333333;
+      background-image: -moz-linear-gradient(center top, #505050 0pt, #333333 50%, #272727 50%, #111111 100%);
+      text-shadow: 0 1px 1px black;
+      color: white;
+      font-family: "helvetica neue", helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 20px;
+      outline: medium none;
+      padding: 5px 20px;
+      text-align: center;
+      text-decoration: none; }
+      #page_header #page_logout a:hover {
+        background-image: -moz-linear-gradient(center top, #5c5c5c 0pt, #333333 50%, #272727 50%, #111111 100%); }
+      #page_header #page_logout a:active {
+        background-image: -moz-linear-gradient(center top, #111111 0pt, #333333 100%);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 1px #333333; }
     #page_header #page_logout small {
       font-size: 10px;
       color: #666666; }
 
 #page_account {
-  padding: 10px;
-  background-color: lightGrey; }
+  padding: 20px;
+  background-color: white;
+  border-bottom: 1px solid #d9d9d9; }
   #page_account table.signin {
     width: auto;
     margin: 0 auto; }
@@ -920,3 +970,62 @@ table.network th {
 
 .moment_card p {
   font-size: 13px; }
+
+form input[type="text"] {
+  -moz-transition-duration: 0.1s;
+  -moz-transition-property: border-color;
+  -moz-transition-timing-function: linear;
+  background: none repeat scroll 0 0 white;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px 4px 4px 4px;
+  width: 180px;
+  font: 15px/18px "Helvetica Neue", Arial, sans-serif;
+  height: 24px;
+  outline: medium none;
+  padding: 5px 9px;
+  vertical-align: bottom; }
+  form input[type="text"]:hover {
+    border-color: #8c8c8c; }
+  form input[type="text"]:focus {
+    border-color: #39b2e5;
+    box-shadow: 0 0 5px 0 #b5dff1; }
+form input[type="password"] {
+  -moz-transition-duration: 0.1s;
+  -moz-transition-property: border-color;
+  -moz-transition-timing-function: linear;
+  background: none repeat scroll 0 0 white;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px 4px 4px 4px;
+  width: 180px;
+  font: 15px/18px "Helvetica Neue", Arial, sans-serif;
+  height: 24px;
+  outline: medium none;
+  padding: 5px 9px;
+  vertical-align: bottom; }
+  form input[type="password"]:hover {
+    border-color: #8c8c8c; }
+  form input[type="password"]:focus {
+    border-color: #39b2e5;
+    box-shadow: 0 0 5px 0 #b5dff1; }
+form input[type="submit"] {
+  background: none repeat scroll 0 0 #97ca00;
+  border-radius: 4px 4px 4px 4px;
+  border: none;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  height: 35px;
+  line-height: 30px;
+  vertical-align: top;
+  padding: 0 18px; }
+  form input[type="submit"]:hover {
+    background: none repeat scroll 0 0 #90c100; }
+form td {
+  text-align: left; }
+  form td.side {
+    border-left: 1px dotted black !important;
+    vertical-align: middle;
+    padding-left: 20px; }
+  form td.remember {
+    text-align: right; }
