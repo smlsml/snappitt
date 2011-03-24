@@ -11,7 +11,7 @@ class ExperiencesController < ApplicationController
   def edit
     @experience = Experience.find_by_id(params[:id])
     new
-    @upload_email = ('exp%s@%s' % [@experience.id, t('app.host')]) if @experience
+    @upload_email = ('post%s@%s' % [@experience.id, t('app.host')]) if @experience
     render :new
   end
 
@@ -72,7 +72,7 @@ class ExperiencesController < ApplicationController
     while @subject.gsub!(/^re:/i,''); @subject.strip!; end
     while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end
 
-    @experience = Experience.find_by_id($1) if @to =~ /exp([0-9]+)@/i
+    @experience = Experience.find_by_id($1) if @to =~ /post([0-9]+)@/i
     @experience = Experience.new(:title => @subject, :creator => @user) unless @experience
     @experience.visibility = 'private' if params[:to].to_s.downcase.include?('private')
 

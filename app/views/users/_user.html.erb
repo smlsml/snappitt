@@ -4,7 +4,7 @@
                             :height => 48,
                             :alt => user),
                   user_path(user)) %>
-       <%= link_to(user, user_path(user)) %>
+       <span><%= link_to(user, user_path(user)) %></span>
   </h2>
   <% unless current_user == user || !user_signed_in? %>
     <% if current_user.follows(user) %>

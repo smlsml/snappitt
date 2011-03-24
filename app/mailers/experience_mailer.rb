@@ -3,7 +3,7 @@ class ExperienceMailer < ActionMailer::Base
 
   def upload_notification(experience)
     @experience = experience
-    @group = 'exp%s@%s' % [@experience.id, I18n.translate('app.host')]
+    @group = 'post%s@%s' % [@experience.id, I18n.translate('app.host')]
     group = @group
 
     mail :to => @experience.creator.email,

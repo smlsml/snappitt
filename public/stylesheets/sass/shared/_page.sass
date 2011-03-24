@@ -17,16 +17,13 @@ h2
 a, a:link
   color: #009ad7
   text-decoration: none
-
-a:visited
-  color: #009ad7
-
-a:hover
-  color: #009ad7
-  text-decoration: underline
-
-a:focus
-  color: #009ad7
+  &:visited
+    color: #009ad7
+  &:hover
+    color: #009ad7
+    text-decoration: underline
+//  &:focus
+//   color: #009ad7
 
 textarea.auto
   height: auto
@@ -51,6 +48,13 @@ table
     margin: 0 auto
     td
       text-align: left
+
+img
+  border: none
+
+p
+  margin: 0
+  padding: 0
 
 div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert
   border-left: none
@@ -221,6 +225,8 @@ div.alert a, #flash_alert a
     padding-top: 25px
     max-width: 980px
     margin: 0 auto
+    table.network
+      width: 100%
 
 #page_footer
   text-align: center
@@ -228,7 +234,7 @@ div.alert a, #flash_alert a
   border-top: 1px solid #d9d9d9
   width: 100%
   bottom: 0
-  height: 35px
+  min-height: 35px
   background-color: white
   .footer
     max-width: 980px
