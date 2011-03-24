@@ -25,6 +25,10 @@ class Experience < ActiveRecord::Base
     limit(3)
   }
 
+  scope :last_three, lambda {
+    user_feed.limit(3)
+  }
+
   def private?
     'private' == visibility
   end

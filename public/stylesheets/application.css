@@ -967,10 +967,19 @@ div.experience_card {
   .experience_header .stats {
     position: absolute;
     width: 300px;
-    top: 0;
+    top: 30px;
     right: 0;
     border: 1px solid gray;
     padding: 10px; }
+    .experience_header .stats strong {
+      padding-right: 30px;
+      background: url(/images/header-icons.png) no-repeat -30px -50px blue; }
+      .experience_header .stats strong.views {
+        background-position: -100px -200px; }
+      .experience_header .stats strong.likes {
+        background-position: -100px -200px; }
+      .experience_header .stats strong.comments {
+        background-position: -100px -200px; }
 
 .user_card {
   margin-bottom: 20px;
@@ -984,8 +993,19 @@ div.experience_card {
 table.network th {
   text-align: left; }
 
+.moment_card img {
+  margin: 0; }
 .moment_card p {
   font-size: 13px; }
+  .moment_card p.links {
+    width: 620px;
+    text-align: right;
+    margin: 0 auto; }
+.moment_card blockquote {
+  width: 620px;
+  margin: 10px auto;
+  border: none;
+  padding: 0; }
 
 form input[type="text"] {
   -moz-transition-duration: 0.1s;

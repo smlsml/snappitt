@@ -12,9 +12,9 @@
   <%= @experience.creator.experiences_count %> Experiences &bull;
   <%= @experience.creator.followers.count %> Followers<br/>
   <div class="stats">
-    <strong><%= @experience.views %></strong> Views -
-    <strong><%= @experience.likes_count %></strong> Likes -
-    <strong><%= @experience.comments_count %></strong> Comments<br/>
+    <strong class="views" title="Views"><%= @experience.views %></strong> Views -
+    <strong class="likes" title="Likes"><%= @experience.likes_count %></strong> Likes -
+    <strong class="comments" title="Comments"><%= @experience.comments_count %></strong> Comments<br/>
   </div>
   <br style="clear: both"/>
 </div>
@@ -22,9 +22,15 @@
 <% @experience.moments.each do |m| %>
   <div class="moment_card">
     <%= image_tag(m.photo_url(:large)) %>
-    <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.creator) %>
+
+    <p class="links">
+      <%= link_to('Like', like_experience_moment_path(@experience, m)) %> &nbsp;
+      <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.creator) %>
+    </p>
+
+    <blockquote><%= t(:lq).html_safe %><%= m.caption %><%= t(:rq).html_safe %></blockquote>
+
     <p>
-      <%= t(:lq).html_safe %><%= m.caption %><%= t(:rq).html_safe %><br/>
       Created: <%= m.created_at.to_formatted_s(:mdy) %>
       <%= (' via %s' % m.source).html_safe if m.source %>
       <% if m.asset %>
@@ -37,9 +43,6 @@
 
     <fieldset>
       <legend>Comments</legend>
-      <h3>
-        <%= link_to('Like', like_experience_moment_path(@experience, m)) %>
-      </h3>
       <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
         <textarea name="comment" rows="2" cols="50" class="auto"></textarea><br/>
         <input type="submit" value="Add Comment"/><br/>

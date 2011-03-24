@@ -1,6 +1,8 @@
 <% experience_date = experience.created_at.to_formatted_s(:mdy) %>
+<% today = Time.now.to_formatted_s(:mdy) %>
+<% date = (today == experience_date ? 'Today' : experience_date) %>
 <% if @last_feed_date != experience_date; %>
-  <h2 class="feed_date"><%= experience_date %></h2>
+  <h2 class="feed_date"><%= @title || date %></h2>
 <% @last_feed_date = experience_date; end %>
 
 <div class="experience_card">
