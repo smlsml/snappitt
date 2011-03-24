@@ -50,7 +50,6 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     fastthread (1.0.7)
-    flutie (1.1.5)
     gem_plugin (0.2.3)
     geokit (1.5.0)
     geokit-rails (1.1.4)
@@ -129,7 +128,6 @@ DEPENDENCIES
   compass
   delayed_job
   devise
-  flutie (~> 1.1)
   geokit
   geokit-rails (= 1.1.4)
   haml
