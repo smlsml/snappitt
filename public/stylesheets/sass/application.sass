@@ -5,6 +5,8 @@ $asset_url: 'http://snappitt-assets.s3.amazonaws.com'
   -webkit-border-radius: $radius
   border-radius: $radius
 
+@import "fancy-buttons"
+
 @import controllers/home
 @import controllers/experience
 @import controllers/session
@@ -14,3 +16,9 @@ $asset_url: 'http://snappitt-assets.s3.amazonaws.com'
 @import shared/follow
 @import shared/moment
 @import shared/form
+
+a.button
+  @include fancy-button-matte(#c0c0c0, 14px, 2em, 1px)
+  color: black
+  &:hover
+    text-decoration: none

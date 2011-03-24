@@ -9,6 +9,8 @@ gem 'paperclip'
 gem 'delayed_job'
 gem 'meta_where'
 gem 'compass'
+gem 'compass-colors'
+gem 'fancy-buttons'
 gem 'aws-s3'
 gem 'rmagick', :require => false
 gem 'geokit'
