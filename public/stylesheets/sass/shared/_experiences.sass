@@ -60,20 +60,26 @@ div.experience_card
 .experience_header
   position: relative
   text-align: left
-  img
-    float: left
+  img.icon
     @include border_radius(4px)
     @include box-shadow(#666, 0, 1px, 2px, 0)
+    position: absolute
+    top: 0
+    left: 0
+  padding-left: 63px
+  margin-bottom: 20px
+  var
+    color: gray
+  .by
+  .details
   .stats
     position: absolute
-    width: 300px
-    top: 30px
+    top: 0
     right: 0
-    border: 1px solid gray
     padding: 10px
-    strong
-      padding-right: 30px
-      background: url(/images/header-icons.png) no-repeat -30px -50px blue
+    background-color: $graySmoke
+    @include border-radius(6px)
+    dfn
       &.views
         background-position: -100px -200px
       &.likes

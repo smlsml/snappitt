@@ -16,6 +16,6 @@
   <% end %>
   </h2>
   <p><%= 'Experiences: %s | Likes: %s | Followers: %s' % [user.experiences.size, user.likes.size, user.followers.size] %></p>
-  <q><%= t(:lq).html_safe << user.profile.bio.to_s << t(:rq).html_safe %></q>
+  <q><%= (t(:lq).html_safe << user.profile.bio.to_s << t(:rq).html_safe) unless user.profile.bio.blank? %></q>
 
 </div>

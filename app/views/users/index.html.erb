@@ -7,10 +7,10 @@
 <table class="network">
   <tr>
     <th><h2>Newest</h2></th>
-    <th><h2>Popular</h2></th>
+    <th><h2>Most Active</h2></th>
   </tr>
   <tr>
-    <td><% User.order('created_at DESC').limit(10).each{ |u| concat render :partial => '/users/user', :locals => {:user => u} }%></td>
-    <td><% User.order('likes_count DESC').limit(10).each{ |u| concat render :partial => '/users/user', :locals => {:user => u} }%></td>
+    <td><%= render User.newest.limit(10) %></td>
+    <td><%= render User.most_active.limit(10) %></td>
   </tr>
 </table>
