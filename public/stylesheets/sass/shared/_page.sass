@@ -1,89 +1,3 @@
-@import shared/base
-
-body
-  margin: 0
-  padding: 0
-  font-family: Helvetica Neue !important
-  font-size: 15px !important
-  color: #999
-
-h1
-  font-size: 24px
-  color: #666
-  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3)
-h2
-  font-size: 20px
-  color: #666
-  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3)
-    
-a
-  color: #009ad7
-  text-decoration: none
-  &:visited
-    color: #009ad7
-  &:hover
-    color: #009ad7
-    text-decoration: underline
-  &:focus
-    color: #009ad7
-
-textarea.auto
-  height: auto
-  width: auto
-
-dl
-  margin: 0
-  line-height: 1.2em
-  dt
-    font-weight: normal
-    margin: 0
-  dd
-    margin: 0
-
-table
-  td
-    border: none !important
-    img
-      margin: 0
-  &.comment
-    width: auto
-    margin: 0 auto
-    td
-      text-align: left
-
-img
-  border: none
-
-p
-  margin: 0
-  padding: 0
-
-label
-  display: block
-
-fieldset
-  background: $graySmoke
-  border: none
-  padding: 10px
-  @include border-radius(6px)
-
-a.button
-  @include snappit_button
-
-div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert
-  border-left: none
-  border-right: none
-  @include border_radius(0px)
-  margin-bottom: 0
-
-div.alert, #flash_alert
-  background: #FBE3E4
-  border-color: #FBC2C4
-  color: #D12F19
-
-div.alert a, #flash_alert a
-  color: #D12F19
-
 #page_header
   z-index: 100
   color: white
@@ -229,6 +143,19 @@ div.alert a, #flash_alert a
     margin: 0 auto
     label
       display: inline
+    td
+      text-align: left
+      &.side
+        a
+          border-left: 1px dotted black 
+          padding-left: 20px
+          padding-top: 20px
+          padding-bottom: 20px
+        vertical-align: middle
+        padding-left: 20px
+
+      &.remember
+        text-align: right
 
 #page_middle
   margin-top: 135px
@@ -241,6 +168,7 @@ div.alert a, #flash_alert a
     margin: 0 auto
     table.network
       width: 100%
+
 
 #page_footer
   text-align: center
