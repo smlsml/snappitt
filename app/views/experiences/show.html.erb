@@ -1,22 +1,26 @@
 <div class="experience_header">
-  <img src="<%= @experience.creator.profile.photo_url %>"/>
-  <h1><%= @experience.title %></h1>
-  <p>
-  <strong><%= @experience.moments_count %></strong> moments at
-  <strong>X</strong> place with
-  <strong>X</strong> people and
-  <strong>X</strong> things
-  </p>
+  <img class="icon" src="<%= @experience.creator.profile.photo_url %>" alt="<%= @experience.creator %>"/>
 
-  By <%= link_to(@experience.creator, user_path(@experience.creator), :title => @experience.creator.profile.realname) %> &nbsp;
-  <%= @experience.creator.experiences_count %> Experiences &bull;
-  <%= @experience.creator.followers.count %> Followers<br/>
-  <div class="stats">
-    <strong class="views" title="Views"><%= @experience.views %></strong> Views -
-    <strong class="likes" title="Likes"><%= @experience.likes_count %></strong> Likes -
-    <strong class="comments" title="Comments"><%= @experience.comments_count %></strong> Comments<br/>
+  <h2><%= @experience.title %></h2>
+
+  <div class="details">
+    <var><%= @experience.moments_count %></var> moments at
+    <var>X</var> places with
+    <var>X</var> people and
+    <var>X</var> things
   </div>
-  <br style="clear: both"/>
+
+  <div class="by">
+    By <%= link_to(@experience.creator, user_path(@experience.creator), :title => @experience.creator.profile.realname) %> &nbsp;
+    <dfn><var><%= @experience.creator.experiences_count %></var> Experiences</dfn> &bull;
+    <dfn><var><%= @experience.creator.followers.count %></var> Followers</dfn>
+  </div>
+
+  <div class="stats">
+    <dfn class="views" title="Views"><var><%= @experience.views %></var> Views</dfn> &bull;
+    <dfn class="likes" title="Likes"><var><%= @experience.likes_count %></var> Likes</dfn> &bull;
+    <dfn class="comments" title="Comments"><var><%= @experience.comments_count %></var> Comments</dfn>
+  </div>
 </div>
 
 <% @experience.moments.each do |m| %>

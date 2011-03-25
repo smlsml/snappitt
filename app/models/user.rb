@@ -32,6 +32,18 @@ class User < ActiveRecord::Base
 
   has_many :experiences, :foreign_key => 'user_id_creator'
 
+  scope :most_active, lambda {
+    where(:confirmed_at.ne => nil).
+    order('experiences_count DESC').
+    limit(50)
+  }
+
+  scope :newest, lambda {
+    where(:confirmed_at.ne => nil).
+    order('created_at DESC').
+    limit(50)
+  }
+
   def follows(user)
     following.exists?(user) || self.id == user.id
   end
