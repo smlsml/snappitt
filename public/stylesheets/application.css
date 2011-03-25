@@ -2,7 +2,7 @@
 /* line 177, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class, a.button {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png?1301007155') repeat-x bottom left;
+  background: url('/images/button_bg.png?1301005384') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -36,6 +36,10 @@
 .experience_controller fieldset.upload textarea {
   width: auto;
   height: auto;
+}
+/* line 9, sass/controllers/_experience.sass */
+.experience_controller fieldset textarea {
+  vertical-align: middle;
 }
 
 /* line 3, sass/controllers/_session.sass */
@@ -371,30 +375,34 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* line 157, sass/shared/_page.sass */
+/* line 156, sass/shared/_page.sass */
 #page_account table.signin td.remember {
   text-align: right;
 }
+/* line 158, sass/shared/_page.sass */
+#page_account table.signin td input[type="submit"] {
+  vertical-align: top;
+}
 
-/* line 160, sass/shared/_page.sass */
+/* line 161, sass/shared/_page.sass */
 #page_middle {
   margin-top: 135px;
   text-align: center;
   padding-bottom: 50px;
   background-color: whiteSmoke;
 }
-/* line 165, sass/shared/_page.sass */
+/* line 166, sass/shared/_page.sass */
 #page_middle #page_center {
   padding-top: 25px;
   max-width: 980px;
   margin: 0 auto;
 }
-/* line 169, sass/shared/_page.sass */
+/* line 170, sass/shared/_page.sass */
 #page_middle #page_center table.network {
   width: 100%;
 }
 
-/* line 173, sass/shared/_page.sass */
+/* line 174, sass/shared/_page.sass */
 #page_footer {
   text-align: center;
   color: #999999;
@@ -404,19 +412,19 @@
   min-height: 35px;
   background-color: white;
 }
-/* line 181, sass/shared/_page.sass */
+/* line 182, sass/shared/_page.sass */
 #page_footer .footer {
   max-width: 980px;
   padding-top: 10px;
   margin: 0 auto;
   position: relative;
 }
-/* line 186, sass/shared/_page.sass */
+/* line 187, sass/shared/_page.sass */
 #page_footer .footer .links {
   color: gray;
   text-align: left;
 }
-/* line 189, sass/shared/_page.sass */
+/* line 190, sass/shared/_page.sass */
 #page_footer .footer .stats {
   position: absolute;
   top: 10px;
@@ -527,6 +535,10 @@ div.experience_card .stats {
   margin-bottom: 20px;
 }
 /* line 63, sass/shared/_experiences.sass */
+.experience_header h2 {
+  min-height: 1.5em;
+}
+/* line 65, sass/shared/_experiences.sass */
 .experience_header img.icon {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -542,11 +554,11 @@ div.experience_card .stats {
   top: 0;
   left: 0;
 }
-/* line 71, sass/shared/_experiences.sass */
+/* line 73, sass/shared/_experiences.sass */
 .experience_header var {
   color: gray;
 }
-/* line 75, sass/shared/_experiences.sass */
+/* line 77, sass/shared/_experiences.sass */
 .experience_header .stats {
   position: absolute;
   top: 0;
@@ -560,15 +572,15 @@ div.experience_card .stats {
   -khtml-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 83, sass/shared/_experiences.sass */
+/* line 85, sass/shared/_experiences.sass */
 .experience_header .stats dfn.views {
   background-position: -100px -200px;
 }
-/* line 85, sass/shared/_experiences.sass */
+/* line 87, sass/shared/_experiences.sass */
 .experience_header .stats dfn.likes {
   background-position: -100px -200px;
 }
-/* line 87, sass/shared/_experiences.sass */
+/* line 89, sass/shared/_experiences.sass */
 .experience_header .stats dfn.comments {
   background-position: -100px -200px;
 }
@@ -641,6 +653,10 @@ table.network th {
   margin: 10px auto;
   border: none;
   padding: 0;
+}
+/* line 17, sass/shared/_moment.sass */
+.moment_card span.source {
+  border-bottom: 1px dotted lightBlue;
 }
 
 /* line 2, sass/shared/_form.sass */
@@ -725,14 +741,13 @@ form input[type="submit"] {
   font-weight: bold;
   height: 35px;
   line-height: 30px;
-  vertical-align: top;
   padding: 0 18px;
 }
-/* line 55, sass/shared/_form.sass */
+/* line 54, sass/shared/_form.sass */
 form input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
-/* line 58, sass/shared/_form.sass */
+/* line 57, sass/shared/_form.sass */
 form textarea {
   -moz-transition-duration: 0.1s;
   -moz-transition-property: border-color;
@@ -753,11 +768,11 @@ form textarea {
   padding: 5px 9px;
   vertical-align: bottom;
 }
-/* line 72, sass/shared/_form.sass */
+/* line 71, sass/shared/_form.sass */
 form textarea:hover {
   border-color: #8c8c8c;
 }
-/* line 74, sass/shared/_form.sass */
+/* line 73, sass/shared/_form.sass */
 form textarea:focus {
   border-color: #39b2e5;
   -moz-box-shadow: #b5dff1 0 0 5px 0;

@@ -32,11 +32,12 @@
       <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.creator) %>
     </p>
 
-    <blockquote><%= t(:lq).html_safe %><%= m.caption %><%= t(:rq).html_safe %></blockquote>
+    <blockquote><%= (t(:lq).html_safe << m.caption << t(:rq).html_safe) unless m.caption.blank? %></blockquote>
 
     <p>
-      Created: <%= m.created_at.to_formatted_s(:mdy) %>
-      <%= (' via %s' % m.source).html_safe if m.source %>
+      Uploaded at <%= m.created_at.to_formatted_s(:mdy) %> by
+      <%= link_to(@experience.creator, user_path(@experience.creator), :title => @experience.creator.profile.realname) %>
+      <%= (' via <span title="%s" class="source">%s&deg;</span>' % [m.source.name, m.source.short]).html_safe if m.source %>
       <% if m.asset %>
         <br/>
         <%= 'Taken on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
@@ -48,7 +49,7 @@
     <fieldset>
       <legend>Comments</legend>
       <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
-        <textarea name="comment" rows="2" cols="50" class="auto"></textarea><br/>
+        <textarea name="comment" rows="2" cols="60" class="auto"></textarea>
         <input type="submit" value="Add Comment"/><br/>
       <% end %>
 
@@ -87,6 +88,5 @@
   </div>
 <% end %>
 
-<%= link_to('Add Moment', edit_experience_path(@experience)) %>
-<br/><br/>
-<%= link_to('Delete Experience', experience_path(@experience), :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.creator) %>
+<%= link_to('Add Moment', edit_experience_path(@experience), :class => 'button') %> &nbsp;&nbsp;
+<%= link_to('Delete Experience', experience_path(@experience), :class => 'button', :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.creator) %>
