@@ -40,7 +40,8 @@
       <%= (' via <span title="%s" class="source">%s&deg;</span>' % [m.source.name, m.source.short]).html_safe if m.source %>
       <% if m.asset %>
         <br/>
-        <%= 'Taken on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
+        <%= 'Taken' if m.asset.taken_at || m.asset.device || m.asset.lat %>
+        <%= 'on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
         <%= ' with %s' % m.asset.device if m.asset.device %>
         <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s, %s</a>' % [m.asset.lat, m.asset.lng, m.asset.lat, m.asset.lng]).html_safe if m.asset.lat %>
       <% end %>
