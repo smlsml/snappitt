@@ -8,6 +8,7 @@ form
     @include border_radius(4px)
     width: 180px
     font: 15px/18px "Helvetica Neue",Arial,sans-serif
+    color: #666
     height: 24px
     outline: medium none
     padding: 5px 9px
@@ -16,7 +17,8 @@ form
       border-color: #8c8c8c
     &:focus
       border-color: #39b2e5
-      box-shadow: 0 0 5px 0 #b5dff1
+      +box-shadow(#b5dff1, 0, 0, 5px, 0)
+      
           
   input[type="password"]
     -moz-transition-duration: 0.1s
@@ -27,6 +29,7 @@ form
     @include border_radius(4px)
     width: 180px
     font: 15px/18px "Helvetica Neue",Arial,sans-serif
+    color: #666
     height: 24px
     outline: medium none
     padding: 5px 9px
@@ -35,7 +38,7 @@ form
       border-color: #8c8c8c
     &:focus
       border-color: #39b2e5
-      box-shadow: 0 0 5px 0 #b5dff1
+      @include box-shadow(#b5dff1, 0, 0, 5px, 0)
       
   input[type="submit"]
     background: none repeat scroll 0 0 #97CA00
@@ -60,4 +63,23 @@ form
     &.remember
       text-align: right
 
+  textarea
+    -moz-transition-duration: 0.1s
+    -moz-transition-property: border-color
+    -moz-transition-timing-function: linear
+    background: none repeat scroll 0 0 #FFFFFF
+    border: 1px solid #B3B3B3
+    @include border_radius(4px)
+    width: 180px
+    font: 15px/18px "Helvetica Neue",Arial,sans-serif
+    color: #333
+    height: 24px
+    outline: medium none
+    padding: 5px 9px
+    vertical-align: bottom
+    &:hover
+      border-color: #8c8c8c
+    &:focus
+      border-color: #39b2e5
+      @include box-shadow(#b5dff1, 0, 0, 5px, 0)
 

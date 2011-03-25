@@ -1,2 +1,2 @@
-rake db:migrate && rails s
+git pull && bundle install && rake db:migrate && rails s
 

@@ -1,12 +1,22 @@
 $asset_url: 'http://snappitt-assets.s3.amazonaws.com'
 
+@mixin snappit_button
+  color: #009ad7 !important
+  @include fancy-button-matte(#b5dff1, 13px, .5em)
+  font-family: 'Helvetica Neue', Helvetica, Arial, San-Serif
+  &:hover
+    text-decoration: none
+
 @mixin border_radius($radius)
   -moz-border-radius: $radius
   -webkit-border-radius: $radius
   border-radius: $radius
 
-@import "fancy-buttons"
 
+@import "fancy-buttons"
+@import "compass/css3/box-shadow"
+@import "compass/css3/border-radius"
+@import "compass/css3/transition"
 @import controllers/home
 @import controllers/experience
 @import controllers/session
@@ -16,9 +26,5 @@ $asset_url: 'http://snappitt-assets.s3.amazonaws.com'
 @import shared/follow
 @import shared/moment
 @import shared/form
+@import shared/flashmessage
 
-a.button
-  @include fancy-button-matte(#c0c0c0, 14px, 2em, 1px)
-  color: black
-  &:hover
-    text-decoration: none

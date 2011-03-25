@@ -2,7 +2,7 @@
 /* line 177, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class, a.button {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png?1301005384') repeat-x bottom left;
+  background: url('/images/button_bg.png?1301007155') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -121,7 +121,8 @@
   background: none repeat scroll 0 0 #90c100;
 }
 
-/* line 1, sass/shared/_page.sass */
+@import url(shared/base.css);
+/* line 3, sass/shared/_page.sass */
 body {
   margin: 0;
   padding: 0;
@@ -130,102 +131,172 @@ body {
   color: #999999;
 }
 
-/* line 8, sass/shared/_page.sass */
+/* line 10, sass/shared/_page.sass */
 h1 {
   font-size: 24px;
   color: #666666;
   text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* line 12, sass/shared/_page.sass */
+/* line 14, sass/shared/_page.sass */
 h2 {
   font-size: 20px;
   color: #666666;
   text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* line 17, sass/shared/_page.sass */
+/* line 19, sass/shared/_page.sass */
 a {
   color: #009ad7;
   text-decoration: none;
 }
-/* line 20, sass/shared/_page.sass */
+/* line 22, sass/shared/_page.sass */
 a:visited {
   color: #009ad7;
 }
-/* line 22, sass/shared/_page.sass */
+/* line 24, sass/shared/_page.sass */
 a:hover {
   color: #009ad7;
   text-decoration: underline;
 }
-/* line 25, sass/shared/_page.sass */
+/* line 27, sass/shared/_page.sass */
 a:focus {
   color: #009ad7;
 }
 
-/* line 28, sass/shared/_page.sass */
+/* line 30, sass/shared/_page.sass */
 textarea.auto {
   height: auto;
   width: auto;
 }
 
-/* line 32, sass/shared/_page.sass */
+/* line 34, sass/shared/_page.sass */
 dl {
   margin: 0;
   line-height: 1.2em;
 }
-/* line 35, sass/shared/_page.sass */
+/* line 37, sass/shared/_page.sass */
 dl dt {
   font-weight: normal;
   margin: 0;
 }
-/* line 38, sass/shared/_page.sass */
+/* line 40, sass/shared/_page.sass */
 dl dd {
   margin: 0;
 }
 
-/* line 42, sass/shared/_page.sass */
+/* line 44, sass/shared/_page.sass */
 table td {
   border: none !important;
 }
-/* line 44, sass/shared/_page.sass */
+/* line 46, sass/shared/_page.sass */
 table td img {
   margin: 0;
 }
-/* line 46, sass/shared/_page.sass */
+/* line 48, sass/shared/_page.sass */
 table.comment {
   width: auto;
   margin: 0 auto;
 }
-/* line 49, sass/shared/_page.sass */
+/* line 51, sass/shared/_page.sass */
 table.comment td {
   text-align: left;
 }
 
-/* line 52, sass/shared/_page.sass */
+/* line 54, sass/shared/_page.sass */
 img {
   border: none;
 }
 
-/* line 55, sass/shared/_page.sass */
+/* line 57, sass/shared/_page.sass */
 p {
   margin: 0;
   padding: 0;
 }
 
-/* line 59, sass/shared/_page.sass */
+/* line 61, sass/shared/_page.sass */
 label {
   display: block;
 }
 
-/* line 62, sass/shared/_page.sass */
+/* line 64, sass/shared/_page.sass */
 fieldset {
   background: #efefef;
   border: none;
   padding: 10px;
 }
 
-/* line 67, sass/shared/_page.sass */
+/* line 69, sass/shared/_page.sass */
+a.button {
+  color: #009ad7 !important;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -khtml-border-radius: 0.5em;
+  border-radius: 0.5em;
+  font-size: 13px;
+  line-height: 1.2em;
+  padding: 0.3em 1em;
+  border-width: 1px;
+  background-color: #a7e5ff;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f5fbfd), color-stop(100%, #9bd4ec));
+  background-image: -moz-linear-gradient(top, #f5fbfd 0%, #9bd4ec 100%);
+  background-image: linear-gradient(top, #f5fbfd 0%, #9bd4ec 100%);
+  border-color: #75c3e5;
+  text-shadow: #f3fcff 0px 1px 1px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.83) 0 0 0.1em 1px inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.83) 0 0 0.1em 1px inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.83) 0 0 0.1em 1px inset;
+  box-shadow: rgba(255, 255, 255, 0.83) 0 0 0.1em 1px inset;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  background-clip: padding-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, San-Serif;
+}
+/* line 120, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
+a.button, a.button:visited {
+  color: #222222;
+}
+/* line 31, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
+a.button:hover, a.button:focus {
+  background-color: #98dfff;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e9f5fb), color-stop(100%, #8eceea));
+  background-image: -moz-linear-gradient(top, #e9f5fb 0%, #8eceea 100%);
+  background-image: linear-gradient(top, #e9f5fb 0%, #8eceea 100%);
+  border-color: #67bde3;
+  text-shadow: #e5f7ff 0px 1px 1px;
+}
+/* line 120, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
+a.button:hover, a.button:hover:visited, a.button:focus, a.button:focus:visited {
+  color: #222222;
+}
+/* line 36, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
+a.button:active {
+  background-color: #88dcff;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #96d2eb), color-stop(40%, #a3d8ee), color-stop(85%, #a3d8ee), color-stop(100%, #c1e5f3));
+  background-image: -moz-linear-gradient(top, #96d2eb 0%, #a3d8ee 40%, #a3d8ee 85%, #c1e5f3 100%);
+  background-image: linear-gradient(top, #96d2eb 0%, #a3d8ee 40%, #a3d8ee 85%, #c1e5f3 100%);
+  border-color: #5bb8e0;
+  text-shadow: #d5f3ff 0px -1px -1px;
+  -moz-box-shadow: #75c3e5 0 0.08em 0.1em 1px inset;
+  -webkit-box-shadow: #75c3e5 0 0.08em 0.1em 1px inset;
+  -o-box-shadow: #75c3e5 0 0.08em 0.1em 1px inset;
+  box-shadow: #75c3e5 0 0.08em 0.1em 1px inset;
+}
+/* line 120, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
+a.button:active, a.button:active:visited {
+  color: #222222;
+}
+/* line 7, sass/application.sass */
+a.button:hover {
+  text-decoration: none;
+}
+
+/* line 72, sass/shared/_page.sass */
 div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert {
   border-left: none;
   border-right: none;
@@ -238,19 +309,19 @@ div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #
   margin-bottom: 0;
 }
 
-/* line 73, sass/shared/_page.sass */
+/* line 78, sass/shared/_page.sass */
 div.alert, #flash_alert {
   background: #fbe3e4;
   border-color: #fbc2c4;
   color: #d12f19;
 }
 
-/* line 78, sass/shared/_page.sass */
+/* line 83, sass/shared/_page.sass */
 div.alert a, #flash_alert a {
   color: #d12f19;
 }
 
-/* line 81, sass/shared/_page.sass */
+/* line 86, sass/shared/_page.sass */
 #page_header {
   z-index: 100;
   color: white;
@@ -262,11 +333,11 @@ div.alert a, #flash_alert a {
   text-align: center;
   background: url("http://snappitt-assets.s3.amazonaws.com/header/header-bg.jpg") #333333;
 }
-/* line 91, sass/shared/_page.sass */
+/* line 96, sass/shared/_page.sass */
 #page_header a {
   color: #999999;
 }
-/* line 93, sass/shared/_page.sass */
+/* line 98, sass/shared/_page.sass */
 #page_header h1 {
   font-size: 28px;
   color: #f5f5f5;
@@ -275,14 +346,14 @@ div.alert a, #flash_alert a {
   margin: 0;
   padding: 15px 0 5px;
 }
-/* line 100, sass/shared/_page.sass */
+/* line 105, sass/shared/_page.sass */
 #page_header ul {
   margin: 0 auto;
   padding: 0;
   max-width: 950px;
   min-width: 450px;
 }
-/* line 105, sass/shared/_page.sass */
+/* line 110, sass/shared/_page.sass */
 #page_header ul li {
   width: 20%;
   float: left;
@@ -290,7 +361,7 @@ div.alert a, #flash_alert a {
   padding: 0;
   list-style: none;
 }
-/* line 111, sass/shared/_page.sass */
+/* line 116, sass/shared/_page.sass */
 #page_header ul li a {
   background: url(http://snappitt-assets.s3.amazonaws.com/header/header-icons.png) no-repeat 0 0;
   width: 80px;
@@ -300,13 +371,13 @@ div.alert a, #flash_alert a {
   text-decoration: none;
   outline: none;
 }
-/* line 119, sass/shared/_page.sass */
+/* line 124, sass/shared/_page.sass */
 #page_header ul li a:hover span {
   display: inline;
   font-size: 13px;
   color: #f5f5f5;
 }
-/* line 123, sass/shared/_page.sass */
+/* line 128, sass/shared/_page.sass */
 #page_header ul li a span {
   display: none;
   text-decoration: none;
@@ -321,117 +392,117 @@ div.alert a, #flash_alert a {
   -moz-box-shadow: 0 0 2px rgba 0, 0, 0, 0.4;
   padding: 4px 8px;
 }
-/* line 132, sass/shared/_page.sass */
+/* line 137, sass/shared/_page.sass */
 #page_header ul li a.selected span {
   display: inline;
   font-size: 13px;
   color: #f5f5f5;
 }
-/* line 136, sass/shared/_page.sass */
+/* line 141, sass/shared/_page.sass */
 #page_header ul li a.home {
   background-position: -60px -8px;
 }
-/* line 138, sass/shared/_page.sass */
+/* line 143, sass/shared/_page.sass */
 #page_header ul li a.home.selected {
   background-position: -60px -368px;
 }
-/* line 140, sass/shared/_page.sass */
+/* line 145, sass/shared/_page.sass */
 #page_header ul li a.home.selected:hover {
   background-position: -60px -368px;
 }
-/* line 142, sass/shared/_page.sass */
+/* line 147, sass/shared/_page.sass */
 #page_header ul li a.home:hover {
   background-position: -60px -128px;
 }
-/* line 144, sass/shared/_page.sass */
+/* line 149, sass/shared/_page.sass */
 #page_header ul li a.home:active {
   background-position: -60px -248px;
 }
-/* line 146, sass/shared/_page.sass */
+/* line 151, sass/shared/_page.sass */
 #page_header ul li a.profile {
   background-position: -260px -8px;
 }
-/* line 148, sass/shared/_page.sass */
+/* line 153, sass/shared/_page.sass */
 #page_header ul li a.profile.selected {
   background-position: -260px -368px;
 }
-/* line 150, sass/shared/_page.sass */
+/* line 155, sass/shared/_page.sass */
 #page_header ul li a.profile.selected:hover {
   background-position: -260px -368px;
 }
-/* line 152, sass/shared/_page.sass */
+/* line 157, sass/shared/_page.sass */
 #page_header ul li a.profile:hover {
   background-position: -260px -128px;
 }
-/* line 154, sass/shared/_page.sass */
+/* line 159, sass/shared/_page.sass */
 #page_header ul li a.profile:active {
   background-position: -260px -248px;
 }
-/* line 156, sass/shared/_page.sass */
+/* line 161, sass/shared/_page.sass */
 #page_header ul li a.upload {
   width: 105px;
   background-position: -448px -8px;
 }
-/* line 159, sass/shared/_page.sass */
+/* line 164, sass/shared/_page.sass */
 #page_header ul li a.upload:hover {
   background-position: -448px -8px;
 }
-/* line 161, sass/shared/_page.sass */
+/* line 166, sass/shared/_page.sass */
 #page_header ul li a.upload:active {
   background-position: -448px -8px;
 }
-/* line 163, sass/shared/_page.sass */
+/* line 168, sass/shared/_page.sass */
 #page_header ul li a.users {
   background-position: -660px -8px;
 }
-/* line 165, sass/shared/_page.sass */
+/* line 170, sass/shared/_page.sass */
 #page_header ul li a.users.selected {
   background-position: -660px -368px;
 }
-/* line 167, sass/shared/_page.sass */
+/* line 172, sass/shared/_page.sass */
 #page_header ul li a.users.selected:hover {
   background-position: -660px -368px;
 }
-/* line 169, sass/shared/_page.sass */
+/* line 174, sass/shared/_page.sass */
 #page_header ul li a.users:hover {
   background-position: -660px -128px;
 }
-/* line 171, sass/shared/_page.sass */
+/* line 176, sass/shared/_page.sass */
 #page_header ul li a.users:active {
   background-position: -660px -248px;
 }
-/* line 173, sass/shared/_page.sass */
+/* line 178, sass/shared/_page.sass */
 #page_header ul li a.users:active:hover {
   background-position: -660px -248px;
 }
-/* line 175, sass/shared/_page.sass */
+/* line 180, sass/shared/_page.sass */
 #page_header ul li a.users_settings {
   background-position: -860px -8px;
 }
-/* line 177, sass/shared/_page.sass */
+/* line 182, sass/shared/_page.sass */
 #page_header ul li a.users_settings.selected {
   background-position: -860px -368px;
 }
-/* line 179, sass/shared/_page.sass */
+/* line 184, sass/shared/_page.sass */
 #page_header ul li a.users_settings.selected:hover {
   background-position: -860px -368px;
 }
-/* line 181, sass/shared/_page.sass */
+/* line 186, sass/shared/_page.sass */
 #page_header ul li a.users_settings:hover {
   background-position: -860px -128px;
 }
-/* line 183, sass/shared/_page.sass */
+/* line 188, sass/shared/_page.sass */
 #page_header ul li a.users_settings:active {
   background-position: -860px -248px;
 }
-/* line 186, sass/shared/_page.sass */
+/* line 191, sass/shared/_page.sass */
 #page_header #page_logout {
   position: absolute;
   right: 50px;
   top: 25px;
   color: #666666;
 }
-/* line 191, sass/shared/_page.sass */
+/* line 196, sass/shared/_page.sass */
 #page_header #page_logout a {
   background-clip: padding-box;
   border: 1px solid black;
@@ -445,7 +516,7 @@ div.alert a, #flash_alert a {
   background-image: -moz-linear-gradient(center top, #505050 0pt, #333333 50%, #272727 50%, #111111 100%);
   text-shadow: 0 1px 1px black;
   color: white;
-  font-family: "helvetica neue", helvetica, Arial, sans-serif;
+  font-family: "helvetica neue", Arial, sans-serif;
   font-size: 11px;
   font-weight: bold;
   line-height: 20px;
@@ -454,56 +525,56 @@ div.alert a, #flash_alert a {
   text-align: center;
   text-decoration: none;
 }
-/* line 207, sass/shared/_page.sass */
+/* line 212, sass/shared/_page.sass */
 #page_header #page_logout a:hover {
   background-image: -moz-linear-gradient(center top, #5c5c5c 0pt, #333333 50%, #272727 50%, #111111 100%);
 }
-/* line 209, sass/shared/_page.sass */
+/* line 214, sass/shared/_page.sass */
 #page_header #page_logout a:active {
   background-image: -moz-linear-gradient(center top, #111111 0pt, #333333 100%);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 1px #333333;
 }
-/* line 212, sass/shared/_page.sass */
+/* line 217, sass/shared/_page.sass */
 #page_header #page_logout small {
   font-size: 10px;
   color: #666666;
 }
 
-/* line 217, sass/shared/_page.sass */
+/* line 222, sass/shared/_page.sass */
 #page_account {
   padding: 20px;
   background-color: white;
   border-bottom: 1px solid #d9d9d9;
 }
-/* line 221, sass/shared/_page.sass */
+/* line 226, sass/shared/_page.sass */
 #page_account table.signin {
   width: auto;
   margin: 0 auto;
 }
-/* line 224, sass/shared/_page.sass */
+/* line 229, sass/shared/_page.sass */
 #page_account table.signin label {
   display: inline;
 }
 
-/* line 227, sass/shared/_page.sass */
+/* line 232, sass/shared/_page.sass */
 #page_middle {
   margin-top: 135px;
   text-align: center;
   padding-bottom: 50px;
   background-color: whiteSmoke;
 }
-/* line 232, sass/shared/_page.sass */
+/* line 237, sass/shared/_page.sass */
 #page_middle #page_center {
   padding-top: 25px;
   max-width: 980px;
   margin: 0 auto;
 }
-/* line 236, sass/shared/_page.sass */
+/* line 241, sass/shared/_page.sass */
 #page_middle #page_center table.network {
   width: 100%;
 }
 
-/* line 239, sass/shared/_page.sass */
+/* line 244, sass/shared/_page.sass */
 #page_footer {
   text-align: center;
   color: #999999;
@@ -513,19 +584,19 @@ div.alert a, #flash_alert a {
   min-height: 35px;
   background-color: white;
 }
-/* line 247, sass/shared/_page.sass */
+/* line 252, sass/shared/_page.sass */
 #page_footer .footer {
   max-width: 980px;
   padding-top: 10px;
   margin: 0 auto;
   position: relative;
 }
-/* line 252, sass/shared/_page.sass */
+/* line 257, sass/shared/_page.sass */
 #page_footer .footer .links {
   color: gray;
   text-align: left;
 }
-/* line 255, sass/shared/_page.sass */
+/* line 260, sass/shared/_page.sass */
 #page_footer .footer .stats {
   position: absolute;
   top: 10px;
@@ -583,7 +654,11 @@ div.experience_card .cover {
   overflow: hidden;
   margin-bottom: 10px;
 }
-/* line 33, sass/shared/_experiences.sass */
+/* line 32, sass/shared/_experiences.sass */
+div.experience_card .cover:hover {
+  border: 6px solid #e0e0e0;
+}
+/* line 35, sass/shared/_experiences.sass */
 div.experience_card .cover .user {
   position: absolute;
   right: 10px;
@@ -599,7 +674,7 @@ div.experience_card .cover .user {
   border-radius: 6px;
   -moz-box-shadow: 0px 0px 5px black;
 }
-/* line 42, sass/shared/_experiences.sass */
+/* line 44, sass/shared/_experiences.sass */
 div.experience_card .cover .moments {
   position: absolute;
   background-color: black;
@@ -616,7 +691,7 @@ div.experience_card .cover .moments {
   font-size: 10px;
   padding: 3px 10px;
 }
-/* line 52, sass/shared/_experiences.sass */
+/* line 54, sass/shared/_experiences.sass */
 div.experience_card .stats {
   border-top: 1px solid #999999;
   color: #999999;
@@ -624,17 +699,27 @@ div.experience_card .stats {
   padding: 10px;
 }
 
-/* line 58, sass/shared/_experiences.sass */
+/* line 60, sass/shared/_experiences.sass */
 .experience_header {
   position: relative;
   text-align: left;
-}
-/* line 61, sass/shared/_experiences.sass */
-.experience_header img {
-  float: left;
   padding: 10px;
 }
 /* line 64, sass/shared/_experiences.sass */
+.experience_header img {
+  float: left;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: #666666 0 1px 2px 0;
+  -webkit-box-shadow: #666666 0 1px 2px 0;
+  -o-box-shadow: #666666 0 1px 2px 0;
+  box-shadow: #666666 0 1px 2px 0;
+}
+/* line 68, sass/shared/_experiences.sass */
 .experience_header .stats {
   position: absolute;
   width: 300px;
@@ -643,20 +728,20 @@ div.experience_card .stats {
   border: 1px solid gray;
   padding: 10px;
 }
-/* line 71, sass/shared/_experiences.sass */
+/* line 75, sass/shared/_experiences.sass */
 .experience_header .stats strong {
   padding-right: 30px;
   background: url(/images/header-icons.png) no-repeat -30px -50px blue;
 }
-/* line 74, sass/shared/_experiences.sass */
+/* line 78, sass/shared/_experiences.sass */
 .experience_header .stats strong.views {
   background-position: -100px -200px;
 }
-/* line 76, sass/shared/_experiences.sass */
+/* line 80, sass/shared/_experiences.sass */
 .experience_header .stats strong.likes {
   background-position: -100px -200px;
 }
-/* line 78, sass/shared/_experiences.sass */
+/* line 82, sass/shared/_experiences.sass */
 .experience_header .stats strong.comments {
   background-position: -100px -200px;
 }
@@ -667,11 +752,34 @@ div.experience_card .stats {
   text-align: left;
   margin-left: 0px;
 }
-/* line 6, sass/shared/_users.sass */
+/* line 5, sass/shared/_users.sass */
+.user_card h2 {
+  padding-top: 10px;
+}
+/* line 7, sass/shared/_users.sass */
 .user_card h2 img {
   margin: 0;
   vertical-align: middle;
-  padding-top: 10px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: #666666 0 1px 2px 0;
+  -webkit-box-shadow: #666666 0 1px 2px 0;
+  -o-box-shadow: #666666 0 1px 2px 0;
+  box-shadow: #666666 0 1px 2px 0;
+}
+/* line 12, sass/shared/_users.sass */
+.user_card h2 a.button {
+  float: right;
+  margin-top: 10px;
+  margin-right: 60px;
+}
+/* line 16, sass/shared/_users.sass */
+.user_card h2 span {
+  margin: 10px;
 }
 
 /* line 2, sass/shared/_follow.sass */
@@ -716,21 +824,25 @@ form input[type="text"] {
   border-radius: 4px;
   width: 180px;
   font: 15px/18px "Helvetica Neue", Arial, sans-serif;
+  color: #666666;
   height: 24px;
   outline: medium none;
   padding: 5px 9px;
   vertical-align: bottom;
 }
-/* line 15, sass/shared/_form.sass */
+/* line 16, sass/shared/_form.sass */
 form input[type="text"]:hover {
   border-color: #8c8c8c;
 }
-/* line 17, sass/shared/_form.sass */
+/* line 18, sass/shared/_form.sass */
 form input[type="text"]:focus {
   border-color: #39b2e5;
-  box-shadow: 0 0 5px 0 #b5dff1;
+  -moz-box-shadow: #b5dff1 0 0 5px 0;
+  -webkit-box-shadow: #b5dff1 0 0 5px 0;
+  -o-box-shadow: #b5dff1 0 0 5px 0;
+  box-shadow: #b5dff1 0 0 5px 0;
 }
-/* line 21, sass/shared/_form.sass */
+/* line 23, sass/shared/_form.sass */
 form input[type="password"] {
   -moz-transition-duration: 0.1s;
   -moz-transition-property: border-color;
@@ -745,21 +857,25 @@ form input[type="password"] {
   border-radius: 4px;
   width: 180px;
   font: 15px/18px "Helvetica Neue", Arial, sans-serif;
+  color: #666666;
   height: 24px;
   outline: medium none;
   padding: 5px 9px;
   vertical-align: bottom;
 }
-/* line 34, sass/shared/_form.sass */
+/* line 37, sass/shared/_form.sass */
 form input[type="password"]:hover {
   border-color: #8c8c8c;
 }
-/* line 36, sass/shared/_form.sass */
+/* line 39, sass/shared/_form.sass */
 form input[type="password"]:focus {
   border-color: #39b2e5;
-  box-shadow: 0 0 5px 0 #b5dff1;
+  -moz-box-shadow: #b5dff1 0 0 5px 0;
+  -webkit-box-shadow: #b5dff1 0 0 5px 0;
+  -o-box-shadow: #b5dff1 0 0 5px 0;
+  box-shadow: #b5dff1 0 0 5px 0;
 }
-/* line 40, sass/shared/_form.sass */
+/* line 43, sass/shared/_form.sass */
 form input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
   -moz-border-radius: 4px;
@@ -778,90 +894,86 @@ form input[type="submit"] {
   vertical-align: top;
   padding: 0 18px;
 }
-/* line 52, sass/shared/_form.sass */
+/* line 55, sass/shared/_form.sass */
 form input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
-/* line 54, sass/shared/_form.sass */
+/* line 57, sass/shared/_form.sass */
 form td {
   text-align: left;
 }
-/* line 56, sass/shared/_form.sass */
+/* line 59, sass/shared/_form.sass */
 form td.side {
   border-left: 1px dotted black !important;
   vertical-align: middle;
   padding-left: 20px;
 }
-/* line 60, sass/shared/_form.sass */
+/* line 63, sass/shared/_form.sass */
 form td.remember {
   text-align: right;
 }
+/* line 66, sass/shared/_form.sass */
+form textarea {
+  -moz-transition-duration: 0.1s;
+  -moz-transition-property: border-color;
+  -moz-transition-timing-function: linear;
+  background: none repeat scroll 0 0 white;
+  border: 1px solid #b3b3b3;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  width: 180px;
+  font: 15px/18px "Helvetica Neue", Arial, sans-serif;
+  color: #333333;
+  height: 24px;
+  outline: medium none;
+  padding: 5px 9px;
+  vertical-align: bottom;
+}
+/* line 80, sass/shared/_form.sass */
+form textarea:hover {
+  border-color: #8c8c8c;
+}
+/* line 82, sass/shared/_form.sass */
+form textarea:focus {
+  border-color: #39b2e5;
+  -moz-box-shadow: #b5dff1 0 0 5px 0;
+  -webkit-box-shadow: #b5dff1 0 0 5px 0;
+  -o-box-shadow: #b5dff1 0 0 5px 0;
+  box-shadow: #b5dff1 0 0 5px 0;
+}
 
-/* line 20, sass/application.sass */
-a.button {
-  -moz-border-radius: 2em;
-  -webkit-border-radius: 2em;
-  -o-border-radius: 2em;
-  -ms-border-radius: 2em;
-  -khtml-border-radius: 2em;
-  border-radius: 2em;
-  font-size: 14px;
-  line-height: 1.2em;
-  padding: 0.3em 1em;
-  border-width: 1px;
-  background-color: #f3f3f3;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e6e6e6), color-stop(100%, #b1b1b1));
-  background-image: -moz-linear-gradient(top, #e6e6e6 0%, #b1b1b1 100%);
-  background-image: linear-gradient(top, #e6e6e6 0%, #b1b1b1 100%);
-  border-color: #9a9a9a;
-  text-shadow: white 0px 1px 1px;
-  -moz-box-shadow: rgba(255, 255, 255, 0.75) 0 0 0.1em 1px inset;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.75) 0 0 0.1em 1px inset;
-  -o-box-shadow: rgba(255, 255, 255, 0.75) 0 0 0.1em 1px inset;
-  box-shadow: rgba(255, 255, 255, 0.75) 0 0 0.1em 1px inset;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding;
-  -o-background-clip: padding-box;
-  -ms-background-clip: padding-box;
-  -khtml-background-clip: padding-box;
-  background-clip: padding-box;
-  color: black;
+/* line 1, sass/shared/_flashmessage.sass */
+.flash {
+  padding: 15px;
+  font-family: "Helvetica Neue", Arial, Sans Serif;
+  text-shadow: 0 1px 0px white;
+  background-color: #d9d9d9;
 }
-/* line 120, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button, a.button:visited {
-  color: #222222;
+/* line 6, sass/shared/_flashmessage.sass */
+.flash.notice {
+  color: #009ad7;
+  background: #bde5f8;
+  border-bottom: 1px solid #009ad7;
 }
-/* line 31, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button:hover, a.button:focus {
-  background-color: #ebebeb;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #dedede), color-stop(100%, #a9a9a9));
-  background-image: -moz-linear-gradient(top, #dedede 0%, #a9a9a9 100%);
-  background-image: linear-gradient(top, #dedede 0%, #a9a9a9 100%);
-  border-color: #929292;
-  text-shadow: white 0px 1px 1px;
+/* line 10, sass/shared/_flashmessage.sass */
+.flash.alert {
+  color: #9f6000;
+  background: #feefb3;
+  border-bottom: 1px solid #9f6000;
 }
-/* line 120, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button:hover, a.button:hover:visited, a.button:focus, a.button:focus:visited {
-  color: #222222;
+/* line 14, sass/shared/_flashmessage.sass */
+.flash.error {
+  color: #d8000c;
+  background: #ffbaba;
+  border-bottom: 1px solid #d8000c;
 }
-/* line 36, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button:active {
-  background-color: #e4e4e4;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #afafaf), color-stop(40%, #b6b6b6), color-stop(85%, #b6b6b6), color-stop(100%, #c8c8c8));
-  background-image: -moz-linear-gradient(top, #afafaf 0%, #b6b6b6 40%, #b6b6b6 85%, #c8c8c8 100%);
-  background-image: linear-gradient(top, #afafaf 0%, #b6b6b6 40%, #b6b6b6 85%, #c8c8c8 100%);
-  border-color: #8b8b8b;
-  text-shadow: white 0px -1px -1px;
-  -moz-box-shadow: #9a9a9a 0 0.08em 0.1em 1px inset;
-  -webkit-box-shadow: #9a9a9a 0 0.08em 0.1em 1px inset;
-  -o-box-shadow: #9a9a9a 0 0.08em 0.1em 1px inset;
-  box-shadow: #9a9a9a 0 0.08em 0.1em 1px inset;
-}
-/* line 120, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button:active, a.button:active:visited {
-  color: #222222;
-}
-/* line 23, sass/application.sass */
-a.button:hover {
-  text-decoration: none;
+/* line 18, sass/shared/_flashmessage.sass */
+.flash.success {
+  color: #4f8a10;
+  background: #dff2bf;
+  border-bottom: 1px solid #4f8a10;
 }

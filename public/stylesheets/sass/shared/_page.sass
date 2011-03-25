@@ -1,3 +1,5 @@
+@import shared/base
+
 body
   margin: 0
   padding: 0
@@ -63,6 +65,9 @@ fieldset
   background: #EFEFEF
   border: none
   padding: 10px
+
+a.button
+  @include snappit_button
 
 div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert
   border-left: none
@@ -196,7 +201,7 @@ div.alert a, #flash_alert a
       background-image: -moz-linear-gradient(center top , #505050 0pt, #333333 50%, #272727 50%, #111111 100%)
       text-shadow: 0 1px 1px #000000
       color: #FFFFFF
-      font-family: "helvetica neue",helvetica,Arial,sans-serif
+      font-family: "helvetica neue",Arial,sans-serif
       font-size: 11px
       font-weight: bold
       line-height: 20px
