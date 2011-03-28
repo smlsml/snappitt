@@ -1,6 +1,6 @@
 /* incase an inverted custom gradient isn't specified */
 /* line 177, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class, a.button {
+.fancy-button-reset-base-class {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
   background: url('/images/button_bg.png?1301007155') repeat-x bottom left;
   margin: 0;
@@ -13,12 +13,12 @@
   font-weight: bold;
 }
 /* line 165, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class::-moz-focus-inner, a.button::-moz-focus-inner {
+.fancy-button-reset-base-class::-moz-focus-inner {
   border: none;
   padding: 0;
 }
 /* line 168, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class:focus, a.button:focus {
+.fancy-button-reset-base-class:focus {
   outline: none;
 }
 
@@ -27,76 +27,54 @@
   border: none;
 }
 
-/* line 2, sass/controllers/_experience.sass */
+/* line 3, sass/controllers/_experience.sass */
 .experience_controller fieldset.upload {
   width: 600px;
   margin: 0 auto;
 }
-/* line 5, sass/controllers/_experience.sass */
+/* line 6, sass/controllers/_experience.sass */
 .experience_controller fieldset.upload textarea {
   width: auto;
   height: auto;
 }
+/* line 10, sass/controllers/_experience.sass */
+.experience_controller #page_middle input[type="submit"] {
+  background: -moz-linear-gradient(center top, #c1e445, #a7d727) repeat scroll 0 0 #c1e445;
+  border: 1px solid #5a7214;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  color: #5a7214;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  outline: medium none;
+  padding: 5px 10px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  margin: 10px auto;
+}
+/* line 42, sass/application.sass */
+.experience_controller #page_middle input[type="submit"]:hover {
+  background: -moz-linear-gradient(center top, #cbf048, #b3e529) repeat scroll 0 0 #b3e529;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* line 46, sass/application.sass */
+.experience_controller #page_middle input[type="submit"]:active {
+  background: -moz-linear-gradient(center top, #b3e529, #cbf048) repeat scroll 0 0 #cbf048;
+  box-shadow: none;
+}
 
 /* line 3, sass/controllers/_session.sass */
-.session_controller #page_center input[type="text"] {
-  -moz-transition-duration: 0.1s;
-  -moz-transition-property: border-color;
-  -moz-transition-timing-function: linear;
-  background: none repeat scroll 0 0 white;
-  border: 1px solid #b3b3b3;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -khtml-border-radius: 4px;
-  border-radius: 4px;
-  width: 220px;
-  font: 15px/18px "Helvetica Neue", Arial, sans-serif;
-  height: 24px;
-  outline: medium none;
-  padding: 5px 9px;
-  vertical-align: bottom;
+.session_controller #page_center label {
+  display: inline;
 }
-/* line 16, sass/controllers/_session.sass */
-.session_controller #page_center input[type="text"]:hover {
-  border-color: #8c8c8c;
+/* line 6, sass/controllers/_session.sass */
+.session_controller #page_center p {
+  margin: 15px 0;
 }
-/* line 18, sass/controllers/_session.sass */
-.session_controller #page_center input[type="text"]:focus {
-  border-color: #39b2e5;
-  box-shadow: 0 0 5px 0 #b5dff1;
-}
-/* line 22, sass/controllers/_session.sass */
-.session_controller #page_center input[type="password"] {
-  -moz-transition-duration: 0.1s;
-  -moz-transition-property: border-color;
-  -moz-transition-timing-function: linear;
-  background: none repeat scroll 0 0 white;
-  border: 1px solid #b3b3b3;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -khtml-border-radius: 4px;
-  border-radius: 4px;
-  width: 220px;
-  font: 15px/18px "Helvetica Neue", Arial, sans-serif;
-  height: 24px;
-  outline: medium none;
-  padding: 5px 9px;
-  vertical-align: bottom;
-}
-/* line 35, sass/controllers/_session.sass */
-.session_controller #page_center input[type="password"]:hover {
-  border-color: #8c8c8c;
-}
-/* line 37, sass/controllers/_session.sass */
-.session_controller #page_center input[type="password"]:focus {
-  border-color: #39b2e5;
-  box-shadow: 0 0 5px 0 #b5dff1;
-}
-/* line 41, sass/controllers/_session.sass */
+/* line 9, sass/controllers/_session.sass */
 .session_controller #page_center input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
   -moz-border-radius: 4px;
@@ -105,20 +83,68 @@
   -ms-border-radius: 4px;
   -khtml-border-radius: 4px;
   border-radius: 4px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
   border: none;
   font-family: Helvetica Neue, Arial, sans-serif;
   font-size: 15px;
   color: white;
-  display: absolute;
   font-weight: bold;
-  height: 35px;
   line-height: 30px;
-  margin: 10px 0 -8px 2px;
-  padding: 0 18px;
+  vertical-align: top;
+  padding: 8px 18px;
 }
-/* line 54, sass/controllers/_session.sass */
+/* line 62, sass/application.sass */
 .session_controller #page_center input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
+}
+
+/* line 14, sass/controllers/_session.sass */
+.registration_controller #page_center label {
+  display: inline;
+}
+/* line 16, sass/controllers/_session.sass */
+.registration_controller #page_center p {
+  margin: 15px 0;
+}
+/* line 18, sass/controllers/_session.sass */
+.registration_controller #page_center input[type="submit"] {
+  background: none repeat scroll 0 0 #97ca00;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  line-height: 30px;
+  vertical-align: top;
+  padding: 8px 18px;
+}
+/* line 62, sass/application.sass */
+.registration_controller #page_center input[type="submit"]:hover {
+  background: none repeat scroll 0 0 #90c100;
+}
+
+/* line 3, sass/controllers/_setting.sass */
+.setting_controller #page_center form {
+  width: 600px;
+  text-align: left;
+  margin-left: 10px;
+}
+/* line 7, sass/controllers/_setting.sass */
+.setting_controller #page_center label {
+  text-align: left;
 }
 
 /* line 1, sass/shared/_page.sass */
@@ -352,49 +378,75 @@
   margin: 0 auto;
 }
 /* line 144, sass/shared/_page.sass */
+#page_account table.signin input[type="submit"] {
+  background: none repeat scroll 0 0 #97ca00;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  line-height: 30px;
+  vertical-align: top;
+  padding: 8px 18px;
+}
+/* line 62, sass/application.sass */
+#page_account table.signin input[type="submit"]:hover {
+  background: none repeat scroll 0 0 #90c100;
+}
+/* line 146, sass/shared/_page.sass */
 #page_account table.signin label {
   display: inline;
 }
-/* line 146, sass/shared/_page.sass */
+/* line 148, sass/shared/_page.sass */
 #page_account table.signin td {
   text-align: left;
 }
-/* line 148, sass/shared/_page.sass */
+/* line 150, sass/shared/_page.sass */
 #page_account table.signin td.side {
   vertical-align: middle;
   padding-left: 20px;
 }
-/* line 149, sass/shared/_page.sass */
+/* line 151, sass/shared/_page.sass */
 #page_account table.signin td.side a {
   border-left: 1px dotted black;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* line 157, sass/shared/_page.sass */
+/* line 159, sass/shared/_page.sass */
 #page_account table.signin td.remember {
   text-align: right;
 }
 
-/* line 160, sass/shared/_page.sass */
+/* line 162, sass/shared/_page.sass */
 #page_middle {
   margin-top: 135px;
   text-align: center;
   padding-bottom: 50px;
   background-color: whiteSmoke;
 }
-/* line 165, sass/shared/_page.sass */
+/* line 167, sass/shared/_page.sass */
 #page_middle #page_center {
   padding-top: 25px;
   max-width: 980px;
   margin: 0 auto;
 }
-/* line 169, sass/shared/_page.sass */
+/* line 171, sass/shared/_page.sass */
 #page_middle #page_center table.network {
   width: 100%;
 }
 
-/* line 173, sass/shared/_page.sass */
+/* line 174, sass/shared/_page.sass */
 #page_footer {
   text-align: center;
   color: #999999;
@@ -404,19 +456,19 @@
   min-height: 35px;
   background-color: white;
 }
-/* line 181, sass/shared/_page.sass */
+/* line 182, sass/shared/_page.sass */
 #page_footer .footer {
   max-width: 980px;
   padding-top: 10px;
   margin: 0 auto;
   position: relative;
 }
-/* line 186, sass/shared/_page.sass */
+/* line 187, sass/shared/_page.sass */
 #page_footer .footer .links {
   color: gray;
   text-align: left;
 }
-/* line 189, sass/shared/_page.sass */
+/* line 190, sass/shared/_page.sass */
 #page_footer .footer .stats {
   position: absolute;
   top: 10px;
@@ -633,14 +685,70 @@ table.network th {
 .moment_card p.links {
   width: 620px;
   text-align: right;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 /* line 12, sass/shared/_moment.sass */
+.moment_card p.links a {
+  background: -moz-linear-gradient(center top, #efefef, #d8d8d8) repeat scroll 0 0 #d8d8d8;
+  border: 1px solid #ababab;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  color: #707070;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  outline: medium none;
+  padding: 5px 10px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+/* line 20, sass/application.sass */
+.moment_card p.links a:hover {
+  background: -moz-linear-gradient(center top, #f6f6f6, #e3e3e3) repeat scroll 0 0 #e3e3e3;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* line 24, sass/application.sass */
+.moment_card p.links a:active {
+  background: -moz-linear-gradient(center top, #e3e3e3, #f6f6f6) repeat scroll 0 0 #1b468f;
+  box-shadow: none;
+}
+/* line 15, sass/shared/_moment.sass */
 .moment_card blockquote {
   width: 620px;
   margin: 10px auto;
   border: none;
   padding: 0;
+}
+/* line 21, sass/shared/_moment.sass */
+.moment_card input[type="submit"] {
+  background: -moz-linear-gradient(center top, #c1e445, #a7d727) repeat scroll 0 0 #c1e445;
+  border: 1px solid #5a7214;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  color: #5a7214;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  outline: medium none;
+  padding: 5px 10px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  text-align: right;
+}
+/* line 42, sass/application.sass */
+.moment_card input[type="submit"]:hover {
+  background: -moz-linear-gradient(center top, #cbf048, #b3e529) repeat scroll 0 0 #b3e529;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* line 46, sass/application.sass */
+.moment_card input[type="submit"]:active {
+  background: -moz-linear-gradient(center top, #b3e529, #cbf048) repeat scroll 0 0 #cbf048;
+  box-shadow: none;
 }
 
 /* line 2, sass/shared/_form.sass */
@@ -711,28 +819,32 @@ form input[type="password"]:focus {
 }
 /* line 43, sass/shared/_form.sass */
 form input[type="submit"] {
-  background: none repeat scroll 0 0 #97ca00;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -khtml-border-radius: 4px;
-  border-radius: 4px;
-  border: none;
-  font-family: Helvetica Neue, Arial, sans-serif;
-  font-size: 15px;
-  color: white;
+  background: -moz-linear-gradient(center top, #efefef, #d8d8d8) repeat scroll 0 0 #d8d8d8;
+  border: 1px solid #ababab;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  color: #707070;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
   font-weight: bold;
-  height: 35px;
-  line-height: 30px;
-  vertical-align: top;
-  padding: 0 18px;
+  margin: 0;
+  outline: medium none;
+  padding: 5px 10px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 55, sass/shared/_form.sass */
+/* line 20, sass/application.sass */
 form input[type="submit"]:hover {
-  background: none repeat scroll 0 0 #90c100;
+  background: -moz-linear-gradient(center top, #f6f6f6, #e3e3e3) repeat scroll 0 0 #e3e3e3;
+  cursor: pointer;
+  text-decoration: none;
 }
-/* line 58, sass/shared/_form.sass */
+/* line 24, sass/application.sass */
+form input[type="submit"]:active {
+  background: -moz-linear-gradient(center top, #e3e3e3, #f6f6f6) repeat scroll 0 0 #1b468f;
+  box-shadow: none;
+}
+/* line 46, sass/shared/_form.sass */
 form textarea {
   -moz-transition-duration: 0.1s;
   -moz-transition-property: border-color;
@@ -753,11 +865,11 @@ form textarea {
   padding: 5px 9px;
   vertical-align: bottom;
 }
-/* line 72, sass/shared/_form.sass */
+/* line 60, sass/shared/_form.sass */
 form textarea:hover {
   border-color: #8c8c8c;
 }
-/* line 74, sass/shared/_form.sass */
+/* line 62, sass/shared/_form.sass */
 form textarea:focus {
   border-color: #39b2e5;
   -moz-box-shadow: #b5dff1 0 0 5px 0;
@@ -822,80 +934,89 @@ h2 {
 }
 
 /* line 17, sass/shared/_base.sass */
+h3 {
+  font-size: 20px;
+  color: #666666;
+  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* line 22, sass/shared/_base.sass */
 a {
   color: #009ad7;
   text-decoration: none;
 }
-/* line 20, sass/shared/_base.sass */
+/* line 25, sass/shared/_base.sass */
 a:visited {
   color: #009ad7;
 }
-/* line 22, sass/shared/_base.sass */
+/* line 27, sass/shared/_base.sass */
 a:hover {
   color: #009ad7;
   text-decoration: underline;
 }
-/* line 25, sass/shared/_base.sass */
+/* line 30, sass/shared/_base.sass */
 a:focus {
   color: #009ad7;
 }
 
-/* line 28, sass/shared/_base.sass */
+/* line 33, sass/shared/_base.sass */
 textarea.auto {
   height: auto;
   width: auto;
 }
 
-/* line 32, sass/shared/_base.sass */
+/* line 37, sass/shared/_base.sass */
 dl {
   margin: 0;
   line-height: 1.2em;
 }
-/* line 35, sass/shared/_base.sass */
+/* line 40, sass/shared/_base.sass */
 dl dt {
   font-weight: normal;
   margin: 0;
 }
-/* line 38, sass/shared/_base.sass */
+/* line 43, sass/shared/_base.sass */
 dl dd {
   margin: 0;
 }
 
-/* line 42, sass/shared/_base.sass */
+/* line 47, sass/shared/_base.sass */
 table td {
   border: none !important;
 }
-/* line 44, sass/shared/_base.sass */
+/* line 49, sass/shared/_base.sass */
 table td img {
   margin: 0;
 }
-/* line 46, sass/shared/_base.sass */
+/* line 51, sass/shared/_base.sass */
 table.comment {
   width: auto;
   margin: 0 auto;
 }
-/* line 49, sass/shared/_base.sass */
+/* line 54, sass/shared/_base.sass */
 table.comment td {
   text-align: left;
 }
 
-/* line 52, sass/shared/_base.sass */
+/* line 57, sass/shared/_base.sass */
 img {
   border: none;
 }
 
-/* line 55, sass/shared/_base.sass */
+/* line 60, sass/shared/_base.sass */
 p {
   margin: 0;
   padding: 0;
 }
 
-/* line 59, sass/shared/_base.sass */
+/* line 64, sass/shared/_base.sass */
 label {
   display: block;
+  font-size: 13px;
+  font-weight: bold;
 }
 
-/* line 62, sass/shared/_base.sass */
+/* line 69, sass/shared/_base.sass */
 fieldset {
   background: #efefef;
   border: none;
@@ -908,72 +1029,30 @@ fieldset {
   border-radius: 6px;
 }
 
-/* line 68, sass/shared/_base.sass */
+/* line 75, sass/shared/_base.sass */
 a.button {
-  color: #009ad7 !important;
-  -moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  -o-border-radius: 0.5em;
-  -ms-border-radius: 0.5em;
-  -khtml-border-radius: 0.5em;
-  border-radius: 0.5em;
-  font-size: 13px;
-  line-height: 1.2em;
-  padding: 0.3em 1em;
-  border-width: 1px;
-  background-color: #a7e5ff;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f5fbfd), color-stop(100%, #9bd4ec));
-  background-image: -moz-linear-gradient(top, #f5fbfd 0%, #9bd4ec 100%);
-  background-image: linear-gradient(top, #f5fbfd 0%, #9bd4ec 100%);
-  border-color: #75c3e5;
-  text-shadow: #f3fcff 0px 1px 1px;
-  -moz-box-shadow: rgba(255, 255, 255, 0.83) 0 0 0.1em 1px inset;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.83) 0 0 0.1em 1px inset;
-  -o-box-shadow: rgba(255, 255, 255, 0.83) 0 0 0.1em 1px inset;
-  box-shadow: rgba(255, 255, 255, 0.83) 0 0 0.1em 1px inset;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding;
-  -o-background-clip: padding-box;
-  -ms-background-clip: padding-box;
-  -khtml-background-clip: padding-box;
-  background-clip: padding-box;
-  font-family: "Helvetica Neue", Helvetica, Arial, San-Serif;
+  background: -moz-linear-gradient(center top, #efefef, #d8d8d8) repeat scroll 0 0 #d8d8d8;
+  border: 1px solid #ababab;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  color: #707070;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  outline: medium none;
+  padding: 5px 10px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 120, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button, a.button:visited {
-  color: #222222;
-}
-/* line 31, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button:hover, a.button:focus {
-  background-color: #98dfff;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e9f5fb), color-stop(100%, #8eceea));
-  background-image: -moz-linear-gradient(top, #e9f5fb 0%, #8eceea 100%);
-  background-image: linear-gradient(top, #e9f5fb 0%, #8eceea 100%);
-  border-color: #67bde3;
-  text-shadow: #e5f7ff 0px 1px 1px;
-}
-/* line 120, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button:hover, a.button:hover:visited, a.button:focus, a.button:focus:visited {
-  color: #222222;
-}
-/* line 36, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button:active {
-  background-color: #88dcff;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #96d2eb), color-stop(40%, #a3d8ee), color-stop(85%, #a3d8ee), color-stop(100%, #c1e5f3));
-  background-image: -moz-linear-gradient(top, #96d2eb 0%, #a3d8ee 40%, #a3d8ee 85%, #c1e5f3 100%);
-  background-image: linear-gradient(top, #96d2eb 0%, #a3d8ee 40%, #a3d8ee 85%, #c1e5f3 100%);
-  border-color: #5bb8e0;
-  text-shadow: #d5f3ff 0px -1px -1px;
-  -moz-box-shadow: #75c3e5 0 0.08em 0.1em 1px inset;
-  -webkit-box-shadow: #75c3e5 0 0.08em 0.1em 1px inset;
-  -o-box-shadow: #75c3e5 0 0.08em 0.1em 1px inset;
-  box-shadow: #75c3e5 0 0.08em 0.1em 1px inset;
-}
-/* line 120, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
-a.button:active, a.button:active:visited {
-  color: #222222;
-}
-/* line 10, sass/application.sass */
+/* line 20, sass/application.sass */
 a.button:hover {
+  background: -moz-linear-gradient(center top, #f6f6f6, #e3e3e3) repeat scroll 0 0 #e3e3e3;
+  cursor: pointer;
   text-decoration: none;
+}
+/* line 24, sass/application.sass */
+a.button:active {
+  background: -moz-linear-gradient(center top, #e3e3e3, #f6f6f6) repeat scroll 0 0 #1b468f;
+  box-shadow: none;
 }

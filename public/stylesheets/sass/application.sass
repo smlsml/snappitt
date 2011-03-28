@@ -3,25 +3,74 @@ $asset_url: 'http://snappitt-assets.s3.amazonaws.com'
 $graySmoke: #EFEFEF
 
 
-@mixin snappit_button
-  color: #009ad7 !important
-  @include fancy-button-matte(#b5dff1, 13px, .5em)
-  font-family: 'Helvetica Neue', Helvetica, Arial, San-Serif
+@mixin snappitt_button
+  background: -moz-linear-gradient(center top , #EFEFEF, #D8D8D8) repeat scroll 0 0 #D8D8D8
+  border: 1px solid #ABABAB
+  border-radius: 3px 3px 3px 3px
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset
+  color: #707070
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif
+  font-size: 12px
+  font-weight: bold
+  margin: 0
+  outline: medium none
+  padding: 5px 10px
+  text-align: center
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5)
   &:hover
+    background: -moz-linear-gradient(center top , #F6F6F6, #E3E3E3) repeat scroll 0 0 #E3E3E3
+    cursor: pointer
     text-decoration: none
+  &:active
+    background: -moz-linear-gradient(center top , #E3E3E3, #F6F6F6) repeat scroll 0 0 #1B468F
+    box-shadow: none
 
-@mixin border_radius($radius)
-  -moz-border-radius: $radius
-  -webkit-border-radius: $radius
-  border-radius: $radius
+@mixin snappitt_button_highlight
+  background: -moz-linear-gradient(center top , #C1E445, #A7D727) repeat scroll 0 0 #C1E445
+  border: 1px solid #5a7214
+  border-radius: 3px 3px 3px 3px
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset
+  color: #5a7214
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif
+  font-size: 12px
+  font-weight: bold
+  margin: 0
+  outline: medium none
+  padding: 5px 10px
+  text-align: center
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5)
+  &:hover
+    background: -moz-linear-gradient(center top , #CBF048, #B3E529) repeat scroll 0 0 #B3E529
+    cursor: pointer
+    text-decoration: none
+  &:active
+    background: -moz-linear-gradient(center top , #B3E529, #CBF048) repeat scroll 0 0 #CBF048
+    box-shadow: none
+    
+@mixin big_button
+  background: none repeat scroll 0 0 #97CA00
+  @include border-radius(4px)
+  @include box-shadow(none)
+  border: none
+  font-family: Helvetica Neue,Arial,sans-serif
+  font-size: 15px
+  color: #FFFFFF
+  font-weight: bold
+  line-height: 30px
+  vertical-align: top
+  padding: 8px 18px
+  &:hover
+    background: none repeat scroll 0 0 #90c100
 
 @import "fancy-buttons"
 @import "compass/css3/box-shadow"
 @import "compass/css3/border-radius"
+@import "compass/css3/gradient"
 @import "compass/css3/transition"
 @import controllers/home
 @import controllers/experience
 @import controllers/session
+@import controllers/setting
 @import shared/page
 @import shared/experiences
 @import shared/users
