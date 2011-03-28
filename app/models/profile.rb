@@ -14,4 +14,8 @@ class Profile < ActiveRecord::Base
     url || PhotoAsset.default_url(type)
   end
 
+  def realname_unless
+    realname unless user.username == realname
+  end
+
 end

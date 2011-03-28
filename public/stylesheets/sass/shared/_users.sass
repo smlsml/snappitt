@@ -1,17 +1,26 @@
 .user_card
-  margin-bottom: 20px
+  position: relative
+  margin-bottom: 30px
   text-align: left
-  margin-left: 0px
-  h2
-    padding-top: 10px
+  .icon
+    position: absolute
+    left: 0
+    top: 0
+    width: 55px
     img
       margin: 0
       vertical-align: middle
       @include border_radius(4px)
       @include box-shadow(#666, 0, 1px, 2px, 0)
-    a.button
-      float: right
-      margin-top: 10px
-      margin-right: 60px
-    span
-      margin: 10px
+  .info
+    margin-left: 60px
+    h2
+      a.button
+        float: right
+        margin-right: 25px
+      small
+        color: lightGray
+    p
+      font-style: italic
+    dfn
+      font-size: 12px
