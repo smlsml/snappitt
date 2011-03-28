@@ -29,14 +29,14 @@
 
     <p class="links">
       <%= link_to('Like', like_experience_moment_path(@experience, m)) %> &nbsp;
-      <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.creator) %>
+      <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.creator) || can_edit?(@experience.creator) %>
     </p>
 
     <blockquote><%= (t(:lq).html_safe << m.caption << t(:rq).html_safe) unless m.caption.blank? %></blockquote>
 
     <p>
       Uploaded at <%= m.created_at.to_formatted_s(:mdy) %> by
-      <%= link_to(@experience.creator, user_path(@experience.creator), :title => @experience.creator.profile.realname) %>
+      <%= link_to(m.creator, user_path(m.creator), :title => m.creator.profile.realname) %>
       <%= (' via <span title="%s" class="source">%s&deg;</span>' % [m.source.name, m.source.short]).html_safe if m.source %>
       <% if m.asset %>
         <br/>
