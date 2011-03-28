@@ -29,7 +29,7 @@ class Asset < ActiveRecord::Base
 
   def geolocation
     geo = Geocode.where(:lat => lat, :lng => lng).order('created_at DESC').first
-    return ('%s %s, %s' % [geo.street, geo.city, geo.state]) if geo && geo.success
+    return ('%s, %s' % [geo.city, geo.state]) if geo && geo.success
     '%s, %s' % [lat, lng]
   end
 
