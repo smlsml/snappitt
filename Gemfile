@@ -14,7 +14,7 @@ gem 'fancy-buttons'
 gem 'aws-s3'
 gem 'rmagick', :require => false
 gem 'geokit'
-gem 'geokit-rails', '1.1.4'
+gem 'geokit-rails3'
 
 # Deploy with Capistrano
 # gem 'capistrano'

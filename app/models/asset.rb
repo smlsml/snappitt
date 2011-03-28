@@ -27,7 +27,14 @@ class Asset < ActiveRecord::Base
                       :convert_options => {:all => '-auto-orient', :feed => '-auto-orient -gravity center -extent 280x157'}
   end
 
+  def geolocation
+    geo = Geocode.where(:lat => lat, :lng => lng).order('created_at DESC').first
+    return ('%s %s, %s' % [geo.street, geo.city, geo.state]) if geo && geo.success
+    '%s, %s' % [lat, lng]
+  end
+
   after_data_post_process :post_process
+  after_create :request_geocode
 
   def post_process
     imgfile = ::Magick::Image.read(data.queued_for_write[:original].path).first
@@ -81,6 +88,14 @@ class Asset < ActiveRecord::Base
     end
 
     sum.to_f * (negative ? -1 : 1)
+  end
+
+  protected
+
+  def request_geocode
+    Geocode.create(:lat => self.lat, :lng => self.lng)
+    Delayed::Job.enqueue(Geocode)
+    true
   end
 
 end

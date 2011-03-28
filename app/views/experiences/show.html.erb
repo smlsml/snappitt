@@ -43,7 +43,7 @@
         <%= 'Taken' if m.asset.taken_at || m.asset.device || m.asset.lat %>
         <%= 'on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
         <%= ' with %s' % m.asset.device if m.asset.device %>
-        <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s, %s</a>' % [m.asset.lat, m.asset.lng, m.asset.lat, m.asset.lng]).html_safe if m.asset.lat %>
+        <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s</a>' % [m.asset.lat, m.asset.lng, m.asset.geolocation]).html_safe if m.asset.lat %>
       <% end %>
     </p>
 
