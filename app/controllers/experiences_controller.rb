@@ -98,8 +98,9 @@ class ExperiencesController < ApplicationController
       @experience.moments << moment
     end
 
+    @new = @experience.new_record?
     @experience.save!
-    ExperienceMailer.upload_notification(@experience).deliver
+    ExperienceMailer.upload_notification(@experience, @user, @new).deliver
 
     head(:created)
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110323194949) do
+ActiveRecord::Schema.define(:version => 20110328172425) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -97,6 +97,22 @@ ActiveRecord::Schema.define(:version => 20110323194949) do
     t.integer  "likes_count",                  :default => 0
     t.integer  "comments_count",               :default => 0
   end
+
+  create_table "geocodes", :force => true do |t|
+    t.float    "lat",                       :null => false
+    t.float    "lng",                       :null => false
+    t.string   "street"
+    t.string   "city",       :limit => 100
+    t.string   "state",      :limit => 2
+    t.string   "zip",        :limit => 10
+    t.string   "country",    :limit => 100
+    t.datetime "lookup_at"
+    t.boolean  "success"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "geocodes", ["lat", "lng"], :name => "index_geocodes_on_lat_and_lng", :unique => true
 
   create_table "likes", :force => true do |t|
     t.integer  "user_id"

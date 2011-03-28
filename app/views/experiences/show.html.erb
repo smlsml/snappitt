@@ -29,26 +29,28 @@
 
     <p class="links">
       <%= link_to('Like', like_experience_moment_path(@experience, m)) %> &nbsp;
-      <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.creator) %>
+      <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.creator) || can_edit?(@experience.creator) %>
     </p>
 
-    <blockquote><%= t(:lq).html_safe %><%= m.caption %><%= t(:rq).html_safe %></blockquote>
+    <blockquote><%= (t(:lq).html_safe << m.caption << t(:rq).html_safe) unless m.caption.blank? %></blockquote>
 
     <p>
-      Created: <%= m.created_at.to_formatted_s(:mdy) %>
-      <%= (' via %s' % m.source).html_safe if m.source %>
+      Uploaded at <%= m.created_at.to_formatted_s(:mdy) %> by
+      <%= link_to(m.creator, user_path(m.creator), :title => m.creator.profile.realname) %>
+      <%= (' via <span title="%s" class="source">%s&deg;</span>' % [m.source.name, m.source.short]).html_safe if m.source %>
       <% if m.asset %>
         <br/>
-        <%= 'Taken on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
+        <%= 'Taken' if m.asset.taken_at || m.asset.device || m.asset.lat %>
+        <%= 'on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
         <%= ' with %s' % m.asset.device if m.asset.device %>
-        <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s, %s</a>' % [m.asset.lat, m.asset.lng, m.asset.lat, m.asset.lng]).html_safe if m.asset.lat %>
+        <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s</a>' % [m.asset.lat, m.asset.lng, m.asset.geolocation]).html_safe if m.asset.lat %>
       <% end %>
     </p>
 
     <fieldset>
       <legend>Comments</legend>
       <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
-        <textarea name="comment" rows="2" cols="50" class="auto"></textarea><br/>
+        <textarea name="comment" rows="2" cols="60" class="auto"></textarea>
         <input type="submit" value="Add Comment"/><br/>
       <% end %>
 
@@ -87,6 +89,5 @@
   </div>
 <% end %>
 
-<%= link_to('Add Moment', edit_experience_path(@experience)) %>
-<br/><br/>
-<%= link_to('Delete Experience', experience_path(@experience), :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.creator) %>
+<%= link_to('Add Moment', edit_experience_path(@experience), :class => 'button') %> &nbsp;&nbsp;
+<%= link_to('Delete Experience', experience_path(@experience), :class => 'button', :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.creator) %>

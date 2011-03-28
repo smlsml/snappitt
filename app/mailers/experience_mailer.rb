@@ -1,13 +1,14 @@
 class ExperienceMailer < ActionMailer::Base
   default :from => "noreply@%s" % I18n.translate('app.host')
 
-  def upload_notification(experience)
+  def upload_notification(experience, user, is_new)
     @experience = experience
-    @group = 'post%s@%s' % [@experience.id, I18n.translate('app.host')]
-    group = @group
+    @user = user
+    @is_new = is_new
+    @group_address = 'post%s@%s' % [experience.id, I18n.translate('app.host')]
 
-    mail :to => @experience.creator.email,
-         :from => "%s on %s <%s>" % [@experience.creator, I18n.translate('app.name'), @group],
-         :reply_to => @group
+    mail :to => @user.email,
+         :from => "%s on %s <%s>" % [@user, I18n.translate('app.name'), @group_address],
+         :reply_to => @group_address
   end
 end
