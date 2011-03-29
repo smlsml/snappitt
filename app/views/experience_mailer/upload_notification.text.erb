@@ -3,8 +3,11 @@ Thanks for using <%= I18n.translate('app.name') %>!
 <% if @is_new %>
 Your new experience can be seen at: <%= experience_url(@experience) %>
 <% else %>
-Your new moment was added to <%= @experience.creator %>'s experience: "<%= @experience.title %>"
+Your moment was added to <%= @experience.creator %>'s experience: "<%= @experience.title %>"
 View the entire experience at <%= experience_url(@experience) %>
+<% end %>
+<% unless @experience.private? %>
+Remember! You and your friends can add to this experience by sending additional photos to <%= @group_address %>
 <% end %>
 
 <% if @user.force_reset %>
@@ -16,12 +19,12 @@ Once activated, you will be prompted to choose a password and provide other prof
 
 P.S. You can set a profile image by email too, just send your photo to avatar@<%= I18n.translate('app.host') %>.
 
+<% elsif @causes %>
+(¯`·._.·(¯`·._.· Experience Activity ·._.·´¯)·._.·´¯)
+  <% @causes.each do |action| %>
+    <%= action.summary %>
+  <% end %>
+---
 <% end %>
-<% unless @experience.private? %>
 
-(¯`·._.·(¯`·._.· Did You Know? ·._.·´¯)·._.·´¯)
-Your friends can add their own photos to this experience!
-Have them send an email with attached photos to <%= @group_address %>.
-
-<% end %>
 Happy Snapping! :-)
