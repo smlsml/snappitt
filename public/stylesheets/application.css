@@ -2,7 +2,7 @@
 /* line 177, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png?1301005384') repeat-x bottom left;
+  background: url('/images/button_bg.png?1301007155') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -39,9 +39,18 @@
 }
 /* line 10, sass/controllers/_experience.sass */
 .experience_controller #page_middle input[type="submit"] {
-  background: -moz-linear-gradient(center top, #c1e445, #a7d727) repeat scroll 0 0 #c1e445;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
+  background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
+  background-image: linear-gradient(top, #c1e445 0%, #a7d727 100%);
   border: 1px solid #5a7214;
-  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
   color: #5a7214;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -54,15 +63,19 @@
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
   margin: 10px auto;
 }
-/* line 42, sass/application.sass */
+/* line 45, sass/application.sass */
 .experience_controller #page_middle input[type="submit"]:hover {
-  background: -moz-linear-gradient(center top, #cbf048, #b3e529) repeat scroll 0 0 #b3e529;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #cbf048), color-stop(100%, #b3e529));
+  background-image: -moz-linear-gradient(top, #cbf048 0%, #b3e529 100%);
+  background-image: linear-gradient(top, #cbf048 0%, #b3e529 100%);
   cursor: pointer;
   text-decoration: none;
 }
-/* line 46, sass/application.sass */
+/* line 49, sass/application.sass */
 .experience_controller #page_middle input[type="submit"]:active {
-  background: -moz-linear-gradient(center top, #b3e529, #cbf048) repeat scroll 0 0 #cbf048;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b3e529), color-stop(100%, #cbf048));
+  background-image: -moz-linear-gradient(top, #b3e529 0%, #cbf048 100%);
+  background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
   box-shadow: none;
 }
 /* line 14, sass/controllers/_experience.sass */
@@ -112,7 +125,7 @@
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 62, sass/application.sass */
+/* line 65, sass/application.sass */
 .session_controller #page_center input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
@@ -147,7 +160,7 @@
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 62, sass/application.sass */
+/* line 65, sass/application.sass */
 .registration_controller #page_center input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
@@ -355,8 +368,13 @@
   -khtml-border-radius: 4px;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px #333333;
-  background-image: -moz-linear-gradient(center top, #505050 0pt, #333333 50%, #272727 50%, #111111 100%);
-  text-shadow: 0 1px 1px black;
+  -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px #333333;
+  -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px #333333;
+  background-color: #222222;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #505050), color-stop(50%, #333333), color-stop(50%, #272727), color-stop(100%, #111111));
+  background-image: -moz-linear-gradient(top, #505050 0%, #333333 50%, #272727 50%, #111111 100%);
+  background-image: linear-gradient(top, #505050 0%, #333333 50%, #272727 50%, #111111 100%);
+  text-shadow: black 0 1px 1px;
   color: white;
   font-family: "helvetica neue", Arial, sans-serif;
   font-size: 11px;
@@ -367,33 +385,37 @@
   text-align: center;
   text-decoration: none;
 }
-/* line 127, sass/shared/_page.sass */
+/* line 87, sass/application.sass */
 #page_header #page_logout a:hover {
-  background-image: -moz-linear-gradient(center top, #5c5c5c 0pt, #333333 50%, #272727 50%, #111111 100%);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #5c5c5c), color-stop(50%, #333333), color-stop(50%, #272727), color-stop(100%, #111111));
+  background-image: -moz-linear-gradient(top, #5c5c5c 0%, #333333 50%, #272727 50%, #111111 100%);
+  background-image: linear-gradient(top, #5c5c5c 0%, #333333 50%, #272727 50%, #111111 100%);
 }
-/* line 129, sass/shared/_page.sass */
+/* line 89, sass/application.sass */
 #page_header #page_logout a:active {
-  background-image: -moz-linear-gradient(center top, #111111 0pt, #333333 100%);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #111111), color-stop(100%, #333333));
+  background-image: -moz-linear-gradient(top, #111111 0%, #333333 100%);
+  background-image: linear-gradient(top, #111111 0%, #333333 100%);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 1px #333333;
 }
-/* line 132, sass/shared/_page.sass */
+/* line 113, sass/shared/_page.sass */
 #page_header #page_logout small {
   font-size: 10px;
   color: #666666;
 }
 
-/* line 137, sass/shared/_page.sass */
+/* line 118, sass/shared/_page.sass */
 #page_account {
   padding: 20px;
   background-color: white;
   border-bottom: 1px solid #d9d9d9;
 }
-/* line 141, sass/shared/_page.sass */
+/* line 122, sass/shared/_page.sass */
 #page_account table.signin {
   width: auto;
   margin: 0 auto;
 }
-/* line 144, sass/shared/_page.sass */
+/* line 125, sass/shared/_page.sass */
 #page_account table.signin input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
   -moz-border-radius: 4px;
@@ -415,62 +437,62 @@
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 62, sass/application.sass */
+/* line 65, sass/application.sass */
 #page_account table.signin input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
-/* line 146, sass/shared/_page.sass */
+/* line 127, sass/shared/_page.sass */
 #page_account table.signin label {
   display: inline;
 }
-/* line 148, sass/shared/_page.sass */
+/* line 129, sass/shared/_page.sass */
 #page_account table.signin td {
   text-align: left;
 }
-/* line 150, sass/shared/_page.sass */
+/* line 131, sass/shared/_page.sass */
 #page_account table.signin td.side {
   vertical-align: middle;
   padding-left: 20px;
 }
-/* line 151, sass/shared/_page.sass */
+/* line 132, sass/shared/_page.sass */
 #page_account table.signin td.side a {
   border-left: 1px dotted black;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* line 158, sass/shared/_page.sass */
+/* line 139, sass/shared/_page.sass */
 #page_account table.signin td.remember {
   text-align: right;
 }
-/* line 160, sass/shared/_page.sass */
+/* line 141, sass/shared/_page.sass */
 #page_account table.signin td input[type="submit"] {
   vertical-align: top;
 }
 
-/* line 163, sass/shared/_page.sass */
+/* line 144, sass/shared/_page.sass */
 #page_middle {
   margin-top: 135px;
   text-align: center;
   padding-bottom: 50px;
   background-color: whiteSmoke;
 }
-/* line 168, sass/shared/_page.sass */
+/* line 149, sass/shared/_page.sass */
 #page_middle #page_center {
   padding-top: 25px;
   max-width: 980px;
   margin: 0 auto;
 }
-/* line 172, sass/shared/_page.sass */
+/* line 153, sass/shared/_page.sass */
 #page_middle #page_center table.network {
   width: 100%;
 }
-/* line 174, sass/shared/_page.sass */
+/* line 155, sass/shared/_page.sass */
 #page_middle #page_center table.network td {
   vertical-align: top;
 }
 
-/* line 177, sass/shared/_page.sass */
+/* line 158, sass/shared/_page.sass */
 #page_footer {
   text-align: center;
   color: #999999;
@@ -480,19 +502,19 @@
   min-height: 35px;
   background-color: white;
 }
-/* line 185, sass/shared/_page.sass */
+/* line 166, sass/shared/_page.sass */
 #page_footer .footer {
   max-width: 980px;
   padding-top: 10px;
   margin: 0 auto;
   position: relative;
 }
-/* line 190, sass/shared/_page.sass */
+/* line 171, sass/shared/_page.sass */
 #page_footer .footer .links {
   color: gray;
   text-align: left;
 }
-/* line 193, sass/shared/_page.sass */
+/* line 174, sass/shared/_page.sass */
 #page_footer .footer .stats {
   position: absolute;
   top: 10px;
@@ -513,29 +535,29 @@ h2.feed_date {
   text-decoration: none;
 }
 
-/* line 10, sass/shared/_experiences.sass */
+/* line 11, sass/shared/_experiences.sass */
 table.feed {
   margin: 0 auto;
   width: auto;
 }
-/* line 13, sass/shared/_experiences.sass */
+/* line 14, sass/shared/_experiences.sass */
 table.feed td {
   text-align: center;
   border: none;
 }
 
-/* line 17, sass/shared/_experiences.sass */
+/* line 18, sass/shared/_experiences.sass */
 div.experience_card {
   width: 292px;
   float: left;
   padding: 15px;
   margin-bottom: 25px;
 }
-/* line 22, sass/shared/_experiences.sass */
+/* line 23, sass/shared/_experiences.sass */
 div.experience_card h3 {
   font-size: 18px;
 }
-/* line 24, sass/shared/_experiences.sass */
+/* line 25, sass/shared/_experiences.sass */
 div.experience_card .cover {
   border: 6px solid #e7e7e7;
   -moz-border-radius: 6px;
@@ -550,11 +572,11 @@ div.experience_card .cover {
   overflow: hidden;
   margin-bottom: 10px;
 }
-/* line 32, sass/shared/_experiences.sass */
+/* line 33, sass/shared/_experiences.sass */
 div.experience_card .cover:hover {
   border: 6px solid #e0e0e0;
 }
-/* line 35, sass/shared/_experiences.sass */
+/* line 36, sass/shared/_experiences.sass */
 div.experience_card .cover .user {
   position: absolute;
   right: 10px;
@@ -568,9 +590,12 @@ div.experience_card .cover .user {
   -ms-border-radius: 6px;
   -khtml-border-radius: 6px;
   border-radius: 6px;
-  -moz-box-shadow: 0px 0px 5px black;
+  -moz-box-shadow: #666666 0 1px 2px 0;
+  -webkit-box-shadow: #666666 0 1px 2px 0;
+  -o-box-shadow: #666666 0 1px 2px 0;
+  box-shadow: #666666 0 1px 2px 0;
 }
-/* line 44, sass/shared/_experiences.sass */
+/* line 45, sass/shared/_experiences.sass */
 div.experience_card .cover .moments {
   position: absolute;
   background-color: black;
@@ -587,26 +612,74 @@ div.experience_card .cover .moments {
   font-size: 10px;
   padding: 3px 10px;
 }
-/* line 54, sass/shared/_experiences.sass */
+/* line 55, sass/shared/_experiences.sass */
 div.experience_card .stats {
-  border-top: 1px solid #999999;
+  border-top: 1px solid #d9d9d9;
   color: #999999;
   margin-top: 10px;
   padding: 10px;
 }
-
 /* line 60, sass/shared/_experiences.sass */
+div.experience_card .stats dfn {
+  color: #999999;
+  font-weight: bold;
+  position: relative;
+  padding-left: 33px;
+  margin-right: 33px;
+}
+/* line 66, sass/shared/_experiences.sass */
+div.experience_card .stats dfn span {
+  height: 20px;
+  width: 30px;
+  position: absolute;
+  left: -2px;
+  background: url("http://snappitt-assets.s3.amazonaws.com/icons/assets2.png") no-repeat scroll 0 0px transparent;
+}
+/* line 73, sass/shared/_experiences.sass */
+div.experience_card .stats dfn.views span {
+  background-position: 0 -38px;
+}
+/* line 75, sass/shared/_experiences.sass */
+div.experience_card .stats dfn.views span:hover {
+  background-position: 0px -6px;
+}
+/* line 78, sass/shared/_experiences.sass */
+div.experience_card .stats dfn.likes span {
+  background-position: -32px -38px;
+}
+/* line 80, sass/shared/_experiences.sass */
+div.experience_card .stats dfn.likes span:hover {
+  background-position: -32px -6px;
+}
+/* line 82, sass/shared/_experiences.sass */
+div.experience_card .stats dfn.comments {
+  margin-right: 0;
+}
+/* line 84, sass/shared/_experiences.sass */
+div.experience_card .stats dfn.comments span {
+  background-position: -65px -38px;
+}
+/* line 86, sass/shared/_experiences.sass */
+div.experience_card .stats dfn.comments span:hover {
+  background-position: -65px -6px;
+}
+/* line 88, sass/shared/_experiences.sass */
+div.experience_card .stats dfn:hover {
+  color: #02b7ff;
+}
+
+/* line 91, sass/shared/_experiences.sass */
 .experience_header {
   position: relative;
   text-align: left;
   padding-left: 63px;
   margin-bottom: 20px;
 }
-/* line 63, sass/shared/_experiences.sass */
+/* line 94, sass/shared/_experiences.sass */
 .experience_header h2 {
   min-height: 1.5em;
 }
-/* line 65, sass/shared/_experiences.sass */
+/* line 96, sass/shared/_experiences.sass */
 .experience_header img.icon {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -622,11 +695,11 @@ div.experience_card .stats {
   top: 0;
   left: 0;
 }
-/* line 73, sass/shared/_experiences.sass */
+/* line 104, sass/shared/_experiences.sass */
 .experience_header var {
   color: gray;
 }
-/* line 77, sass/shared/_experiences.sass */
+/* line 106, sass/shared/_experiences.sass */
 .experience_header .stats {
   position: absolute;
   top: 0;
@@ -640,17 +713,19 @@ div.experience_card .stats {
   -khtml-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 84, sass/shared/_experiences.sass */
+/* line 113, sass/shared/_experiences.sass */
 .experience_header .stats var {
   color: #666666;
 }
-/* line 87, sass/shared/_experiences.sass */
+/* line 116, sass/shared/_experiences.sass */
 .experience_header .stats dfn {
+  color: #666666;
+  font-weight: bold;
   position: relative;
   padding-left: 33px;
   margin-right: 10px;
 }
-/* line 91, sass/shared/_experiences.sass */
+/* line 122, sass/shared/_experiences.sass */
 .experience_header .stats dfn span {
   height: 20px;
   width: 30px;
@@ -658,81 +733,98 @@ div.experience_card .stats {
   left: 0;
   background: url("http://snappitt-assets.s3.amazonaws.com/icons/assets.png") no-repeat scroll 0 0px transparent;
 }
-/* line 98, sass/shared/_experiences.sass */
+/* line 129, sass/shared/_experiences.sass */
 .experience_header .stats dfn.views span {
   background-position: 0 -6px;
 }
-/* line 100, sass/shared/_experiences.sass */
+/* line 131, sass/shared/_experiences.sass */
 .experience_header .stats dfn.views span:hover {
   background-position: 0px -38px;
 }
-/* line 103, sass/shared/_experiences.sass */
+/* line 134, sass/shared/_experiences.sass */
 .experience_header .stats dfn.likes span {
   background-position: -32px -6px;
 }
-/* line 105, sass/shared/_experiences.sass */
+/* line 136, sass/shared/_experiences.sass */
 .experience_header .stats dfn.likes span:hover {
   background-position: -32px -38px;
 }
-/* line 107, sass/shared/_experiences.sass */
+/* line 138, sass/shared/_experiences.sass */
 .experience_header .stats dfn.comments {
   margin-right: 0;
 }
-/* line 109, sass/shared/_experiences.sass */
+/* line 140, sass/shared/_experiences.sass */
 .experience_header .stats dfn.comments span {
   background-position: -65px -6px;
 }
-/* line 111, sass/shared/_experiences.sass */
+/* line 142, sass/shared/_experiences.sass */
 .experience_header .stats dfn.comments span:hover {
-  background-position: 65px -38px;
+  background-position: -65px -38px;
+}
+/* line 144, sass/shared/_experiences.sass */
+.experience_header .stats dfn:hover {
+  color: #02b7ff;
 }
 
 /* line 1, sass/shared/_users.sass */
 .user_card {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
   text-align: left;
+  border-bottom: 1px solid #d9d9d9;
 }
-/* line 5, sass/shared/_users.sass */
+/* line 7, sass/shared/_users.sass */
 .user_card .icon {
   position: absolute;
   left: 0;
   top: 0;
   width: 55px;
 }
-/* line 10, sass/shared/_users.sass */
+/* line 12, sass/shared/_users.sass */
 .user_card .icon img {
   margin: 0;
   vertical-align: middle;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -khtml-border-radius: 4px;
-  border-radius: 4px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
   -moz-box-shadow: #666666 0 1px 2px 0;
   -webkit-box-shadow: #666666 0 1px 2px 0;
   -o-box-shadow: #666666 0 1px 2px 0;
   box-shadow: #666666 0 1px 2px 0;
 }
-/* line 15, sass/shared/_users.sass */
+/* line 17, sass/shared/_users.sass */
 .user_card .info {
   margin-left: 60px;
 }
-/* line 18, sass/shared/_users.sass */
-.user_card .info h2 a.button {
-  float: right;
-  margin-right: 25px;
+/* line 19, sass/shared/_users.sass */
+.user_card .info h2 {
+  font-size: 18px;
 }
 /* line 21, sass/shared/_users.sass */
-.user_card .info h2 small {
-  color: lightGray;
+.user_card .info h2 a {
+  font-weight: bold;
 }
 /* line 23, sass/shared/_users.sass */
+.user_card .info h2 a.button {
+  float: right;
+  margin: 10px auto;
+}
+/* line 26, sass/shared/_users.sass */
+.user_card .info h2 small {
+  color: #999999;
+  font-size: 15px;
+}
+/* line 29, sass/shared/_users.sass */
 .user_card .info p {
+  padding-top: 5px;
+  font-family: georgia, serif;
   font-style: italic;
 }
-/* line 25, sass/shared/_users.sass */
+/* line 33, sass/shared/_users.sass */
 .user_card .info dfn {
   font-size: 12px;
 }
@@ -740,8 +832,9 @@ div.experience_card .stats {
 /* line 2, sass/shared/_follow.sass */
 table.network th {
   text-align: left;
+  padding-left: 15px;
 }
-/* line 4, sass/shared/_follow.sass */
+/* line 5, sass/shared/_follow.sass */
 table.network td {
   width: 50%;
   padding: 15px;
@@ -771,10 +864,18 @@ table.network td {
 }
 /* line 13, sass/shared/_moment.sass */
 .moment_card p.links a {
-  background: -moz-linear-gradient(center top, #efefef, #d8d8d8) repeat scroll 0 0 #d8d8d8;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
+  background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
+  background-image: linear-gradient(top, #efefef 0%, #d8d8d8 100%);
   border: 1px solid #ababab;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
   color: #707070;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -785,15 +886,19 @@ table.network td {
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 20, sass/application.sass */
+/* line 21, sass/application.sass */
 .moment_card p.links a:hover {
-  background: -moz-linear-gradient(center top, #f6f6f6, #e3e3e3) repeat scroll 0 0 #e3e3e3;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
+  background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
+  background-image: linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
   cursor: pointer;
   text-decoration: none;
 }
-/* line 24, sass/application.sass */
+/* line 25, sass/application.sass */
 .moment_card p.links a:active {
-  background: -moz-linear-gradient(center top, #e3e3e3, #f6f6f6) repeat scroll 0 0 #1b468f;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
+  background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
+  background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
   box-shadow: none;
 }
 /* line 15, sass/shared/_moment.sass */
@@ -811,9 +916,18 @@ table.network td {
 }
 /* line 26, sass/shared/_moment.sass */
 .moment_card input[type="submit"] {
-  background: -moz-linear-gradient(center top, #c1e445, #a7d727) repeat scroll 0 0 #c1e445;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
+  background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
+  background-image: linear-gradient(top, #c1e445 0%, #a7d727 100%);
   border: 1px solid #5a7214;
-  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
   color: #5a7214;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -826,15 +940,19 @@ table.network td {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
   margin: 10px auto;
 }
-/* line 42, sass/application.sass */
+/* line 45, sass/application.sass */
 .moment_card input[type="submit"]:hover {
-  background: -moz-linear-gradient(center top, #cbf048, #b3e529) repeat scroll 0 0 #b3e529;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #cbf048), color-stop(100%, #b3e529));
+  background-image: -moz-linear-gradient(top, #cbf048 0%, #b3e529 100%);
+  background-image: linear-gradient(top, #cbf048 0%, #b3e529 100%);
   cursor: pointer;
   text-decoration: none;
 }
-/* line 46, sass/application.sass */
+/* line 49, sass/application.sass */
 .moment_card input[type="submit"]:active {
-  background: -moz-linear-gradient(center top, #b3e529, #cbf048) repeat scroll 0 0 #cbf048;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b3e529), color-stop(100%, #cbf048));
+  background-image: -moz-linear-gradient(top, #b3e529 0%, #cbf048 100%);
+  background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
   box-shadow: none;
 }
 /* line 30, sass/shared/_moment.sass */
@@ -910,10 +1028,18 @@ form input[type="password"]:focus {
 }
 /* line 43, sass/shared/_form.sass */
 form input[type="submit"] {
-  background: -moz-linear-gradient(center top, #efefef, #d8d8d8) repeat scroll 0 0 #d8d8d8;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
+  background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
+  background-image: linear-gradient(top, #efefef 0%, #d8d8d8 100%);
   border: 1px solid #ababab;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
   color: #707070;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -924,15 +1050,19 @@ form input[type="submit"] {
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 20, sass/application.sass */
+/* line 21, sass/application.sass */
 form input[type="submit"]:hover {
-  background: -moz-linear-gradient(center top, #f6f6f6, #e3e3e3) repeat scroll 0 0 #e3e3e3;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
+  background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
+  background-image: linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
   cursor: pointer;
   text-decoration: none;
 }
-/* line 24, sass/application.sass */
+/* line 25, sass/application.sass */
 form input[type="submit"]:active {
-  background: -moz-linear-gradient(center top, #e3e3e3, #f6f6f6) repeat scroll 0 0 #1b468f;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
+  background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
+  background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
   box-shadow: none;
 }
 /* line 46, sass/shared/_form.sass */
@@ -1041,21 +1171,21 @@ h3 {
 
 /* line 22, sass/shared/_base.sass */
 a {
-  color: #009ad7;
+  color: #02b7ff;
   text-decoration: none;
 }
 /* line 25, sass/shared/_base.sass */
 a:visited {
-  color: #009ad7;
+  color: #02b7ff;
 }
 /* line 27, sass/shared/_base.sass */
 a:hover {
-  color: #009ad7;
+  color: #02aaed;
   text-decoration: underline;
 }
 /* line 30, sass/shared/_base.sass */
 a:focus {
-  color: #009ad7;
+  color: #02b7ff;
 }
 
 /* line 33, sass/shared/_base.sass */
@@ -1131,10 +1261,18 @@ fieldset {
 
 /* line 76, sass/shared/_base.sass */
 a.button {
-  background: -moz-linear-gradient(center top, #efefef, #d8d8d8) repeat scroll 0 0 #d8d8d8;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
+  background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
+  background-image: linear-gradient(top, #efefef 0%, #d8d8d8 100%);
   border: 1px solid #ababab;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
   color: #707070;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -1145,15 +1283,19 @@ a.button {
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 20, sass/application.sass */
+/* line 21, sass/application.sass */
 a.button:hover {
-  background: -moz-linear-gradient(center top, #f6f6f6, #e3e3e3) repeat scroll 0 0 #e3e3e3;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
+  background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
+  background-image: linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
   cursor: pointer;
   text-decoration: none;
 }
-/* line 24, sass/application.sass */
+/* line 25, sass/application.sass */
 a.button:active {
-  background: -moz-linear-gradient(center top, #e3e3e3, #f6f6f6) repeat scroll 0 0 #1b468f;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
+  background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
+  background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
   box-shadow: none;
 }
 

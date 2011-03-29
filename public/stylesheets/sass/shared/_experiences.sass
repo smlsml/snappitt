@@ -40,7 +40,7 @@ div.experience_card
       height: 48px
       background-color: white
       @include border_radius(6px)
-      -moz-box-shadow: 0px 0px 5px black
+      @include box-shadow(#666, 0, 1px, 2px, 0)
     .moments
       position: absolute
       background-color: black
@@ -52,10 +52,40 @@ div.experience_card
       font-size: 10px
       padding: 3px 10px
   .stats
-    border-top: 1px solid #999
+    border-top: 1px solid #D9D9D9
     color: #999999
     margin-top: 10px
     padding: 10px
+    dfn
+      color: #999
+      font-weight: bold
+      position: relative
+      padding-left: 33px
+      margin-right: 33px
+      span
+        height: 20px
+        width: 30px
+        position: absolute
+        left: -2px
+        background: url('#{$asset_url}/icons/assets2.png') no-repeat scroll 0 0px transparent
+      &.views
+        span
+          background-position: 0 -38px
+          &:hover
+            background-position: 0px -6px
+      &.likes
+        span
+          background-position: -32px -38px
+          &:hover
+            background-position: -32px -6px
+      &.comments
+        margin-right: 0
+        span
+          background-position: -65px -38px
+          &:hover
+            background-position: -65px -6px
+      &:hover
+        color: #02b7ff
 
 .experience_header
   position: relative
@@ -72,8 +102,6 @@ div.experience_card
   margin-bottom: 20px
   var
     color: gray
-  .by
-  .details
   .stats
     position: absolute
     top: 0
@@ -85,6 +113,8 @@ div.experience_card
       color: #666
 
     dfn
+      color: #666
+      font-weight: bold
       position: relative
       padding-left: 33px
       margin-right: 10px
@@ -109,4 +139,6 @@ div.experience_card
         span
           background-position: -65px -6px
           &:hover
-            background-position: 65px -38px
+            background-position: -65px -38px
+      &:hover
+        color: #02B7FF

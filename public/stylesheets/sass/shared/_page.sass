@@ -109,26 +109,7 @@
     top: 25px
     color: #666666
     a
-      background-clip: padding-box
-      border: 1px solid #000000
-      @include border_radius(4px)
-      box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px #333333
-      background-image: -moz-linear-gradient(center top , #505050 0pt, #333333 50%, #272727 50%, #111111 100%)
-      text-shadow: 0 1px 1px #000000
-      color: #FFFFFF
-      font-family: "helvetica neue",Arial,sans-serif
-      font-size: 11px
-      font-weight: bold
-      line-height: 20px
-      outline: medium none
-      padding: 5px 20px
-      text-align: center
-      text-decoration: none
-      &:hover
-        background-image: -moz-linear-gradient(center top , #5C5C5C 0pt, #333333 50%, #272727 50%, #111111 100%)
-      &:active
-        background-image: -moz-linear-gradient(center top , #111111 0pt, #333333 100%)
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 1px #333333
+      @include button_header
     small
       font-size: 10px
       color: #666
