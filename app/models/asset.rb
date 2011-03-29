@@ -72,7 +72,7 @@ class Asset < ActiveRecord::Base
   end
 
   def self.default_url(type = :thumb)
-    '/images/default/%s/unknown.%s' % [type.to_s, type == 'large' || type == 'preview' ? 'jpg' : 'png']
+    '/images/default/%s/unknown.%s' % [type.to_s, (type.to_s == 'large' || type.to_s == 'preview') ? 'jpg' : 'png']
   end
 
   def ddmmss_to_degree(str, negative = false)
