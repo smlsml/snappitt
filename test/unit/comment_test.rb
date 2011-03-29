@@ -5,7 +5,7 @@ class CommentTest < ActiveSupport::TestCase
   test "fixture" do
     @comment = comments(:snoop_caption)
     assert_kind_of(Comment, @comment)
-    assert_kind_of(User, @comment.creator)
+    assert_kind_of(User, @comment.user)
   end
 
 end

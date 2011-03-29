@@ -25,7 +25,7 @@ class UserTest < ActiveSupport::TestCase
   test "experiences_count: cached count of experiences" do
     @snoop = users(:snoop)
     cnt = @snoop.experiences_count
-    exp = Experience.create!(:title => 'Some experience', :user_id_creator => @snoop.id)
+    exp = Experience.create!(:title => 'Some experience', :user => @snoop)
 
     @snoop.reload
     assert_equal cnt + 1, @snoop.experiences_count

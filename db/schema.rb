@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110329205826) do
+ActiveRecord::Schema.define(:version => 20110329211449) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -103,14 +103,14 @@ ActiveRecord::Schema.define(:version => 20110329205826) do
 
   create_table "experiences", :force => true do |t|
     t.string   "title"
-    t.integer  "user_id_creator"
-    t.string   "visibility",      :limit => 7, :default => "public", :null => false
+    t.integer  "user_id",                                           :null => false
+    t.string   "visibility",     :limit => 7, :default => "public", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "views",                        :default => 0
-    t.integer  "moments_count",                :default => 0
-    t.integer  "likes_count",                  :default => 0
-    t.integer  "comments_count",               :default => 0
+    t.integer  "views",                       :default => 0
+    t.integer  "moments_count",               :default => 0
+    t.integer  "likes_count",                 :default => 0
+    t.integer  "comments_count",              :default => 0
   end
 
   create_table "geocodes", :force => true do |t|
@@ -159,7 +159,7 @@ ActiveRecord::Schema.define(:version => 20110329205826) do
   end
 
   create_table "moments", :force => true do |t|
-    t.integer  "user_id_creator"
+    t.integer  "user_id",                       :null => false
     t.integer  "thing_id"
     t.integer  "location_id"
     t.float    "lat"
@@ -170,8 +170,8 @@ ActiveRecord::Schema.define(:version => 20110329205826) do
     t.integer  "source_id"
     t.integer  "asset_id"
     t.integer  "caption_id"
-    t.integer  "likes_count",     :default => 0
-    t.integer  "comments_count",  :default => 0
+    t.integer  "likes_count",    :default => 0
+    t.integer  "comments_count", :default => 0
   end
 
   create_table "profiles", :force => true do |t|

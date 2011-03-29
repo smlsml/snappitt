@@ -8,7 +8,7 @@
 <div class="experience_card">
   <div class="cover">
     <%= link_to( image_tag(experience.photo_url), experience_path(experience) ) %>
-    <div class="user" style="background-image: url('<%=experience.creator.profile.photo_url %>')"></div>
+    <div class="user" style="background-image: url('<%=experience.user.profile.photo_url %>')"></div>
     <div class="moments"><%= experience.moments_status %></div>
   </div>
   <h3><%= link_to( experience.title, experience_path(experience)) %></h3>

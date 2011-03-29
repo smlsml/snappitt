@@ -1,21 +1,22 @@
 class Experience < ActiveRecord::Base
 
+  belongs_to :user, :counter_cache => true
   has_one :event, :inverse_of => :experience
-  belongs_to :creator, :class_name => 'User', :foreign_key => 'user_id_creator', :counter_cache => true
-
   has_many :moments, :order => 'moments.id', :dependent => :destroy
   has_many :comments, :through => :moments, :readonly => true
   has_many :likes, :through => :moments, :readonly => true
 
+  validates :user, :presence => true
+
   scope :user_feed, lambda { |user|
-    includes(:creator => :profile, :moments => :asset).
+    includes(:user => :profile, :moments => :asset).
     where(:visibility.ne => 'private', :users => {:confirmed_at.ne => nil}).
     order('experiences.created_at DESC')
   }
 
   scope :by_user, lambda { |user|
-    includes(:creator => :profile, :moments => :asset).
-    where("user_id_creator = ?", user.id).
+    includes(:user => :profile, :moments => :asset).
+    where("user_id = ?", user.id).
     order('created_at DESC')
   }
 
@@ -26,7 +27,7 @@ class Experience < ActiveRecord::Base
   }
 
   scope :last_three, lambda {
-    user_feed.limit(3)
+    user_feed(nil).limit(3)
   }
 
   def private?

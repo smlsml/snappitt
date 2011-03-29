@@ -1,17 +1,17 @@
 private:
   title: Private Experience
-  creator: snoop # user
+  user: snoop # User
   visibility: private
   views: 1
 
 public:
   title: Public Experience
-  creator: dre # user
+  user: dre # User
   visibility: public
   views: 5
 
 group:
   title: Group Experience
-  creator: snoop # user
+  user: snoop # User
   visibility: group
   views: 100

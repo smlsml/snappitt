@@ -2,6 +2,7 @@ class MomentComment < Comment
 
   belongs_to :moment, :inverse_of => :comments, :counter_cache => :comments_count
 
+  #validates :moment, :presence => true
 
   class CreateCause < Cause
     def verb; 'added a comment to'; end
@@ -12,7 +13,7 @@ class MomentComment < Comment
   protected
 
   def create_cause
-    CreateCause.create!(:user => creator , :action => self, :subject => moment)
+    CreateCause.create!(:user => user , :action => self, :subject => moment)
   end
 
 end

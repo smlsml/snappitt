@@ -13,12 +13,12 @@ class Cause < ActiveRecord::Base
   end
 
   def owner
-    person = if subject.creator.blank?
+    person = if subject.user.blank?
       ''
-    elsif subject.creator == user
-      '%s own ' % subject.creator.profile.his_her
+    elsif subject.user == user
+      '%s own ' % subject.user.profile.his_her
     else
-      '%s ' % subject.creator.to_s.possessive
+      '%s ' % subject.user.to_s.possessive
     end
 
     '%s%s' % [person, subject.class.name]

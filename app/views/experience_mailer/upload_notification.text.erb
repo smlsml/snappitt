@@ -3,7 +3,7 @@ Thanks for using <%= I18n.translate('app.name') %>!
 <% if @is_new %>
 Your new experience can be seen at: <%= experience_url(@experience) %>
 <% else %>
-Your moment was added to <%= @experience.creator %>'s experience: "<%= @experience.title %>"
+Your moment was added to <%= @experience.user %>'s experience: "<%= @experience.title %>"
 View the entire experience at <%= experience_url(@experience) %>
 <% end %>
 <% unless @experience.private? %>

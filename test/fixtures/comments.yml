@@ -1,10 +1,10 @@
 snoop_caption:
-  creator: snoop # user
+  user: snoop # User
   type: CaptionComment
   text: Fo Shizzle!
 
 snoop_comment:
-  creator: snoop # user
+  user: snoop # User
   type: MomentComment
   text: Now this is a cool experience!
-  moment: eat
+  moment: eat # Moment

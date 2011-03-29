@@ -1,5 +1,5 @@
 like_create:
-  user: snoop (User)
+  user: snoop # User
   action: snoop_likes_eat (Like)
   action_type: Like
   subject: eat (Moment)
@@ -7,7 +7,7 @@ like_create:
   type: Like:CreateCause
 
 moment_create:
-  user: snoop (User)
+  user: snoop # User
   action: eat (Moment)
   action_type: Moment
   subject: group (Experience)

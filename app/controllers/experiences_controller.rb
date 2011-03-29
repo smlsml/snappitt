@@ -73,13 +73,13 @@ class ExperiencesController < ApplicationController
     while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end
 
     @experience = Experience.find_by_id($1) if @to =~ /post([0-9]+)@/i
-    @experience = Experience.new(:title => @subject, :creator => @user) unless @experience
+    @experience = Experience.new(:title => @subject, :user => @user) unless @experience
     @experience.visibility = 'private' if params[:to].to_s.downcase.include?('private')
 
     @message.attachments.each do |attachment|
       moment = Moment.new
-      moment.create_caption(:text => params[:plain])
-      moment.creator = @user
+      moment.create_caption(:text => params[:plain], :user => @user)
+      moment.user = @user
       moment.source = @source
 
       file = StringIO.new(attachment.decoded)
@@ -107,10 +107,10 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
-    return render :private if @experience.private? && !can_edit?(@experience.creator)
+    return render :private if @experience.private? && !can_edit?(@experience.user)
 
-    unless @experience.creator.confirmed?
-      return render :confirm unless can_edit?(@experience.creator)
+    unless @experience.user.confirmed?
+      return render :confirm unless can_edit?(@experience.user)
       flash.now[:notice] = 'You must confirm your account before others can view your experiences'
     end
 
@@ -140,11 +140,11 @@ class ExperiencesController < ApplicationController
 
     return head :bad_request unless @moment
 
-    @moment.creator = @user
+    @moment.user = @user
     @moment.thing = Thing.find_or_create_by_name(params[:thing]) if params[:thing]
     @moment.location = Location.find_or_create_by_name(params[:location]) if params[:location]
     @moment.source = @source
-    @moment.caption.creator = @user
+    @moment.caption.user = @user
 
     if params[:asset]
       @asset = PhotoAsset.new(params[:asset])
@@ -164,10 +164,10 @@ class ExperiencesController < ApplicationController
         @experience = Experience.find(params[:grp_moment])
       elsif @moment.thing && @moment.location
         @experience = Experience.new(:title => '%s @ %s' % [@moment.thing, @moment.location])
-        @experience.creator = @user
+        @experience.user = @user
       else
         @experience = Experience.new(:title => "none")
-        @experience.creator = @user
+        @experience.user = @user
       end
     end
 

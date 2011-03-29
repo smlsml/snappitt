@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   has_many :following, :through => :connections_out, :class_name => 'User', :source => :to
   has_many :followers, :through => :connections_in, :class_name => 'User', :source => :from
 
-  has_many :experiences, :foreign_key => 'user_id_creator'
+  has_many :experiences, :foreign_key => 'user_id'
 
   scope :most_active, lambda {
     where(:confirmed_at.ne => nil).

@@ -1,13 +1,14 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  test "should get create" do
-    get :create
+
+  test "should get index" do
+    get :show
     assert_response :success
   end
 
   test "should get show" do
-    get :show
+    get :show, :controller => 'people', :id => users(:snoop).id
     assert_response :success
   end
 

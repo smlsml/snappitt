@@ -1,10 +1,10 @@
 eat:
-  creator: snoop # user
-  thing: burger # thing
-  location: westword # location
+  user: snoop # User
+  thing: burger # Thing
+  location: westword # Location
   caption: snoop_caption
   lat: 1.5
   lng: 1.5
-  source: website # source
-  asset: photo
-  experience: group # experience
+  source: website # Source
+  asset: photo # Asset
+  experience: group # Experience

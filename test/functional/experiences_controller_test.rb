@@ -28,7 +28,7 @@ class ExperiencesControllerTest < ActionController::TestCase
   end
 
   def get_experience(params = {})
-    Experience.where({:creator => @user, :title => @params[:subject]}.merge(params)).first
+    Experience.where({:user => @user, :title => @params[:subject]}.merge(params)).first
   end
 
   test "create_mail: creates experience via email" do
@@ -83,11 +83,11 @@ class ExperiencesControllerTest < ActionController::TestCase
     post :create_mail, @params
     assert_response :success
 
-    @second = get_experience(:creator => @user)
+    @second = get_experience(:user => @user)
     assert_kind_of Experience, @second
     assert_equal @params[:plain], @experience.moments.second.caption.to_s
     assert_equal 2, @experience.moments.count
-    assert_equal @snoop, @experience.moments.second.creator
+    assert_equal @snoop, @experience.moments.second.user
   end
 
   test "create_mail: avatar at snappitt updates user image" do

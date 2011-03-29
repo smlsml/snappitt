@@ -1,21 +1,20 @@
 class Moment < ActiveRecord::Base
 
-  after_create :create_cause
-
-  belongs_to :creator, :class_name => "User", :foreign_key => 'user_id_creator'
-
+  belongs_to :user
   belongs_to :asset, :dependent => :destroy
   belongs_to :source
   belongs_to :thing
   belongs_to :location
   belongs_to :experience, :counter_cache => true
-  belongs_to :caption, :class_name => 'CaptionComment', :dependent => :destroy#, :inverse_of => :moment
+  belongs_to :caption, :class_name => 'CaptionComment', :dependent => :destroy
 
   has_many :likes, :inverse_of => :moment, :dependent => :destroy
   has_many :comments, :class_name => 'MomentComment', :inverse_of => :moment, :dependent => :destroy
 
   accepts_nested_attributes_for :caption
+  after_create :create_cause
 
+  validates :user, :presence => true
 
   def photo_url(type = :thumb)
     url = asset.data.url(type) if asset
@@ -53,7 +52,7 @@ class Moment < ActiveRecord::Base
   protected
 
   def create_cause
-    CreateCause.create!(:user => creator, :action => self, :subject => experience)
+    CreateCause.create!(:user => user, :action => self, :subject => experience)
   end
 
 end
