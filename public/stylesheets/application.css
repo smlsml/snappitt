@@ -69,6 +69,18 @@
 .experience_controller fieldset textarea {
   vertical-align: middle;
 }
+/* line 17, sass/controllers/_experience.sass */
+.experience_controller .comment img {
+  padding-top: 6px;
+}
+/* line 19, sass/controllers/_experience.sass */
+.experience_controller .comment a {
+  padding-left: 5px;
+}
+/* line 21, sass/controllers/_experience.sass */
+.experience_controller .comment td.text {
+  padding-left: 5px;
+}
 
 /* line 3, sass/controllers/_session.sass */
 .session_controller #page_center label {
@@ -621,24 +633,58 @@ div.experience_card .stats {
   right: 0;
   padding: 10px;
   background-color: #efefef;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -khtml-border-radius: 6px;
-  border-radius: 6px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
 }
-/* line 85, sass/shared/_experiences.sass */
-.experience_header .stats dfn.views {
-  background-position: -100px -200px;
+/* line 84, sass/shared/_experiences.sass */
+.experience_header .stats var {
+  color: #666666;
 }
 /* line 87, sass/shared/_experiences.sass */
-.experience_header .stats dfn.likes {
-  background-position: -100px -200px;
+.experience_header .stats dfn {
+  position: relative;
+  padding-left: 33px;
+  margin-right: 10px;
 }
-/* line 89, sass/shared/_experiences.sass */
+/* line 91, sass/shared/_experiences.sass */
+.experience_header .stats dfn span {
+  height: 20px;
+  width: 30px;
+  position: absolute;
+  left: 0;
+  background: url("http://snappitt-assets.s3.amazonaws.com/icons/assets.png") no-repeat scroll 0 0px transparent;
+}
+/* line 98, sass/shared/_experiences.sass */
+.experience_header .stats dfn.views span {
+  background-position: 0 -6px;
+}
+/* line 100, sass/shared/_experiences.sass */
+.experience_header .stats dfn.views span:hover {
+  background-position: 0px -38px;
+}
+/* line 103, sass/shared/_experiences.sass */
+.experience_header .stats dfn.likes span {
+  background-position: -32px -6px;
+}
+/* line 105, sass/shared/_experiences.sass */
+.experience_header .stats dfn.likes span:hover {
+  background-position: -32px -38px;
+}
+/* line 107, sass/shared/_experiences.sass */
 .experience_header .stats dfn.comments {
-  background-position: -100px -200px;
+  margin-right: 0;
+}
+/* line 109, sass/shared/_experiences.sass */
+.experience_header .stats dfn.comments span {
+  background-position: -65px -6px;
+}
+/* line 111, sass/shared/_experiences.sass */
+.experience_header .stats dfn.comments span:hover {
+  background-position: 65px -38px;
 }
 
 /* line 1, sass/shared/_users.sass */
@@ -750,14 +796,20 @@ table.network td {
   background: -moz-linear-gradient(center top, #e3e3e3, #f6f6f6) repeat scroll 0 0 #1b468f;
   box-shadow: none;
 }
-/* line 16, sass/shared/_moment.sass */
+/* line 15, sass/shared/_moment.sass */
+.moment_card p.metadata {
+  font-size: 11px;
+  font-color: #999999;
+}
+/* line 19, sass/shared/_moment.sass */
 .moment_card blockquote {
   width: 620px;
   margin: 10px auto;
   border: none;
+  font-style: italic;
   padding: 0;
 }
-/* line 22, sass/shared/_moment.sass */
+/* line 26, sass/shared/_moment.sass */
 .moment_card input[type="submit"] {
   background: -moz-linear-gradient(center top, #c1e445, #a7d727) repeat scroll 0 0 #c1e445;
   border: 1px solid #5a7214;
@@ -772,8 +824,7 @@ table.network td {
   padding: 5px 10px;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
-  margin: 10px;
-  text-align: right;
+  margin: 10px auto;
 }
 /* line 42, sass/application.sass */
 .moment_card input[type="submit"]:hover {
@@ -786,7 +837,7 @@ table.network td {
   background: -moz-linear-gradient(center top, #b3e529, #cbf048) repeat scroll 0 0 #cbf048;
   box-shadow: none;
 }
-/* line 26, sass/shared/_moment.sass */
+/* line 30, sass/shared/_moment.sass */
 .moment_card span.source {
   border-bottom: 1px dotted lightBlue;
 }
@@ -962,8 +1013,8 @@ div.activity {
 body {
   margin: 0;
   padding: 0;
-  font-family: Helvetica Neue !important;
-  font-size: 15px !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
   color: #999999;
 }
 
@@ -1069,6 +1120,7 @@ fieldset {
   background: #efefef;
   border: none;
   padding: 10px;
+  border-bottom: 1px solid #dedede;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -o-border-radius: 6px;
@@ -1077,7 +1129,7 @@ fieldset {
   border-radius: 6px;
 }
 
-/* line 75, sass/shared/_base.sass */
+/* line 76, sass/shared/_base.sass */
 a.button {
   background: -moz-linear-gradient(center top, #efefef, #d8d8d8) repeat scroll 0 0 #d8d8d8;
   border: 1px solid #ababab;
@@ -1103,4 +1155,9 @@ a.button:hover {
 a.button:active {
   background: -moz-linear-gradient(center top, #e3e3e3, #f6f6f6) repeat scroll 0 0 #1b468f;
   box-shadow: none;
+}
+
+/* line 79, sass/shared/_base.sass */
+var {
+  font-size: 13px;
 }

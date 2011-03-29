@@ -17,9 +17,9 @@
   </div>
 
   <div class="stats">
-    <dfn class="views" title="Views"><var><%= @experience.views %></var> Views</dfn> &bull;
-    <dfn class="likes" title="Likes"><var><%= @experience.likes_count %></var> Likes</dfn> &bull;
-    <dfn class="comments" title="Comments"><var><%= @experience.comments_count %></var> Comments</dfn>
+    <dfn class="views" title="Views"><span></span><var><%= @experience.views %></var></dfn>
+    <dfn class="likes" title="Likes"><span></span><var><%= @experience.likes_count %></var></dfn>
+    <dfn class="comments" title="Comments"><span></span><var><%= @experience.comments_count %></var></dfn>
   </div>
 </div>
 
@@ -34,7 +34,7 @@
 
     <blockquote><%= (t(:lq).html_safe << m.caption << t(:rq).html_safe) unless m.caption.blank? %></blockquote>
 
-    <p>
+    <p class="metadata">
       Uploaded at <%= m.created_at.to_formatted_s(:mdy) %> by
       <%= link_to(m.creator, user_path(m.creator), :title => m.creator.profile.realname) %>
       <%= (' via <span title="%s" class="source">%s&deg;</span>' % [m.source.name, m.source.short]).html_safe if m.source %>
@@ -50,7 +50,7 @@
     <fieldset>
       <legend>Comments</legend>
       <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
-        <textarea name="comment" rows="2" cols="60" class="auto"></textarea>
+        <textarea name="comment" rows="2" cols="60" class="auto"></textarea><br/>
         <input type="submit" value="Add Comment"/><br/>
       <% end %>
 
@@ -66,7 +66,7 @@
                         user_path(first_like.user)) %>
           </td>
           <td><%= link_to(first_like.user, user_path(first_like.user)) %></td>
-          <td><%= m.likes.count > 1 ? (' and %s others' % (m.likes.count - 1)) : '' %> liked this moment</td>
+          <td class="text"><%= m.likes.count > 1 ? (' and %s others' % (m.likes.count - 1)) : '' %> liked this moment</td>
         </tr>
       <% end %>
       <% m.comments.each do |c| %>
@@ -79,7 +79,7 @@
                         user_path(c.creator)) %>
           </td>
           <td><%= link_to(c.creator, user_path(c.creator)) %></td>
-          <td>"<%= c.text %>"</td>
+          <td class="text">"<%= c.text %>"</td>
         </tr>
       <% end %>
       </table>
