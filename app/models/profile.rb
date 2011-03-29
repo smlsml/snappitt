@@ -18,4 +18,15 @@ class Profile < ActiveRecord::Base
     realname unless user.username == realname
   end
 
+  def his_her
+    case gender.to_s.downcase
+      when 'm'
+        'his'
+      when 'f'
+        'her'
+      else
+        'their'
+    end
+  end
+
 end

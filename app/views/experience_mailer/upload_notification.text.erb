@@ -21,9 +21,10 @@ P.S. You can set a profile image by email too, just send your photo to avatar@<%
 
 <% elsif @causes %>
 (¯`·._.·(¯`·._.· Experience Activity ·._.·´¯)·._.·´¯)
-  <% @causes.each do |action| %>
-    <%= action.summary %>
-  <% end %>
+<% @causes.each do |action| %>
+* <%= action.summary %>
+<% end %>
+
 ---
 <% end %>
 

@@ -114,6 +114,8 @@ class ExperiencesController < ApplicationController
       flash.now[:notice] = 'You must confirm your account before others can view your experiences'
     end
 
+    @causes = Cause.for_experience(@experience).limit(20)
+
     @experience.increment!(:views, 1) unless is_bot?
   end
 

@@ -2,7 +2,7 @@
 /* line 177, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png?1301007155') repeat-x bottom left;
+  background: url('/images/button_bg.png?1301005384') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -948,6 +948,14 @@ form textarea:focus {
   color: #4f8a10;
   background: #dff2bf;
   border-bottom: 1px solid #4f8a10;
+}
+
+/* line 1, sass/shared/_activity.sass */
+div.activity {
+  width: 500px;
+  text-align: left;
+  font-size: 16px;
+  margin: 20px auto;
 }
 
 /* line 1, sass/shared/_base.sass */

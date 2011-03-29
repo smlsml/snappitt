@@ -12,8 +12,20 @@ class Cause < ActiveRecord::Base
     'caused'
   end
 
+  def owner
+    person = if subject.creator.blank?
+      ''
+    elsif subject.creator == user
+      '%s own ' % subject.creator.profile.his_her
+    else
+      '%s ' % subject.creator.to_s.possessive
+    end
+
+    '%s%s' % [person, subject.class.name]
+  end
+
   def summary
-    "%s %s %s" % [user, verb, subject.creator.blank? ? '%s' % subject.class.name : '%s %s' % [subject.creator.to_s.possessive, subject.class.name]]
+    "%s %s %s" % [user, verb, owner]
   end
 
   scope :for_experience, lambda { |experience|
