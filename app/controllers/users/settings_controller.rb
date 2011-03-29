@@ -12,7 +12,7 @@ class Users::SettingsController < ApplicationController
     if params[:asset]
       @source = Source.find_or_create_from_request(request)
       @asset = PhotoAsset.new(params[:asset])
-      @asset.creator = current_user
+      @asset.user = current_user
       @asset.source = @source
 
       @profile.photo_asset = @asset

@@ -1,4 +1,4 @@
 photo:
-  creator: snoop # user
+  user: snoop # user
   source: website # source
   type: PhotoAsset

@@ -58,7 +58,7 @@ class ExperiencesController < ApplicationController
       asset = PhotoAsset.new(:data => file)
 
       if asset
-        asset.creator = @user
+        asset.user = @user
         asset.source = @source
         profile = @user.profile
         profile.photo_asset = asset
@@ -90,7 +90,7 @@ class ExperiencesController < ApplicationController
       asset = PhotoAsset.new(:data => file)
 
       if asset
-        asset.creator = @user
+        asset.user = @user
         asset.source = @source
         moment.asset = asset
       end
@@ -151,7 +151,7 @@ class ExperiencesController < ApplicationController
     end
 
     if @asset
-      @asset.creator = @user
+      @asset.user = @user
       @asset.source = @source
 
       @moment.asset = @asset

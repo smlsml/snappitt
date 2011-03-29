@@ -2,8 +2,10 @@ require "RMagick"
 
 class Asset < ActiveRecord::Base
 
-  belongs_to :creator, :class_name => 'User', :foreign_key => 'user_id_creator'
+  belongs_to :user
   belongs_to :source
+
+  validates :user, :presence => true
 
   if Rails.env == 'production'
     has_attached_file :data,
