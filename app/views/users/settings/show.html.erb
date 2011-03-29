@@ -5,6 +5,8 @@
   <%= p.label 'username', 'Username: %s' % @profile.user.username %>
   <%= p.label 'email', 'Email: %s' % @profile.user.email %>
   <%= p.label 'joined', 'Joined: %s' % @profile.user.created_at.to_formatted_s(:mdy) %>
+  <%= p.label 'role', 'Admin?: yes' if @profile.user.is_admin? %>
+  <%= p.label 'publish', 'Publish? yes' if can_publish? %><br/>
 
   <%= label :password, :new, 'New Password:' %>
   <%= password_field :password, :new, :value => '', :autocomplete => 'false' %>

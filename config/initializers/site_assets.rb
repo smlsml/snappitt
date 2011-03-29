@@ -2,7 +2,8 @@ class SiteAssets
   cattr_accessor :prefix
 
   MAP = {
-    :header_bg => '/header/header-bg.jpg'
+    :header_bg => '/header/header-bg.jpg',
+    :published => '/icons/published.png'
   }
 
   def self.[](name)

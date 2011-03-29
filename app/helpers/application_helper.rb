@@ -24,6 +24,10 @@ module ApplicationHelper
     user_signed_in? && ((user && user == current_user) || current_user.is_admin?)
   end
 
+  def can_publish?
+    user_signed_in? && (current_user.is_admin? || current_user.email =~ /@likeme.net/i || current_user.email =~ /@westword.com/i)
+  end
+
   # for devise
   def resource_name
     :user

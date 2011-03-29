@@ -25,4 +25,6 @@ Photo::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   Paperclip.options[:command_path] = "/opt/local/bin/"
+
+  config.site_assets_prefix = 'http://snappitt-assets.s3.amazonaws.com'
 end

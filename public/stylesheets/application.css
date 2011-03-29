@@ -748,8 +748,15 @@ table.network td {
 }
 
 /* line 2, sass/shared/_moment.sass */
-.moment_card img {
+.moment_card .moment {
+  position: relative;
+}
+/* line 4, sass/shared/_moment.sass */
+.moment_card .moment img {
   margin: 0;
+}
+/* line 6, sass/shared/_moment.sass */
+.moment_card .moment img.photo {
   border: 6px solid #efefef;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -758,18 +765,25 @@ table.network td {
   -khtml-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 6, sass/shared/_moment.sass */
+/* line 9, sass/shared/_moment.sass */
+.moment_card .moment img.published {
+  width: 100px;
+  position: absolute;
+  bottom: 20px;
+  right: 25%;
+}
+/* line 14, sass/shared/_moment.sass */
 .moment_card p {
   font-size: 13px;
   text-align: center;
 }
-/* line 9, sass/shared/_moment.sass */
+/* line 17, sass/shared/_moment.sass */
 .moment_card p.links {
   width: 620px;
   text-align: center;
   margin: 10px auto;
 }
-/* line 13, sass/shared/_moment.sass */
+/* line 21, sass/shared/_moment.sass */
 .moment_card p.links a {
   background: -moz-linear-gradient(center top, #efefef, #d8d8d8) repeat scroll 0 0 #d8d8d8;
   border: 1px solid #ababab;
@@ -796,12 +810,12 @@ table.network td {
   background: -moz-linear-gradient(center top, #e3e3e3, #f6f6f6) repeat scroll 0 0 #1b468f;
   box-shadow: none;
 }
-/* line 15, sass/shared/_moment.sass */
+/* line 23, sass/shared/_moment.sass */
 .moment_card p.metadata {
   font-size: 11px;
   font-color: #999999;
 }
-/* line 19, sass/shared/_moment.sass */
+/* line 27, sass/shared/_moment.sass */
 .moment_card blockquote {
   width: 620px;
   margin: 10px auto;
@@ -809,7 +823,7 @@ table.network td {
   font-style: italic;
   padding: 0;
 }
-/* line 26, sass/shared/_moment.sass */
+/* line 34, sass/shared/_moment.sass */
 .moment_card input[type="submit"] {
   background: -moz-linear-gradient(center top, #c1e445, #a7d727) repeat scroll 0 0 #c1e445;
   border: 1px solid #5a7214;
@@ -837,7 +851,7 @@ table.network td {
   background: -moz-linear-gradient(center top, #b3e529, #cbf048) repeat scroll 0 0 #cbf048;
   box-shadow: none;
 }
-/* line 30, sass/shared/_moment.sass */
+/* line 38, sass/shared/_moment.sass */
 .moment_card span.source {
   border-bottom: 1px dotted lightBlue;
 }

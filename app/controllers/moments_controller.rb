@@ -4,11 +4,22 @@ class MomentsController < ApplicationController
   def show
   end
 
+  def publish
+    @user = current_user
+    @moment = Moment.find(params[:id])
+
+    PublishFlag.create!(:user => @user, :moment => @moment)
+
+    flash[:success] = 'Published Moment'
+
+    redirect_to experience_path(@moment.experience)
+  end
+
   def like
     @user = current_user
     @moment = Moment.find(params[:id])
 
-    LikeFlag.create!(:user_id => @user.id, :moment_id => @moment.id)
+    LikeFlag.create!(:user => @user, :moment => @moment)
 
     flash[:success] = 'Liked Moment'
 
@@ -19,7 +30,7 @@ class MomentsController < ApplicationController
     @user = current_user
     @moment = Moment.find(params[:id])
 
-    MomentComment.create(:user_id => @user.id, :moment_id => @moment.id, :text => params[:comment].to_s.strip)
+    MomentComment.create!(:user => @user, :moment => @moment, :text => params[:comment].to_s.strip)
 
     flash[:success] = 'Added comment'
 

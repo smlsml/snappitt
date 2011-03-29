@@ -9,6 +9,7 @@ class Moment < ActiveRecord::Base
   belongs_to :caption, :class_name => 'CaptionComment', :dependent => :destroy
 
   has_many :likes, :class_name => 'LikeFlag', :inverse_of => :moment, :dependent => :destroy
+  has_many :publishes, :class_name => 'PublishFlag', :inverse_of => :moment, :dependent => :destroy
   has_many :comments, :class_name => 'MomentComment', :inverse_of => :moment, :dependent => :destroy
 
   accepts_nested_attributes_for :caption
@@ -29,6 +30,9 @@ class Moment < ActiveRecord::Base
     title
   end
 
+  def published?
+    publishes.count > 0
+  end
 
   def self.experience_id_for(moment_id)
     Moment.find(moment_id, :select => 'experience_id').experience_id

@@ -1,8 +1,16 @@
 .moment_card
-  img
-    margin: 0
-    border: 6px solid $graySmoke
-    @include border-radius(6px)
+  .moment
+    position: relative
+    img
+      margin: 0
+      &.photo
+        border: 6px solid $graySmoke
+        @include border-radius(6px)
+      &.published
+        width: 100px
+        position: absolute
+        bottom: 20px
+        right: 25%
   p
     font-size: 13px
     text-align: center

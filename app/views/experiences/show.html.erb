@@ -4,7 +4,7 @@
   <h2><%= @experience.title %></h2>
 
   <div class="details">
-    <var><%= @experience.moments_count %></var> moments <!--at
+    <var><%= @experience.moments_count %></var> moments <!-- at
     <var>X</var> places with
     <var>X</var> people and
     <var>X</var> things -->
@@ -25,9 +25,13 @@
 
 <% @experience.moments.each do |m| %>
   <div class="moment_card">
-    <%= image_tag(m.photo_url(:large)) %>
+    <div class="moment">
+    <%= image_tag(m.photo_url(:large), :class => 'photo') %>
+    <%= ('<img src="%s" class="published"/>' % SiteAssets[:published]).html_safe if m.published? %>
+    </div>
 
     <p class="links">
+      <%= link_to('Publish', publish_experience_moment_path(@experience, m)) if !m.published? && can_publish? %> &nbsp;
       <%= link_to('Like', like_experience_moment_path(@experience, m)) %> &nbsp;
       <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
     </p>

@@ -43,4 +43,12 @@ class MomentTest < ActiveSupport::TestCase
     assert_equal eat2, Moment::CreateCause.where(:action_id => eat2.id, :action_type => 'Moment').first.action
   end
 
+  test "publishing" do
+    assert !@eat.published?
+    PublishFlag.create!(:user => users(:snoop), :moment => @eat)
+    @eat.reload
+    assert @eat.published?
+    assert_kind_of Cause, PublishFlag::CreateCause.first
+  end
+
 end
