@@ -5,14 +5,23 @@
     @include border-radius(6px)
   p
     font-size: 13px
+    text-align: center
     &.links
       width: 620px
       text-align: center
-      margin: 0 auto
+      margin: 10px auto
+      a
+        @include snappitt_button
+
   blockquote
     width: 620px
     margin: 10px auto
     border: none
     padding: 0
+
+  input[type="submit"]
+    @include snappitt_button_highlight
+    margin: 10px
+    text-align: right
   span.source
     border-bottom: 1px dotted lightBlue
