@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   belongs_to :contact, :inverse_of => :user
 
   has_many :services
-  has_many :likes, :inverse_of => :user
+  has_many :likes, :class_name => 'LikeFlag', :inverse_of => :user
 
   has_many :connections_in, :class_name => 'Connection', :foreign_key => 'user_id_to'
   has_many :connections_out, :class_name => 'Connection', :foreign_key => 'user_id_from'

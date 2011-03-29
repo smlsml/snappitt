@@ -12,7 +12,7 @@ class MomentTest < ActiveSupport::TestCase
     assert_kind_of(PhotoAsset, @eat.asset)
     assert_kind_of(Thing, @eat.thing)
     assert_kind_of(Location, @eat.location)
-    assert_kind_of(Like, @eat.likes.first)
+    assert_kind_of(LikeFlag, @eat.likes.first)
     assert_kind_of(CaptionComment, @eat.caption)
     assert_kind_of(MomentComment, @eat.comments.first)
 
@@ -20,7 +20,7 @@ class MomentTest < ActiveSupport::TestCase
   end
 
   test "like counter" do
-    Like.create!(:moment_id => @eat.id, :user_id => users(:snoop).id)
+    LikeFlag.create!(:moment_id => @eat.id, :user_id => users(:snoop).id)
 
     @eat.reload
 

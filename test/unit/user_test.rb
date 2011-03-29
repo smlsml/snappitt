@@ -12,7 +12,7 @@ class UserTest < ActiveSupport::TestCase
   test "likes_count: cached count of likes" do
     @snoop = users(:snoop)
     cnt = @snoop.likes_count
-    like = Like.create!(:moment_id => moments(:eat).id, :user_id => @snoop.id)
+    like = LikeFlag.create!(:moment_id => moments(:eat).id, :user_id => @snoop.id)
 
     @snoop.reload
     assert_equal cnt + 1, @snoop.likes_count

@@ -1,7 +1,7 @@
-class Like < ActiveRecord::Base
+class LikeFlag < MomentFlag
 
-  belongs_to :user, :inverse_of => :likes, :counter_cache => true
-  belongs_to :moment, :inverse_of => :likes, :counter_cache => true
+  belongs_to :user, :inverse_of => :likes, :counter_cache => :likes_count
+  belongs_to :moment, :inverse_of => :likes, :counter_cache => :likes_count
 
   class CreateCause < Cause
     def verb; 'liked'; end

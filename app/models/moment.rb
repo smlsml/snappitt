@@ -8,7 +8,7 @@ class Moment < ActiveRecord::Base
   belongs_to :experience, :counter_cache => true
   belongs_to :caption, :class_name => 'CaptionComment', :dependent => :destroy
 
-  has_many :likes, :inverse_of => :moment, :dependent => :destroy
+  has_many :likes, :class_name => 'LikeFlag', :inverse_of => :moment, :dependent => :destroy
   has_many :comments, :class_name => 'MomentComment', :inverse_of => :moment, :dependent => :destroy
 
   accepts_nested_attributes_for :caption

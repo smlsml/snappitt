@@ -7,7 +7,6 @@ class HomeController < ApplicationController
   end
 
   def home
-
     @experiences = Experience.user_feed(current_user)
     render :home
   end

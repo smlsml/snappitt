@@ -4,14 +4,14 @@ class Experience < ActiveRecord::Base
   has_one :event, :inverse_of => :experience
   has_many :moments, :order => 'moments.id', :dependent => :destroy
   has_many :comments, :through => :moments, :readonly => true
-  has_many :likes, :through => :moments, :readonly => true
+  has_many :likes, :class_name => 'LikeFlag', :through => :moments, :readonly => true
 
   validates :user, :presence => true
 
   scope :user_feed, lambda { |user|
     includes(:user => :profile, :moments => :asset).
     where(:visibility.ne => 'private', :users => {:confirmed_at.ne => nil}).
-    order('experiences.created_at DESC')
+    order('experiences.created_at DESC, moments.id')
   }
 
   scope :by_user, lambda { |user|

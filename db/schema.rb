@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110329211449) do
+ActiveRecord::Schema.define(:version => 20110329221834) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -157,6 +157,17 @@ ActiveRecord::Schema.define(:version => 20110329211449) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "moment_flags", :force => true do |t|
+    t.integer  "user_id",                  :null => false
+    t.integer  "moment_id",                :null => false
+    t.string   "type",       :limit => 50, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "moment_flags", ["moment_id"], :name => "index_moment_flags_on_moment_id"
+  add_index "moment_flags", ["user_id"], :name => "index_moment_flags_on_user_id"
 
   create_table "moments", :force => true do |t|
     t.integer  "user_id",                       :null => false

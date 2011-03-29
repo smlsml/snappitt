@@ -8,7 +8,7 @@ class MomentsController < ApplicationController
     @user = current_user
     @moment = Moment.find(params[:id])
 
-    Like.create!(:user_id => @user.id, :moment_id => @moment.id)
+    LikeFlag.create!(:user_id => @user.id, :moment_id => @moment.id)
 
     flash[:success] = 'Liked Moment'
 
