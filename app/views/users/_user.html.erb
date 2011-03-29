@@ -20,9 +20,8 @@
         <% end %>
       <% end %>
     </h2>
-
-    <dfn><%= 'Experiences: %s | Likes: %s | Followers: %s' % [user.experiences.size, user.likes.size, user.followers.size] %></dfn>
-    <p><%= (t(:lq).html_safe << user.profile.bio.to_s << t(:rq).html_safe) unless user.profile.bio.blank? %></p>
+    <p><%= user.profile.bio.to_s unless user.profile.bio.blank? %></p>
+    <dfn><%= '%s Experiences | %s Followers' % [user.experiences.size, user.followers.size] %></dfn>
   </div>
 
 </div>
