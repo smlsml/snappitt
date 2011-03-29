@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110328172425) do
+ActiveRecord::Schema.define(:version => 20110328222244) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id_creator"
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(:version => 20110328172425) do
     t.datetime "taken_at"
     t.string   "device"
   end
+
+  create_table "causes", :force => true do |t|
+    t.integer  "user_id",                    :null => false
+    t.integer  "action_id",                  :null => false
+    t.string   "action_type",  :limit => 50, :null => false
+    t.integer  "subject_id",                 :null => false
+    t.string   "subject_type", :limit => 50, :null => false
+    t.string   "type",         :limit => 50, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "causes", ["action_type", "action_id"], :name => "index_causes_on_action_type_and_action_id"
+  add_index "causes", ["subject_type", "subject_id"], :name => "index_causes_on_subject_type_and_subject_id"
+  add_index "causes", ["user_id"], :name => "index_causes_on_user_id"
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"

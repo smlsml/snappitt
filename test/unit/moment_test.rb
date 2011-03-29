@@ -2,8 +2,11 @@ require 'test_helper'
 
 class MomentTest < ActiveSupport::TestCase
 
-  test "fixture" do
+  def setup
     @eat = moments(:eat)
+  end
+
+  test "fixture" do
     assert_kind_of(Moment, @eat)
     assert_kind_of(Source, @eat.source)
     assert_kind_of(PhotoAsset, @eat.asset)
@@ -17,7 +20,6 @@ class MomentTest < ActiveSupport::TestCase
   end
 
   test "like counter" do
-    @eat = moments(:eat)
     Like.create!(:moment_id => @eat.id, :user_id => users(:snoop).id)
 
     @eat.reload
@@ -27,13 +29,18 @@ class MomentTest < ActiveSupport::TestCase
   end
 
   test "comment counter" do
-    @eat = moments(:eat)
     MomentComment.create!(:moment_id => @eat.id, :user_id => users(:snoop).id, :text => "whatever")
 
     @eat.reload
 
     assert @eat.comments_count > 0
     assert @eat.experience.comments_count > 0
+  end
+
+  test "create cause" do
+    eat2 = @eat.clone
+    eat2.save
+    assert_equal eat2, Moment::CreateCause.where(:action_id => eat2.id, :action_type => 'Moment').first.action
   end
 
 end

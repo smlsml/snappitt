@@ -131,7 +131,7 @@ class ExperiencesController < ApplicationController
     @user = current_user unless @user
 
     if params[:moment]
-      @moment = Moment.create(params[:moment])
+      @moment = Moment.new(params[:moment])
     end
 
     @source = Source.find_or_create_from_request(request)
@@ -162,13 +162,14 @@ class ExperiencesController < ApplicationController
         @experience = Experience.find(params[:grp_moment])
       elsif @moment.thing && @moment.location
         @experience = Experience.new(:title => '%s @ %s' % [@moment.thing, @moment.location])
+        @experience.creator = @user
       else
         @experience = Experience.new(:title => "none")
+        @experience.creator = @user
       end
     end
 
     @moment.experience = @experience
-    @moment.experience.creator = @user
 
     return @moment.save
 
