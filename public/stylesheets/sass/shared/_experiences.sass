@@ -80,11 +80,33 @@ div.experience_card
     right: 0
     padding: 10px
     background-color: $graySmoke
-    @include border-radius(6px)
+    @include border-radius(4px)
+    var
+      color: #666
+
     dfn
+      position: relative
+      padding-left: 33px
+      margin-right: 10px
+      span
+        height: 20px
+        width: 30px
+        position: absolute
+        left: 0
+        background: url('#{$asset_url}/icons/assets.png') no-repeat scroll 0 0px transparent
       &.views
-        background-position: -100px -200px
+        span
+          background-position: 0 -6px
+          &:hover
+            background-position: 0px -38px
       &.likes
-        background-position: -100px -200px
+        span
+          background-position: -32px -6px
+          &:hover
+            background-position: -32px -38px
       &.comments
-        background-position: -100px -200px
+        margin-right: 0
+        span
+          background-position: -65px -6px
+          &:hover
+            background-position: 65px -38px
