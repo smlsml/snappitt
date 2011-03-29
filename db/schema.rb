@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110329221834) do
+ActiveRecord::Schema.define(:version => 20110329225535) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -128,13 +128,6 @@ ActiveRecord::Schema.define(:version => 20110329221834) do
   end
 
   add_index "geocodes", ["lat", "lng"], :name => "index_geocodes_on_lat_and_lng", :unique => true
-
-  create_table "likes", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "moment_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "locations", :force => true do |t|
     t.string   "name"
