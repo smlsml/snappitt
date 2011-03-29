@@ -1,5 +1,14 @@
 <%= render @user %>
 
+<div class="activity">
+<h2>Recent Activity</h2>
+  <ol>
+    <% Cause.for_user(@user).each do |action| %>
+      <li><%= action.summary %></li>
+    <% end %>
+  </ol>
+</div>
+
 <table class="feed"><tr><td><%= render @experiences %></td></tr></table>
 
 <br style="clear:both" />

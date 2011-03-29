@@ -4,10 +4,10 @@
   <h2><%= @experience.title %></h2>
 
   <div class="details">
-    <var><%= @experience.moments_count %></var> moments at
+    <var><%= @experience.moments_count %></var> moments <!--at
     <var>X</var> places with
     <var>X</var> people and
-    <var>X</var> things
+    <var>X</var> things -->
   </div>
 
   <div class="by">
@@ -91,3 +91,14 @@
 
 <%= link_to('Add Moment', edit_experience_path(@experience), :class => 'button') %> &nbsp;&nbsp;
 <%= link_to('Delete Experience', experience_path(@experience), :class => 'button', :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.creator) %>
+
+<% if @causes %>
+<div class="activity">
+<h2>Recent Activity</h2>
+  <ol>
+    <% @causes.each do |action| %>
+      <li><%= action.summary %></li>
+    <% end %>
+  </ol>
+</div>
+<% end %>

@@ -1,5 +1,7 @@
 class Moment < ActiveRecord::Base
 
+  after_create :create_cause
+
   belongs_to :creator, :class_name => "User", :foreign_key => 'user_id_creator'
 
   belongs_to :asset, :dependent => :destroy
@@ -14,6 +16,7 @@ class Moment < ActiveRecord::Base
 
   accepts_nested_attributes_for :caption
 
+
   def photo_url(type = :thumb)
     url = asset.data.url(type) if asset
     url || PhotoAsset.default_url(type)
@@ -27,6 +30,7 @@ class Moment < ActiveRecord::Base
     title
   end
 
+
   def self.experience_id_for(moment_id)
     Moment.find(moment_id, :select => 'experience_id').experience_id
   end
@@ -39,6 +43,17 @@ class Moment < ActiveRecord::Base
   def self.decrement_counter(field, id)
     super(field, id)
     Experience.decrement_counter(field, Moment.experience_id_for(id))
+  end
+
+
+  class CreateCause < Cause
+    def verb; 'uploaded a moment to'; end
+  end
+
+  protected
+
+  def create_cause
+    CreateCause.create!(:user => creator, :action => self, :subject => experience)
   end
 
 end

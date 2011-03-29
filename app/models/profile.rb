@@ -14,4 +14,19 @@ class Profile < ActiveRecord::Base
     url || PhotoAsset.default_url(type)
   end
 
+  def realname_unless
+    realname unless user.username == realname
+  end
+
+  def his_her
+    case gender.to_s.downcase
+      when 'm'
+        'his'
+      when 'f'
+        'her'
+      else
+        'their'
+    end
+  end
+
 end

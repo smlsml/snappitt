@@ -2,7 +2,7 @@
 /* line 177, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png?1301007155') repeat-x bottom left;
+  background: url('/images/button_bg.png?1301005384') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -689,16 +689,19 @@ div.experience_card .stats {
 
 /* line 1, sass/shared/_users.sass */
 .user_card {
-  margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 30px;
   text-align: left;
-  margin-left: 0px;
 }
 /* line 5, sass/shared/_users.sass */
-.user_card h2 {
-  padding-top: 10px;
+.user_card .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 55px;
 }
-/* line 7, sass/shared/_users.sass */
-.user_card h2 img {
+/* line 10, sass/shared/_users.sass */
+.user_card .icon img {
   margin: 0;
   vertical-align: middle;
   -moz-border-radius: 4px;
@@ -712,20 +715,36 @@ div.experience_card .stats {
   -o-box-shadow: #666666 0 1px 2px 0;
   box-shadow: #666666 0 1px 2px 0;
 }
-/* line 12, sass/shared/_users.sass */
-.user_card h2 a.button {
-  float: right;
-  margin-top: 10px;
-  margin-right: 60px;
+/* line 15, sass/shared/_users.sass */
+.user_card .info {
+  margin-left: 60px;
 }
-/* line 16, sass/shared/_users.sass */
-.user_card h2 span {
-  margin: 10px;
+/* line 18, sass/shared/_users.sass */
+.user_card .info h2 a.button {
+  float: right;
+  margin-right: 25px;
+}
+/* line 21, sass/shared/_users.sass */
+.user_card .info h2 small {
+  color: lightGray;
+}
+/* line 23, sass/shared/_users.sass */
+.user_card .info p {
+  font-style: italic;
+}
+/* line 25, sass/shared/_users.sass */
+.user_card .info dfn {
+  font-size: 12px;
 }
 
 /* line 2, sass/shared/_follow.sass */
 table.network th {
   text-align: left;
+}
+/* line 4, sass/shared/_follow.sass */
+table.network td {
+  width: 50%;
+  padding: 15px;
 }
 
 /* line 2, sass/shared/_moment.sass */
@@ -980,6 +999,14 @@ form textarea:focus {
   color: #4f8a10;
   background: #dff2bf;
   border-bottom: 1px solid #4f8a10;
+}
+
+/* line 1, sass/shared/_activity.sass */
+div.activity {
+  width: 500px;
+  text-align: left;
+  font-size: 16px;
+  margin: 20px auto;
 }
 
 /* line 1, sass/shared/_base.sass */

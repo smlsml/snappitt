@@ -6,6 +6,7 @@ class ExperienceMailer < ActionMailer::Base
     @user = user
     @is_new = is_new
     @group_address = 'post%s@%s' % [experience.id, I18n.translate('app.host')]
+    @causes = Cause.for_experience(@experience).limit(5)
 
     mail :to => @user.email,
          :from => "%s on %s <%s>" % [@user, I18n.translate('app.name'), @group_address],

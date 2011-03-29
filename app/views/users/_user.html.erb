@@ -1,21 +1,28 @@
 <div class="user_card">
 
-  <h2><%= link_to(image_tag(user.profile.photo_url,
-                            :width => 48,
-                            :height => 48,
-                            :alt => user),
-                  user_path(user)) %>
-       <span><%= link_to(user, user_path(user)) %></span>
+  <div class="icon">
+    <%= link_to(image_tag(user.profile.photo_url(:thumb),
+                          :width => 48,
+                          :height => 48,
+                          :alt => user),
+                user_path(user)) %>
+  </div>
 
-  <% unless current_user == user || !user_signed_in? %>
-    <% if current_user.follows(user) %>
-      <%= link_to( t(:unfollow), user_follow_path(user, current_user), :class => 'button', :method => :delete) %>
-    <% else %>
-      <%= link_to( t(:follow), user_follow_index_path(user), :class => 'button', :method => :post)  %>
-    <% end %>
-  <% end %>
-  </h2>
-  <p><%= 'Experiences: %s | Likes: %s | Followers: %s' % [user.experiences.size, user.likes.size, user.followers.size] %></p>
-  <q><%= (t(:lq).html_safe << user.profile.bio.to_s << t(:rq).html_safe) unless user.profile.bio.blank? %></q>
+  <div class="info">
+    <h2>
+      <span><%= link_to(user, user_path(user)) %></span>
+      <small><%= user.profile.realname_unless %></small>
+      <% unless current_user == user || !user_signed_in? %>
+        <% if current_user.follows(user) %>
+          <%= link_to( t(:unfollow), user_follow_path(user, current_user), :class => 'button', :method => :delete) %>
+        <% else %>
+          <%= link_to( t(:follow), user_follow_index_path(user), :class => 'button', :method => :post)  %>
+        <% end %>
+      <% end %>
+    </h2>
+
+    <dfn><%= 'Experiences: %s | Likes: %s | Followers: %s' % [user.experiences.size, user.likes.size, user.followers.size] %></dfn>
+    <p><%= (t(:lq).html_safe << user.profile.bio.to_s << t(:rq).html_safe) unless user.profile.bio.blank? %></p>
+  </div>
 
 </div>
