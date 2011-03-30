@@ -21,6 +21,7 @@
  <li>
    <a href="<%= @in ? user_path(current_user) : root_path %>"<%= nav_class(:profile) %>>
      <span><%= t('nav.profile') %></span>
+     <%= ('<var class="alerts">%s</var>' % current_user.notifications.unseen.count).html_safe if @in && current_user.unseen_notifications? %>
    </a>
  </li>
  <li>

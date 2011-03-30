@@ -4,7 +4,7 @@ like_create:
   action_type: Like
   subject: eat (Moment)
   subject_type: Moment
-  type: Like:CreateCause
+  type: LikeFlag::CreateCause
 
 moment_create:
   user: snoop # User

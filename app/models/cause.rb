@@ -38,4 +38,24 @@ class Cause < ActiveRecord::Base
     order('created_at DESC')
   }
 
+  module HasNotifications
+    def self.included(base)
+      base.after_create :create_notifications
+    end
+
+    protected
+
+    def create_notifications
+      create_notifications_for_users(subject.notify_users) if subject.respond_to?(:notify_users)
+    end
+  end
+
+  protected
+
+  def create_notifications_for_users(users)
+    notifications = []
+    users.delete_if{|u| u.id == self.user.id}.compact.uniq.each{ |u| notifications << {:user_id => u.id, :cause_id => self.id} }
+    Notification.create!(notifications)
+  end
+
 end

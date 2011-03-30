@@ -1,0 +1,4 @@
+snoop_like:
+  user: snoop # User
+  cause: like_create # Cause
+  seen: false

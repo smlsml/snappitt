@@ -13,9 +13,14 @@ class Moment < ActiveRecord::Base
   has_many :comments, :class_name => 'MomentComment', :inverse_of => :moment, :dependent => :destroy
 
   accepts_nested_attributes_for :caption
-  after_create :create_cause
+
+  #--
 
   validates :user, :presence => true
+
+  after_create :create_cause
+
+  #--
 
   def photo_url(type = :thumb)
     url = asset.data.url(type) if asset
@@ -34,6 +39,12 @@ class Moment < ActiveRecord::Base
     publishes.count > 0
   end
 
+  def notify_users
+    ([self.user, self.experience.user] + comments.collect{|c| c.user} + likes.collect{|l| l.user}).compact.uniq
+  end
+
+  #--
+
   def self.experience_id_for(moment_id)
     Moment.find(moment_id, :select => 'experience_id').experience_id
   end
@@ -48,8 +59,10 @@ class Moment < ActiveRecord::Base
     Experience.decrement_counter(field, Moment.experience_id_for(id))
   end
 
+  #--
 
   class CreateCause < Cause
+    include Cause::HasNotifications
     def verb; 'uploaded a moment to'; end
   end
 

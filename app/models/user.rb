@@ -32,6 +32,12 @@ class User < ActiveRecord::Base
 
   has_many :experiences, :foreign_key => 'user_id'
 
+  has_many :notifications do
+    def unseen
+      where(:seen => false)
+    end
+  end
+
   scope :most_active, lambda {
     where(:confirmed_at.ne => nil).
     order('experiences_count DESC').
@@ -58,6 +64,10 @@ class User < ActiveRecord::Base
 
   def is_admin?
     role == 'admin'
+  end
+
+  def unseen_notifications?
+    notifications.unseen.count > 0
   end
 
   def self.generate_password(len = 8)

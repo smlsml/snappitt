@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110329225535) do
+ActiveRecord::Schema.define(:version => 20110330005704) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -177,6 +177,16 @@ ActiveRecord::Schema.define(:version => 20110329225535) do
     t.integer  "likes_count",    :default => 0
     t.integer  "comments_count", :default => 0
   end
+
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id",                       :null => false
+    t.integer  "cause_id",                      :null => false
+    t.boolean  "seen",       :default => false, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notifications", ["user_id", "seen"], :name => "index_notifications_on_user_id_and_seen"
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"

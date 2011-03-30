@@ -48,4 +48,8 @@ class Experience < ActiveRecord::Base
     '%s moment%s' % [moments_count, 1 == moments_count ? '':'s']
   end
 
+  def notify_users
+    moments.collect{|m| m.notify_users}.flatten.compact.uniq
+  end
+
 end

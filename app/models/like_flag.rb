@@ -4,6 +4,7 @@ class LikeFlag < MomentFlag
   belongs_to :moment, :inverse_of => :likes, :counter_cache => :likes_count
 
   class CreateCause < Cause
+    include Cause::HasNotifications
     def verb; 'liked'; end
   end
 

@@ -3,12 +3,12 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
 
   test "should get index" do
-    get :show
+    get :index
     assert_response :success
   end
 
   test "should get show" do
-    get :show, :controller => 'people', :id => users(:snoop).id
+    get :show, :id => users(:snoop).id
     assert_response :success
   end
 

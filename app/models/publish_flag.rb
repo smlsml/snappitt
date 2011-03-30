@@ -4,6 +4,7 @@ class PublishFlag < MomentFlag
   belongs_to :moment, :inverse_of => :publishes
 
   class CreateCause < Cause
+    include Cause::HasNotifications
     def verb; 'published'; end
   end
 

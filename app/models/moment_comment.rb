@@ -5,6 +5,7 @@ class MomentComment < Comment
   #validates :moment, :presence => true
 
   class CreateCause < Cause
+    include Cause::HasNotifications
     def verb; 'added a comment to'; end
   end
 

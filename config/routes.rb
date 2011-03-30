@@ -9,7 +9,7 @@ Photo::Application.routes.draw do
                              :sign_up => 'join'}
 
   resources :people,
-            :controller => 'Users',
+            :controller => 'users',
             :only => [:index, :show],
             :as => 'users' do
     resource :settings, :only => [:show, :update], :module => 'users'
