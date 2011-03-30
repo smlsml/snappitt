@@ -21,11 +21,11 @@ module ApplicationHelper
   end
 
   def can_edit?(user)
-    user_signed_in? && ((user && user == current_user) || current_user.is_admin?)
+    user_signed_in? && ((user && user == current_user) || current_user.admin?)
   end
 
   def can_publish?
-    user_signed_in? && (current_user.is_admin? || current_user.email =~ /@likeme.net/i || current_user.email =~ /@westword.com/i)
+    user_signed_in? && (current_user.admin? || current_user.publish?)
   end
 
   # for devise

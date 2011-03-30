@@ -62,13 +62,27 @@ class User < ActiveRecord::Base
     username
   end
 
-  def is_admin?
+  def admin?
     role == 'admin'
+  end
+
+  def publish?
+    email =~ /@likeme.net/i || email =~ /@westword.com/i
   end
 
   def unseen_notifications?
     notifications.unseen.count > 0
   end
+
+  def permissions
+    p = [:create]
+    p += [:like, :comment] if confirmed?
+    p += [:delete, :publish] if admin?
+    p += [:publish] if publish?
+    p.flatten.uniq
+  end
+
+  #--
 
   def self.generate_password(len = 8)
     chars = (('A'..'Z').to_a + ('0'..'9').to_a) - %w(i o 0 1 l 0)

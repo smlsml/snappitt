@@ -7,28 +7,37 @@ class Users::SettingsController < ApplicationController
   end
 
   def update
+    success = ""
+
     @profile = current_user.profile
 
-    if params[:asset]
+    if params[:profile_photo]
       @source = Source.find_or_create_from_request(request)
-      @asset = PhotoAsset.new(params[:asset])
+      @asset = PhotoAsset.new(params[:profile_photo])
       @asset.user = current_user
       @asset.source = @source
 
       @profile.photo_asset = @asset
+      success << ' and profile photo'
     end
 
     if params[:password] && !params[:password][:new].blank?
       if current_user.reset_password!(params[:password][:new], params[:password][:confirm])
         current_user.update_attribute(:force_reset, 0)
-        pw = ' and password at %s' % Time.now
+        success << ' and password'
       else
         flash[:error] = "Error updating password: #{current_user.errors}"
       end
     end
 
+    if params[:hometown]
+      @hometown = Location.find_or_create_by_name(params[:hometown][:name].to_s.strip)
+      @profile.hometown = @hometown if @hometown
+      success << ' and hometown'
+    end
+
     if @profile.update_attributes!(params[:profile])
-      flash[:success] = 'Updated Profile%s' % pw
+      flash[:success] = 'Saved profile%s' % success
     else
       flash[:error] = 'Error updating profile: %s' % @profile.errors
     end

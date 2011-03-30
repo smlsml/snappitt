@@ -25,8 +25,24 @@ en:
     attributes:
       user:
         login: 'Username or Email'
+        created_at: 'Joined'
+      profile:
+        realname: 'Realname'
+        gender: 'Sex'
+        hometown_attributes[name]: 'dud'
+
   footer:
     moment_count: 'Moments Snapped:'
     developed_in: 'Designed and Developed in Denver, CO'
   sign:
     in: 'Sign In'
+  helpers:
+    label:
+      profile[hometown_attributes]:
+        name: 'Howntown'
+      profile_photo:
+        data: 'Profile Photo'
+      perms:
+        set: 'Permissions'
+      password:
+        new: 'Set New Password'

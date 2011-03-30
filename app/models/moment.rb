@@ -63,7 +63,7 @@ class Moment < ActiveRecord::Base
 
   class CreateCause < Cause
     include Cause::HasNotifications
-    def verb; 'uploaded a moment to'; end
+    def verb; 'added to'; end
   end
 
   protected

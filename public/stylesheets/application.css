@@ -167,13 +167,62 @@
 
 /* line 3, sass/controllers/_setting.sass */
 .setting_controller #page_center form {
-  width: 600px;
+  width: 700px;
+  margin: 10px auto;
   text-align: left;
-  margin-left: 10px;
 }
 /* line 7, sass/controllers/_setting.sass */
-.setting_controller #page_center label {
-  text-align: left;
+.setting_controller #page_center form fieldset {
+  margin-bottom: 20px;
+}
+/* line 10, sass/controllers/_setting.sass */
+.setting_controller #page_center form fieldset legend img {
+  vertical-align: middle;
+  margin-right: 10px;
+  border: 4px solid #efefef;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 16, sass/controllers/_setting.sass */
+.setting_controller #page_center form fieldset ol li {
+  padding: 5px;
+  list-style: none;
+}
+/* line 19, sass/controllers/_setting.sass */
+.setting_controller #page_center form fieldset ol li label {
+  display: inline-block;
+  _display: inline-block;
+  width: 150px;
+  text-align: right;
+  padding: 5px;
+}
+/* line 25, sass/controllers/_setting.sass */
+.setting_controller #page_center form fieldset ol li input {
+  vertical-align: middle;
+}
+/* line 27, sass/controllers/_setting.sass */
+.setting_controller #page_center form fieldset ol li span {
+  font-size: 11px;
+  font-style: italic;
+  padding: 10px;
+  text-shadow: 1px 1px 2px white;
+}
+/* line 32, sass/controllers/_setting.sass */
+.setting_controller #page_center form fieldset ol li dfn {
+  font-size: 13px;
+}
+/* line 34, sass/controllers/_setting.sass */
+.setting_controller #page_center form fieldset ol li dfn a.unconfirmed {
+  color: red;
+}
+/* line 36, sass/controllers/_setting.sass */
+.setting_controller #page_center form p.submit {
+  margin: 20px;
+  text-align: center;
 }
 
 /* line 1, sass/shared/_page.sass */
@@ -1019,10 +1068,15 @@ form input[type="text"] {
   vertical-align: bottom;
 }
 /* line 16, sass/shared/_form.sass */
+form input[type="text"][readonly="readonly"] {
+  background: whiteSmoke;
+  border: none !important;
+}
+/* line 19, sass/shared/_form.sass */
 form input[type="text"]:hover {
   border-color: #8c8c8c;
 }
-/* line 18, sass/shared/_form.sass */
+/* line 21, sass/shared/_form.sass */
 form input[type="text"]:focus {
   border-color: #39b2e5;
   -moz-box-shadow: #b5dff1 0 0 5px 0;
@@ -1030,7 +1084,7 @@ form input[type="text"]:focus {
   -o-box-shadow: #b5dff1 0 0 5px 0;
   box-shadow: #b5dff1 0 0 5px 0;
 }
-/* line 23, sass/shared/_form.sass */
+/* line 26, sass/shared/_form.sass */
 form input[type="password"] {
   -moz-transition-duration: 0.1s;
   -moz-transition-property: border-color;
@@ -1051,11 +1105,11 @@ form input[type="password"] {
   padding: 5px 9px;
   vertical-align: bottom;
 }
-/* line 37, sass/shared/_form.sass */
+/* line 40, sass/shared/_form.sass */
 form input[type="password"]:hover {
   border-color: #8c8c8c;
 }
-/* line 39, sass/shared/_form.sass */
+/* line 42, sass/shared/_form.sass */
 form input[type="password"]:focus {
   border-color: #39b2e5;
   -moz-box-shadow: #b5dff1 0 0 5px 0;
@@ -1063,7 +1117,7 @@ form input[type="password"]:focus {
   -o-box-shadow: #b5dff1 0 0 5px 0;
   box-shadow: #b5dff1 0 0 5px 0;
 }
-/* line 43, sass/shared/_form.sass */
+/* line 46, sass/shared/_form.sass */
 form input[type="submit"] {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
@@ -1102,7 +1156,7 @@ form input[type="submit"]:active {
   background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
   box-shadow: none;
 }
-/* line 46, sass/shared/_form.sass */
+/* line 49, sass/shared/_form.sass */
 form textarea {
   -moz-transition-duration: 0.1s;
   -moz-transition-property: border-color;
@@ -1123,11 +1177,11 @@ form textarea {
   padding: 5px 9px;
   vertical-align: bottom;
 }
-/* line 60, sass/shared/_form.sass */
+/* line 63, sass/shared/_form.sass */
 form textarea:hover {
   border-color: #8c8c8c;
 }
-/* line 62, sass/shared/_form.sass */
+/* line 65, sass/shared/_form.sass */
 form textarea:focus {
   border-color: #39b2e5;
   -moz-box-shadow: #b5dff1 0 0 5px 0;
@@ -1299,8 +1353,12 @@ fieldset {
   -khtml-border-radius: 6px;
   border-radius: 6px;
 }
+/* line 75, sass/shared/_base.sass */
+fieldset legend {
+  font-style: oblique;
+}
 
-/* line 76, sass/shared/_base.sass */
+/* line 78, sass/shared/_base.sass */
 a.button {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
@@ -1340,7 +1398,7 @@ a.button:active {
   box-shadow: none;
 }
 
-/* line 79, sass/shared/_base.sass */
+/* line 81, sass/shared/_base.sass */
 var {
   font-size: 13px;
 }

@@ -6,7 +6,7 @@ class MomentComment < Comment
 
   class CreateCause < Cause
     include Cause::HasNotifications
-    def verb; 'added a comment to'; end
+    def verb; 'commented on'; end
   end
 
   after_create :create_cause
