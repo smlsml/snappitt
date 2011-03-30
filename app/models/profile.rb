@@ -9,6 +9,8 @@ class Profile < ActiveRecord::Base
 
   accepts_nested_attributes_for :hometown, :current_location
 
+  validates :gender, :inclusion => ['','M','F'], :length => { :maximum => 1 }
+
   def photo_url(type = :thumb)
     url = photo_asset.data.url(type) if photo_asset
     url || PhotoAsset.default_url(type)

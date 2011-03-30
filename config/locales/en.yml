@@ -28,8 +28,6 @@ en:
         created_at: 'Joined'
       profile:
         realname: 'Realname'
-        gender: 'Sex'
-        hometown_attributes[name]: 'dud'
 
   footer:
     moment_count: 'Moments Snapped:'
@@ -38,7 +36,7 @@ en:
     in: 'Sign In'
   helpers:
     label:
-      profile[hometown_attributes]:
+      hometown:
         name: 'Howntown'
       profile_photo:
         data: 'Profile Photo'
