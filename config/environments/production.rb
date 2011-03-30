@@ -52,4 +52,6 @@ Photo::Application.configure do
   config.middleware.use "NoWWW"
 
   config.site_assets_prefix = 'http://snappitt-assets.s3.amazonaws.com'
+  Sass::Plugin.options[:style] = :compact
+  Sass::Plugin.options[:never_update] = true
 end
