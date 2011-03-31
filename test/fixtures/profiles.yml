@@ -5,7 +5,7 @@ snoop:
   current_location: denver # location
   website: http://www.snoopdogg.com/
   bio: Bow-wow-wow-yippie-yo-yippie-yay
-  gender: male
+  gender: M
 
 dre:
   realname: Andre Romelle Young
@@ -14,4 +14,4 @@ dre:
   current_location: denver # location
   website: http://www.drdre.com/
   bio: Youse a soldier, you're probably packin heat up there
-  gender: male
+  gender: M

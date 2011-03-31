@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class Users::SettingsControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
+
   test "the truth" do
-    assert true
+    sign_in(users(:snoop))
+    get :show, :user_id => users(:snoop).id
+    assert_response :success
   end
+
 end

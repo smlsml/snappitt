@@ -1,14 +1,18 @@
 class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :lockable and :timeoutable
+  # :token_authenticatable, :timeoutable
   devise :database_authenticatable,
          :registerable,
          :recoverable,
          :rememberable,
          :trackable,
          :validatable,
-         :confirmable
+         :confirmable,
+         :lockable,
+         :maximum_attempts => 5,
+         :lock_strategy => :failed_attempts,
+         :unlock_strategy => :email
 
   attr_accessor :login
   attr_accessible :email, :username, :login, :password, :remember_me
@@ -62,13 +66,32 @@ class User < ActiveRecord::Base
     username
   end
 
-  def is_admin?
+  def admin?
     role == 'admin'
+  end
+
+  def publish?
+    email =~ /@likeme.net/i || email =~ /@westword.com/i
   end
 
   def unseen_notifications?
     notifications.unseen.count > 0
   end
+
+  def permissions
+    p = [:create]
+    p += [:like, :comment] if confirmed?
+    p += [:delete, :publish] if admin?
+    p += [:publish] if publish?
+    p.flatten.uniq
+  end
+
+  def access_locked?
+    return true if disabled?
+    super
+  end
+
+  #--
 
   def self.generate_password(len = 8)
     chars = (('A'..'Z').to_a + ('0'..'9').to_a) - %w(i o 0 1 l 0)

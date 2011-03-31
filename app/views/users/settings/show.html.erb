@@ -1,53 +1,101 @@
 <h1>Settings</h1>
 
-<% form_for @profile, :url => user_settings_path, :html => { :multipart => true } do |p| %>
+<%= form_for @profile, :url => user_settings_path, :html => { :multipart => true } do |p| %>
 
-  <%= p.label 'username', 'Username: %s' % @profile.user.username %>
-  <%= p.label 'email', 'Email: %s' % @profile.user.email %>
-  <%= p.label 'joined', 'Joined: %s' % @profile.user.created_at.to_formatted_s(:mdy) %>
-  <%= p.label 'role', 'Admin?: yes' if @profile.user.is_admin? %>
-  <%= p.label 'publish', 'Publish? yes' if can_publish? %><br/>
+  <%= fields_for(@profile.user) do |u| %>
+  <fieldset>
+    <legend>Account</legend>
 
-  <%= label :password, :new, 'New Password:' %>
-  <%= password_field :password, :new, :value => '', :autocomplete => 'false' %>
+    <ol>
+      <li>
+        <%= u.label :username %>
+        <%= u.text_field :username, :readonly => true %>
+        <span>You will be able to change this later</span>
+      </li>
 
-  <br/><br/>
+      <li>
+        <%= u.label :email %>
+        <%= u.text_field :email, :readonly => true %>
+        <span>You will be able to change this later</span>
+      </li>
 
-  <%= fields_for :asset do |a| %>
-    <%= a.label :data, 'Profile Picture:' %>
-    <%= a.file_field :data %>
-  <% end %><br/><br/>
+      <li>
+        <%= label :password, :new %>
+        <%= password_field :password, :new, :value => '', :autocomplete => 'false' %>
+        <span>Enter a new password here</span>
+      </li>
 
-  <%= image_tag( @profile.photo_url ) %><br/>
+      <li>
+        <%= u.label :created_at %>
+        <dfn><%= @profile.user.created_at.to_formatted_s(:mdy) %></dfn>
+        <dfn>
+          <%= link_to('(unconfirmed account)',
+                      new_user_confirmation_path('user[email]' => @profile.user.email),
+                      :class => 'unconfirmed') unless @profile.user.confirmed? %>
+        </dfn>
+      </li>
 
-  <%= p.label 'realname', 'Nickname:' %>
-  <%= p.text_field :realname %><br/><br/>
+      <li>
+        <%= label :perms, :set %>
+        <dfn><%= @profile.user.permissions.join(', ').titleize %></dfn>
+      </li>
+    </ol>
 
-  <%= p.label 'birthday', 'Birthday:' %>
-  <%= p.date_select :birthday, :start_year => 1925, :end_year => Time.now.year, :default => Time.now - 20.years %><br/><br/>
-
-  <%= p.fields_for :hometown do |h| %>
-    <%= h.label 'name', 'Hometown:' %>
-    <%= h.text_field :name %><br/><br/>
+  </fieldset>
   <% end %>
 
-  <%= p.label 'bio', 'Introduction:' %>
-  <%= p.text_field :bio %><br/><br/>
+  <fieldset>
+    <legend><%= image_tag( @profile.photo_url, :alt => @user ) %>Profile</legend>
 
-  <%= p.label 'gender', 'Sex:' %>
-  <%= p.select :gender, {'Yes!' => 'X','Guy' => 'M','Girl' => 'F'}, :include_blank => true %><br/>
+    <ol>
+      <li>
+        <%= fields_for :profile_photo do |a| %>
+          <%= a.label :data %>
+          <%= a.file_field :data %>
+        <% end %>
+      </li>
 
-  <br/>
+      <li>
+        <%= p.label :realname %>
+        <%= p.text_field :realname %>
+        <span>Helps friends to find you</span>
+      </li>
 
-  <%= submit_tag 'Update Profile' %>
+      <li>
+        <%= p.label :birthday %>
+        <%= p.date_select :birthday, :start_year => 1925, :end_year => Time.now.year, :default => Time.now - 20.years %>
+      </li>
 
-  <br/><br/>
+      <li>
+        <%= fields_for :hometown, @profile.hometown do |h| %>
+          <%= h.label :name %>
+          <%= h.text_field :name %>
+        <% end %>
+        <span><%= '%s, %s' % [@profile.hometown.lat, @profile.hometown.lng] if @profile.hometown.try(:lat) %></span>
+      </li>
+
+      <li>
+        <%= p.label :bio %>
+        <%= p.text_field :bio %>
+        <span>Short description of you</span>
+      </li>
+
+      <li>
+        <%= p.label :gender %>
+        <%= p.select :gender, {'Guy' => 'M','Girl' => 'F'}, :include_blank => true %>
+      </li>
+    </ol>
+
+  </fieldset>
+
+  <p class="submit"><%= submit_tag 'Save Changes' %></p>
 
   <fieldset>
-    You've logged in <%= current_user.sign_in_count %> times!<br/>
-    Current login  at <%= current_user.current_sign_in_at %> from <%= current_user.current_sign_in_ip %><br/>
-    Previous login at <%= current_user.last_sign_in_at %> from <%= current_user.last_sign_in_ip %><br/>
-    Using <%= request.env['HTTP_USER_AGENT'] %>
+    <legend>Login Security</legend>
+    <p>You've logged in <var><%= current_user.sign_in_count %></var> times!</p>
+    <p>Current login at <var><%= current_user.current_sign_in_at %></var> from <var><%= current_user.current_sign_in_ip %></var></p>
+    <p>Previous login at <var><%= current_user.last_sign_in_at %></var> from <var><%= current_user.last_sign_in_ip %></var></p>
+    <p><%= request.env['HTTP_USER_AGENT'] %></p>
   </fieldset>
 
 <% end %>

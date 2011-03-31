@@ -1,1 +1,1 @@
-Time::DATE_FORMATS[:mdy] = "%B %d %Y"
+Time::DATE_FORMATS[:mdy] = lambda { |time| time.strftime("%B #{time.day.ordinalize} %Y") }

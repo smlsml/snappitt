@@ -15,4 +15,23 @@ class ProfileTest < ActiveSupport::TestCase
     assert @snoop === @snoop.user.profile
   end
 
+  test "gender validation" do
+    assert @snoop.valid?
+
+    @snoop.gender = 'f the police'
+    assert !@snoop.valid?
+
+    @snoop.gender = 'M '
+    assert !@snoop.valid?
+
+    @snoop.gender = 'M'
+    assert @snoop.valid?
+
+    @snoop.gender = 'F'
+    assert @snoop.valid?
+
+    @snoop.gender = ''
+    assert @snoop.valid?
+  end
+
 end

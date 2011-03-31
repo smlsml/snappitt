@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     end
 
     def can_edit?(user)
-      user_signed_in? && ((user && user == current_user) || current_user.is_admin?)
+      user_signed_in? && ((user && user == current_user) || current_user.admin?)
     end
 
 end
