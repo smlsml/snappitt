@@ -1,36 +1,29 @@
 <%= render @user %>
 
-<table class="split">
-  <tr>
-    <td>
+<div id="main">
+    <table class="feed"><tr><td><%= render @experiences %></td></tr></table>
+</div>
 
-      <div class="activity">
-      <h2>Recent Activity</h2>
-        <ul>
-          <% Cause.for_user(@user).each do |action| %>
-            <li><%= action.summary %></li>
-          <% end %>
-        </ul>
-      </div>
+<div id="secondary">
+  <div class="section activity">
+    <h2>Recent Activity</h2>
+    <ul>
+      <% Cause.for_user(@user).each do |action| %>
+        <li><%= action.summary %></li>
+      <% end %>
+    </ul>
+  </div>
 
-    </td>
-    <td>
+  <div class="section activity">
+    <h2>New Notifications</h2>
+    <ul>
+      <% @user.notifications.unseen.each do |n| %>
+        <li><%= n.cause.summary %></li>
+        <%= n.update_attribute(:seen, true) %>
+      <% end %>
+    </ul>
+  </div>
 
-      <div class="notifications">
-        <h2>New Notifications</h2>
-        <ul>
-        <% @user.notifications.unseen.each do |n| %>
-          <li><%= n.cause.summary %></li>
-          <% n.update_attribute(:seen, true) %>
-        <% end %>
-        </ul>
-      </div>
-
-    </td>
-  </tr>
-</table>
-
-
-<table class="feed"><tr><td><%= render @experiences %></td></tr></table>
+</div>
 
 <br style="clear:both" />

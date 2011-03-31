@@ -177,20 +177,20 @@
 .setting_controller #page_center form fieldset legend img {
   vertical-align: middle;
   margin-right: 10px;
-  border: 4px solid #efefef;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
   -ms-border-radius: 4px;
   -khtml-border-radius: 4px;
   border-radius: 4px;
+  border: 4px solid #efefef;
 }
-/* line 16, sass/controllers/_setting.sass */
+/* line 17, sass/controllers/_setting.sass */
 .setting_controller #page_center form fieldset ol li {
   padding: 5px;
   list-style: none;
 }
-/* line 19, sass/controllers/_setting.sass */
+/* line 20, sass/controllers/_setting.sass */
 .setting_controller #page_center form fieldset ol li label {
   display: inline-block;
   _display: inline-block;
@@ -198,34 +198,35 @@
   text-align: right;
   padding: 5px;
 }
-/* line 25, sass/controllers/_setting.sass */
+/* line 26, sass/controllers/_setting.sass */
 .setting_controller #page_center form fieldset ol li input {
   vertical-align: middle;
 }
-/* line 27, sass/controllers/_setting.sass */
+/* line 28, sass/controllers/_setting.sass */
 .setting_controller #page_center form fieldset ol li span {
   font-size: 11px;
   font-style: italic;
   padding: 10px;
   text-shadow: 1px 1px 2px white;
 }
-/* line 32, sass/controllers/_setting.sass */
+/* line 33, sass/controllers/_setting.sass */
 .setting_controller #page_center form fieldset ol li dfn {
   font-size: 13px;
 }
-/* line 34, sass/controllers/_setting.sass */
+/* line 35, sass/controllers/_setting.sass */
 .setting_controller #page_center form fieldset ol li dfn a.unconfirmed {
   color: red;
 }
-/* line 36, sass/controllers/_setting.sass */
+/* line 37, sass/controllers/_setting.sass */
+.setting_controller #page_center form fieldset ol li textarea {
+  width: auto;
+  height: 40px;
+  vertical-align: top;
+}
+/* line 41, sass/controllers/_setting.sass */
 .setting_controller #page_center form p.submit {
   margin: 20px;
   text-align: center;
-}
-/* line 9, sass/controllers/_setting.sass */
-.setting_controller #page_center textarea {
-  width: auto;
-  height: 50px;
 }
 
 /* line 2, sass/controllers/_user.sass */
@@ -247,20 +248,12 @@
   text-align: left;
 }
 /* line 12, sass/controllers/_user.sass */
-.user_controller table.split {
+.user_controller #secondary {
   width: 300px;
-  padding-top: 10px;
-  background: #efefef;
-  border-bottom: 1px solid #dedede;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -khtml-border-radius: 6px;
-  border-radius: 6px;
+  float: right;
 }
-/* line 18, sass/controllers/_user.sass */
-.user_controller table.split h2 {
+/* line 15, sass/controllers/_user.sass */
+.user_controller #secondary h2 {
   clear: both;
   color: #666666;
   font-family: georgia, serif;
@@ -270,10 +263,18 @@
   text-decoration: none;
   text-align: left;
 }
-/* line 27, sass/controllers/_user.sass */
-.user_controller table.split td {
-  padding-top: 0;
-  width: 100%;
+/* line 24, sass/controllers/_user.sass */
+.user_controller #secondary .section {
+  padding: 10px;
+  background: #efefef;
+  border-bottom: 1px solid #dedede;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
 /* line 1, sass/shared/_page.sass */
@@ -1223,7 +1224,7 @@ form textarea {
   border-radius: 4px;
   width: 180px;
   font: 15px/18px "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
+  color: #666666;
   height: 24px;
   outline: medium none;
   padding: 5px 9px;
@@ -1311,88 +1312,87 @@ h2 {
 
 /* line 17, sass/shared/_base.sass */
 h3 {
-  font-size: 20px;
+  font-size: 18px;
   color: #666666;
   text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
 }
 
 /* line 22, sass/shared/_base.sass */
 a {
-  color: #02b7ff;
+  color: #009ad7;
   text-decoration: none;
 }
 /* line 25, sass/shared/_base.sass */
 a:visited {
-  color: #02b7ff;
+  color: #009ad7;
 }
 /* line 27, sass/shared/_base.sass */
 a:hover {
-  color: #02aaed;
   text-decoration: underline;
 }
-/* line 30, sass/shared/_base.sass */
+/* line 29, sass/shared/_base.sass */
 a:focus {
-  color: #02b7ff;
+  color: #009ad7;
 }
 
-/* line 33, sass/shared/_base.sass */
+/* line 32, sass/shared/_base.sass */
 textarea.auto {
   height: auto;
   width: auto;
 }
 
-/* line 37, sass/shared/_base.sass */
+/* line 36, sass/shared/_base.sass */
 dl {
   margin: 0;
   line-height: 1.2em;
 }
-/* line 40, sass/shared/_base.sass */
+/* line 39, sass/shared/_base.sass */
 dl dt {
   font-weight: normal;
   margin: 0;
 }
-/* line 43, sass/shared/_base.sass */
+/* line 42, sass/shared/_base.sass */
 dl dd {
   margin: 0;
 }
 
-/* line 47, sass/shared/_base.sass */
+/* line 46, sass/shared/_base.sass */
 table td {
   border: none !important;
 }
-/* line 49, sass/shared/_base.sass */
+/* line 48, sass/shared/_base.sass */
 table td img {
   margin: 0;
 }
-/* line 51, sass/shared/_base.sass */
+/* line 50, sass/shared/_base.sass */
 table.comment {
   width: auto;
   margin: 0 auto;
 }
-/* line 54, sass/shared/_base.sass */
+/* line 53, sass/shared/_base.sass */
 table.comment td {
   text-align: left;
 }
 
-/* line 57, sass/shared/_base.sass */
+/* line 56, sass/shared/_base.sass */
 img {
   border: none;
 }
 
-/* line 60, sass/shared/_base.sass */
+/* line 59, sass/shared/_base.sass */
 p {
   margin: 0;
   padding: 0;
 }
 
-/* line 64, sass/shared/_base.sass */
+/* line 63, sass/shared/_base.sass */
 label {
   display: block;
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 69, sass/shared/_base.sass */
+/* line 68, sass/shared/_base.sass */
 fieldset {
   background: #efefef;
   border: none;
@@ -1405,12 +1405,12 @@ fieldset {
   -khtml-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 75, sass/shared/_base.sass */
+/* line 74, sass/shared/_base.sass */
 fieldset legend {
   font-style: oblique;
 }
 
-/* line 78, sass/shared/_base.sass */
+/* line 77, sass/shared/_base.sass */
 a.button {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
@@ -1450,8 +1450,14 @@ a.button:active {
   box-shadow: none;
 }
 
-/* line 81, sass/shared/_base.sass */
+/* line 80, sass/shared/_base.sass */
 var {
   font-size: 13px;
   font-style: normal;
+}
+
+/* line 84, sass/shared/_base.sass */
+li {
+  list-style: none;
+  font-size: 13px;
 }
