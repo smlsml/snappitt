@@ -31,7 +31,7 @@
         <dfn>
           <%= link_to('(unconfirmed account)',
                       new_user_confirmation_path('user[email]' => @profile.user.email),
-                      :class => 'unconfirmed') if @profile.user.confirmed? %>
+                      :class => 'unconfirmed') unless @profile.user.confirmed? %>
         </dfn>
       </li>
 

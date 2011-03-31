@@ -18,8 +18,6 @@ class Moment < ActiveRecord::Base
 
   validates :user, :presence => true
 
-  after_create :create_cause
-
   #--
 
   def photo_url(type = :thumb)
@@ -65,6 +63,8 @@ class Moment < ActiveRecord::Base
     include Cause::HasNotifications
     def verb; 'added to'; end
   end
+
+  after_create :create_cause
 
   protected
 

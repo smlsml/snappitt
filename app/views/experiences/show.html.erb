@@ -31,8 +31,8 @@
     </div>
 
     <p class="links">
-      <%= link_to('Publish', publish_experience_moment_path(@experience, m)) if !m.published? && can_publish? %> &nbsp;
       <%= link_to('Like', like_experience_moment_path(@experience, m)) %> &nbsp;
+      <%= link_to('Publish', publish_experience_moment_path(@experience, m)) if !m.published? && can_publish? %> &nbsp;
       <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
     </p>
 

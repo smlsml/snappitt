@@ -1,14 +1,18 @@
 class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :lockable and :timeoutable
+  # :token_authenticatable, :timeoutable
   devise :database_authenticatable,
          :registerable,
          :recoverable,
          :rememberable,
          :trackable,
          :validatable,
-         :confirmable
+         :confirmable,
+         :lockable,
+         :maximum_attempts => 5,
+         :lock_strategy => :failed_attempts,
+         :unlock_strategy => :email
 
   attr_accessor :login
   attr_accessible :email, :username, :login, :password, :remember_me
@@ -80,6 +84,11 @@ class User < ActiveRecord::Base
     p += [:delete, :publish] if admin?
     p += [:publish] if publish?
     p.flatten.uniq
+  end
+
+  def access_locked?
+    return true if disabled?
+    super
   end
 
   #--
