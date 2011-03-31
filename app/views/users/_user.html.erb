@@ -20,7 +20,7 @@
         <% end %>
       <% end %>
     </h2>
-    <p><%= user.profile.bio.to_s unless user.profile.bio.blank? %></p>
+    <p><%= user.profile.tagline %></p>
     <dfn><%= '%s Experiences | %s Followers' % [user.experiences.size, user.followers.size] %></dfn>
   </div>
 

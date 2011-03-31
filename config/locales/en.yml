@@ -28,6 +28,8 @@ en:
         created_at: 'Joined'
       profile:
         realname: 'Realname'
+        birthday: 'Birth Year'
+        zodiac_western_id: 'Zodiac'
 
   footer:
     moment_count: 'Moments Snapped:'

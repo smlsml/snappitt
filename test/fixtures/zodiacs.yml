@@ -1,0 +1,9 @@
+aries:
+  name: Aries
+  description: The Ram
+  type: WesternZodiac
+
+monkey:
+  name: 0
+  description: Monkey
+  type: ChineseZodiac

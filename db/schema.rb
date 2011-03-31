@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331004739) do
+ActiveRecord::Schema.define(:version => 20110331172004) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -200,6 +200,7 @@ ActiveRecord::Schema.define(:version => 20110331004739) do
     t.datetime "updated_at"
     t.string   "gender",               :limit => 1,   :default => "", :null => false
     t.integer  "photo_asset_id"
+    t.integer  "zodiac_western_id"
   end
 
   create_table "services", :force => true do |t|
@@ -258,5 +259,15 @@ ActiveRecord::Schema.define(:version => 20110331004739) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
+
+  create_table "zodiacs", :force => true do |t|
+    t.string  "name",   :limit => 30,  :default => "", :null => false
+    t.string  "phrase", :limit => 75,  :default => "", :null => false
+    t.string  "url",    :limit => 200, :default => "", :null => false
+    t.string  "type",   :limit => 50,                  :null => false
+    t.integer "lookup", :limit => 2
+  end
+
+  add_index "zodiacs", ["lookup"], :name => "index_zodiacs_on_lookup"
 
 end
