@@ -63,7 +63,14 @@
 
       <li>
         <%= p.label :birthday %>
-        <%= p.date_select :birthday, :start_year => 1925, :end_year => Time.now.year, :default => Time.now - 20.years %>
+        <%= p.date_select :birthday, :start_year => 1925, :end_year => Time.now.year, :discard_month => true, :default => Time.now - 20.years, :include_blank => true %>
+        <span><%= @profile.zodiac_chinese %></span>
+      </li>
+
+      <li>
+        <%= p.label :zodiac_western_id %>
+        <%= p.collection_select(:zodiac_western_id, Zodiac::Western.all, :id, :name, :include_blank => true) %>
+        <span><%= @profile.zodiac_western %></span>
       </li>
 
       <li>
