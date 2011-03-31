@@ -30,10 +30,11 @@ class Users::SettingsController < ApplicationController
       end
     end
 
-    if params[:hometown]
+    if params[:hometown] && params[:hometown][:name]
       @hometown = Location.find_or_create_by_name(params[:hometown][:name].to_s.strip)
+      original = @profile.hometown
       @profile.hometown = @hometown if @hometown
-      success << ' and hometown'
+      success << ' and hometown' unless original == @hometown
     end
 
     if @profile.update_attributes!(params[:profile])
