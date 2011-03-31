@@ -27,18 +27,18 @@
   border: none;
 }
 
-/* line 3, sass/controllers/_experience.sass */
-.experience_controller fieldset.upload {
+/* line 4, sass/controllers/_experience.sass */
+.experience_controller #page_center fieldset.upload {
   width: 600px;
   margin: 0 auto;
 }
-/* line 6, sass/controllers/_experience.sass */
-.experience_controller fieldset.upload textarea {
+/* line 7, sass/controllers/_experience.sass */
+.experience_controller #page_center fieldset.upload textarea {
   width: auto;
   height: auto;
 }
 /* line 10, sass/controllers/_experience.sass */
-.experience_controller #page_middle input[type="submit"] {
+.experience_controller #page_center fieldset.upload input[type="submit"] {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
   background-image: linear-gradient(top, #c1e445 0%, #a7d727 100%);
@@ -64,7 +64,7 @@
   margin: 10px auto;
 }
 /* line 45, sass/application.sass */
-.experience_controller #page_middle input[type="submit"]:hover {
+.experience_controller #page_center fieldset.upload input[type="submit"]:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #cbf048), color-stop(100%, #b3e529));
   background-image: -moz-linear-gradient(top, #cbf048 0%, #b3e529 100%);
   background-image: linear-gradient(top, #cbf048 0%, #b3e529 100%);
@@ -72,26 +72,26 @@
   text-decoration: none;
 }
 /* line 49, sass/application.sass */
-.experience_controller #page_middle input[type="submit"]:active {
+.experience_controller #page_center fieldset.upload input[type="submit"]:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b3e529), color-stop(100%, #cbf048));
   background-image: -moz-linear-gradient(top, #b3e529 0%, #cbf048 100%);
   background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
   box-shadow: none;
 }
 /* line 14, sass/controllers/_experience.sass */
-.experience_controller fieldset textarea {
+.experience_controller #page_center fieldset textarea {
   vertical-align: middle;
 }
 /* line 17, sass/controllers/_experience.sass */
-.experience_controller .comment img {
+.experience_controller #page_center .comment img {
   padding-top: 6px;
 }
 /* line 19, sass/controllers/_experience.sass */
-.experience_controller .comment a {
+.experience_controller #page_center .comment a {
   padding-left: 5px;
 }
 /* line 21, sass/controllers/_experience.sass */
-.experience_controller .comment td.text {
+.experience_controller #page_center .comment td.text {
   padding-left: 5px;
 }
 
@@ -121,11 +121,10 @@
   font-size: 15px;
   color: white;
   font-weight: bold;
-  line-height: 30px;
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 65, sass/application.sass */
+/* line 64, sass/application.sass */
 .session_controller #page_center input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
@@ -156,11 +155,10 @@
   font-size: 15px;
   color: white;
   font-weight: bold;
-  line-height: 30px;
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 65, sass/application.sass */
+/* line 64, sass/application.sass */
 .registration_controller #page_center input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
@@ -451,13 +449,13 @@
   text-align: center;
   text-decoration: none;
 }
-/* line 87, sass/application.sass */
+/* line 86, sass/application.sass */
 #page_header #page_logout a:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #5c5c5c), color-stop(50%, #333333), color-stop(50%, #272727), color-stop(100%, #111111));
   background-image: -moz-linear-gradient(top, #5c5c5c 0%, #333333 50%, #272727 50%, #111111 100%);
   background-image: linear-gradient(top, #5c5c5c 0%, #333333 50%, #272727 50%, #111111 100%);
 }
-/* line 89, sass/application.sass */
+/* line 88, sass/application.sass */
 #page_header #page_logout a:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #111111), color-stop(100%, #333333));
   background-image: -moz-linear-gradient(top, #111111 0%, #333333 100%);
@@ -499,11 +497,10 @@
   font-size: 15px;
   color: white;
   font-weight: bold;
-  line-height: 30px;
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 65, sass/application.sass */
+/* line 64, sass/application.sass */
 #page_account table.signin input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
