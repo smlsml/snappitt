@@ -2,31 +2,30 @@
 
 <%= form_for @profile, :url => user_settings_path, :html => { :multipart => true } do |p| %>
 
-  <%= fields_for(@profile.user) do |u| %>
   <fieldset>
     <legend>Account</legend>
 
     <ol>
-      <li>
-        <%= u.label :username %>
-        <%= u.text_field :username, :readonly => true %>
-        <span>You will be able to change this later</span>
+      <li<%= ' class="error"'.html_safe unless @user_username.errors.empty? %>>
+        <%= label :user, :username %>
+        <%= text_field :user, :username, :value => @user_username.username, :autocomplete => 'off' %>
+        <span>Must be unique on Snappitt</span>
       </li>
 
-      <li>
-        <%= u.label :email %>
-        <%= u.text_field :email, :readonly => true %>
-        <span>You will be able to change this later</span>
+      <li<%= ' class="error"'.html_safe unless @user_email.errors.empty? %>>
+        <%= label :user, :email %>
+        <%= text_field :user, :email, :value => @user_email.email, :autocomplete => 'off' %>
+        <span>Must be unique on Snappitt</span>
       </li>
 
-      <li>
+      <li<%= ' class="error"'.html_safe unless @user_email.errors.empty? %>>
         <%= label :password, :new %>
-        <%= password_field :password, :new, :value => '', :autocomplete => 'false' %>
+        <%= password_field :password, :new, :value => '', :autocomplete => 'off' %>
         <span>Enter a new password here</span>
       </li>
 
       <li>
-        <%= u.label :created_at %>
+        <%= label :user, :created_at %>
         <dfn><%= @profile.user.created_at.to_formatted_s(:mdy) %></dfn>
         <dfn>
           <%= link_to('(unconfirmed account)',
@@ -42,7 +41,6 @@
     </ol>
 
   </fieldset>
-  <% end %>
 
   <fieldset>
     <legend><%= image_tag( @profile.photo_url, :alt => @user ) %>Profile</legend>

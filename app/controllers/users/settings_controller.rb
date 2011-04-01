@@ -4,12 +4,35 @@ class Users::SettingsController < ApplicationController
 
   def show
     @profile = current_user.profile
+    @user_username = User.find(current_user.id)
+    @user_email    = User.find(current_user.id)
+    @user_password = User.find(current_user.id)
   end
 
   def update
     success = ""
+    error = ""
 
-    @profile = current_user.profile
+    show # get instance variables
+
+    if params[:user] && params[:user][:username] && @user_username.username != params[:user][:username]
+      @user_username.username = params[:user][:username]
+      if @user_username.save
+        success << ' and changed username'
+      else
+        error << ' ' << @user_username.errors.full_messages.to_s
+      end
+    end
+
+    if params[:user] && params[:user][:email] && @user_email.email != params[:user][:email]
+      @user_email.email = params[:user][:email]
+      if @user_email.save
+        @user_email.send_confirmation_instructions
+        success << ' and changed email'
+      else
+        error << ' ' << @user_email.errors.full_messages.to_s
+      end
+    end
 
     if params[:profile_photo]
       @source = Source.find_or_create_from_request(request)
@@ -22,11 +45,11 @@ class Users::SettingsController < ApplicationController
     end
 
     if params[:password] && !params[:password][:new].blank?
-      if current_user.reset_password!(params[:password][:new], params[:password][:confirm])
-        current_user.update_attribute(:force_reset, 0)
+      if @user_password.reset_password!(params[:password][:new], params[:password][:confirm])
+        @user_password.update_attribute(:force_reset, 0)
         success << ' and password'
       else
-        flash[:error] = "Error updating password: #{current_user.errors}"
+        error << ' ' << @user_password.errors.full_messages.to_s
       end
     end
 
@@ -38,12 +61,16 @@ class Users::SettingsController < ApplicationController
     end
 
     if @profile.update_attributes!(params[:profile])
-      flash[:success] = 'Saved profile%s' % success
+      flash.now[:success] = 'Saved profile%s' % success
     else
-      flash[:error] = 'Error updating profile: %s' % @profile.errors
+      error << @profile.errors.full_messages.to_s
     end
 
-    redirect_to user_settings_path
+    unless error.blank?
+      flash.now[:error]= 'Some fields not changed:%s' % error
+    end
+
+    render :show
   end
 
 end
