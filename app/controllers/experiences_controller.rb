@@ -166,7 +166,7 @@ class ExperiencesController < ApplicationController
         @experience = Experience.new(:title => '%s @ %s' % [@moment.thing, @moment.location])
         @experience.user = @user
       else
-        @experience = Experience.new(:title => "none")
+        @experience = Experience.new(:title => "Untitled")
         @experience.user = @user
       end
     end
