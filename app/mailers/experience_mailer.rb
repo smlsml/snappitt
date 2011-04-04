@@ -1,12 +1,11 @@
 class ExperienceMailer < ActionMailer::Base
   default :from => "noreply@%s" % I18n.translate('app.host')
 
-  def upload_notification(experience, user, is_new)
+  def upload_notification(experience, user)
     @experience = experience
     @user = user
-    @is_new = is_new
     @group_address = 'post%s@%s' % [experience.id, I18n.translate('app.host')]
-    @causes = Cause.for_experience(@experience).limit(5)
+    @causes = Cause.reject_deleted(Cause.for_experience(@experience).limit(5))
 
     mail :to => @user.email,
          :from => "%s on %s <%s>" % [@user, I18n.translate('app.name'), @group_address],

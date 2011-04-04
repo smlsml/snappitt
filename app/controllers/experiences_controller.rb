@@ -28,6 +28,7 @@ class ExperiencesController < ApplicationController
     @from = @message.header['Reply-to'].addresses.first.to_s.downcase if @message.header['Reply-to']
 
     @user = User.find_by_email(@from)
+    return head(:forbidden) if @user.disabled
 
     if !@user
       password = User.generate_password
@@ -98,9 +99,8 @@ class ExperiencesController < ApplicationController
       @experience.moments << moment
     end
 
-    @new = @experience.new_record?
     @experience.save!
-    ExperienceMailer.upload_notification(@experience, @user, @new).deliver
+    ExperienceMailer.upload_notification(@experience, @user).deliver
 
     head(:created)
   end
@@ -114,7 +114,7 @@ class ExperiencesController < ApplicationController
       flash.now[:notice] = 'You must confirm your account before others can view your experiences'
     end
 
-    @causes = Cause.for_experience(@experience).limit(20)
+    @causes = Cause.reject_deleted(Cause.for_experience(@experience).limit(20))
 
     @experience.increment!(:views, 1) unless is_bot?
   end

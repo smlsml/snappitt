@@ -101,7 +101,7 @@
 <h2>Recent Activity</h2>
   <ol>
     <% @causes.each do |action| %>
-      <li><%= action.summary %></li>
+      <li><%= action.summary(Cause::Decorator.new(@user)) %></li>
     <% end %>
   </ol>
 </div>

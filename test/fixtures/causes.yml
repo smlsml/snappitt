@@ -1,8 +1,8 @@
 like_create:
   user: snoop # User
-  action: snoop_likes_eat (Like)
-  action_type: Like
-  subject: eat (Moment)
+  action: snoop_likes_eat # LikeFlag
+  action_type: LikeFlag
+  subject: eat # Moment
   subject_type: Moment
   type: LikeFlag::CreateCause
 

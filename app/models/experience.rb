@@ -8,6 +8,9 @@ class Experience < ActiveRecord::Base
 
   validates :user, :presence => true
 
+  attr_accessor :newly_created
+  after_create :set_new
+
   scope :user_feed, lambda { |user|
     includes(:user => :profile, :moments => :asset).
     where(:visibility.ne => 'private', :users => {:confirmed_at.ne => nil}).
@@ -45,11 +48,17 @@ class Experience < ActiveRecord::Base
   end
 
   def moments_status
-    '%s moment%s' % [moments_count, 1 == moments_count ? '':'s']
+    '%s %s' % [moments_count, "moment".for_count(moments_count)]
   end
 
   def notify_users
     moments.collect{|m| m.notify_users}.flatten.compact.uniq
+  end
+
+  protected
+
+  def set_new
+    self.newly_created = true
   end
 
 end

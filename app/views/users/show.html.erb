@@ -8,8 +8,8 @@
   <div class="section activity">
     <h2>Recent Activity</h2>
     <ul>
-      <% Cause.for_user(@user).each do |action| %>
-        <li><%= action.summary %></li>
+      <% Cause.reject_deleted(Cause.for_user(@user)).each do |action| %>
+        <li><%= action.summary(Cause::Decorator.new(@user)) %></li>
       <% end %>
     </ul>
   </div>
@@ -18,7 +18,7 @@
     <h2>New Notifications</h2>
     <ul>
       <% @user.notifications.unseen.each do |n| %>
-        <li><%= n.cause.summary %></li>
+        <li><%= n.cause.summary(Cause::Decorator.new(@user)) %></li>
         <%= n.update_attribute(:seen, true) %>
       <% end %>
     </ul>

@@ -1,11 +1,15 @@
 class String
 
   def possessive
-    self.last == 's' ? (self + "\'") : (self + "\'s")
+    '%s%s' % [self, self.last == 's' ? "\'" : "\'s"]
   end
 
   def is_zip_code?
     self.length == 5 && self.to_i > 0
+  end
+
+  def for_count(cnt)
+    1 == cnt.to_i ? self : self.pluralize
   end
 
 end

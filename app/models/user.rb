@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
          :lock_strategy => :failed_attempts,
          :unlock_strategy => :email
 
-  attr_accessor :login
+  attr_accessor :login, :newly_created
   attr_accessible :email, :username, :login, :password, :remember_me
 
   validates :username, :presence => true, :length => { :minimum => 2 }, :uniqueness => true
@@ -115,6 +115,7 @@ class User < ActiveRecord::Base
     self.create_profile(:realname => self.username)
     self.create_contact(:email => self.email, :name => self.username)
     self.save!
+    self.newly_created = true
   end
 
 end

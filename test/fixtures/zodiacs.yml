@@ -1,9 +1,10 @@
 aries:
   name: Aries
-  description: The Ram
-  type: WesternZodiac
+  phrase: The Ram
+  type: Zodiac::Western
 
 monkey:
-  name: 0
-  description: Monkey
-  type: ChineseZodiac
+  name: Monkey
+  phrase: I Entertain
+  type: Zodiac::ChineseZodiac
+  lookup: 0
