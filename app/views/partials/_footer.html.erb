@@ -6,20 +6,28 @@
 </p>
 
 <dl class="stats">
-  <dt><%= t('footer.moment_count')%></dt>
-  <dd><%= Moment.count %></dd>
+  <dt><%= t('footer.moment_count')%> <%= Moment.count %></dt>
+  <% if current_user.try(:admin?) %>
+  <dt><%= t('footer.user_count')%> <%= User.count %></dt>
+  <% end %>
 </dl>
 
 </div>
 
 <% if Rails.env != 'production' %>
-<br/>ToDo:<br/>
-tag people - also triggers an invite,
-temporary collaborators in feed,
-feed is only followers and events,
-facebook share,
-twitter share,
-wrap whole create process in a transaction,
-user search,
-more language localization
+  <h3>ToDo:</h3>
+  create events with custom email prefix,
+  profile.realname = contact.name
+  show all notifications,
+  only show notifciations for self,
+  change like to drop-down,
+  Change experience title,
+  temporary collaborators in feed,
+  feed is only followers and events,
+  tag people - also triggers an invite,
+  facebook share,
+  twitter share,
+  wrap whole create process in a transaction,
+  user search,
+  more language localization
 <% end %>

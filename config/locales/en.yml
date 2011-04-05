@@ -33,6 +33,7 @@ en:
 
   footer:
     moment_count: 'Moments Snapped:'
+    user_count: 'Total Users:'
     developed_in: 'Designed and Developed in Denver, CO'
   sign:
     in: 'Sign In'
