@@ -1,4 +1,8 @@
-<div id="page_account">
+<div id="page_account"<%= ' class="welcome"'.html_safe if @welcome %>>
+  <% if @welcome %>
+  <h2><%= t('app.tagline') %></h2>
+  <h3>Get started by emailing a photo to <a href="mailto:post@snappitt.com">post@snappitt.com</a></h3>
+  <% end %>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <table class="signin">
@@ -16,8 +20,8 @@
     </tr>
     <tr>
       <td colspan="2">
-        <%= f.text_field :login %>
-        <%= f.password_field :password %>
+        <%= f.text_field :login, :placeholder => 'Username or Email' %>
+        <%= f.password_field :password, :placeholder => 'Password' %>
         <%= f.submit t('sign.in') %>
       </td>
       <td class="side">

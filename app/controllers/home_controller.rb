@@ -12,6 +12,7 @@ class HomeController < ApplicationController
   end
 
   def welcome
+    @welcome = true
     render :welcome
   end
 

@@ -537,11 +537,29 @@
   border-bottom: 1px solid #d9d9d9;
 }
 /* line 132, sass/shared/_page.sass */
+#page_account.welcome {
+  background: url("http://snappitt-assets.s3.amazonaws.com/flavor/splash-bg.png") no-repeat scroll center top #009ad7;
+  height: 227px;
+  padding-top: 225px;
+}
+/* line 136, sass/shared/_page.sass */
+#page_account.welcome h2, #page_account.welcome h3, #page_account.welcome label {
+  color: #efefef;
+}
+/* line 138, sass/shared/_page.sass */
+#page_account.welcome a {
+  color: #efefef;
+}
+/* line 140, sass/shared/_page.sass */
+#page_account.welcome table.signin {
+  margin-top: 25px;
+}
+/* line 143, sass/shared/_page.sass */
 #page_account table.signin {
   width: auto;
   margin: 0 auto;
 }
-/* line 135, sass/shared/_page.sass */
+/* line 146, sass/shared/_page.sass */
 #page_account table.signin input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
   -moz-border-radius: 4px;
@@ -566,58 +584,62 @@
 #page_account table.signin input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
-/* line 137, sass/shared/_page.sass */
+/* line 148, sass/shared/_page.sass */
 #page_account table.signin label {
   display: inline;
 }
-/* line 139, sass/shared/_page.sass */
+/* line 150, sass/shared/_page.sass */
 #page_account table.signin td {
   text-align: left;
 }
-/* line 141, sass/shared/_page.sass */
+/* line 152, sass/shared/_page.sass */
 #page_account table.signin td.side {
   vertical-align: middle;
   padding-left: 20px;
 }
-/* line 142, sass/shared/_page.sass */
+/* line 153, sass/shared/_page.sass */
 #page_account table.signin td.side a {
   border-left: 1px dotted black;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* line 149, sass/shared/_page.sass */
+/* line 160, sass/shared/_page.sass */
 #page_account table.signin td.remember {
   text-align: right;
 }
-/* line 151, sass/shared/_page.sass */
+/* line 162, sass/shared/_page.sass */
 #page_account table.signin td input[type="submit"] {
   vertical-align: top;
 }
 
-/* line 154, sass/shared/_page.sass */
+/* line 165, sass/shared/_page.sass */
 #page_middle {
   margin-top: 135px;
   text-align: center;
   padding-bottom: 50px;
   background-color: whiteSmoke;
 }
-/* line 159, sass/shared/_page.sass */
+/* line 170, sass/shared/_page.sass */
+#page_middle.welcome {
+  margin-top: 0;
+}
+/* line 172, sass/shared/_page.sass */
 #page_middle #page_center {
   padding-top: 25px;
   max-width: 980px;
   margin: 0 auto;
 }
-/* line 163, sass/shared/_page.sass */
+/* line 176, sass/shared/_page.sass */
 #page_middle #page_center table.network {
   width: 100%;
 }
-/* line 165, sass/shared/_page.sass */
+/* line 178, sass/shared/_page.sass */
 #page_middle #page_center table.network td {
   vertical-align: top;
 }
 
-/* line 168, sass/shared/_page.sass */
+/* line 181, sass/shared/_page.sass */
 #page_footer {
   text-align: center;
   color: #999999;
@@ -627,19 +649,19 @@
   min-height: 35px;
   background-color: white;
 }
-/* line 176, sass/shared/_page.sass */
+/* line 189, sass/shared/_page.sass */
 #page_footer .footer {
   max-width: 980px;
   padding-top: 10px;
   margin: 0 auto;
   position: relative;
 }
-/* line 181, sass/shared/_page.sass */
+/* line 194, sass/shared/_page.sass */
 #page_footer .footer .links {
   color: gray;
   text-align: left;
 }
-/* line 184, sass/shared/_page.sass */
+/* line 197, sass/shared/_page.sass */
 #page_footer .footer .stats {
   position: absolute;
   top: 10px;

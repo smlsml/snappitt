@@ -23,11 +23,13 @@
 </head>
 <body class="<%= controller_css_name %>">
 
+<% unless @welcome %>
 <div id="page_header">
   <%= render :partial => '/partials/header' %>
 </div>
+<% end %>
 
-<div id="page_middle">
+<div id="page_middle"<%= ' class="welcome"'.html_safe if @welcome %>>
   <%= render_flash_messages %>
 
   <%= render :partial => '/partials/signup' unless user_signed_in? || is_account_page? %>
