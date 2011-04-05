@@ -11,7 +11,7 @@
     <ul>
       <% @user.notifications.each do |n| %>
         <li><%= n.cause.summary(Cause::Decorator.new(@user)) %><%= ' (new)' unless n.seen %></li>
-        <% n.update_attribute(:seen, true) %>
+        <% n.update_attribute(:seen, true) unless n.seen %>
       <% end %>
     </ul>
   </div>

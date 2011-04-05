@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
 
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :timeoutable
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -17,10 +15,17 @@ class User < ActiveRecord::Base
   attr_accessor :login, :newly_created
   attr_accessible :email, :username, :login, :password, :remember_me
 
-  validates :username, :presence => true, :length => { :minimum => 2 }, :uniqueness => true
+  validates :username,
+            :presence => true,
+            :format => {:with => /^[A-Za-z0-9\._\-\+]+$/i},
+            :length => {:minimum => 2},
+            :uniqueness => true
 
-  before_create :downcase
-  after_create :setup
+  before_create :setup
+  after_create :set_new
+  before_save :downcase
+
+  #--
 
   belongs_to :profile, :inverse_of => :user
   belongs_to :contact, :inverse_of => :user
@@ -36,11 +41,13 @@ class User < ActiveRecord::Base
 
   has_many :experiences, :foreign_key => 'user_id'
 
-  has_many :notifications do
+  has_many :notifications, :order => 'created_at DESC' do
     def unseen
       where(:seen => false)
     end
   end
+
+  #--
 
   scope :most_active, lambda {
     where(:confirmed_at.ne => nil).
@@ -53,6 +60,8 @@ class User < ActiveRecord::Base
     order('created_at DESC').
     limit(50)
   }
+
+  #--
 
   def follows(user)
     following.exists?(user) || self.id == user.id
@@ -114,7 +123,9 @@ class User < ActiveRecord::Base
   def setup
     self.create_profile(:realname => self.username)
     self.create_contact(:email => self.email, :name => self.username)
-    self.save!
+  end
+
+  def set_new
     self.newly_created = true
   end
 
