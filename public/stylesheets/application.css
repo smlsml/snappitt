@@ -164,17 +164,17 @@
 }
 
 /* line 3, sass/controllers/_setting.sass */
-.setting_controller #page_center form {
+.setting_controller #page_center form, .event_controller #page_center form {
   width: 700px;
   margin: 10px auto;
   text-align: left;
 }
 /* line 7, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset {
+.setting_controller #page_center form fieldset, .event_controller #page_center form fieldset {
   margin-bottom: 20px;
 }
 /* line 10, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset legend img {
+.setting_controller #page_center form fieldset legend img, .event_controller #page_center form fieldset legend img {
   vertical-align: middle;
   margin-right: 10px;
   -moz-border-radius: 4px;
@@ -186,20 +186,20 @@
   border: 4px solid #efefef;
 }
 /* line 17, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li {
+.setting_controller #page_center form fieldset ol li, .event_controller #page_center form fieldset ol li {
   padding: 5px;
   list-style: none;
 }
 /* line 21, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li.error label {
+.setting_controller #page_center form fieldset ol li.error label, .event_controller #page_center form fieldset ol li.error label {
   color: red;
 }
 /* line 23, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li.error input {
+.setting_controller #page_center form fieldset ol li.error input, .event_controller #page_center form fieldset ol li.error input {
   border-color: red;
 }
 /* line 25, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li label {
+.setting_controller #page_center form fieldset ol li label, .event_controller #page_center form fieldset ol li label {
   display: inline-block;
   _display: inline-block;
   width: 150px;
@@ -207,32 +207,32 @@
   padding: 5px;
 }
 /* line 31, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li input {
+.setting_controller #page_center form fieldset ol li input, .event_controller #page_center form fieldset ol li input {
   vertical-align: middle;
 }
 /* line 33, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li span {
+.setting_controller #page_center form fieldset ol li span, .event_controller #page_center form fieldset ol li span {
   font-size: 11px;
   font-style: italic;
   padding: 10px;
   text-shadow: 1px 1px 2px white;
 }
 /* line 38, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li dfn {
+.setting_controller #page_center form fieldset ol li dfn, .event_controller #page_center form fieldset ol li dfn {
   font-size: 13px;
 }
 /* line 40, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li dfn a.unconfirmed {
+.setting_controller #page_center form fieldset ol li dfn a.unconfirmed, .event_controller #page_center form fieldset ol li dfn a.unconfirmed {
   color: red;
 }
 /* line 42, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li textarea {
+.setting_controller #page_center form fieldset ol li textarea, .event_controller #page_center form fieldset ol li textarea {
   width: auto;
   height: 40px;
   vertical-align: top;
 }
 /* line 46, sass/controllers/_setting.sass */
-.setting_controller #page_center form p.submit {
+.setting_controller #page_center form p.submit, .event_controller #page_center form p.submit {
   margin: 20px;
   text-align: center;
 }

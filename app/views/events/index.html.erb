@@ -1,0 +1,11 @@
+<h1>Events</h1>
+
+<div class="events">
+<% @events.each do |e| %>
+  <%= e.inspect %>
+<% end %>
+</div>
+
+<br/>
+
+<%= link_to('Create Event', new_event_path) %>

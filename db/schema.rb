@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331172004) do
+ActiveRecord::Schema.define(:version => 20110405232738) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -99,6 +99,9 @@ ActiveRecord::Schema.define(:version => 20110331172004) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "experience_id"
+    t.string   "hashtag",         :limit => 35, :null => false
+    t.string   "prize"
+    t.integer  "prize_at_moment"
   end
 
   create_table "experiences", :force => true do |t|

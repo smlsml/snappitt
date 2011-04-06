@@ -1,0 +1,59 @@
+<h1>Create Event</h1>
+
+<%= form_for @event do |e| %>
+
+  <fieldset>
+    <legend>Event</legend>
+
+    <ol>
+      <li>
+        <%= e.label :name %>
+        <%= e.text_field :name %>
+        <span>Will become the Experience title</span>
+      </li>
+
+      <li>
+        <%= e.label :hashtag %>
+        <%= e.text_field :hashtag %>
+        <span>Upload photos to <strong>hashtag</strong>@snappitt.com</span>
+      </li>
+
+      <li>
+        <%= e.label :start_at %>
+        <%= e.datetime_select :start_at, :start_year => Time.now.year, :end_year => Time.now.year, :default => Date.today %>
+        <span></span>
+      </li>
+
+      <li>
+        <%= e.label :end_at %>
+        <%= e.datetime_select :end_at, :start_year => Time.now.year, :end_year => Time.now.year, :default => Date.today %>
+        <span></span>
+      </li>
+    </ol>
+
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Prize</legend>
+
+    <ol>
+      <li>
+        <%= e.label :prize %>
+        <%= e.text_area :prize %><br/>
+        <label></label>
+        <span>Describe the prize</span>
+      </li>
+
+      <li>
+        <%= e.label :prize_at_moment %>
+        <%= e.select :prize_at_moment, [10,25,50,100,200,300] %>
+        <span>Person who posts the Xth moment wins</span>
+      </li>
+    </ol>
+
+  </fieldset>
+
+  <p class="submit"><%= submit_tag 'Create Event' %></p>
+
+<% end %>

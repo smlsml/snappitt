@@ -28,6 +28,8 @@ Photo::Application.routes.draw do
     end
   end
 
+  resources :events, :only => [:index, :show, :create, :new]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
