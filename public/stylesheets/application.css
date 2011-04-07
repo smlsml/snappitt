@@ -614,20 +614,22 @@
 }
 /* line 170, sass/shared/_page.sass */
 #page_middle #page_middle_box {
-  padding-top: 25px;
-  max-width: 980px;
+  width: 980px;
+  padding-left: 5px;
+  padding-right: 5px;
   margin: 0 auto;
+  padding-top: 25px;
 }
-/* line 174, sass/shared/_page.sass */
+/* line 173, sass/shared/_page.sass */
 #page_middle #page_middle_box table.network {
   width: 100%;
 }
-/* line 176, sass/shared/_page.sass */
+/* line 175, sass/shared/_page.sass */
 #page_middle #page_middle_box table.network td {
   vertical-align: top;
 }
 
-/* line 179, sass/shared/_page.sass */
+/* line 178, sass/shared/_page.sass */
 #page_footer {
   text-align: center;
   color: #999999;
@@ -637,19 +639,21 @@
   min-height: 35px;
   background-color: white;
 }
-/* line 187, sass/shared/_page.sass */
+/* line 186, sass/shared/_page.sass */
 #page_footer .footer {
-  max-width: 980px;
-  padding-top: 10px;
+  width: 980px;
+  padding-left: 5px;
+  padding-right: 5px;
   margin: 0 auto;
+  padding-top: 10px;
   position: relative;
 }
-/* line 192, sass/shared/_page.sass */
+/* line 190, sass/shared/_page.sass */
 #page_footer .footer .links {
   color: gray;
   text-align: left;
 }
-/* line 195, sass/shared/_page.sass */
+/* line 193, sass/shared/_page.sass */
 #page_footer .footer .stats {
   position: absolute;
   top: 10px;

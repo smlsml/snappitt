@@ -28,7 +28,6 @@ class ExperiencesController < ApplicationController
     @from = @message.header['Reply-to'].addresses.first.to_s.downcase if @message.header['Reply-to']
 
     @user = User.find_by_email(@from)
-    return head(:forbidden) if @user.disabled
 
     if !@user
       password = User.generate_password
@@ -46,6 +45,7 @@ class ExperiencesController < ApplicationController
     end
 
     return head(:unauthorized) unless @user
+    return head(:forbidden) if @user.disabled
 
     if @to =~ /avatar@snappitt.com/i
       attachment = @message.attachments.first

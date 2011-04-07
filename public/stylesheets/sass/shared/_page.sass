@@ -168,9 +168,8 @@
   &.welcome
     margin-top: 0
   #page_middle_box
+    @include page_center_box
     padding-top: 25px
-    max-width: 980px
-    margin: 0 auto
     table.network
       width: 100%
       td
@@ -185,9 +184,8 @@
   min-height: 35px
   background-color: white
   .footer
-    max-width: 980px
+    @include page_center_box
     padding-top: 10px
-    margin: 0 auto
     position: relative
     .links
       color: gray
