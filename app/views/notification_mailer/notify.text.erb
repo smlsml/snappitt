@@ -1,5 +1,7 @@
 Hey <%= @user %>
 
-<%= @notification.cause.summary(Cause::Decorator.new(@user)) %>!
+<%= @notification.cause.summary(Cause::EmailDecorator.new(self, @user)) %>
+
+---
 
 Thanks for using Snappitt!

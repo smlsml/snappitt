@@ -6,7 +6,7 @@ class NotificationMailerTest < ActionMailer::TestCase
     @user = users(:snoop)
     @note = notifications(:snoop_like)
     mail = NotificationMailer.notify(@user, @note)
-    assert_equal @note.cause.verb.upcase, mail.subject
+    assert_equal @note.cause.verb.capitalize, mail.subject
     assert_equal [@user.email], mail.to
     assert_equal ["noreply@snappitt.com"], mail.from
     assert_match "Hey", mail.body.encoded
