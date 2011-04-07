@@ -663,6 +663,222 @@
   text-align: right;
 }
 
+/* line 1, sass/shared/_base.sass */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #999999;
+  overflow-y: scroll;
+}
+
+/* line 9, sass/shared/_base.sass */
+h1 {
+  font-size: 24px;
+  color: #666666;
+  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* line 13, sass/shared/_base.sass */
+h2 {
+  font-size: 20px;
+  color: #666666;
+  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* line 18, sass/shared/_base.sass */
+h3 {
+  font-size: 18px;
+  color: #666666;
+  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* line 23, sass/shared/_base.sass */
+a {
+  color: #009ad7;
+  text-decoration: none;
+}
+/* line 26, sass/shared/_base.sass */
+a:visited {
+  color: #009ad7;
+}
+/* line 28, sass/shared/_base.sass */
+a:hover {
+  text-decoration: underline;
+}
+/* line 30, sass/shared/_base.sass */
+a:focus {
+  color: #009ad7;
+}
+
+/* line 33, sass/shared/_base.sass */
+textarea.auto {
+  height: auto;
+  width: auto;
+}
+
+/* line 37, sass/shared/_base.sass */
+dl {
+  margin: 0;
+  line-height: 1.2em;
+}
+/* line 40, sass/shared/_base.sass */
+dl dt {
+  font-weight: normal;
+  margin: 0;
+}
+/* line 43, sass/shared/_base.sass */
+dl dd {
+  margin: 0;
+}
+
+/* line 47, sass/shared/_base.sass */
+table td {
+  border: none !important;
+}
+/* line 49, sass/shared/_base.sass */
+table td img {
+  margin: 0;
+}
+/* line 51, sass/shared/_base.sass */
+table.comment {
+  width: auto;
+  margin: 0 auto;
+}
+/* line 54, sass/shared/_base.sass */
+table.comment td {
+  text-align: left;
+}
+
+/* line 57, sass/shared/_base.sass */
+img {
+  border: none;
+}
+
+/* line 60, sass/shared/_base.sass */
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 64, sass/shared/_base.sass */
+label {
+  display: inline;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 69, sass/shared/_base.sass */
+fieldset {
+  background: #efefef;
+  border: none;
+  padding: 10px;
+  border-bottom: 1px solid #dedede;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+}
+/* line 75, sass/shared/_base.sass */
+fieldset legend {
+  font-style: oblique;
+}
+
+/* line 78, sass/shared/_base.sass */
+a.button {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
+  background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
+  background-image: linear-gradient(top, #efefef 0%, #d8d8d8 100%);
+  border: 1px solid #ababab;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  color: #707070;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  outline: medium none;
+  padding: 5px 10px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+/* line 21, sass/application.sass */
+a.button:hover {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
+  background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
+  background-image: linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
+  cursor: pointer;
+  text-decoration: none;
+}
+/* line 25, sass/application.sass */
+a.button:active {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
+  background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
+  background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
+  box-shadow: none;
+}
+
+/* line 81, sass/shared/_base.sass */
+var {
+  font-size: 13px;
+  font-style: normal;
+}
+
+/* line 85, sass/shared/_base.sass */
+li {
+  list-style: none;
+  font-size: 13px;
+}
+
+/* line 3, sass/shared/_container.sass */
+.page_container .container_end {
+  height: 1px;
+  overflow: hidden;
+  clear: both;
+}
+/* line 7, sass/shared/_container.sass */
+.page_container .container_end br {
+  height: 1px;
+  font-size: 1px;
+  clear: both;
+}
+/* line 14, sass/shared/_container.sass */
+.page_container .container_wrapper .container_panel_left {
+  float: left;
+  width: 320px;
+}
+/* line 17, sass/shared/_container.sass */
+.page_container .container_wrapper .container_panel_right {
+  float: right;
+  width: 320px;
+}
+/* line 20, sass/shared/_container.sass */
+.page_container .container_wrapper .container_body_left {
+  margin-right: 320px;
+}
+/* line 22, sass/shared/_container.sass */
+.page_container .container_wrapper .container_body_left .container_body_inner {
+  width: 650px;
+}
+/* line 24, sass/shared/_container.sass */
+.page_container .container_wrapper .container_body_right {
+  margin-left: 320px;
+}
+/* line 26, sass/shared/_container.sass */
+.page_container .container_wrapper .container_body_right .container_body_inner {
+  float: right;
+  width: 650px;
+}
+
 /* line 1, sass/shared/_experiences.sass */
 h2.feed_date {
   clear: both;
@@ -1307,180 +1523,4 @@ div.activity {
 div.notifications {
   text-align: left;
   margin: 0;
-}
-
-/* line 1, sass/shared/_base.sass */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  color: #999999;
-  overflow-y: scroll;
-}
-
-/* line 9, sass/shared/_base.sass */
-h1 {
-  font-size: 24px;
-  color: #666666;
-  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
-}
-
-/* line 13, sass/shared/_base.sass */
-h2 {
-  font-size: 20px;
-  color: #666666;
-  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
-}
-
-/* line 18, sass/shared/_base.sass */
-h3 {
-  font-size: 18px;
-  color: #666666;
-  text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
-}
-
-/* line 23, sass/shared/_base.sass */
-a {
-  color: #009ad7;
-  text-decoration: none;
-}
-/* line 26, sass/shared/_base.sass */
-a:visited {
-  color: #009ad7;
-}
-/* line 28, sass/shared/_base.sass */
-a:hover {
-  text-decoration: underline;
-}
-/* line 30, sass/shared/_base.sass */
-a:focus {
-  color: #009ad7;
-}
-
-/* line 33, sass/shared/_base.sass */
-textarea.auto {
-  height: auto;
-  width: auto;
-}
-
-/* line 37, sass/shared/_base.sass */
-dl {
-  margin: 0;
-  line-height: 1.2em;
-}
-/* line 40, sass/shared/_base.sass */
-dl dt {
-  font-weight: normal;
-  margin: 0;
-}
-/* line 43, sass/shared/_base.sass */
-dl dd {
-  margin: 0;
-}
-
-/* line 47, sass/shared/_base.sass */
-table td {
-  border: none !important;
-}
-/* line 49, sass/shared/_base.sass */
-table td img {
-  margin: 0;
-}
-/* line 51, sass/shared/_base.sass */
-table.comment {
-  width: auto;
-  margin: 0 auto;
-}
-/* line 54, sass/shared/_base.sass */
-table.comment td {
-  text-align: left;
-}
-
-/* line 57, sass/shared/_base.sass */
-img {
-  border: none;
-}
-
-/* line 60, sass/shared/_base.sass */
-p {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 64, sass/shared/_base.sass */
-label {
-  display: inline;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-/* line 69, sass/shared/_base.sass */
-fieldset {
-  background: #efefef;
-  border: none;
-  padding: 10px;
-  border-bottom: 1px solid #dedede;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -khtml-border-radius: 6px;
-  border-radius: 6px;
-}
-/* line 75, sass/shared/_base.sass */
-fieldset legend {
-  font-style: oblique;
-}
-
-/* line 78, sass/shared/_base.sass */
-a.button {
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
-  background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
-  background-image: linear-gradient(top, #efefef 0%, #d8d8d8 100%);
-  border: 1px solid #ababab;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  border-radius: 3px;
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
-  color: #707070;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  margin: 0;
-  outline: medium none;
-  padding: 5px 10px;
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
-}
-/* line 21, sass/application.sass */
-a.button:hover {
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
-  background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
-  background-image: linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
-  cursor: pointer;
-  text-decoration: none;
-}
-/* line 25, sass/application.sass */
-a.button:active {
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
-  background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
-  background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
-  box-shadow: none;
-}
-
-/* line 81, sass/shared/_base.sass */
-var {
-  font-size: 13px;
-  font-style: normal;
-}
-
-/* line 85, sass/shared/_base.sass */
-li {
-  list-style: none;
-  font-size: 13px;
 }

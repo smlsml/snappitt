@@ -49,53 +49,41 @@ module ApplicationHelper
   end
 
   def container(options = {}, &block)
-    saved_title  = @content_for_title
-    saved_bottom = @content_for_bottom
-    saved_left   = @content_for_left_side
-    saved_right  = @content_for_right_side
-
-    @content_for_title = nil
-    @content_for_bottom = nil
-    @content_for_left_side = nil
-    @content_for_right_side = nil
-
+    out = ""
     main_content = capture(&block)
     container_class = options[:class].to_s
 
-    concat <<-HTML
+    out << <<-HTML.html_safe
     <div class="page_container #{container_class}">
       <div class="container_wrapper">
     HTML
 
-    concat content_tag(:div, @content_for_title, :class => 'container_header') if @content_for_title
+    out << content_tag(:div, content_for(:title), :class => 'container_header') if content_for?(:bottom)
 
-    if @content_for_left_side
-      concat content_tag(:div, @content_for_left_side, :class => 'container_panel_left' )
-      concat '<div class="container_body_right">'
-    elsif @content_for_right_side
-      concat content_tag(:div, @content_for_right_side, :class => 'container_panel_right' )
-      concat '<div class="container_body_left">'
+    if content_for?(:left_side)
+      out << content_tag(:div, content_for(:left_side), :class => 'container_panel_left' )
+      out << '<div class="container_body_right">'.html_safe
+    elsif content_for?(:right_side)
+      out << content_tag(:div, content_for(:right_side), :class => 'container_panel_right' )
+      out << '<div class="container_body_left">'.html_safe
     else
-      concat '<div class="container_body_full">'
+      out << '<div class="container_body_full">'.html_safe
     end
 
-    concat content_tag(:div, main_content, :class => 'container_body_inner')
-    concat content_tag(:div, '<br style="clear: both"/>', :class => 'container_end')
+    out << content_tag(:div, main_content, :class => 'container_body_inner')
+    out << content_tag(:div, '<br style="clear: both"/>'.html_safe, :class => 'container_end')
 
-    concat '</div>'
+    out << '</div>'.html_safe
 
-    concat content_tag(:div, @content_for_bottom, :class => 'container_footer') if @content_for_bottom
+    out << content_tag(:div, content_for(:bottom), :class => 'container_footer') if content_for?(:title)
 
-    concat <<-HTML
+    out << <<-HTML.html_safe
       <div class="container_end"><br style="clear: both"/></div>
       </div><!-- container_wrapper -->
     </div><!-- page_container -->
     HTML
 
-    @content_for_title = saved_title
-    @content_for_bottom = saved_bottom
-    @content_for_left_side = saved_left
-    @content_for_right_side = saved_right
+    out.html_safe
   end
 
 end
