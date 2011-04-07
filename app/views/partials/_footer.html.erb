@@ -1,7 +1,7 @@
 <div class="footer">
 
 <p class="links">
-  <a href="/">Home</a> | <%= link_to('Events', events_path)%> <br/>
+  <%= footer_links.join(' | ').html_safe %><br/>
   <%= t('footer.developed_in') %>
 </p>
 

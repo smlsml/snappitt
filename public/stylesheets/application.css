@@ -28,17 +28,17 @@
 }
 
 /* line 4, sass/controllers/_experience.sass */
-.experience_controller #page_center fieldset.upload {
+.experience_controller #page_middle_box fieldset.upload {
   width: 600px;
   margin: 0 auto;
 }
 /* line 7, sass/controllers/_experience.sass */
-.experience_controller #page_center fieldset.upload textarea {
+.experience_controller #page_middle_box fieldset.upload textarea {
   width: auto;
   height: auto;
 }
 /* line 10, sass/controllers/_experience.sass */
-.experience_controller #page_center fieldset.upload input[type="submit"] {
+.experience_controller #page_middle_box fieldset.upload input[type="submit"] {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
   background-image: linear-gradient(top, #c1e445 0%, #a7d727 100%);
@@ -64,7 +64,7 @@
   margin: 10px auto;
 }
 /* line 45, sass/application.sass */
-.experience_controller #page_center fieldset.upload input[type="submit"]:hover {
+.experience_controller #page_middle_box fieldset.upload input[type="submit"]:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #cbf048), color-stop(100%, #b3e529));
   background-image: -moz-linear-gradient(top, #cbf048 0%, #b3e529 100%);
   background-image: linear-gradient(top, #cbf048 0%, #b3e529 100%);
@@ -72,39 +72,35 @@
   text-decoration: none;
 }
 /* line 49, sass/application.sass */
-.experience_controller #page_center fieldset.upload input[type="submit"]:active {
+.experience_controller #page_middle_box fieldset.upload input[type="submit"]:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b3e529), color-stop(100%, #cbf048));
   background-image: -moz-linear-gradient(top, #b3e529 0%, #cbf048 100%);
   background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
   box-shadow: none;
 }
 /* line 14, sass/controllers/_experience.sass */
-.experience_controller #page_center fieldset textarea {
+.experience_controller #page_middle_box fieldset textarea {
   vertical-align: middle;
 }
 /* line 17, sass/controllers/_experience.sass */
-.experience_controller #page_center .comment img {
+.experience_controller #page_middle_box .comment img {
   padding-top: 6px;
 }
 /* line 19, sass/controllers/_experience.sass */
-.experience_controller #page_center .comment a {
+.experience_controller #page_middle_box .comment a {
   padding-left: 5px;
 }
 /* line 21, sass/controllers/_experience.sass */
-.experience_controller #page_center .comment td.text {
+.experience_controller #page_middle_box .comment td.text {
   padding-left: 5px;
 }
 
 /* line 3, sass/controllers/_session.sass */
-.session_controller #page_center label {
-  display: inline;
-}
-/* line 6, sass/controllers/_session.sass */
-.session_controller #page_center p {
+.session_controller #page_middle_box p {
   margin: 15px 0;
 }
-/* line 9, sass/controllers/_session.sass */
-.session_controller #page_center input[type="submit"] {
+/* line 5, sass/controllers/_session.sass */
+.session_controller #page_middle_box input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -125,20 +121,16 @@
   padding: 8px 18px;
 }
 /* line 64, sass/application.sass */
-.session_controller #page_center input[type="submit"]:hover {
+.session_controller #page_middle_box input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
 
-/* line 14, sass/controllers/_session.sass */
-.registration_controller #page_center label {
-  display: inline;
-}
-/* line 16, sass/controllers/_session.sass */
-.registration_controller #page_center p {
+/* line 10, sass/controllers/_session.sass */
+.registration_controller #page_middle_box p {
   margin: 15px 0;
 }
-/* line 18, sass/controllers/_session.sass */
-.registration_controller #page_center input[type="submit"] {
+/* line 12, sass/controllers/_session.sass */
+.registration_controller #page_middle_box input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -159,22 +151,22 @@
   padding: 8px 18px;
 }
 /* line 64, sass/application.sass */
-.registration_controller #page_center input[type="submit"]:hover {
+.registration_controller #page_middle_box input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
 
 /* line 3, sass/controllers/_setting.sass */
-.setting_controller #page_center form, .event_controller #page_center form {
+.setting_controller #page_middle_box form, .event_controller #page_middle_box form {
   width: 700px;
   margin: 10px auto;
   text-align: left;
 }
 /* line 7, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset, .event_controller #page_center form fieldset {
+.setting_controller #page_middle_box form fieldset, .event_controller #page_middle_box form fieldset {
   margin-bottom: 20px;
 }
 /* line 10, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset legend img, .event_controller #page_center form fieldset legend img {
+.setting_controller #page_middle_box form fieldset legend img, .event_controller #page_middle_box form fieldset legend img {
   vertical-align: middle;
   margin-right: 10px;
   -moz-border-radius: 4px;
@@ -186,20 +178,20 @@
   border: 4px solid #efefef;
 }
 /* line 17, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li, .event_controller #page_center form fieldset ol li {
+.setting_controller #page_middle_box form fieldset ol li, .event_controller #page_middle_box form fieldset ol li {
   padding: 5px;
   list-style: none;
 }
 /* line 21, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li.error label, .event_controller #page_center form fieldset ol li.error label {
+.setting_controller #page_middle_box form fieldset ol li.error label, .event_controller #page_middle_box form fieldset ol li.error label {
   color: red;
 }
 /* line 23, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li.error input, .event_controller #page_center form fieldset ol li.error input {
+.setting_controller #page_middle_box form fieldset ol li.error input, .event_controller #page_middle_box form fieldset ol li.error input {
   border-color: red;
 }
 /* line 25, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li label, .event_controller #page_center form fieldset ol li label {
+.setting_controller #page_middle_box form fieldset ol li label, .event_controller #page_middle_box form fieldset ol li label {
   display: inline-block;
   _display: inline-block;
   width: 150px;
@@ -207,32 +199,32 @@
   padding: 5px;
 }
 /* line 31, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li input, .event_controller #page_center form fieldset ol li input {
+.setting_controller #page_middle_box form fieldset ol li input, .event_controller #page_middle_box form fieldset ol li input {
   vertical-align: middle;
 }
 /* line 33, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li span, .event_controller #page_center form fieldset ol li span {
+.setting_controller #page_middle_box form fieldset ol li span, .event_controller #page_middle_box form fieldset ol li span {
   font-size: 11px;
   font-style: italic;
   padding: 10px;
   text-shadow: 1px 1px 2px white;
 }
 /* line 38, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li dfn, .event_controller #page_center form fieldset ol li dfn {
+.setting_controller #page_middle_box form fieldset ol li dfn, .event_controller #page_middle_box form fieldset ol li dfn {
   font-size: 13px;
 }
 /* line 40, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li dfn a.unconfirmed, .event_controller #page_center form fieldset ol li dfn a.unconfirmed {
+.setting_controller #page_middle_box form fieldset ol li dfn a.unconfirmed, .event_controller #page_middle_box form fieldset ol li dfn a.unconfirmed {
   color: red;
 }
 /* line 42, sass/controllers/_setting.sass */
-.setting_controller #page_center form fieldset ol li textarea, .event_controller #page_center form fieldset ol li textarea {
+.setting_controller #page_middle_box form fieldset ol li textarea, .event_controller #page_middle_box form fieldset ol li textarea {
   width: auto;
   height: 40px;
   vertical-align: top;
 }
 /* line 46, sass/controllers/_setting.sass */
-.setting_controller #page_center form p.submit, .event_controller #page_center form p.submit {
+.setting_controller #page_middle_box form p.submit, .event_controller #page_middle_box form p.submit {
   margin: 20px;
   text-align: center;
 }
@@ -585,61 +577,57 @@
   background: none repeat scroll 0 0 #90c100;
 }
 /* line 148, sass/shared/_page.sass */
-#page_account table.signin label {
-  display: inline;
-}
-/* line 150, sass/shared/_page.sass */
 #page_account table.signin td {
   text-align: left;
 }
-/* line 152, sass/shared/_page.sass */
+/* line 150, sass/shared/_page.sass */
 #page_account table.signin td.side {
   vertical-align: middle;
   padding-left: 20px;
 }
-/* line 153, sass/shared/_page.sass */
+/* line 151, sass/shared/_page.sass */
 #page_account table.signin td.side a {
   border-left: 1px dotted black;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* line 160, sass/shared/_page.sass */
+/* line 158, sass/shared/_page.sass */
 #page_account table.signin td.remember {
   text-align: right;
 }
-/* line 162, sass/shared/_page.sass */
+/* line 160, sass/shared/_page.sass */
 #page_account table.signin td input[type="submit"] {
   vertical-align: top;
 }
 
-/* line 165, sass/shared/_page.sass */
+/* line 163, sass/shared/_page.sass */
 #page_middle {
   margin-top: 135px;
   text-align: center;
   padding-bottom: 50px;
   background-color: whiteSmoke;
 }
-/* line 170, sass/shared/_page.sass */
+/* line 168, sass/shared/_page.sass */
 #page_middle.welcome {
   margin-top: 0;
 }
-/* line 172, sass/shared/_page.sass */
-#page_middle #page_center {
+/* line 170, sass/shared/_page.sass */
+#page_middle #page_middle_box {
   padding-top: 25px;
   max-width: 980px;
   margin: 0 auto;
 }
-/* line 176, sass/shared/_page.sass */
-#page_middle #page_center table.network {
+/* line 174, sass/shared/_page.sass */
+#page_middle #page_middle_box table.network {
   width: 100%;
 }
-/* line 178, sass/shared/_page.sass */
-#page_middle #page_center table.network td {
+/* line 176, sass/shared/_page.sass */
+#page_middle #page_middle_box table.network td {
   vertical-align: top;
 }
 
-/* line 181, sass/shared/_page.sass */
+/* line 179, sass/shared/_page.sass */
 #page_footer {
   text-align: center;
   color: #999999;
@@ -649,19 +637,19 @@
   min-height: 35px;
   background-color: white;
 }
-/* line 189, sass/shared/_page.sass */
+/* line 187, sass/shared/_page.sass */
 #page_footer .footer {
   max-width: 980px;
   padding-top: 10px;
   margin: 0 auto;
   position: relative;
 }
-/* line 194, sass/shared/_page.sass */
+/* line 192, sass/shared/_page.sass */
 #page_footer .footer .links {
   color: gray;
   text-align: left;
 }
-/* line 197, sass/shared/_page.sass */
+/* line 195, sass/shared/_page.sass */
 #page_footer .footer .stats {
   position: absolute;
   top: 10px;
@@ -1324,105 +1312,106 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   color: #999999;
+  overflow-y: scroll;
 }
 
-/* line 8, sass/shared/_base.sass */
+/* line 9, sass/shared/_base.sass */
 h1 {
   font-size: 24px;
   color: #666666;
   text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* line 12, sass/shared/_base.sass */
+/* line 13, sass/shared/_base.sass */
 h2 {
   font-size: 20px;
   color: #666666;
   text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* line 17, sass/shared/_base.sass */
+/* line 18, sass/shared/_base.sass */
 h3 {
   font-size: 18px;
   color: #666666;
   text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* line 22, sass/shared/_base.sass */
+/* line 23, sass/shared/_base.sass */
 a {
   color: #009ad7;
   text-decoration: none;
 }
-/* line 25, sass/shared/_base.sass */
+/* line 26, sass/shared/_base.sass */
 a:visited {
   color: #009ad7;
 }
-/* line 27, sass/shared/_base.sass */
+/* line 28, sass/shared/_base.sass */
 a:hover {
   text-decoration: underline;
 }
-/* line 29, sass/shared/_base.sass */
+/* line 30, sass/shared/_base.sass */
 a:focus {
   color: #009ad7;
 }
 
-/* line 32, sass/shared/_base.sass */
+/* line 33, sass/shared/_base.sass */
 textarea.auto {
   height: auto;
   width: auto;
 }
 
-/* line 36, sass/shared/_base.sass */
+/* line 37, sass/shared/_base.sass */
 dl {
   margin: 0;
   line-height: 1.2em;
 }
-/* line 39, sass/shared/_base.sass */
+/* line 40, sass/shared/_base.sass */
 dl dt {
   font-weight: normal;
   margin: 0;
 }
-/* line 42, sass/shared/_base.sass */
+/* line 43, sass/shared/_base.sass */
 dl dd {
   margin: 0;
 }
 
-/* line 46, sass/shared/_base.sass */
+/* line 47, sass/shared/_base.sass */
 table td {
   border: none !important;
 }
-/* line 48, sass/shared/_base.sass */
+/* line 49, sass/shared/_base.sass */
 table td img {
   margin: 0;
 }
-/* line 50, sass/shared/_base.sass */
+/* line 51, sass/shared/_base.sass */
 table.comment {
   width: auto;
   margin: 0 auto;
 }
-/* line 53, sass/shared/_base.sass */
+/* line 54, sass/shared/_base.sass */
 table.comment td {
   text-align: left;
 }
 
-/* line 56, sass/shared/_base.sass */
+/* line 57, sass/shared/_base.sass */
 img {
   border: none;
 }
 
-/* line 59, sass/shared/_base.sass */
+/* line 60, sass/shared/_base.sass */
 p {
   margin: 0;
   padding: 0;
 }
 
-/* line 63, sass/shared/_base.sass */
+/* line 64, sass/shared/_base.sass */
 label {
-  display: block;
+  display: inline;
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 68, sass/shared/_base.sass */
+/* line 69, sass/shared/_base.sass */
 fieldset {
   background: #efefef;
   border: none;
@@ -1435,12 +1424,12 @@ fieldset {
   -khtml-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 74, sass/shared/_base.sass */
+/* line 75, sass/shared/_base.sass */
 fieldset legend {
   font-style: oblique;
 }
 
-/* line 77, sass/shared/_base.sass */
+/* line 78, sass/shared/_base.sass */
 a.button {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
@@ -1480,13 +1469,13 @@ a.button:active {
   box-shadow: none;
 }
 
-/* line 80, sass/shared/_base.sass */
+/* line 81, sass/shared/_base.sass */
 var {
   font-size: 13px;
   font-style: normal;
 }
 
-/* line 84, sass/shared/_base.sass */
+/* line 85, sass/shared/_base.sass */
 li {
   list-style: none;
   font-size: 13px;

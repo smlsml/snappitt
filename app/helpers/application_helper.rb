@@ -42,4 +42,60 @@ module ApplicationHelper
   end
   # end devise
 
+  def footer_links
+    links = [link_to('Home', root_path)]
+    links << link_to('Events', events_path) if user_signed_in?
+    links
+  end
+
+  def container(options = {}, &block)
+    saved_title  = @content_for_title
+    saved_bottom = @content_for_bottom
+    saved_left   = @content_for_left_side
+    saved_right  = @content_for_right_side
+
+    @content_for_title = nil
+    @content_for_bottom = nil
+    @content_for_left_side = nil
+    @content_for_right_side = nil
+
+    main_content = capture(&block)
+    container_class = options[:class].to_s
+
+    concat <<-HTML
+    <div class="page_container #{container_class}">
+      <div class="container_wrapper">
+    HTML
+
+    concat content_tag(:div, @content_for_title, :class => 'container_header') if @content_for_title
+
+    if @content_for_left_side
+      concat content_tag(:div, @content_for_left_side, :class => 'container_panel_left' )
+      concat '<div class="container_body_right">'
+    elsif @content_for_right_side
+      concat content_tag(:div, @content_for_right_side, :class => 'container_panel_right' )
+      concat '<div class="container_body_left">'
+    else
+      concat '<div class="container_body_full">'
+    end
+
+    concat content_tag(:div, main_content, :class => 'container_body_inner')
+    concat content_tag(:div, '<br style="clear: both"/>', :class => 'container_end')
+
+    concat '</div>'
+
+    concat content_tag(:div, @content_for_bottom, :class => 'container_footer') if @content_for_bottom
+
+    concat <<-HTML
+      <div class="container_end"><br style="clear: both"/></div>
+      </div><!-- container_wrapper -->
+    </div><!-- page_container -->
+    HTML
+
+    @content_for_title = saved_title
+    @content_for_bottom = saved_bottom
+    @content_for_left_side = saved_left
+    @content_for_right_side = saved_right
+  end
+
 end
