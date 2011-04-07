@@ -14,7 +14,7 @@ module MailHelper
       experience = @cause.subject.experience if @cause.subject.try(:experience)
       link = experience.blank? ? '' : @controller.experience_url(experience, anchor)
 
-      '%s%s' % [@cause.subject.class.name, link]
+      '%s %s' % [@cause.subject.class.name, link]
     end
 
   end
