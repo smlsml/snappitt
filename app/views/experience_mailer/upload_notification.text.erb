@@ -19,12 +19,17 @@ Once activated, you will be prompted to choose a password and provide other prof
 
 P.S. You can set a profile image by email too, just send your photo to avatar@<%= I18n.translate('app.host') %>.
 
-<% elsif @causes %>
+<% elsif @causes && @causes.size > 1 %>
 (¯`·._.·(¯`·._.· Experience Activity ·._.·´¯)·._.·´¯)
 <% @causes.each do |action| %>
 * <%= action.summary(Cause::Decorator.new(@user)) %>
 <% end %>
 
+<% @event = Event.find_by_experience_id(@experience.id) %>
+<% if @event %>
+EVENT PRIZE: The person who uploads the <% @event.prize_at_moment %> moment will win a <% @event.prize %>!
+
+<% end %>
 ---
 <% end %>
 
