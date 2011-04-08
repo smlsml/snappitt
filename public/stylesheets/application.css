@@ -32,12 +32,16 @@
   width: 600px;
   margin: 0 auto;
 }
-/* line 7, sass/controllers/_experience.sass */
+/* line 5, sass/controllers/_experience.sass */
+.experience_controller #page_middle_box fieldset.upload label {
+  display: block;
+}
+/* line 9, sass/controllers/_experience.sass */
 .experience_controller #page_middle_box fieldset.upload textarea {
   width: auto;
   height: auto;
 }
-/* line 10, sass/controllers/_experience.sass */
+/* line 12, sass/controllers/_experience.sass */
 .experience_controller #page_middle_box fieldset.upload input[type="submit"] {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
@@ -78,19 +82,19 @@
   background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
   box-shadow: none;
 }
-/* line 14, sass/controllers/_experience.sass */
+/* line 16, sass/controllers/_experience.sass */
 .experience_controller #page_middle_box fieldset textarea {
   vertical-align: middle;
 }
-/* line 17, sass/controllers/_experience.sass */
+/* line 19, sass/controllers/_experience.sass */
 .experience_controller #page_middle_box .comment img {
   padding-top: 6px;
 }
-/* line 19, sass/controllers/_experience.sass */
+/* line 21, sass/controllers/_experience.sass */
 .experience_controller #page_middle_box .comment a {
   padding-left: 5px;
 }
-/* line 21, sass/controllers/_experience.sass */
+/* line 23, sass/controllers/_experience.sass */
 .experience_controller #page_middle_box .comment td.text {
   padding-left: 5px;
 }
@@ -1208,10 +1212,18 @@ table.network td, table.split td {
   position: relative;
 }
 /* line 4, sass/shared/_moment.sass */
+.moment_card .moment .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 26px;
+  color: lightGray;
+}
+/* line 10, sass/shared/_moment.sass */
 .moment_card .moment img {
   margin: 0;
 }
-/* line 6, sass/shared/_moment.sass */
+/* line 12, sass/shared/_moment.sass */
 .moment_card .moment img.photo {
   border: 6px solid #efefef;
   -moz-border-radius: 6px;
@@ -1221,25 +1233,25 @@ table.network td, table.split td {
   -khtml-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 9, sass/shared/_moment.sass */
+/* line 15, sass/shared/_moment.sass */
 .moment_card .moment img.published {
   width: 100px;
   position: absolute;
   bottom: 20px;
   right: 25%;
 }
-/* line 14, sass/shared/_moment.sass */
+/* line 20, sass/shared/_moment.sass */
 .moment_card p {
   font-size: 13px;
   text-align: center;
 }
-/* line 17, sass/shared/_moment.sass */
+/* line 23, sass/shared/_moment.sass */
 .moment_card p.links {
   width: 620px;
   text-align: center;
   margin: 10px auto;
 }
-/* line 21, sass/shared/_moment.sass */
+/* line 27, sass/shared/_moment.sass */
 .moment_card p.links a {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
@@ -1278,12 +1290,12 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
   box-shadow: none;
 }
-/* line 23, sass/shared/_moment.sass */
+/* line 29, sass/shared/_moment.sass */
 .moment_card p.metadata {
   font-size: 11px;
   font-color: #999999;
 }
-/* line 27, sass/shared/_moment.sass */
+/* line 33, sass/shared/_moment.sass */
 .moment_card blockquote {
   width: 620px;
   margin: 10px auto;
@@ -1291,7 +1303,7 @@ table.network td, table.split td {
   font-style: italic;
   padding: 0;
 }
-/* line 34, sass/shared/_moment.sass */
+/* line 40, sass/shared/_moment.sass */
 .moment_card input[type="submit"] {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
@@ -1332,7 +1344,7 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
   box-shadow: none;
 }
-/* line 38, sass/shared/_moment.sass */
+/* line 44, sass/shared/_moment.sass */
 .moment_card span.source {
   border-bottom: 1px dotted lightBlue;
 }

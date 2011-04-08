@@ -23,10 +23,12 @@
   </div>
 </div>
 
+<% cnt = 0 %>
 <% @experience.moments.each do |m| %>
   <a name="<%= m.id %>"></a>
   <div class="moment_card">
     <div class="moment">
+    <div class="number">#<%= cnt += 1 %></div>
     <%= image_tag(m.photo_url(:large), :class => 'photo') %>
     <%= ('<img src="%s" class="published"/>' % SiteAssets[:published]).html_safe if m.published? %>
     </div>
