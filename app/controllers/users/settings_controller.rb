@@ -47,6 +47,7 @@ class Users::SettingsController < ApplicationController
     if params[:password] && !params[:password][:new].blank?
       if @user_password.reset_password!(params[:password][:new], params[:password][:confirm])
         @user_password.update_attribute(:force_reset, 0)
+        sign_in @user_password, :bypass => true
         success << ' and password'
       else
         error << ' ' << @user_password.errors.full_messages.to_s
