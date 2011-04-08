@@ -11,7 +11,7 @@ module MailHelper
     def subject
       anchor = @cause.subject.is_a?(Moment) ? {:anchor => @cause.subject.to_key} : {}
       experience = @cause.subject.is_a?(Experience) ? @cause.subject: nil
-      experience = @cause.subject.experience if @cause.subject.try(:experience)
+      experience = @cause.subject.experience if @cause.subject.respond_to?(:experience)
       link = experience.blank? ? '' : @controller.experience_url(experience, anchor)
 
       '%s %s' % [@cause.subject.class.name, link]

@@ -105,4 +105,20 @@ class ExperiencesControllerTest < ActionController::TestCase
     assert_nil get_experience
   end
 
+  test "create_mail: group" do
+    @event = events(:artopia)
+    @event.experience = nil
+    @event.save!
+
+    @params[:to] = 'artopia@snappitt.com'
+    setup_mail
+
+    post :create_mail, @params
+    assert_response :success
+
+    @experience = get_experience(:title => @event.name)
+    assert_kind_of Experience, @experience
+  end
+
+
 end

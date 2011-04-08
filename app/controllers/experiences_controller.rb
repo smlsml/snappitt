@@ -74,7 +74,20 @@ class ExperiencesController < ApplicationController
     while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end
 
     @experience = Experience.find_by_id($1) if @to =~ /post([0-9]+)@/i
-    @experience = Experience.new(:title => @subject, :user => @user) unless @experience
+
+    unless @experience
+      if @to =~ /(.*?)@/i
+        @event = Event.find_by_hashtag($1)
+        if @event
+          @event.create_experience(:title => @event.name, :user => @user) unless @event.experience
+          @event.save!
+          @experience = @event.experience
+        end
+      end
+
+      @experience = Experience.new(:title => @subject, :user => @user) unless @experience
+    end
+
     @experience.visibility = 'private' if params[:to].to_s.downcase.include?('private')
 
     @message.attachments.each do |attachment|
