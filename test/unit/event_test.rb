@@ -16,4 +16,12 @@ class EventTest < ActiveSupport::TestCase
     assert @artopia === exp.event
   end
 
+  test "hashtag format" do
+    assert @artopia.valid?
+    @artopia.hashtag = 'dAAaj.aZfa_ol-de09+234' # 25 is max
+    assert @artopia.valid?
+    @artopia.hashtag += "~"
+    assert !@artopia.valid?
+  end
+
 end

@@ -3,6 +3,8 @@ require 'test_helper'
 class ExperiencesControllerTest < ActionController::TestCase
 
   def setup
+    ActionMailer::Base.deliveries.clear
+
     @user = users(:dre)
     sign_in(@user)
 
@@ -105,12 +107,12 @@ class ExperiencesControllerTest < ActionController::TestCase
     assert_nil get_experience
   end
 
-  test "create_mail: group" do
+  test "create_mail: event hashtags create and use one experience" do
     @event = events(:artopia)
     @event.experience = nil
     @event.save!
 
-    @params[:to] = 'artopia@snappitt.com'
+    @params[:to] = '%s@snappitt.com' % @event.hashtag
     setup_mail
 
     post :create_mail, @params
@@ -118,6 +120,16 @@ class ExperiencesControllerTest < ActionController::TestCase
 
     @experience = get_experience(:title => @event.name)
     assert_kind_of Experience, @experience
+
+    email = ActionMailer::Base.deliveries.first
+    assert email
+    assert_match '%s' % @params[:to], email.body
+    assert_match '%s' % @event.prize, email.body
+
+    post :create_mail, @params
+    assert_response :success
+    assert_equal @experience, get_experience(:title => @event.name)
+    assert_equal 2, @experience.reload.moments_count
   end
 
 

@@ -21,7 +21,7 @@ class ExperiencesController < ApplicationController
     @message = Mail.new(params[:message])
     return head(:bad_request) unless @message
 
-    @to   = params[:to].to_s.downcase.strip
+    @to   = params[:to].to_s.downcase.gsub('<','').gsub('>','').strip
     @from = params[:from].to_s.downcase.strip
     @from = params[:x_sender].to_s.downcase.strip if params[:x_sender]
     @from = params[:x_forwarded_for].to_s.downcase.strip if params[:x_forwarded_for]
@@ -31,7 +31,6 @@ class ExperiencesController < ApplicationController
 
     if !@user
       password = User.generate_password
-      p "Creating a new user: #{@from}"
       username = @from.to_s.downcase.strip.split('@')[0]
       username = username << Time.now().to_i.to_s if User.find_by_username(username)
 
@@ -77,7 +76,7 @@ class ExperiencesController < ApplicationController
 
     unless @experience
       if @to =~ /(.*?)@/i
-        @event = Event.find_by_hashtag($1)
+        @event = Event.find_by_hashtag($1.to_s.downcase.strip)
         if @event
           @event.create_experience(:title => @event.name, :user => @user) unless @event.experience
           @event.save!
