@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_nav
   before_filter :force_reset
+  before_filter :downcase
 
   protected
 
@@ -12,6 +13,10 @@ class ApplicationController < ActionController::Base
 
     def is_bot?
       request.user_agent.to_s.include?('bot')
+    end
+
+    def downcase
+      params[:user][:login].downcase! if params[:user] && params[:user][:login]
     end
 
     def set_nav
