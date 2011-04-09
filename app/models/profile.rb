@@ -21,6 +21,10 @@ class Profile < ActiveRecord::Base
     !photo_asset.blank?
   end
 
+  def can_email?(type)
+    !dont_notify_for.include?(type)
+  end
+
   def realname_unless
     realname unless user.username == realname
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110405232738) do
+ActiveRecord::Schema.define(:version => 20110408225025) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -204,6 +204,7 @@ ActiveRecord::Schema.define(:version => 20110405232738) do
     t.string   "gender",               :limit => 1,   :default => "", :null => false
     t.integer  "photo_asset_id"
     t.integer  "zodiac_western_id"
+    t.string   "dont_notify_for",                     :default => "", :null => false
   end
 
   create_table "services", :force => true do |t|

@@ -61,6 +61,12 @@ class Users::SettingsController < ApplicationController
       success << ' and hometown' unless original == @hometown
     end
 
+    if params[:dont_notify_for]
+      before = @profile.dont_notify_for
+      @profile.dont_notify_for = params[:dont_notify_for].values.reject{|v| v.blank?}.uniq.compact.join(',')
+      success << ' and updated email notifications' if before != @profile.dont_notify_for
+    end
+
     if @profile.update_attributes!(params[:profile])
       flash.now[:success] = 'Saved profile%s' % success
     else

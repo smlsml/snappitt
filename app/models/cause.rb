@@ -26,6 +26,10 @@ class Cause < ActiveRecord::Base
     end
   end
 
+  def title
+    verb.capitalize
+  end
+
   def summary(decorator = nil)
     decorator = Decorator.new(nil) unless decorator
     decorator.decorate(self)

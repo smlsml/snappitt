@@ -93,6 +93,34 @@
 
   </fieldset>
 
+  <fieldset>
+    <legend>Email Notifications</legend>
+    <p>Send me an email notification when others...</p>
+    <ol>
+      <li>
+        <%= check_box(:dont_notify_for, :add, {:checked => @profile.can_email?('Moment::CreateCause')}, '', 'Moment::CreateCause') %>
+        <strong>Add a Moment</strong> to an Experience I've participated in
+      </li>
+
+      <li>
+        <%= check_box(:dont_notify_for, :like, {:checked => @profile.can_email?('LikeFlag::CreateCause')}, '', 'LikeFlag::CreateCause') %>
+        <strong>Like a Moment</strong> in an Experience I've participated in
+      </li>
+
+      <li>
+        <%= check_box(:dont_notify_for, :comment, {:checked => @profile.can_email?('MomentComment::CreateCause')}, '', 'MomentComment::CreateCause') %>
+        <strong>Comment on a Moment</strong> in an Experience I've participated in
+      </li>
+
+      <li>
+        <%= check_box(:dont_notify_for, :publish, {:checked => @profile.can_email?('PublishFlag::CreateCause')}, '', 'PublishFlag::CreateCause') %>
+        <strong>Publish a Moment</strong> in an Experience I've participated in
+      </li>
+    </ol>
+
+  </fieldset>
+
+
   <p class="submit"><%= submit_tag 'Save Changes' %></p>
 
   <fieldset>

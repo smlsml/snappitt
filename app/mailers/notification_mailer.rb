@@ -8,6 +8,6 @@ class NotificationMailer < ActionMailer::Base
 
     mail :to => @user.email,
          :from => "%s <%s>" % [I18n.translate('app.name'), 'noreply@snappitt.com'],
-         :subject => @notification.cause.verb.capitalize
+         :subject => @notification.cause.title
   end
 end

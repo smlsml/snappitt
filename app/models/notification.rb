@@ -15,7 +15,7 @@ class Notification < ActiveRecord::Base
   protected
 
   def send_notifications
-    NotificationMailer.notify(user, self).deliver
+    NotificationMailer.notify(user, self).deliver if user.profile.can_email?(self.cause.type)
   end
 
 end
