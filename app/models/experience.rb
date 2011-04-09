@@ -41,10 +41,15 @@ class Experience < ActiveRecord::Base
     title
   end
 
-  def photo_url
+  def title
+    rtitle = read_attribute(:title).strip
+    rtitle.blank? || rtitle == '@' ? created_at.to_formatted_s(:mdy) : rtitle
+  end
+
+  def photo_url(type = :feed)
     m = moments.first
     m = Moment.new unless m
-    m.photo_url(:feed)
+    m.photo_url(type)
   end
 
   def moments_status

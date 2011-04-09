@@ -67,7 +67,7 @@
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
   margin: 10px auto;
 }
-/* line 45, sass/application.sass */
+/* line 44, sass/application.sass */
 .experience_controller #page_middle_box fieldset.upload input[type="submit"]:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #cbf048), color-stop(100%, #b3e529));
   background-image: -moz-linear-gradient(top, #cbf048 0%, #b3e529 100%);
@@ -75,7 +75,7 @@
   cursor: pointer;
   text-decoration: none;
 }
-/* line 49, sass/application.sass */
+/* line 48, sass/application.sass */
 .experience_controller #page_middle_box fieldset.upload input[type="submit"]:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b3e529), color-stop(100%, #cbf048));
   background-image: -moz-linear-gradient(top, #b3e529 0%, #cbf048 100%);
@@ -124,7 +124,7 @@
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 64, sass/application.sass */
+/* line 63, sass/application.sass */
 .session_controller #page_middle_box input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
@@ -154,7 +154,7 @@
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 64, sass/application.sass */
+/* line 63, sass/application.sass */
 .registration_controller #page_middle_box input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
@@ -507,13 +507,13 @@
   text-align: center;
   text-decoration: none;
 }
-/* line 86, sass/application.sass */
+/* line 85, sass/application.sass */
 #page_header #page_logout a:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #5c5c5c), color-stop(50%, #333333), color-stop(50%, #272727), color-stop(100%, #111111));
   background-image: -moz-linear-gradient(top, #5c5c5c 0%, #333333 50%, #272727 50%, #111111 100%);
   background-image: linear-gradient(top, #5c5c5c 0%, #333333 50%, #272727 50%, #111111 100%);
 }
-/* line 88, sass/application.sass */
+/* line 87, sass/application.sass */
 #page_header #page_logout a:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #111111), color-stop(100%, #333333));
   background-image: -moz-linear-gradient(top, #111111 0%, #333333 100%);
@@ -576,7 +576,7 @@
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 64, sass/application.sass */
+/* line 63, sass/application.sass */
 #page_account table.signin input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
@@ -745,35 +745,26 @@ table td {
 table td img {
   margin: 0;
 }
-/* line 51, sass/shared/_base.sass */
-table.comment {
-  width: auto;
-  margin: 0 auto;
-}
-/* line 54, sass/shared/_base.sass */
-table.comment td {
-  text-align: left;
-}
 
-/* line 57, sass/shared/_base.sass */
+/* line 52, sass/shared/_base.sass */
 img {
   border: none;
 }
 
-/* line 60, sass/shared/_base.sass */
+/* line 55, sass/shared/_base.sass */
 p {
   margin: 0;
   padding: 0;
 }
 
-/* line 64, sass/shared/_base.sass */
+/* line 59, sass/shared/_base.sass */
 label {
   display: inline;
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 69, sass/shared/_base.sass */
+/* line 64, sass/shared/_base.sass */
 fieldset {
   background: #efefef;
   border: none;
@@ -786,12 +777,12 @@ fieldset {
   -khtml-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 75, sass/shared/_base.sass */
+/* line 70, sass/shared/_base.sass */
 fieldset legend {
   font-style: oblique;
 }
 
-/* line 78, sass/shared/_base.sass */
+/* line 73, sass/shared/_base.sass */
 a.button {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
@@ -815,7 +806,7 @@ a.button {
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 21, sass/application.sass */
+/* line 20, sass/application.sass */
 a.button:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
   background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
@@ -823,7 +814,7 @@ a.button:hover {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 25, sass/application.sass */
+/* line 24, sass/application.sass */
 a.button:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
   background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
@@ -831,13 +822,13 @@ a.button:active {
   box-shadow: none;
 }
 
-/* line 81, sass/shared/_base.sass */
+/* line 76, sass/shared/_base.sass */
 var {
   font-size: 13px;
   font-style: normal;
 }
 
-/* line 85, sass/shared/_base.sass */
+/* line 80, sass/shared/_base.sass */
 li {
   list-style: none;
   font-size: 13px;
@@ -943,6 +934,8 @@ div.experience_card .cover .user {
   width: 48px;
   height: 48px;
   background-color: white;
+  display: block;
+  cursor: help;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -o-border-radius: 6px;
@@ -954,13 +947,14 @@ div.experience_card .cover .user {
   -o-box-shadow: #666666 0 1px 2px 0;
   box-shadow: #666666 0 1px 2px 0;
 }
-/* line 43, sass/shared/_experiences.sass */
+/* line 45, sass/shared/_experiences.sass */
 div.experience_card .cover .moments {
   position: absolute;
   background-color: black;
   opacity: 0.7;
   right: 10px;
   bottom: 10px;
+  cursor: default;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
@@ -971,14 +965,14 @@ div.experience_card .cover .moments {
   font-size: 10px;
   padding: 3px 10px;
 }
-/* line 53, sass/shared/_experiences.sass */
+/* line 56, sass/shared/_experiences.sass */
 div.experience_card .stats {
   border-top: 1px solid #d9d9d9;
   color: #999999;
   margin-top: 10px;
   padding: 10px;
 }
-/* line 58, sass/shared/_experiences.sass */
+/* line 61, sass/shared/_experiences.sass */
 div.experience_card .stats dfn {
   color: #c5c5c5;
   font-weight: bold;
@@ -986,7 +980,7 @@ div.experience_card .stats dfn {
   padding-left: 33px;
   margin-right: 33px;
 }
-/* line 64, sass/shared/_experiences.sass */
+/* line 67, sass/shared/_experiences.sass */
 div.experience_card .stats dfn span {
   height: 20px;
   width: 30px;
@@ -994,51 +988,51 @@ div.experience_card .stats dfn span {
   left: -2px;
   background: url("http://snappitt-assets.s3.amazonaws.com/icons/assets2.png") no-repeat scroll 0 0px transparent;
 }
-/* line 71, sass/shared/_experiences.sass */
+/* line 74, sass/shared/_experiences.sass */
 div.experience_card .stats dfn.views span {
   background-position: 0 -38px;
 }
-/* line 73, sass/shared/_experiences.sass */
+/* line 76, sass/shared/_experiences.sass */
 div.experience_card .stats dfn.views span:hover {
   background-position: 0px -6px;
 }
-/* line 76, sass/shared/_experiences.sass */
+/* line 79, sass/shared/_experiences.sass */
 div.experience_card .stats dfn.likes span {
   background-position: -32px -38px;
 }
-/* line 78, sass/shared/_experiences.sass */
+/* line 81, sass/shared/_experiences.sass */
 div.experience_card .stats dfn.likes span:hover {
   background-position: -32px -6px;
 }
-/* line 80, sass/shared/_experiences.sass */
+/* line 83, sass/shared/_experiences.sass */
 div.experience_card .stats dfn.comments {
   margin-right: 0;
 }
-/* line 82, sass/shared/_experiences.sass */
+/* line 85, sass/shared/_experiences.sass */
 div.experience_card .stats dfn.comments span {
   background-position: -65px -38px;
 }
-/* line 84, sass/shared/_experiences.sass */
+/* line 87, sass/shared/_experiences.sass */
 div.experience_card .stats dfn.comments span:hover {
   background-position: -65px -6px;
 }
-/* line 86, sass/shared/_experiences.sass */
+/* line 89, sass/shared/_experiences.sass */
 div.experience_card .stats dfn:hover {
   color: #02b7ff;
 }
 
-/* line 89, sass/shared/_experiences.sass */
+/* line 92, sass/shared/_experiences.sass */
 .experience_header {
   position: relative;
   text-align: left;
+  margin-bottom: 50px;
   padding-left: 63px;
-  margin-bottom: 20px;
 }
-/* line 92, sass/shared/_experiences.sass */
+/* line 97, sass/shared/_experiences.sass */
 .experience_header h2 {
   min-height: 1.5em;
 }
-/* line 94, sass/shared/_experiences.sass */
+/* line 99, sass/shared/_experiences.sass */
 .experience_header img.icon {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -1054,18 +1048,23 @@ div.experience_card .stats dfn:hover {
   top: 0;
   left: 0;
 }
-/* line 103, sass/shared/_experiences.sass */
+/* line 106, sass/shared/_experiences.sass */
 .experience_header .by var {
   color: #999999;
   font-weight: bold;
   font-size: 15px;
 }
-/* line 107, sass/shared/_experiences.sass */
-.experience_header .stats {
+/* line 110, sass/shared/_experiences.sass */
+.experience_header .side {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 10px;
+  text-align: right;
+}
+/* line 115, sass/shared/_experiences.sass */
+.experience_header .side .stats {
+  margin: 5px;
+  padding: 5px;
   background-color: #efefef;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -1074,56 +1073,56 @@ div.experience_card .stats dfn:hover {
   -khtml-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 114, sass/shared/_experiences.sass */
-.experience_header .stats var {
+/* line 120, sass/shared/_experiences.sass */
+.experience_header .side .stats var {
   color: #999999;
 }
-/* line 117, sass/shared/_experiences.sass */
-.experience_header .stats dfn {
+/* line 123, sass/shared/_experiences.sass */
+.experience_header .side dfn {
   color: #666666;
   font-weight: bold;
   position: relative;
   padding-left: 33px;
   margin-right: 10px;
 }
-/* line 123, sass/shared/_experiences.sass */
-.experience_header .stats dfn span {
+/* line 129, sass/shared/_experiences.sass */
+.experience_header .side dfn span {
   height: 20px;
   width: 30px;
   position: absolute;
   left: 0;
   background: url("http://snappitt-assets.s3.amazonaws.com/icons/assets.png") no-repeat scroll 0 0px transparent;
 }
-/* line 130, sass/shared/_experiences.sass */
-.experience_header .stats dfn.views span {
+/* line 136, sass/shared/_experiences.sass */
+.experience_header .side dfn.views span {
   background-position: 0 -6px;
 }
-/* line 132, sass/shared/_experiences.sass */
-.experience_header .stats dfn.views span:hover {
+/* line 138, sass/shared/_experiences.sass */
+.experience_header .side dfn.views span:hover {
   background-position: 0px -38px;
 }
-/* line 135, sass/shared/_experiences.sass */
-.experience_header .stats dfn.likes span {
+/* line 141, sass/shared/_experiences.sass */
+.experience_header .side dfn.likes span {
   background-position: -32px -6px;
 }
-/* line 137, sass/shared/_experiences.sass */
-.experience_header .stats dfn.likes span:hover {
+/* line 143, sass/shared/_experiences.sass */
+.experience_header .side dfn.likes span:hover {
   background-position: -32px -38px;
 }
-/* line 139, sass/shared/_experiences.sass */
-.experience_header .stats dfn.comments {
+/* line 145, sass/shared/_experiences.sass */
+.experience_header .side dfn.comments {
   margin-right: 0;
 }
-/* line 141, sass/shared/_experiences.sass */
-.experience_header .stats dfn.comments span {
+/* line 147, sass/shared/_experiences.sass */
+.experience_header .side dfn.comments span {
   background-position: -65px -6px;
 }
-/* line 143, sass/shared/_experiences.sass */
-.experience_header .stats dfn.comments span:hover {
+/* line 149, sass/shared/_experiences.sass */
+.experience_header .side dfn.comments span:hover {
   background-position: -65px -38px;
 }
-/* line 145, sass/shared/_experiences.sass */
-.experience_header .stats dfn:hover {
+/* line 151, sass/shared/_experiences.sass */
+.experience_header .side dfn:hover {
   color: #02b7ff;
 }
 
@@ -1207,23 +1206,22 @@ table.network td, table.split td {
   vertical-align: top;
 }
 
-/* line 2, sass/shared/_moment.sass */
-.moment_card .moment {
+/* line 1, sass/shared/_moment.sass */
+.moment_card {
+  margin-bottom: 50px;
+  border-top: 5px solid #efefef;
   position: relative;
 }
-/* line 4, sass/shared/_moment.sass */
-.moment_card .moment .number {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 26px;
-  color: lightGray;
+/* line 5, sass/shared/_moment.sass */
+.moment_card .moment {
+  position: relative;
+  text-align: center;
 }
-/* line 10, sass/shared/_moment.sass */
+/* line 8, sass/shared/_moment.sass */
 .moment_card .moment img {
   margin: 0;
 }
-/* line 12, sass/shared/_moment.sass */
+/* line 10, sass/shared/_moment.sass */
 .moment_card .moment img.photo {
   border: 6px solid #efefef;
   -moz-border-radius: 6px;
@@ -1233,25 +1231,52 @@ table.network td, table.split td {
   -khtml-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 15, sass/shared/_moment.sass */
+/* line 13, sass/shared/_moment.sass */
 .moment_card .moment img.published {
   width: 100px;
   position: absolute;
   bottom: 20px;
   right: 25%;
 }
-/* line 20, sass/shared/_moment.sass */
+/* line 18, sass/shared/_moment.sass */
+.moment_card .avatar {
+  text-align: center;
+  padding: 10px;
+}
+/* line 21, sass/shared/_moment.sass */
+.moment_card .number {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+  color: gray;
+  text-align: right;
+}
+/* line 28, sass/shared/_moment.sass */
+.moment_card textarea {
+  height: 1.2em;
+  vertical-align: middle;
+}
+/* line 31, sass/shared/_moment.sass */
+.moment_card.comment {
+  width: auto;
+  margin: 0;
+}
+/* line 34, sass/shared/_moment.sass */
+.moment_card.comment td {
+  text-align: left;
+}
+/* line 36, sass/shared/_moment.sass */
 .moment_card p {
   font-size: 13px;
   text-align: center;
 }
-/* line 23, sass/shared/_moment.sass */
+/* line 39, sass/shared/_moment.sass */
 .moment_card p.links {
-  width: 620px;
-  text-align: center;
-  margin: 10px auto;
+  text-align: left;
+  margin: 5px;
 }
-/* line 27, sass/shared/_moment.sass */
+/* line 42, sass/shared/_moment.sass */
 .moment_card p.links a {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
@@ -1275,7 +1300,7 @@ table.network td, table.split td {
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 21, sass/application.sass */
+/* line 20, sass/application.sass */
 .moment_card p.links a:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
   background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
@@ -1283,27 +1308,31 @@ table.network td, table.split td {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 25, sass/application.sass */
+/* line 24, sass/application.sass */
 .moment_card p.links a:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
   background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
   background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
   box-shadow: none;
 }
-/* line 29, sass/shared/_moment.sass */
+/* line 44, sass/shared/_moment.sass */
+.moment_card p.admin {
+  text-align: right;
+}
+/* line 46, sass/shared/_moment.sass */
 .moment_card p.metadata {
   font-size: 11px;
   font-color: #999999;
 }
-/* line 33, sass/shared/_moment.sass */
+/* line 50, sass/shared/_moment.sass */
 .moment_card blockquote {
-  width: 620px;
   margin: 10px auto;
   border: none;
   font-style: italic;
   padding: 0;
+  text-align: center;
 }
-/* line 40, sass/shared/_moment.sass */
+/* line 57, sass/shared/_moment.sass */
 .moment_card input[type="submit"] {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
@@ -1329,7 +1358,7 @@ table.network td, table.split td {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
   margin: 10px auto;
 }
-/* line 45, sass/application.sass */
+/* line 44, sass/application.sass */
 .moment_card input[type="submit"]:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #cbf048), color-stop(100%, #b3e529));
   background-image: -moz-linear-gradient(top, #cbf048 0%, #b3e529 100%);
@@ -1337,14 +1366,14 @@ table.network td, table.split td {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 49, sass/application.sass */
+/* line 48, sass/application.sass */
 .moment_card input[type="submit"]:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b3e529), color-stop(100%, #cbf048));
   background-image: -moz-linear-gradient(top, #b3e529 0%, #cbf048 100%);
   background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
   box-shadow: none;
 }
-/* line 44, sass/shared/_moment.sass */
+/* line 61, sass/shared/_moment.sass */
 .moment_card span.source {
   border-bottom: 1px dotted lightBlue;
 }
@@ -1444,7 +1473,7 @@ form input[type="submit"] {
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 21, sass/application.sass */
+/* line 20, sass/application.sass */
 form input[type="submit"]:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
   background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
@@ -1452,7 +1481,7 @@ form input[type="submit"]:hover {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 25, sass/application.sass */
+/* line 24, sass/application.sass */
 form input[type="submit"]:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
   background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);

@@ -38,6 +38,8 @@ div.experience_card
       width: 48px
       height: 48px
       background-color: white
+      display: block
+      cursor: help
       @include border_radius(6px)
       @include box-shadow(#666, 0, 1px, 2px, 0)
     .moments
@@ -46,6 +48,7 @@ div.experience_card
       opacity: 0.7
       right: 10px
       bottom: 10px
+      cursor: default
       @include border-radius(4px)
       color: white
       font-size: 10px
@@ -89,6 +92,8 @@ div.experience_card
 .experience_header
   position: relative
   text-align: left
+  margin-bottom: 50px
+  padding-left: 63px
   h2
     min-height: 1.5em
   img.icon
@@ -97,22 +102,23 @@ div.experience_card
     position: absolute
     top: 0
     left: 0
-  padding-left: 63px
-  margin-bottom: 20px
   .by
     var
       color: #999
       font-weight: bold
       font-size: 15px
-  .stats
+  .side
     position: absolute
     top: 0
     right: 0
-    padding: 10px
-    background-color: $graySmoke
-    @include border-radius(4px)
-    var
-      color: #999
+    text-align: right
+    .stats
+      margin: 5px
+      padding: 5px
+      background-color: $graySmoke
+      @include border-radius(4px)
+      var
+        color: #999
 
     dfn
       color: #666
