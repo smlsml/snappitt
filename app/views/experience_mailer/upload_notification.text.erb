@@ -25,7 +25,7 @@ Once activated, you will be prompted to choose a password and provide other prof
 <% if @experience.event %>
 ---
 
-PRIZE: The person who uploads the <% @experience.event.prize_at_moment %> moment will win a <% @experience.event.prize %>!
+PRIZE: The person who uploads the <%= @experience.event.prize_at_moment %> moment will win a <%= @experience.event.prize %>!
 
 <% end %>
 <% if @causes && @causes.size > 1 %>

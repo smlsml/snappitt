@@ -91,7 +91,7 @@ class ExperiencesController < ApplicationController
 
     @message.attachments.each do |attachment|
       moment = Moment.new
-      moment.create_caption(:text => params[:plain], :user => @user)
+      moment.create_caption(:text => (params[:plain].blank? && !@experience.new_record?) ? @subject : params[:plain], :user => @user)
       moment.user = @user
       moment.source = @source
 
