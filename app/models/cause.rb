@@ -13,7 +13,8 @@ class Cause < ActiveRecord::Base
   end
 
   def owner(viewer = nil)
-    owner_user = self.subject.try(:user)
+    owner_user = self.subject.user if self.subject.respond_to?(:user)
+    owner_user = self.subject if self.subject.is_a?(User)
 
     if owner_user.blank?
       ''
