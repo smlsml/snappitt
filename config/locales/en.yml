@@ -40,7 +40,7 @@ en:
   helpers:
     label:
       hometown:
-        name: 'Howntown'
+        name: 'Hometown'
       profile_photo:
         data: 'Profile Photo'
       perms:
