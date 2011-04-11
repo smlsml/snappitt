@@ -283,23 +283,24 @@
 
 /* line 1, sass/shared/_page.sass */
 #page_header {
-  z-index: 100;
   color: white;
   height: 135px;
-  margin: 0 auto;
   text-align: center;
   background: url("http://snappitt-assets.s3.amazonaws.com/header/header-bg.jpg") #333333;
 }
-/* line 8, sass/shared/_page.sass */
+/* line 6, sass/shared/_page.sass */
 #page_header #page_header_box {
   width: 650px;
-  overflow: hidden;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0 auto;
+  position: relative;
 }
-/* line 11, sass/shared/_page.sass */
+/* line 9, sass/shared/_page.sass */
 #page_header a {
   color: #999999;
 }
-/* line 13, sass/shared/_page.sass */
+/* line 11, sass/shared/_page.sass */
 #page_header h1 {
   font-size: 28px;
   color: #f5f5f5;
@@ -308,12 +309,12 @@
   margin: 0;
   padding: 15px 0 5px;
 }
-/* line 20, sass/shared/_page.sass */
+/* line 18, sass/shared/_page.sass */
 #page_header ul {
   margin: 0 auto;
   padding: 0;
 }
-/* line 23, sass/shared/_page.sass */
+/* line 21, sass/shared/_page.sass */
 #page_header ul li {
   width: 20%;
   float: left;
@@ -321,7 +322,7 @@
   padding: 0;
   list-style: none;
 }
-/* line 29, sass/shared/_page.sass */
+/* line 27, sass/shared/_page.sass */
 #page_header ul li var.alerts {
   color: white;
   background: red;
@@ -338,7 +339,7 @@
   -webkit-box-shadow: 1px 2px 4px black;
   box-shadow: 1px 2px 4px black;
 }
-/* line 39, sass/shared/_page.sass */
+/* line 37, sass/shared/_page.sass */
 #page_header ul li a {
   background: url(http://snappitt-assets.s3.amazonaws.com/header/header-icons.png) no-repeat 0 0;
   width: 80px;
@@ -348,13 +349,7 @@
   text-decoration: none;
   outline: none;
 }
-/* line 47, sass/shared/_page.sass */
-#page_header ul li a:hover span {
-  display: inline;
-  font-size: 13px;
-  color: #f5f5f5;
-}
-/* line 51, sass/shared/_page.sass */
+/* line 45, sass/shared/_page.sass */
 #page_header ul li a span {
   display: none;
   text-decoration: none;
@@ -369,117 +364,117 @@
   -moz-box-shadow: 0 0 2px rgba 0, 0, 0, 0.4;
   padding: 4px 8px;
 }
-/* line 60, sass/shared/_page.sass */
+/* line 54, sass/shared/_page.sass */
 #page_header ul li a.selected span {
   display: inline;
   font-size: 13px;
   color: #f5f5f5;
 }
-/* line 64, sass/shared/_page.sass */
+/* line 58, sass/shared/_page.sass */
 #page_header ul li a.home {
   background-position: -60px -8px;
 }
-/* line 66, sass/shared/_page.sass */
+/* line 60, sass/shared/_page.sass */
 #page_header ul li a.home.selected {
   background-position: -60px -368px;
 }
-/* line 68, sass/shared/_page.sass */
+/* line 62, sass/shared/_page.sass */
 #page_header ul li a.home.selected:hover {
   background-position: -60px -368px;
 }
-/* line 70, sass/shared/_page.sass */
+/* line 64, sass/shared/_page.sass */
 #page_header ul li a.home:hover {
   background-position: -60px -128px;
 }
-/* line 72, sass/shared/_page.sass */
+/* line 66, sass/shared/_page.sass */
 #page_header ul li a.home:active {
   background-position: -60px -248px;
 }
-/* line 74, sass/shared/_page.sass */
+/* line 68, sass/shared/_page.sass */
 #page_header ul li a.profile {
   background-position: -260px -8px;
 }
-/* line 76, sass/shared/_page.sass */
+/* line 70, sass/shared/_page.sass */
 #page_header ul li a.profile.selected {
   background-position: -260px -368px;
 }
-/* line 78, sass/shared/_page.sass */
+/* line 72, sass/shared/_page.sass */
 #page_header ul li a.profile.selected:hover {
   background-position: -260px -368px;
 }
-/* line 80, sass/shared/_page.sass */
+/* line 74, sass/shared/_page.sass */
 #page_header ul li a.profile:hover {
   background-position: -260px -128px;
 }
-/* line 82, sass/shared/_page.sass */
+/* line 76, sass/shared/_page.sass */
 #page_header ul li a.profile:active {
   background-position: -260px -248px;
 }
-/* line 84, sass/shared/_page.sass */
+/* line 78, sass/shared/_page.sass */
 #page_header ul li a.upload {
   width: 105px;
   background-position: -448px -8px;
 }
-/* line 87, sass/shared/_page.sass */
+/* line 81, sass/shared/_page.sass */
 #page_header ul li a.upload:hover {
   background-position: -448px -8px;
 }
-/* line 89, sass/shared/_page.sass */
+/* line 83, sass/shared/_page.sass */
 #page_header ul li a.upload:active {
   background-position: -448px -8px;
 }
-/* line 91, sass/shared/_page.sass */
+/* line 85, sass/shared/_page.sass */
 #page_header ul li a.users {
   background-position: -660px -8px;
 }
-/* line 93, sass/shared/_page.sass */
+/* line 87, sass/shared/_page.sass */
 #page_header ul li a.users.selected {
   background-position: -660px -368px;
 }
-/* line 95, sass/shared/_page.sass */
+/* line 89, sass/shared/_page.sass */
 #page_header ul li a.users.selected:hover {
   background-position: -660px -368px;
 }
-/* line 97, sass/shared/_page.sass */
+/* line 91, sass/shared/_page.sass */
 #page_header ul li a.users:hover {
   background-position: -660px -128px;
 }
-/* line 99, sass/shared/_page.sass */
+/* line 93, sass/shared/_page.sass */
 #page_header ul li a.users:active {
   background-position: -660px -248px;
 }
-/* line 101, sass/shared/_page.sass */
+/* line 95, sass/shared/_page.sass */
 #page_header ul li a.users:active:hover {
   background-position: -660px -248px;
 }
-/* line 103, sass/shared/_page.sass */
+/* line 97, sass/shared/_page.sass */
 #page_header ul li a.users_settings {
   background-position: -860px -8px;
 }
-/* line 105, sass/shared/_page.sass */
+/* line 99, sass/shared/_page.sass */
 #page_header ul li a.users_settings.selected {
   background-position: -860px -368px;
 }
-/* line 107, sass/shared/_page.sass */
+/* line 101, sass/shared/_page.sass */
 #page_header ul li a.users_settings.selected:hover {
   background-position: -860px -368px;
 }
-/* line 109, sass/shared/_page.sass */
+/* line 103, sass/shared/_page.sass */
 #page_header ul li a.users_settings:hover {
   background-position: -860px -128px;
 }
-/* line 111, sass/shared/_page.sass */
+/* line 105, sass/shared/_page.sass */
 #page_header ul li a.users_settings:active {
   background-position: -860px -248px;
 }
-/* line 114, sass/shared/_page.sass */
+/* line 108, sass/shared/_page.sass */
 #page_header #page_logout {
   position: absolute;
   right: 50px;
   top: 25px;
   color: #666666;
 }
-/* line 119, sass/shared/_page.sass */
+/* line 113, sass/shared/_page.sass */
 #page_header #page_logout a {
   background-clip: padding-box;
   border: 1px solid black;
@@ -520,13 +515,13 @@
   background-image: linear-gradient(top, #111111 0%, #333333 100%);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 1px #333333;
 }
-/* line 121, sass/shared/_page.sass */
+/* line 115, sass/shared/_page.sass */
 #page_header #page_logout small {
   font-size: 10px;
   color: #666666;
 }
 
-/* line 126, sass/shared/_page.sass */
+/* line 120, sass/shared/_page.sass */
 #page_account {
   width: 650px;
   overflow: hidden;
@@ -534,30 +529,30 @@
   background-color: white;
   border-bottom: 1px solid #d9d9d9;
 }
-/* line 132, sass/shared/_page.sass */
+/* line 126, sass/shared/_page.sass */
 #page_account.welcome {
   background: url("http://snappitt-assets.s3.amazonaws.com/flavor/splash-bg.png") no-repeat scroll center top #009ad7;
   height: 227px;
   padding-top: 225px;
 }
-/* line 136, sass/shared/_page.sass */
+/* line 130, sass/shared/_page.sass */
 #page_account.welcome h2, #page_account.welcome h3, #page_account.welcome label {
   color: #efefef;
 }
-/* line 138, sass/shared/_page.sass */
+/* line 132, sass/shared/_page.sass */
 #page_account.welcome a {
   color: #efefef;
 }
-/* line 140, sass/shared/_page.sass */
+/* line 134, sass/shared/_page.sass */
 #page_account.welcome table.signin {
   margin-top: 25px;
 }
-/* line 143, sass/shared/_page.sass */
+/* line 137, sass/shared/_page.sass */
 #page_account table.signin {
   width: auto;
   margin: 0 auto;
 }
-/* line 146, sass/shared/_page.sass */
+/* line 140, sass/shared/_page.sass */
 #page_account table.signin input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
   -moz-border-radius: 4px;
@@ -582,45 +577,43 @@
 #page_account table.signin input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
-/* line 148, sass/shared/_page.sass */
+/* line 142, sass/shared/_page.sass */
 #page_account table.signin td {
   text-align: left;
 }
-/* line 150, sass/shared/_page.sass */
+/* line 144, sass/shared/_page.sass */
 #page_account table.signin td.side {
   vertical-align: middle;
   padding-left: 20px;
 }
-/* line 151, sass/shared/_page.sass */
+/* line 145, sass/shared/_page.sass */
 #page_account table.signin td.side a {
   border-left: 1px dotted black;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* line 158, sass/shared/_page.sass */
+/* line 152, sass/shared/_page.sass */
 #page_account table.signin td.remember {
   text-align: right;
 }
-/* line 160, sass/shared/_page.sass */
+/* line 154, sass/shared/_page.sass */
 #page_account table.signin td input[type="submit"] {
   vertical-align: top;
 }
 
-/* line 163, sass/shared/_page.sass */
+/* line 157, sass/shared/_page.sass */
 #page_middle {
-  margin-top: 135px;
   text-align: center;
   padding-bottom: 50px;
   background-color: whiteSmoke;
-  width: 650px;
   overflow: hidden;
 }
-/* line 170, sass/shared/_page.sass */
+/* line 162, sass/shared/_page.sass */
 #page_middle.welcome {
   margin-top: 0;
 }
-/* line 172, sass/shared/_page.sass */
+/* line 164, sass/shared/_page.sass */
 #page_middle #page_middle_box {
   width: 650px;
   padding-left: 5px;
@@ -628,18 +621,17 @@
   margin: 0 auto;
   padding-top: 25px;
 }
-/* line 175, sass/shared/_page.sass */
+/* line 167, sass/shared/_page.sass */
 #page_middle #page_middle_box table.network {
   width: 100%;
 }
-/* line 177, sass/shared/_page.sass */
+/* line 169, sass/shared/_page.sass */
 #page_middle #page_middle_box table.network td {
   vertical-align: top;
 }
 
-/* line 180, sass/shared/_page.sass */
+/* line 172, sass/shared/_page.sass */
 #page_footer {
-  width: 650px;
   overflow: hidden;
   text-align: center;
   color: #999999;
@@ -647,8 +639,8 @@
   min-height: 35px;
   background-color: white;
 }
-/* line 188, sass/shared/_page.sass */
-#page_footer .footer {
+/* line 179, sass/shared/_page.sass */
+#page_footer #page_footer_box {
   width: 650px;
   padding-left: 5px;
   padding-right: 5px;
@@ -656,13 +648,13 @@
   padding-top: 10px;
   position: relative;
 }
-/* line 192, sass/shared/_page.sass */
-#page_footer .footer .links {
+/* line 183, sass/shared/_page.sass */
+#page_footer #page_footer_box .links {
   color: gray;
   text-align: left;
 }
-/* line 195, sass/shared/_page.sass */
-#page_footer .footer .stats {
+/* line 186, sass/shared/_page.sass */
+#page_footer #page_footer_box .stats {
   position: absolute;
   top: 10px;
   right: 0;
