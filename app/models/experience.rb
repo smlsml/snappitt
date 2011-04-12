@@ -5,11 +5,13 @@ class Experience < ActiveRecord::Base
   has_many :moments, :order => 'moments.id', :order => 'created_at DESC', :dependent => :destroy
   has_many :comments, :through => :moments, :readonly => true
   has_many :likes, :class_name => 'LikeFlag', :through => :moments, :readonly => true
+  has_many :collaborators, :class_name => 'ExperienceCollaborator'
 
   validates :user, :presence => true
 
   attr_accessor :newly_created
   after_create :set_new
+  after_create :add_collaborator
 
   scope :user_feed, lambda { |user|
     includes(:user => :profile, :moments => :asset).
@@ -43,7 +45,7 @@ class Experience < ActiveRecord::Base
 
   def title
     rtitle = read_attribute(:title).strip
-    rtitle.blank? || rtitle == '@' ? created_at.to_formatted_s(:mdy) : rtitle
+    rtitle.blank? || rtitle == '@' ? 'Snaps on %s' % created_at.to_formatted_s(:mdy) : rtitle
   end
 
   def photo_url(type = :feed)
@@ -64,6 +66,10 @@ class Experience < ActiveRecord::Base
 
   def set_new
     self.newly_created = true
+  end
+
+  def add_collaborator
+    ExperienceCollaborator.create(:experience => self, :user => user)
   end
 
 end

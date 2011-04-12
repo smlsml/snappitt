@@ -65,11 +65,16 @@ class Moment < ActiveRecord::Base
   end
 
   after_create :create_cause
+  after_create :add_collaborator
 
   protected
 
   def create_cause
     CreateCause.create!(:user => user, :action => self, :subject => experience)
+  end
+
+  def add_collaborator
+    ExperienceCollaborator.create(:experience => experience, :user => user)
   end
 
 end

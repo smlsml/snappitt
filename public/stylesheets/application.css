@@ -815,12 +815,38 @@ a.button:active {
 }
 
 /* line 76, sass/shared/_base.sass */
+a.big_button {
+  background: none repeat scroll 0 0 #97ca00;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  vertical-align: top;
+  padding: 8px 18px;
+}
+/* line 64, sass/application.sass */
+a.big_button:hover {
+  background: none repeat scroll 0 0 #90c100;
+}
+
+/* line 79, sass/shared/_base.sass */
 var {
   font-size: 13px;
   font-style: normal;
 }
 
-/* line 80, sass/shared/_base.sass */
+/* line 83, sass/shared/_base.sass */
 li {
   list-style: none;
   font-size: 13px;
@@ -1018,42 +1044,29 @@ div.experience_card .stats dfn:hover {
   position: relative;
   text-align: left;
   margin-bottom: 50px;
-  padding-left: 63px;
 }
-/* line 97, sass/shared/_experiences.sass */
-.experience_header h2 {
-  min-height: 1.5em;
+/* line 96, sass/shared/_experiences.sass */
+.experience_header h1 {
+  font-weight: bold;
 }
 /* line 99, sass/shared/_experiences.sass */
-.experience_header img.icon {
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -khtml-border-radius: 4px;
-  border-radius: 4px;
-  -moz-box-shadow: #666666 0 1px 2px 0;
-  -webkit-box-shadow: #666666 0 1px 2px 0;
-  -o-box-shadow: #666666 0 1px 2px 0;
-  box-shadow: #666666 0 1px 2px 0;
-  position: absolute;
-  top: 0;
-  left: 0;
+.experience_header .collaborators img {
+  border: 1px solid #efefef;
+  padding: 1px;
 }
-/* line 106, sass/shared/_experiences.sass */
-.experience_header .by var {
-  color: #999999;
-  font-weight: bold;
-  font-size: 15px;
+/* line 102, sass/shared/_experiences.sass */
+.experience_header .add {
+  margin-top: 10px;
+  text-align: center;
 }
-/* line 110, sass/shared/_experiences.sass */
+/* line 105, sass/shared/_experiences.sass */
 .experience_header .side {
   position: absolute;
   top: 0;
   right: 0;
   text-align: right;
 }
-/* line 115, sass/shared/_experiences.sass */
+/* line 110, sass/shared/_experiences.sass */
 .experience_header .side .stats {
   margin: 5px;
   padding: 5px;
@@ -1065,11 +1078,11 @@ div.experience_card .stats dfn:hover {
   -khtml-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 120, sass/shared/_experiences.sass */
+/* line 115, sass/shared/_experiences.sass */
 .experience_header .side .stats var {
   color: #999999;
 }
-/* line 123, sass/shared/_experiences.sass */
+/* line 117, sass/shared/_experiences.sass */
 .experience_header .side dfn {
   color: #666666;
   font-weight: bold;
@@ -1077,7 +1090,7 @@ div.experience_card .stats dfn:hover {
   padding-left: 33px;
   margin-right: 10px;
 }
-/* line 129, sass/shared/_experiences.sass */
+/* line 123, sass/shared/_experiences.sass */
 .experience_header .side dfn span {
   height: 20px;
   width: 30px;
@@ -1085,35 +1098,35 @@ div.experience_card .stats dfn:hover {
   left: 0;
   background: url("http://snappitt-assets.s3.amazonaws.com/icons/assets.png") no-repeat scroll 0 0px transparent;
 }
-/* line 136, sass/shared/_experiences.sass */
+/* line 130, sass/shared/_experiences.sass */
 .experience_header .side dfn.views span {
   background-position: 0 -6px;
 }
-/* line 138, sass/shared/_experiences.sass */
+/* line 132, sass/shared/_experiences.sass */
 .experience_header .side dfn.views span:hover {
   background-position: 0px -38px;
 }
-/* line 141, sass/shared/_experiences.sass */
+/* line 135, sass/shared/_experiences.sass */
 .experience_header .side dfn.likes span {
   background-position: -32px -6px;
 }
-/* line 143, sass/shared/_experiences.sass */
+/* line 137, sass/shared/_experiences.sass */
 .experience_header .side dfn.likes span:hover {
   background-position: -32px -38px;
 }
-/* line 145, sass/shared/_experiences.sass */
+/* line 139, sass/shared/_experiences.sass */
 .experience_header .side dfn.comments {
   margin-right: 0;
 }
-/* line 147, sass/shared/_experiences.sass */
+/* line 141, sass/shared/_experiences.sass */
 .experience_header .side dfn.comments span {
   background-position: -65px -6px;
 }
-/* line 149, sass/shared/_experiences.sass */
+/* line 143, sass/shared/_experiences.sass */
 .experience_header .side dfn.comments span:hover {
   background-position: -65px -38px;
 }
-/* line 151, sass/shared/_experiences.sass */
+/* line 145, sass/shared/_experiences.sass */
 .experience_header .side dfn:hover {
   color: #02b7ff;
 }

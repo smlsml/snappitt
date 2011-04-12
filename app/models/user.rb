@@ -128,7 +128,7 @@ class User < ActiveRecord::Base
   end
 
   def setup
-    self.create_profile(:realname => self.username)
+    self.create_profile(:realname => self.username, :dont_notify_for => 'Moment::CreateCause')
     self.create_contact(:email => self.email, :name => self.username)
   end
 

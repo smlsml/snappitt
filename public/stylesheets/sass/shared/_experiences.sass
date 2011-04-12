@@ -93,20 +93,15 @@ div.experience_card
   position: relative
   text-align: left
   margin-bottom: 50px
-  padding-left: 63px
-  h2
-    min-height: 1.5em
-  img.icon
-    @include border-radius(4px)
-    @include box-shadow(#666, 0, 1px, 2px, 0)
-    position: absolute
-    top: 0
-    left: 0
-  .by
-    var
-      color: #999
-      font-weight: bold
-      font-size: 15px
+  h1
+    font-weight: bold
+  .collaborators
+    img
+      border: 1px solid $graySmoke
+      padding: 1px
+  .add
+    margin-top: 10px
+    text-align: center
   .side
     position: absolute
     top: 0
@@ -119,7 +114,6 @@ div.experience_card
       @include border-radius(4px)
       var
         color: #999
-
     dfn
       color: #666
       font-weight: bold

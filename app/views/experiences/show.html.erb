@@ -1,19 +1,14 @@
 <div class="experience_header">
-  <img class="icon" src="<%= @experience.user.profile.photo_url %>" alt="<%= @experience.user %>"/>
-
-  <h2><%= @experience.title %></h2>
+  <h1><%= @experience.title %></h1>
 
   <div class="details">
-    <var><%= @experience.moments_count %></var> moments <!-- at
-    <var>X</var> places with
-    <var>X</var> people and
-    <var>X</var> things -->
+    <dfn><var><%= @experience.moments_count %></var> moments from</dfn>
   </div>
 
-  <div class="by">
-    By <%= link_to(@experience.user, user_path(@experience.user), :title => @experience.user.profile.realname) %> &nbsp;
-    <dfn><var><%= @experience.user.experiences_count %></var> Experiences</dfn> &bull;
-    <dfn><var><%= @experience.user.followers.count %></var> Followers</dfn>
+  <div class="collaborators">
+    <% @experience.collaborators.each do |c| %>
+      <%= user_icon(c.user, :thumb)%>
+    <% end %>
   </div>
 
   <div class="side">
@@ -22,8 +17,13 @@
       <dfn class="likes" title="Likes"><span></span><var><%= @experience.likes_count %></var></dfn>
       <dfn class="comments" title="Comments"><span></span><var><%= @experience.comments_count %></var></dfn><br>
     </div>
-    <%= link_to('Add Moment', edit_experience_path(@experience), :class => 'button') %> &nbsp;&nbsp;
     <%= link_to('Delete Experience', experience_path(@experience), :class => 'button', :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.user) %>
+  </div>
+
+  <div class="add">
+    &ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;
+    <%= link_to('Add Moment', edit_experience_path(@experience), :class => 'big_button') %>
+    &ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;
   </div>
 </div>
 

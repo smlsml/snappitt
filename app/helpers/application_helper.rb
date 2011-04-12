@@ -48,6 +48,10 @@ module ApplicationHelper
     links
   end
 
+  def user_icon(user, size = :thumb)
+    link_to(image_tag(user.profile.photo_url(size), :alt => user), user_path(user), :title => user)
+  end
+
   def container(options = {}, &block)
     out = ""
     main_content = capture(&block)

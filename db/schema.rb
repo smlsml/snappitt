@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110408225025) do
+ActiveRecord::Schema.define(:version => 20110412174552) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -103,6 +103,13 @@ ActiveRecord::Schema.define(:version => 20110408225025) do
     t.string   "prize"
     t.integer  "prize_at_moment"
   end
+
+  create_table "experience_collaborators", :force => true do |t|
+    t.integer "experience_id"
+    t.integer "user_id"
+  end
+
+  add_index "experience_collaborators", ["experience_id", "user_id"], :name => "index_experience_collaborators_on_experience_id_and_user_id", :unique => true
 
   create_table "experiences", :force => true do |t|
     t.string   "title"
