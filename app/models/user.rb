@@ -40,6 +40,13 @@ class User < ActiveRecord::Base
   has_many :followers, :through => :connections_in, :class_name => 'User', :source => :from
 
   has_many :experiences, :foreign_key => 'user_id'
+  has_many :moments, :foreign_key => 'user_id'
+  has_many :joined_experiences,
+           :source => :experience,
+           :through => :moments,
+           :uniq => true,
+           :readonly => true,
+           :foreign_key => 'user_id'
 
   has_many :notifications, :order => 'created_at DESC' do
     def unseen
