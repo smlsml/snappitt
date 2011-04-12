@@ -2,7 +2,7 @@ class Experience < ActiveRecord::Base
 
   belongs_to :user, :counter_cache => true
   has_one :event, :inverse_of => :experience
-  has_many :moments, :order => 'moments.id', :dependent => :destroy
+  has_many :moments, :order => 'moments.id', :order => 'created_at DESC', :dependent => :destroy
   has_many :comments, :through => :moments, :readonly => true
   has_many :likes, :class_name => 'LikeFlag', :through => :moments, :readonly => true
 

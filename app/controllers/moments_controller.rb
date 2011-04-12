@@ -12,7 +12,7 @@ class MomentsController < ApplicationController
 
     flash[:success] = 'Published Moment'
 
-    redirect_to experience_path(@moment.experience)
+    redirect_to experience_path(@moment.experience, :anchor => @moment.id)
   end
 
   def like
@@ -23,7 +23,7 @@ class MomentsController < ApplicationController
 
     flash[:success] = 'Liked Moment'
 
-    redirect_to experience_path(@moment.experience)
+    redirect_to experience_path(@moment.experience, :anchor => @moment.id)
   end
 
   def comment
@@ -34,7 +34,7 @@ class MomentsController < ApplicationController
 
     flash[:success] = 'Added comment'
 
-    redirect_to experience_path(@moment.experience)
+    redirect_to experience_path(@moment.experience, :anchor => @moment.id)
   end
 
   def destroy

@@ -1,42 +1,43 @@
 <div id="page_header_box">
-<h1><%= t('app.name') %></h1>
+  <h1><%= t('app.name') %></h1>
 
-<% @in = user_signed_in? %>
+  <% @in = user_signed_in? %>
 
-<ul>
- <li>
-   <a href="<%= root_path %>"<%= nav_class(:home) %>>
-     <span><%= t('nav.home') %></span>
-   </a>
- </li>
- <li>
-   <a href="<%= users_path %>"<%= nav_class(:users) %>>
-     <span><%= t('nav.people') %></span>
-   </a>
- </li>
- <li>
-   <a href="<%= new_experience_path %>"<%= nav_class(:upload) %>>
-     <span><%= t('nav.upload') %></span>
-   </a>
- </li>
- <li>
-   <a href="<%= @in ? user_path(current_user) : root_path %>"<%= nav_class(:profile) %>>
-     <span><%= t('nav.profile') %></span>
-     <%= ('<var class="alerts">%s</var>' % current_user.notifications.unseen.count).html_safe if @in && current_user.unseen_notifications? %>
-   </a>
- </li>
- <li>
-   <a href="<%= @in ? user_settings_path(current_user) : root_path %>"<%= nav_class(:users_settings) %>>
-     <span><%= t('nav.settings') %></span>
-   </a>
- </li>
-</ul>
+  <ul>
+   <li>
+     <a href="<%= root_path %>"<%= nav_class(:home) %>>
+       <span><%= t('nav.home') %></span>
+     </a>
+   </li>
+   <li>
+     <a href="<%= users_path %>"<%= nav_class(:users) %>>
+       <span><%= t('nav.people') %></span>
+     </a>
+   </li>
+   <li>
+     <a href="<%= new_experience_path %>"<%= nav_class(:upload) %>>
+       <span><%= t('nav.upload') %></span>
+     </a>
+   </li>
+   <li>
+     <a href="<%= @in ? user_path(current_user) : root_path %>"<%= nav_class(:profile) %>>
+       <span><%= t('nav.profile') %></span>
+       <%= ('<var class="alerts">%s</var>' % current_user.notifications.unseen.count).html_safe if @in && current_user.unseen_notifications? %>
+     </a>
+   </li>
+   <li>
+     <a href="<%= @in ? user_settings_path(current_user) : root_path %>"<%= nav_class(:users_settings) %>>
+       <span><%= t('nav.settings') %></span>
+     </a>
+   </li>
+  </ul>
+  <div style="clear:both; height: 1px"></div>
 
-<% if @in %>
+  <% if @in %>
 
-<div id="page_logout">
-  <%= 'Hi %s' % current_user %> :: <%= link_to t('nav.logout'), destroy_user_session_path %>
-</div>
+  <div id="page_logout">
+    <%= 'Hi %s' % current_user %> :: <%= link_to t('nav.logout'), destroy_user_session_path %>
+  </div>
 
-<% end %>
+  <% end %>
 </div>

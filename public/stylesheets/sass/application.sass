@@ -1,6 +1,7 @@
 $asset_url: 'http://snappitt-assets.s3.amazonaws.com'
 
 $graySmoke: #EFEFEF
+$pageWidth: 970px
 
 @mixin snappitt_button
   @include linear-gradient(color-stops(#EFEFEF, #D8D8D8))
@@ -89,7 +90,7 @@ $graySmoke: #EFEFEF
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 1px #333333
 
 @mixin page_center_box
-  width: 650px
+  width: $pageWidth
   padding-left: 5px
   padding-right: 5px
   margin: 0 auto

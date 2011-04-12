@@ -67,7 +67,7 @@
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
   margin: 10px auto;
 }
-/* line 44, sass/application.sass */
+/* line 45, sass/application.sass */
 .experience_controller #page_middle_box fieldset.upload input[type="submit"]:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #cbf048), color-stop(100%, #b3e529));
   background-image: -moz-linear-gradient(top, #cbf048 0%, #b3e529 100%);
@@ -75,7 +75,7 @@
   cursor: pointer;
   text-decoration: none;
 }
-/* line 48, sass/application.sass */
+/* line 49, sass/application.sass */
 .experience_controller #page_middle_box fieldset.upload input[type="submit"]:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b3e529), color-stop(100%, #cbf048));
   background-image: -moz-linear-gradient(top, #b3e529 0%, #cbf048 100%);
@@ -124,7 +124,7 @@
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 63, sass/application.sass */
+/* line 64, sass/application.sass */
 .session_controller #page_middle_box input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
@@ -154,7 +154,7 @@
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 63, sass/application.sass */
+/* line 64, sass/application.sass */
 .registration_controller #page_middle_box input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
@@ -290,7 +290,7 @@
 }
 /* line 6, sass/shared/_page.sass */
 #page_header #page_header_box {
-  width: 650px;
+  width: 970px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 0 auto;
@@ -502,13 +502,13 @@
   text-align: center;
   text-decoration: none;
 }
-/* line 85, sass/application.sass */
+/* line 86, sass/application.sass */
 #page_header #page_logout a:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #5c5c5c), color-stop(50%, #333333), color-stop(50%, #272727), color-stop(100%, #111111));
   background-image: -moz-linear-gradient(top, #5c5c5c 0%, #333333 50%, #272727 50%, #111111 100%);
   background-image: linear-gradient(top, #5c5c5c 0%, #333333 50%, #272727 50%, #111111 100%);
 }
-/* line 87, sass/application.sass */
+/* line 88, sass/application.sass */
 #page_header #page_logout a:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #111111), color-stop(100%, #333333));
   background-image: -moz-linear-gradient(top, #111111 0%, #333333 100%);
@@ -523,36 +523,34 @@
 
 /* line 120, sass/shared/_page.sass */
 #page_account {
-  width: 650px;
-  overflow: hidden;
   padding: 20px;
   background-color: white;
   border-bottom: 1px solid #d9d9d9;
 }
-/* line 126, sass/shared/_page.sass */
+/* line 124, sass/shared/_page.sass */
 #page_account.welcome {
   background: url("http://snappitt-assets.s3.amazonaws.com/flavor/splash-bg.png") no-repeat scroll center top #009ad7;
   height: 227px;
   padding-top: 225px;
 }
-/* line 130, sass/shared/_page.sass */
+/* line 128, sass/shared/_page.sass */
 #page_account.welcome h2, #page_account.welcome h3, #page_account.welcome label {
   color: #efefef;
 }
-/* line 132, sass/shared/_page.sass */
+/* line 130, sass/shared/_page.sass */
 #page_account.welcome a {
   color: #efefef;
 }
-/* line 134, sass/shared/_page.sass */
+/* line 132, sass/shared/_page.sass */
 #page_account.welcome table.signin {
   margin-top: 25px;
 }
-/* line 137, sass/shared/_page.sass */
+/* line 135, sass/shared/_page.sass */
 #page_account table.signin {
   width: auto;
   margin: 0 auto;
 }
-/* line 140, sass/shared/_page.sass */
+/* line 138, sass/shared/_page.sass */
 #page_account table.signin input[type="submit"] {
   background: none repeat scroll 0 0 #97ca00;
   -moz-border-radius: 4px;
@@ -573,87 +571,85 @@
   vertical-align: top;
   padding: 8px 18px;
 }
-/* line 63, sass/application.sass */
+/* line 64, sass/application.sass */
 #page_account table.signin input[type="submit"]:hover {
   background: none repeat scroll 0 0 #90c100;
 }
-/* line 142, sass/shared/_page.sass */
+/* line 140, sass/shared/_page.sass */
 #page_account table.signin td {
   text-align: left;
 }
-/* line 144, sass/shared/_page.sass */
+/* line 142, sass/shared/_page.sass */
 #page_account table.signin td.side {
   vertical-align: middle;
   padding-left: 20px;
 }
-/* line 145, sass/shared/_page.sass */
+/* line 143, sass/shared/_page.sass */
 #page_account table.signin td.side a {
   border-left: 1px dotted black;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* line 152, sass/shared/_page.sass */
+/* line 150, sass/shared/_page.sass */
 #page_account table.signin td.remember {
   text-align: right;
 }
-/* line 154, sass/shared/_page.sass */
+/* line 152, sass/shared/_page.sass */
 #page_account table.signin td input[type="submit"] {
   vertical-align: top;
 }
 
-/* line 157, sass/shared/_page.sass */
+/* line 155, sass/shared/_page.sass */
 #page_middle {
   text-align: center;
   padding-bottom: 50px;
   background-color: whiteSmoke;
-  overflow: hidden;
 }
-/* line 162, sass/shared/_page.sass */
+/* line 159, sass/shared/_page.sass */
 #page_middle.welcome {
   margin-top: 0;
 }
-/* line 164, sass/shared/_page.sass */
+/* line 161, sass/shared/_page.sass */
 #page_middle #page_middle_box {
-  width: 650px;
+  width: 970px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 0 auto;
   padding-top: 25px;
 }
-/* line 167, sass/shared/_page.sass */
+/* line 164, sass/shared/_page.sass */
 #page_middle #page_middle_box table.network {
   width: 100%;
 }
-/* line 169, sass/shared/_page.sass */
+/* line 166, sass/shared/_page.sass */
 #page_middle #page_middle_box table.network td {
   vertical-align: top;
 }
 
-/* line 172, sass/shared/_page.sass */
+/* line 169, sass/shared/_page.sass */
 #page_footer {
-  overflow: hidden;
   text-align: center;
   color: #999999;
   border-top: 1px solid #d9d9d9;
   min-height: 35px;
   background-color: white;
 }
-/* line 179, sass/shared/_page.sass */
+/* line 175, sass/shared/_page.sass */
 #page_footer #page_footer_box {
-  width: 650px;
+  width: 970px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 0 auto;
   padding-top: 10px;
   position: relative;
 }
-/* line 183, sass/shared/_page.sass */
+/* line 179, sass/shared/_page.sass */
 #page_footer #page_footer_box .links {
   color: gray;
   text-align: left;
 }
-/* line 186, sass/shared/_page.sass */
+/* line 182, sass/shared/_page.sass */
 #page_footer #page_footer_box .stats {
   position: absolute;
   top: 10px;
@@ -802,7 +798,7 @@ a.button {
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 20, sass/application.sass */
+/* line 21, sass/application.sass */
 a.button:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
   background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
@@ -810,7 +806,7 @@ a.button:hover {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 24, sass/application.sass */
+/* line 25, sass/application.sass */
 a.button:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
   background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
@@ -1296,7 +1292,7 @@ table.network td, table.split td {
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 20, sass/application.sass */
+/* line 21, sass/application.sass */
 .moment_card p.links a:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
   background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
@@ -1304,7 +1300,7 @@ table.network td, table.split td {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 24, sass/application.sass */
+/* line 25, sass/application.sass */
 .moment_card p.links a:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
   background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
@@ -1354,7 +1350,7 @@ table.network td, table.split td {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
   margin: 10px auto;
 }
-/* line 44, sass/application.sass */
+/* line 45, sass/application.sass */
 .moment_card input[type="submit"]:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #cbf048), color-stop(100%, #b3e529));
   background-image: -moz-linear-gradient(top, #cbf048 0%, #b3e529 100%);
@@ -1362,7 +1358,7 @@ table.network td, table.split td {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 48, sass/application.sass */
+/* line 49, sass/application.sass */
 .moment_card input[type="submit"]:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b3e529), color-stop(100%, #cbf048));
   background-image: -moz-linear-gradient(top, #b3e529 0%, #cbf048 100%);
@@ -1469,7 +1465,7 @@ form input[type="submit"] {
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-/* line 20, sass/application.sass */
+/* line 21, sass/application.sass */
 form input[type="submit"]:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
   background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
@@ -1477,7 +1473,7 @@ form input[type="submit"]:hover {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 24, sass/application.sass */
+/* line 25, sass/application.sass */
 form input[type="submit"]:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
   background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
