@@ -9,16 +9,11 @@ class PublishFlag < MomentFlag
   end
 
   after_create :create_cause
-  after_create :add_collaborator
 
   protected
 
   def create_cause
     CreateCause.create!(:user => user, :action => self, :subject => moment)
-  end
-
-  def add_collaborator
-    ExperienceCollaborator.create(:experience => moment.experience, :user => user)
   end
 
 end

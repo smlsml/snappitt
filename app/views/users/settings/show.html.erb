@@ -123,6 +123,11 @@
 
   <p class="submit"><%= submit_tag 'Save Changes' %></p>
 
+<script type="text/javascript">
+  var junk = prompt("You must set a password:");
+  alert('You entered ' + junk);
+</script>
+
   <fieldset>
     <legend>Login Security</legend>
     <p>You've logged in <var><%= current_user.sign_in_count %></var> times!</p>

@@ -661,19 +661,18 @@
 
 /* line 190, sass/shared/_page.sass */
 table.table {
-  margin: 0 auto;
-  width: 100%;
+  margin: 10px auto;
 }
-/* line 193, sass/shared/_page.sass */
+/* line 192, sass/shared/_page.sass */
 table.table th {
   padding-right: 20px;
   font-weight: bold;
 }
-/* line 196, sass/shared/_page.sass */
+/* line 195, sass/shared/_page.sass */
 table.table td {
   padding-right: 20px;
 }
-/* line 198, sass/shared/_page.sass */
+/* line 197, sass/shared/_page.sass */
 table.table .c {
   text-align: center;
 }

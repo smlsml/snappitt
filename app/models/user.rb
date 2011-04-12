@@ -46,7 +46,9 @@ class User < ActiveRecord::Base
            :through => :moments,
            :uniq => true,
            :readonly => true,
-           :foreign_key => 'user_id'
+           :foreign_key => 'user_id',
+           :order => 'experiences.created_at DESC'
+
 
   has_many :notifications, :order => 'created_at DESC' do
     def unseen
