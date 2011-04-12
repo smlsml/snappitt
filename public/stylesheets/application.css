@@ -659,6 +659,25 @@
   text-align: right;
 }
 
+/* line 190, sass/shared/_page.sass */
+table.table {
+  margin: 0 auto;
+  width: 100%;
+}
+/* line 193, sass/shared/_page.sass */
+table.table th {
+  padding-right: 20px;
+  font-weight: bold;
+}
+/* line 196, sass/shared/_page.sass */
+table.table td {
+  padding-right: 20px;
+}
+/* line 198, sass/shared/_page.sass */
+table.table .c {
+  text-align: center;
+}
+
 /* line 1, sass/shared/_base.sass */
 body {
   margin: 0;

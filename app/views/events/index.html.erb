@@ -1,9 +1,23 @@
 <h1>Events</h1>
 
 <div class="events">
-<% @events.each do |e| %>
-  <%= e.inspect %>
-<% end %>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Hashtag</th>
+      <th>Prize</th>
+      <th class="c">Moments</th>
+    </tr>
+    <% @events.each do |e| %>
+    <tr>
+      <td><%= e.name %></td>
+      <td>#<%= e.hashtag %></td>
+      <td><%= e.prize %></td>
+      <td class="c"><%= e.experience ? link_to(e.experience.moments_count, experience_path(e.experience)) : 0 %></td>
+    </tr>
+    <% end %>
+  </table>
+
 </div>
 
 <br/>
