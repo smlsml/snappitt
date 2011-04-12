@@ -89,31 +89,16 @@ div.experience_card
       &:hover
         color: #02b7ff
 
-.experience_header
-  position: relative
-  text-align: left
+div.experience_header
   margin-bottom: 50px
-  h1
-    font-weight: bold
-  .collaborators
-    img
-      border: 1px solid $graySmoke
-      padding: 1px
-  .add
-    margin-top: 10px
-    text-align: center
-  .side
+  position: relative
+  .stats
+    z-index: 5
     position: absolute
     top: 0
-    right: 0
-    text-align: right
-    .stats
-      margin: 5px
-      padding: 5px
-      background-color: $graySmoke
-      @include border-radius(4px)
-      var
-        color: #999
+    right: 15px
+    var
+      color: #999
     dfn
       color: #666
       font-weight: bold
@@ -144,3 +129,28 @@ div.experience_card
             background-position: -65px -38px
       &:hover
         color: #02B7FF
+
+  fieldset.header
+    text-align: left
+    padding: 0 15px 15px
+    .main
+      position: relative
+      margin-right: 310px
+      h1
+        font-weight: bold
+      .collaborators
+        img
+          border: 1px solid $graySmoke
+          padding: 1px
+          &:hover
+            border-color: lightGray
+
+    .side
+      position: absolute
+      top: 0
+      right: -310px
+      width: 310px
+      text-align: right
+      .add
+        margin-top: 5px
+        margin-bottom: 15px

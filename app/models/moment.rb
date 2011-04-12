@@ -41,6 +41,10 @@ class Moment < ActiveRecord::Base
     ([self.user, self.experience.user] + comments.collect{|c| c.user} + likes.collect{|l| l.user}).compact.uniq
   end
 
+  def time
+    self.created_at.getlocal.to_formatted_s(:timem).downcase
+  end
+
   #--
 
   def self.experience_id_for(moment_id)
