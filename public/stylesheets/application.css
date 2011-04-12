@@ -286,7 +286,7 @@
   color: white;
   height: 135px;
   text-align: center;
-  background: url("http://snappitt-assets.s3.amazonaws.com/header/header-bg.jpg") #333333;
+  background: url(http://snappitt-assets.s3.amazonaws.com/header/header-bg.jpg) repeat scroll 0 0 #333333;
 }
 /* line 6, sass/shared/_page.sass */
 #page_header #page_header_box {
