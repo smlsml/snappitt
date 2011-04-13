@@ -36,11 +36,11 @@
 </div>
 
 
-<% cnt = @experience.moments.count %>
+<% cnt = @experience.moments.count + 1 %>
 <% @experience.moments.each do |m| %>
   <a name="<%= m.id %>"></a>
   <div class="moment_card">
-    <h2><%= m.time %></h2>
+    <h2><%= m.time %><small><%= m.asset.device %></small></h2>
     <div class="number">moment #<%= cnt -= 1 %></div>
     <table width="100%">
       <tr>
