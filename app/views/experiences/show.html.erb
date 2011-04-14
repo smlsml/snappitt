@@ -73,8 +73,10 @@
             <%= select(:like,
                        :shot,
                        LikeFlag::SHOTS,
-                       {:prompt => "Rate Photo:", :selected => m.likes.by_user(current_user).first.try(:shot)},
-                       {:onchange => 'location.href="%s?shot="+this.value' % like_experience_moment_path(@experience, m)}) %> &nbsp;
+                       {:prompt => "Rate Photo:",
+                        :selected => m.likes.by_user(current_user).first.try(:shot)},
+                       {:id => 'like_%s' % m.id,
+                        :onchange => "new Ajax.Request('%s?shot='+this.value, {method: 'get', onSuccess: function(transport) {new Effect.Highlight(this.up())}.bind(this)})" % like_experience_moment_path(@experience, m)}) %> &nbsp;
             <%= link_to('Publish', publish_experience_moment_path(@experience, m)) if !m.published? && can_publish? %> &nbsp;
             <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
           </p>

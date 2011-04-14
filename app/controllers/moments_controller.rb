@@ -27,7 +27,10 @@ class MomentsController < ApplicationController
       flash[:success] = 'Classified Moment'
     end
 
-    redirect_to experience_path(@moment.experience, :anchor => @moment.id)
+    respond_to do |format|
+      format.js { head(:ok) }
+      format.html { experience_path(@moment.experience, :anchor => @moment.id) }
+    end
   end
 
   def comment
