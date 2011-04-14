@@ -87,6 +87,7 @@ class Cause < ActiveRecord::Base
     end
 
     def subject
+      return '%s as %s' % [@cause.subject.class.name, @cause.action.shot] if @cause.action.kind_of?(LikeFlag)
       @cause.subject.class.name
     end
   end
