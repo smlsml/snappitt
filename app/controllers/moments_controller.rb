@@ -24,7 +24,6 @@ class MomentsController < ApplicationController
       flag = LikeFlag.create(:user => @user, :moment => @moment) unless flag
       flag.shot = params[:shot]
       flag.save!
-      flash[:success] = 'Classified Moment'
     end
 
     respond_to do |format|
