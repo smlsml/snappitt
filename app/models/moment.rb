@@ -52,6 +52,15 @@ class Moment < ActiveRecord::Base
     self.created_at.getlocal.to_formatted_s(:timem).downcase
   end
 
+  def grouped_flags
+    grp = {}
+    self.likes.each do |l|
+      grp[l.shot] = [] unless grp[l.shot]
+      grp[l.shot] << l.user
+    end
+    grp
+  end
+
   #--
 
   def self.experience_id_for(moment_id)

@@ -87,9 +87,25 @@
       <tr>
         <th><%= user_icon(first_like.user, :tiny) %></th>
         <td colspan="2" class="text">
-          <%= m.likes.collect{|l| l.user}.uniq.compact.to_sentence %> classified this photo as <%= m.likes.collect{|l| l.shot}.uniq.compact.to_sentence %>
+          <%= m.likes.collect{|l| l.user}.uniq.compact.to_sentence %> flagged this photo as <%= m.likes.collect{|l| l.shot}.uniq.compact.to_sentence %>
         </td>
       </tr>
+      <% m.likes.each do |l| %>
+      <tr>
+        <th><%= user_icon(l.user, :tiny) %></th>
+        <td colspan="2" class="text">
+          <%= user_link(l.user) %> flagged this photo as <%= l.shot %>
+        </td>
+      </tr>
+      <% end %>
+      <% m.grouped_flags.each do |shot, users| %>
+      <tr>
+        <th><%= user_icon(users.first, :tiny) %></th>
+        <td colspan="2" class="text">
+          <%= users.uniq.to_sentence %> flagged this photo as <%= shot %>
+        </td>
+      </tr>
+      <% end %>
     <% end %>
     <% m.comments.each do |c| %>
       <tr>
