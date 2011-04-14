@@ -1,6 +1,6 @@
 class LikeFlag < MomentFlag
 
-  SHOTS = ['Artsy','Funny','Hot','Macro','Dark','Boo','Inappropriate']
+  SHOTS = ['Portrait','Artsy','Nice!','Funny','Macro','Huh?','Inappropriate']
 
   belongs_to :user, :inverse_of => :likes, :counter_cache => :likes_count
   belongs_to :moment, :inverse_of => :likes, :counter_cache => :likes_count
