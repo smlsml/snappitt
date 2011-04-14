@@ -8,7 +8,14 @@ class Moment < ActiveRecord::Base
   belongs_to :experience, :counter_cache => true
   belongs_to :caption, :class_name => 'CaptionComment', :dependent => :destroy
 
-  has_many :likes, :class_name => 'LikeFlag', :inverse_of => :moment, :dependent => :destroy
+  has_many :likes,
+           :class_name => 'LikeFlag',
+           :inverse_of => :moment,
+           :dependent => :destroy do
+    def by_user(user)
+      where(:user_id => user.is_a?(User) ? user.id : 0)
+    end
+  end
   has_many :publishes, :class_name => 'PublishFlag', :inverse_of => :moment, :dependent => :destroy
   has_many :comments, :class_name => 'MomentComment', :inverse_of => :moment, :dependent => :destroy
 

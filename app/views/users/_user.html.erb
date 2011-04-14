@@ -1,16 +1,12 @@
 <div class="user_card">
 
   <div class="icon">
-    <%= link_to(image_tag(user.profile.photo_url(:thumb),
-                          :width => 48,
-                          :height => 48,
-                          :alt => user),
-                user_path(user)) %>
+    <%= user_icon(user) %>
   </div>
 
   <div class="info">
     <h2>
-      <span><%= link_to(user, user_path(user)) %></span>
+      <span><%= user_link(user) %></span>
       <small><%= user.profile.realname_unless %></small>
       <% unless current_user == user || !user_signed_in? %>
         <% if current_user.follows(user) %>

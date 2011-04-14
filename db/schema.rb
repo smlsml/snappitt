@@ -162,11 +162,12 @@ ActiveRecord::Schema.define(:version => 20110412232542) do
   end
 
   create_table "moment_flags", :force => true do |t|
-    t.integer  "user_id",                  :null => false
-    t.integer  "moment_id",                :null => false
-    t.string   "type",       :limit => 50, :null => false
+    t.integer  "user_id",                                  :null => false
+    t.integer  "moment_id",                                :null => false
+    t.string   "type",       :limit => 50,                 :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "shot",                     :default => "", :null => false
   end
 
   add_index "moment_flags", ["moment_id"], :name => "index_moment_flags_on_moment_id"

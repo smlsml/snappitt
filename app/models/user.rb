@@ -84,6 +84,10 @@ class User < ActiveRecord::Base
     username
   end
 
+  def username_realname
+    ('%s (%s)' % [username, profile.realname_unless]).gsub(' ()','')
+  end
+
   def admin?
     role == 'admin'
   end

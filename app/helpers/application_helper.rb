@@ -49,7 +49,11 @@ module ApplicationHelper
   end
 
   def user_icon(user, size = :thumb)
-    link_to(image_tag(user.profile.photo_url(size), :alt => user), user_path(user), :title => user)
+    link_to(image_tag(user.profile.photo_url(size), :alt => user), user_path(user), :title => user.username_realname)
+  end
+
+  def user_link(user)
+    link_to(user, user_path(user), :title => user.profile.realname_unless)
   end
 
   def container(options = {}, &block)

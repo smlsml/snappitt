@@ -19,9 +19,13 @@ class MomentsController < ApplicationController
     @user = current_user
     @moment = Moment.find(params[:id])
 
-    LikeFlag.create!(:user => @user, :moment => @moment)
-
-    flash[:success] = 'Liked Moment'
+    if params[:shot] && LikeFlag::SHOTS.include?(params[:shot])
+      flag = @moment.likes.by_user(@user).first
+      flag = LikeFlag.create(:user => @user, :moment => @moment) unless flag
+      flag.shot = params[:shot]
+      flag.save!
+      flash[:success] = 'Classified Moment'
+    end
 
     redirect_to experience_path(@moment.experience, :anchor => @moment.id)
   end
