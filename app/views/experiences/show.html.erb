@@ -64,6 +64,7 @@
           <%= link_to('Publish', publish_experience_moment_path(@experience, m)) if !m.published? && can_publish? %>
         </div>
 
+        <% if current_user %>
         <%= select(:like,
                    :shot,
                    LikeFlag::SHOTS,
@@ -71,6 +72,7 @@
                     :selected => m.likes.by_user(current_user).first.try(:shot)},
                    {:id => 'like_%s' % m.id,
                     :onchange => "new Ajax.Request('%s?shot='+this.value, {method: 'get', onSuccess: function(transport) {new Effect.Highlight(this.up())}.bind(this)})" % like_experience_moment_path(@experience, m)}) %>
+        <% end %>
 
         <div class="button r">
           <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
