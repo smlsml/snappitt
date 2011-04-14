@@ -8,10 +8,10 @@
     small
       font-size: 14px
   .moment
-    position: relative
     padding: 5px 0px
     background-color: $graySmoke
     .photo
+      position: relative
       text-align: center
       img
         max-width: 630px
@@ -19,8 +19,8 @@
         &.published
           width: 100px
           position: absolute
-          bottom: 20px
-          right: 25%
+          bottom: 10px
+          left: 10px
   .number
     position: absolute
     right: 0
@@ -51,16 +51,28 @@
       font-size: 11px
       font-color: #999
 
-  blockquote
-    margin: 10px auto
-    border: none
-    font-style: italic
-    padding: 0
-    text-align: center
-
   input[type="submit"]
     @include snappitt_button_highlight
     margin: 10px auto
 
   span.source
     border-bottom: 1px dotted lightBlue
+
+  .actions
+    position: relative
+    text-align: center
+    margin-left: 125px
+    margin-right: 125px
+    padding: 5px
+    .button
+      position: absolute
+      width: 125px
+      bottom: 10px
+      a
+        @include snappitt_button
+      &.l
+        left: -115px
+        text-align: left
+      &.r
+        right: -115px
+        text-align: right

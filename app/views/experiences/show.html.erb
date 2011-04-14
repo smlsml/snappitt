@@ -47,62 +47,45 @@
 
     <div class="number">moment #<%= cnt -= 1 %></div>
     <div class="moment">
-      <div class="photo">
-        <%= image_tag(m.photo_url(:large), :class => 'photo') %>
+      <div class="photo"><%= image_tag(m.photo_url(:large), :class => 'photo') %>
         <%= ('<img src="%s" class="published"/>' % SiteAssets[:published]).html_safe if m.published? %>
       </div>
 
-      <blockquote><%= (t(:lq).html_safe << m.caption << t(:rq).html_safe) unless m.caption.to_s.blank? %></blockquote>
       <p class="metadata">
         <% if m.asset %>
           <%= 'Taken' if m.asset.taken_at || m.asset.device || m.asset.lat %>
-          <%= 'on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
           <%= ' with %s' % m.asset.device if m.asset.device %>
           <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s</a>' % [m.asset.lat, m.asset.lng, m.asset.geolocation]).html_safe if m.asset.lat %>
         <% end %>
       </p>
 
+      <div class="actions">
+        <div class="button l">
+          <%= link_to('Publish', publish_experience_moment_path(@experience, m)) if !m.published? && can_publish? %>
+        </div>
+
+        <%= select(:like,
+                   :shot,
+                   LikeFlag::SHOTS,
+                   {:prompt => "Tag Photo:",
+                    :selected => m.likes.by_user(current_user).first.try(:shot)},
+                   {:id => 'like_%s' % m.id,
+                    :onchange => "new Ajax.Request('%s?shot='+this.value, {method: 'get', onSuccess: function(transport) {new Effect.Highlight(this.up())}.bind(this)})" % like_experience_moment_path(@experience, m)}) %>
+
+        <div class="button r">
+          <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
+        </div>
+      </div>
+
     </div>
 
     <table class="comment" width="100%">
-      <tr>
-        <th><%= user_icon(m.user, :tiny) %></th>
-        <td><%= user_link(m.user) %> uploaded this moment <%= (' via <span title="%s" class="source">%s&deg;</span>' % [m.source.name, m.source.short]).html_safe if m.source %></td>
-        <td style="text-align: right">
-          <p class="links">
-            <%= select(:like,
-                       :shot,
-                       LikeFlag::SHOTS,
-                       {:prompt => "Rate Photo:",
-                        :selected => m.likes.by_user(current_user).first.try(:shot)},
-                       {:id => 'like_%s' % m.id,
-                        :onchange => "new Ajax.Request('%s?shot='+this.value, {method: 'get', onSuccess: function(transport) {new Effect.Highlight(this.up())}.bind(this)})" % like_experience_moment_path(@experience, m)}) %> &nbsp;
-            <%= link_to('Publish', publish_experience_moment_path(@experience, m)) if !m.published? && can_publish? %> &nbsp;
-            <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
-          </p>
-        </td>
-      </tr>
     <% if m.likes.count > 0 %>
-    <% first_like = m.likes.first %>
-      <tr>
-        <th><%= user_icon(first_like.user, :tiny) %></th>
-        <td colspan="2" class="text">
-          <%= m.likes.collect{|l| l.user}.uniq.compact.to_sentence %> flagged this photo as <%= m.likes.collect{|l| l.shot}.uniq.compact.to_sentence %>
-        </td>
-      </tr>
-      <% m.likes.each do |l| %>
-      <tr>
-        <th><%= user_icon(l.user, :tiny) %></th>
-        <td colspan="2" class="text">
-          <%= user_link(l.user) %> <%= l.shot %>
-        </td>
-      </tr>
-      <% end %>
       <% m.grouped_flags.each do |shot, users| %>
       <tr>
         <th><%= user_icon(users.first, :tiny) %></th>
         <td colspan="2" class="text">
-          <%= users.uniq.to_sentence %> flagged this photo as <%= shot %>
+          <%= users.uniq.to_sentence %> tagged this photo as <%= shot %>
         </td>
       </tr>
       <% end %>
@@ -112,7 +95,7 @@
         <th><%= user_icon(c.user, :tiny) %></th>
         <td colspan="2" class="text">
           <span class="user"><%= user_link(c.user) %></span>
-          &ldquo;<%= c.text %>&rdquo;
+          <%= quoted_comment(c.text) %>
         </td>
       </tr>
     <% end %>
@@ -127,12 +110,11 @@
       </tr>
     </table>
 
-
-
   </div>
 <% end %>
 
 <% if @causes %>
+
 <fieldset>
   <legend>Recent Activity</legend>
   <div class="activity">
