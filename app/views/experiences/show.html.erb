@@ -91,7 +91,7 @@
     <% end %>
     <% m.comments.each do |c| %>
       <tr>
-        <th><%= user_icon(c.user.user, :tiny) %></th>
+        <th><%= user_icon(c.user, :tiny) %></th>
         <td colspan="2" class="text">
           <span class="user"><%= link_to(c.user, user_path(c.user)) %></span>
           &ldquo;<%= c.text %>&rdquo;
