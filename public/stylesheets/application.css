@@ -86,18 +86,6 @@
 .experience_controller #page_middle_box fieldset textarea {
   vertical-align: middle;
 }
-/* line 19, sass/controllers/_experience.sass */
-.experience_controller #page_middle_box .comment img {
-  padding-top: 6px;
-}
-/* line 21, sass/controllers/_experience.sass */
-.experience_controller #page_middle_box .comment a {
-  padding-left: 5px;
-}
-/* line 23, sass/controllers/_experience.sass */
-.experience_controller #page_middle_box .comment td.text {
-  padding-left: 5px;
-}
 
 /* line 3, sass/controllers/_session.sass */
 .session_controller #page_middle_box p {
@@ -161,15 +149,14 @@
 
 /* line 3, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form, .event_controller #page_middle_box form {
-  width: 700px;
   margin: 10px auto;
   text-align: left;
 }
-/* line 7, sass/controllers/_setting.sass */
+/* line 6, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset, .event_controller #page_middle_box form fieldset {
   margin-bottom: 20px;
 }
-/* line 10, sass/controllers/_setting.sass */
+/* line 9, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset legend img, .event_controller #page_middle_box form fieldset legend img {
   vertical-align: middle;
   margin-right: 10px;
@@ -181,53 +168,53 @@
   border-radius: 4px;
   border: 4px solid #efefef;
 }
-/* line 17, sass/controllers/_setting.sass */
+/* line 16, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset ol li, .event_controller #page_middle_box form fieldset ol li {
   padding: 5px;
   list-style: none;
 }
-/* line 21, sass/controllers/_setting.sass */
+/* line 20, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset ol li.error label, .event_controller #page_middle_box form fieldset ol li.error label {
   color: red;
 }
-/* line 23, sass/controllers/_setting.sass */
+/* line 22, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset ol li.error input, .event_controller #page_middle_box form fieldset ol li.error input {
   border-color: red;
 }
-/* line 25, sass/controllers/_setting.sass */
+/* line 24, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset ol li label, .event_controller #page_middle_box form fieldset ol li label {
   display: inline-block;
   _display: inline-block;
-  width: 150px;
+  width: 125px;
   text-align: right;
   padding: 5px;
 }
-/* line 31, sass/controllers/_setting.sass */
+/* line 30, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset ol li input, .event_controller #page_middle_box form fieldset ol li input {
   vertical-align: middle;
 }
-/* line 33, sass/controllers/_setting.sass */
+/* line 32, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset ol li span, .event_controller #page_middle_box form fieldset ol li span {
   font-size: 11px;
   font-style: italic;
   padding: 10px;
   text-shadow: 1px 1px 2px white;
 }
-/* line 38, sass/controllers/_setting.sass */
+/* line 37, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset ol li dfn, .event_controller #page_middle_box form fieldset ol li dfn {
   font-size: 13px;
 }
-/* line 40, sass/controllers/_setting.sass */
+/* line 39, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset ol li dfn a.unconfirmed, .event_controller #page_middle_box form fieldset ol li dfn a.unconfirmed {
   color: red;
 }
-/* line 42, sass/controllers/_setting.sass */
+/* line 41, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form fieldset ol li textarea, .event_controller #page_middle_box form fieldset ol li textarea {
   width: auto;
-  height: 40px;
+  height: auto;
   vertical-align: top;
 }
-/* line 46, sass/controllers/_setting.sass */
+/* line 45, sass/controllers/_setting.sass */
 .setting_controller #page_middle_box form p.submit, .event_controller #page_middle_box form p.submit {
   margin: 20px;
   text-align: center;
@@ -284,13 +271,13 @@
 /* line 1, sass/shared/_page.sass */
 #page_header {
   color: white;
-  height: 135px;
+  height: 115px;
   text-align: center;
   background: url(http://snappitt-assets.s3.amazonaws.com/header/header-bg.jpg) repeat scroll 0 0 #333333;
 }
 /* line 6, sass/shared/_page.sass */
 #page_header #page_header_box {
-  width: 970px;
+  width: 630px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 0 auto;
@@ -307,7 +294,7 @@
   font-family: Georgia;
   font-style: italic;
   margin: 0;
-  padding: 15px 0 5px;
+  padding: 5px 0 5px;
 }
 /* line 18, sass/shared/_page.sass */
 #page_header ul {
@@ -470,8 +457,8 @@
 /* line 108, sass/shared/_page.sass */
 #page_header #page_logout {
   position: absolute;
-  right: 50px;
-  top: 25px;
+  right: 10px;
+  top: 10px;
   color: #666666;
 }
 /* line 113, sass/shared/_page.sass */
@@ -612,7 +599,7 @@
 }
 /* line 161, sass/shared/_page.sass */
 #page_middle #page_middle_box {
-  width: 970px;
+  width: 630px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 0 auto;
@@ -637,7 +624,7 @@
 }
 /* line 175, sass/shared/_page.sass */
 #page_footer #page_footer_box {
-  width: 970px;
+  width: 630px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 0 auto;
@@ -936,7 +923,7 @@ table.feed td {
 div.experience_card {
   width: 292px;
   float: left;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 25px;
 }
 /* line 22, sass/shared/_experiences.sass */
@@ -1129,7 +1116,7 @@ div.experience_header fieldset.header {
 /* line 136, sass/shared/_experiences.sass */
 div.experience_header fieldset.header .main {
   position: relative;
-  margin-right: 310px;
+  margin-right: 250px;
 }
 /* line 139, sass/shared/_experiences.sass */
 div.experience_header fieldset.header .main h1 {
@@ -1148,8 +1135,8 @@ div.experience_header fieldset.header .main .collaborators img:hover {
 div.experience_header fieldset.header .side {
   position: absolute;
   top: 0;
-  right: -310px;
-  width: 310px;
+  right: -250px;
+  width: 250px;
   text-align: right;
 }
 /* line 154, sass/shared/_experiences.sass */
@@ -1248,44 +1235,34 @@ table.network td, table.split td {
   color: lightGray;
   text-align: left;
   font-size: 26px;
-  border-bottom: 5px solid #efefef;
 }
-/* line 9, sass/shared/_moment.sass */
+/* line 8, sass/shared/_moment.sass */
 .moment_card h2 small {
   font-size: 14px;
 }
-/* line 11, sass/shared/_moment.sass */
+/* line 10, sass/shared/_moment.sass */
 .moment_card .moment {
   position: relative;
-  text-align: center;
+  padding: 5px 0px;
+  background-color: #efefef;
 }
 /* line 14, sass/shared/_moment.sass */
-.moment_card .moment img {
-  margin: 0;
+.moment_card .moment .photo {
+  text-align: center;
 }
 /* line 16, sass/shared/_moment.sass */
-.moment_card .moment img.photo {
-  border: 6px solid #efefef;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -khtml-border-radius: 6px;
-  border-radius: 6px;
+.moment_card .moment .photo img {
+  max-width: 640px;
+  margin: 0;
 }
 /* line 19, sass/shared/_moment.sass */
-.moment_card .moment img.published {
+.moment_card .moment .photo img.published {
   width: 100px;
   position: absolute;
   bottom: 20px;
   right: 25%;
 }
 /* line 24, sass/shared/_moment.sass */
-.moment_card .avatar {
-  text-align: center;
-  padding: 10px;
-}
-/* line 27, sass/shared/_moment.sass */
 .moment_card .number {
   position: absolute;
   right: 0;
@@ -1294,31 +1271,34 @@ table.network td, table.split td {
   color: lightGray;
   text-align: right;
 }
-/* line 34, sass/shared/_moment.sass */
+/* line 31, sass/shared/_moment.sass */
 .moment_card textarea {
   height: 1.2em;
   vertical-align: middle;
 }
-/* line 37, sass/shared/_moment.sass */
-.moment_card.comment {
-  width: auto;
+/* line 34, sass/shared/_moment.sass */
+.moment_card .comment {
   margin: 0;
 }
-/* line 40, sass/shared/_moment.sass */
-.moment_card.comment td {
+/* line 36, sass/shared/_moment.sass */
+.moment_card .comment th {
+  padding: 3px;
+}
+/* line 38, sass/shared/_moment.sass */
+.moment_card .comment td {
+  padding: 3px;
   text-align: left;
 }
-/* line 42, sass/shared/_moment.sass */
+/* line 41, sass/shared/_moment.sass */
 .moment_card p {
   font-size: 13px;
   text-align: center;
 }
-/* line 45, sass/shared/_moment.sass */
+/* line 44, sass/shared/_moment.sass */
 .moment_card p.links {
-  text-align: left;
-  margin: 5px;
+  text-align: right;
 }
-/* line 48, sass/shared/_moment.sass */
+/* line 46, sass/shared/_moment.sass */
 .moment_card p.links a {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
@@ -1357,16 +1337,16 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
   box-shadow: none;
 }
-/* line 50, sass/shared/_moment.sass */
+/* line 48, sass/shared/_moment.sass */
 .moment_card p.admin {
   text-align: right;
 }
-/* line 52, sass/shared/_moment.sass */
+/* line 50, sass/shared/_moment.sass */
 .moment_card p.metadata {
   font-size: 11px;
   font-color: #999999;
 }
-/* line 56, sass/shared/_moment.sass */
+/* line 54, sass/shared/_moment.sass */
 .moment_card blockquote {
   margin: 10px auto;
   border: none;
@@ -1374,7 +1354,7 @@ table.network td, table.split td {
   padding: 0;
   text-align: center;
 }
-/* line 63, sass/shared/_moment.sass */
+/* line 61, sass/shared/_moment.sass */
 .moment_card input[type="submit"] {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
@@ -1415,7 +1395,7 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
   box-shadow: none;
 }
-/* line 67, sass/shared/_moment.sass */
+/* line 65, sass/shared/_moment.sass */
 .moment_card span.source {
   border-bottom: 1px dotted lightBlue;
 }

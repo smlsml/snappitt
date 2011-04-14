@@ -40,105 +40,90 @@
 <% @experience.moments.each do |m| %>
   <a name="<%= m.id %>"></a>
   <div class="moment_card">
-    <h2><%= m.time %><small><%= m.asset.device %></small></h2>
+    <h2>
+      <span class="time"><%= m.time %></span>
+      <small><%= m.asset.device if m.asset %></small>
+    </h2>
+
     <div class="number">moment #<%= cnt -= 1 %></div>
-    <table width="100%">
+    <div class="moment">
+      <div class="photo">
+        <%= image_tag(m.photo_url(:large), :class => 'photo') %>
+        <%= ('<img src="%s" class="published"/>' % SiteAssets[:published]).html_safe if m.published? %>
+      </div>
+
+      <blockquote><%= (t(:lq).html_safe << m.caption << t(:rq).html_safe) unless m.caption.to_s.blank? %></blockquote>
+      <p class="metadata">
+        Uploaded at <%= m.created_at.to_formatted_s(:mdy) %> by
+        <%= link_to(m.user, user_path(m.user), :title => m.user.profile.realname) %>
+        <%= (' via <span title="%s" class="source">%s&deg;</span>' % [m.source.name, m.source.short]).html_safe if m.source %>
+        <% if m.asset %>
+          <br/>
+          <%= 'Taken' if m.asset.taken_at || m.asset.device || m.asset.lat %>
+          <%= 'on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
+          <%= ' with %s' % m.asset.device if m.asset.device %>
+          <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s</a>' % [m.asset.lat, m.asset.lng, m.asset.geolocation]).html_safe if m.asset.lat %>
+        <% end %>
+      </p>
+
+    </div>
+
+    <table class="comment" width="100%">
       <tr>
-        <td colspan="2" style="background-color: #EFEFEF">
-          <div class="moment">
-            <%= image_tag(m.photo_url(:large), :class => 'photo') %>
-            <%= ('<img src="%s" class="published"/>' % SiteAssets[:published]).html_safe if m.published? %>
-          </div>
-        </td>
-        <td width="308" valign="bottom" style="vertical-align: bottom">
-          <div class="avatar">
-            <%= link_to(image_tag(m.user.profile.photo_url(:avatar)), user_path(m.user)) %>
-          </div>
-          <blockquote><%= (t(:lq).html_safe << m.caption << t(:rq).html_safe) unless m.caption.blank? %></blockquote>
-          <p class="metadata">
-            Uploaded at <%= m.created_at.to_formatted_s(:mdy) %> by
-            <%= link_to(m.user, user_path(m.user), :title => m.user.profile.realname) %>
-            <%= (' via <span title="%s" class="source">%s&deg;</span>' % [m.source.name, m.source.short]).html_safe if m.source %>
-            <% if m.asset %>
-              <br/>
-              <%= 'Taken' if m.asset.taken_at || m.asset.device || m.asset.lat %>
-              <%= 'on %s' % m.asset.taken_at.to_formatted_s(:mdy) if m.asset.taken_at %>
-              <%= ' with %s' % m.asset.device if m.asset.device %>
-              <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s</a>' % [m.asset.lat, m.asset.lng, m.asset.geolocation]).html_safe if m.asset.lat %>
-            <% end %>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 5px">
+        <th><%= user_icon(m.user, :tiny) %></th>
+        <td><%= m.user %> uploaded this moment</td>
+        <td style="text-align: right">
           <p class="links">
             <%= link_to('Like', like_experience_moment_path(@experience, m)) %> &nbsp;
-          </p>
-        </td>
-        <td style="padding: 5px">
-          <p class="links admin">
             <%= link_to('Publish', publish_experience_moment_path(@experience, m)) if !m.published? && can_publish? %> &nbsp;
             <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
           </p>
         </td>
-        <td width="308">
-
+      </tr>
+    <% if m.likes.count > 0 %>
+    <% first_like = m.likes.first %>
+      <tr>
+        <th><%= user_icon(first_like.user, :tiny) %></th>
+        <td colspan="2" class="text">
+          <%= m.likes.collect{|l| l.user}.uniq.compact.to_sentence %> liked this moment
         </td>
       </tr>
+    <% end %>
+    <% m.comments.each do |c| %>
       <tr>
+        <th><%= user_icon(c.user.user, :tiny) %></th>
+        <td colspan="2" class="text">
+          <span class="user"><%= link_to(c.user, user_path(c.user)) %></span>
+          &ldquo;<%= c.text %>&rdquo;
+        </td>
+      </tr>
+    <% end %>
+      <tr>
+        <th></th>
         <td colspan="2">
-
-          <table class="comment">
-          <% if m.likes.count > 0 %>
-          <% first_like = m.likes.first %>
-            <tr>
-              <td>
-                <%= link_to(image_tag(first_like.user.profile.photo_url,
-                                      :width => 24,
-                                      :height => 24,
-                                      :alt => first_like.user),
-                            user_path(first_like.user)) %>
-              </td>
-              <td><%= link_to(first_like.user, user_path(first_like.user)) %></td>
-              <td class="text"><%= m.likes.count > 1 ? (' and %s others' % (m.likes.count - 1)) : '' %> liked this moment</td>
-            </tr>
-          <% end %>
-          <% m.comments.each do |c| %>
-            <tr>
-              <td>
-                <%= link_to(image_tag(c.user.profile.photo_url,
-                                      :width => 24,
-                                      :height => 24,
-                                     :alt => c.user),
-                            user_path(c.user)) %>
-              </td>
-              <td><%= link_to(c.user, user_path(c.user)) %></td>
-              <td class="text">"<%= c.text %>"</td>
-            </tr>
-          <% end %>
-          </table>
-
           <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
-            <textarea name="comment" rows="1" cols="44" class="auto"></textarea>
+            <textarea name="comment" rows="1" cols="55" class="auto"></textarea>
             <input type="submit" value="Add Comment"/><br/>
           <% end %>
-
-        </td>
-        <td width="308">
-
         </td>
       </tr>
     </table>
+
+
+
   </div>
 <% end %>
 
 <% if @causes %>
-<div class="activity">
-<h2>Recent Activity</h2>
-  <ol>
-    <% @causes.each do |action| %>
-      <li><%= action.summary(Cause::Decorator.new(@user)) %></li>
-    <% end %>
-  </ol>
-</div>
+<fieldset>
+  <legend>Recent Activity</legend>
+  <div class="activity">
+    <ol>
+      <% @causes.each do |action| %>
+        <li><%= action.summary(Cause::Decorator.new(@user)) %></li>
+      <% end %>
+    </ol>
+  </div>
+</fieldset>
+
 <% end %>

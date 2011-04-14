@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   end
 
   def home
-    @experiences = Experience.user_feed(current_user)
+    @experiences = Experience.user_feed(current_user).limit(30)
     render :home
   end
 

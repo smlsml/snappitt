@@ -5,25 +5,22 @@
     color: lightGray
     text-align: left
     font-size: 26px
-    border-bottom: 5px solid $graySmoke
     small
       font-size: 14px
   .moment
     position: relative
-    text-align: center
-    img
-      margin: 0
-      &.photo
-        border: 6px solid $graySmoke
-        @include border-radius(6px)
-      &.published
-        width: 100px
-        position: absolute
-        bottom: 20px
-        right: 25%
-  .avatar
-    text-align: center
-    padding: 10px
+    padding: 5px 0px
+    background-color: $graySmoke
+    .photo
+      text-align: center
+      img
+        max-width: 640px
+        margin: 0
+        &.published
+          width: 100px
+          position: absolute
+          bottom: 20px
+          right: 25%
   .number
     position: absolute
     right: 0
@@ -34,17 +31,18 @@
   textarea
     height: 1.2em
     vertical-align: middle
-  &.comment
-    width: auto
+  .comment
     margin: 0
+    th
+      padding: 3px
     td
+      padding: 3px
       text-align: left
   p
     font-size: 13px
     text-align: center
     &.links
-      text-align: left
-      margin: 5px
+      text-align: right
       a
         @include snappitt_button
     &.admin
