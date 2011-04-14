@@ -1129,7 +1129,7 @@ div.experience_header fieldset.header .main .collaborators img {
 }
 /* line 145, sass/shared/_experiences.sass */
 div.experience_header fieldset.header .main .collaborators img:hover {
-  border-color: lightGray;
+  border-color: #999999;
 }
 /* line 148, sass/shared/_experiences.sass */
 div.experience_header fieldset.header .side {
@@ -1232,7 +1232,7 @@ table.network td, table.split td {
 }
 /* line 4, sass/shared/_moment.sass */
 .moment_card h2 {
-  color: lightGray;
+  color: #999999;
   text-align: left;
   font-size: 26px;
 }
@@ -1268,7 +1268,7 @@ table.network td, table.split td {
   right: 0;
   top: 15px;
   font-size: 14px;
-  color: lightGray;
+  color: #999999;
   text-align: right;
 }
 /* line 31, sass/shared/_moment.sass */
@@ -1550,26 +1550,27 @@ form textarea:focus {
   font-family: "Helvetica Neue", Arial, Sans Serif;
   text-shadow: 0 1px 0px white;
   background-color: #d9d9d9;
+  font-size: 20px;
 }
-/* line 6, sass/shared/_flashmessage.sass */
+/* line 7, sass/shared/_flashmessage.sass */
 .flash.notice {
   color: #009ad7;
   background: #bde5f8;
   border-bottom: 1px solid #009ad7;
 }
-/* line 10, sass/shared/_flashmessage.sass */
+/* line 11, sass/shared/_flashmessage.sass */
 .flash.alert {
   color: #d8000c;
   background: #ffbaba;
   border-bottom: 1px solid #d8000c;
 }
-/* line 14, sass/shared/_flashmessage.sass */
+/* line 15, sass/shared/_flashmessage.sass */
 .flash.error {
   color: #d8000c;
   background: #ffbaba;
   border-bottom: 1px solid #d8000c;
 }
-/* line 18, sass/shared/_flashmessage.sass */
+/* line 19, sass/shared/_flashmessage.sass */
 .flash.success {
   color: #4f8a10;
   background: #dff2bf;
