@@ -6,4 +6,9 @@ class CaptionComment < Comment
     text
   end
 
+  def html_quoted
+    return '' if text.strip.blank?
+    '&ldquo;'.html_safe << text << '&rdquo;'.html_safe
+  end
+
 end

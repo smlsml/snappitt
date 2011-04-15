@@ -1286,12 +1286,12 @@ table.network td, table.split td {
 }
 /* line 10, sass/shared/_moment.sass */
 .moment_card .moment {
-  position: relative;
   padding: 5px 0px;
   background-color: #efefef;
 }
-/* line 14, sass/shared/_moment.sass */
+/* line 13, sass/shared/_moment.sass */
 .moment_card .moment .photo {
+  position: relative;
   text-align: center;
 }
 /* line 16, sass/shared/_moment.sass */
@@ -1303,8 +1303,8 @@ table.network td, table.split td {
 .moment_card .moment .photo img.published {
   width: 100px;
   position: absolute;
-  bottom: 20px;
-  right: 25%;
+  bottom: 10px;
+  left: 10px;
 }
 /* line 24, sass/shared/_moment.sass */
 .moment_card .number {
@@ -1391,14 +1391,6 @@ table.network td, table.split td {
   font-color: #999999;
 }
 /* line 54, sass/shared/_moment.sass */
-.moment_card blockquote {
-  margin: 10px auto;
-  border: none;
-  font-style: italic;
-  padding: 0;
-  text-align: center;
-}
-/* line 61, sass/shared/_moment.sass */
 .moment_card input[type="submit"] {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
@@ -1439,9 +1431,72 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
   box-shadow: none;
 }
-/* line 65, sass/shared/_moment.sass */
+/* line 58, sass/shared/_moment.sass */
 .moment_card span.source {
   border-bottom: 1px dotted lightBlue;
+}
+/* line 61, sass/shared/_moment.sass */
+.moment_card .actions {
+  position: relative;
+  text-align: center;
+  margin-left: 125px;
+  margin-right: 125px;
+  padding: 5px;
+}
+/* line 67, sass/shared/_moment.sass */
+.moment_card .actions .button {
+  position: absolute;
+  width: 125px;
+  bottom: 10px;
+}
+/* line 71, sass/shared/_moment.sass */
+.moment_card .actions .button a {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
+  background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
+  background-image: linear-gradient(top, #efefef 0%, #d8d8d8 100%);
+  border: 1px solid #ababab;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  color: #707070;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  outline: medium none;
+  padding: 5px 10px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+/* line 22, sass/application.sass */
+.moment_card .actions .button a:hover {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #e3e3e3));
+  background-image: -moz-linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
+  background-image: linear-gradient(top, #f6f6f6 0%, #e3e3e3 100%);
+  cursor: pointer;
+  text-decoration: none;
+}
+/* line 26, sass/application.sass */
+.moment_card .actions .button a:active {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f6f6f6));
+  background-image: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
+  background-image: linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%);
+  box-shadow: none;
+}
+/* line 73, sass/shared/_moment.sass */
+.moment_card .actions .button.l {
+  left: -115px;
+  text-align: left;
+}
+/* line 76, sass/shared/_moment.sass */
+.moment_card .actions .button.r {
+  right: -115px;
+  text-align: right;
 }
 
 /* line 2, sass/shared/_form.sass */

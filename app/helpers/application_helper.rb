@@ -56,6 +56,10 @@ module ApplicationHelper
     link_to(user, user_path(user), :title => user.profile.realname_unless)
   end
 
+  def quoted_comment(text)
+    t(:lq).html_safe << text << t(:rq).html_safe unless text.to_s.strip.blank?
+  end
+
   def container(options = {}, &block)
     out = ""
     main_content = capture(&block)
