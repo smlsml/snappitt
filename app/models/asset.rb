@@ -1,3 +1,4 @@
+
 require "RMagick"
 
 class Asset < ActiveRecord::Base
@@ -41,7 +42,7 @@ class Asset < ActiveRecord::Base
   after_create :request_geocode
 
   def post_process
-    imgfile = ::Magick::Image.read(data.queued_for_write[:original].path).first
+    imgfile = ::Magick::Image.read(data.queued_for_write[:original].path).first rescue nil
 
     return unless imgfile
 

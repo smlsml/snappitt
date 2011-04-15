@@ -82,6 +82,12 @@
     </div>
 
     <table class="comment" width="100%">
+      <tr>
+        <th><%= user_icon(m.user, :tiny) %></th>
+        <td colspan="2">
+          <%= user_link(m.user) %> <%= quoted_comment(m.caption) || 'uploaded this moment via %s' % m.source.short.html_safe if m.source %>
+        </td>
+      </tr>
     <% if m.likes.count > 0 %>
       <% m.grouped_flags.each do |shot, users| %>
       <tr>
