@@ -28,7 +28,6 @@
         </div>
         <%= link_to('Add Moment', edit_experience_path(@experience), :class => 'button') %>
         <%= link_to('Delete Experience', experience_path(@experience), :class => 'button', :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.user) %><br/>
-        <h3 style="padding-top: 5px"><%= link_to('Back to LIST View', experience_path(@experience)) %></h3>
       </div>
 
     </div>
@@ -36,13 +35,17 @@
   </fieldset>
 </div>
 
+<div class="grid">
 <% @experience.moments.each do |m| %>
   <%= image_tag(m.photo_url(:avatar), :class => 'photo', :onclick => "$('m').show().update('<img src=\"#{SiteAssets[:loading]}\"/>'); new Ajax.Updater('m','#{one_experience_moment_url(@experience,m)}',{method: 'get'})") %>
 <% end %>
+</div>
 
 <div id="m" style="min-height: 300px">
   <h2>Choose an Image</h2>
 </div>
+
+<h3 style="padding-top: 5px"><%= link_to('View All At Once', experience_path(@experience, :normal => 1)) %></h3>
 
 <% if @causes %>
 
@@ -57,4 +60,13 @@
   </div>
 </fieldset>
 
+<% end %>
+
+<%= javascript_tag do %>
+  if( location.hash ) {
+    var u = '<%= one_experience_moment_url(@experience,0) %>';
+    u = u.replace('/0/','/'+location.hash.substr(1)+'/');
+    $('m').show().update('<img src="<%= SiteAssets[:loading] %>"/>');
+    new Ajax.Updater('m',u,{method: 'get'});
+  }
 <% end %>
