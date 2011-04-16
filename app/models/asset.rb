@@ -22,8 +22,8 @@ class Asset < ActiveRecord::Base
                       :path => ":id/:style_:extension",
                       :bucket => lambda { |attachment|
                         id = attachment.instance.id
-                        p attachment.class
-                        p attachment.instance
+                        #p attachment.class
+                        #p attachment.instance
                         num = 0
                         #num = id % 3 if id.to_i > 526
                         "snappitt#{num}"
