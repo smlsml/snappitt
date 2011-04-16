@@ -97,7 +97,8 @@ class ExperiencesController < ApplicationController
       file.original_filename = attachment.filename
       file.content_type = attachment.mime_type
 
-      asset = PhotoAsset.create(:user => @user, :source => @source, :data => file)
+      asset = PhotoAsset.create(:user => @user, :source => @source)
+      asset.data = file
       moment.asset = asset if asset
 
       @experience.moments << moment
