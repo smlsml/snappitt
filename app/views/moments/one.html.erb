@@ -27,7 +27,7 @@
       <%= select(:like,
                  :shot,
                  LikeFlag::SHOTS,
-                 {:prompt => "Tag Photo:",
+                 {:prompt => "Flag Photo:",
                   :selected => m.likes.by_user(current_user).first.try(:shot)},
                  {:id => 'like_%s' % m.id,
                   :onchange => "new Ajax.Request('%s?shot='+this.value, {method: 'get', onSuccess: function(transport) {new Effect.Highlight(this.up())}.bind(this)})" % like_experience_moment_path(@experience, m)}) %>
@@ -52,7 +52,7 @@
     <tr>
       <th><%= user_icon(users.first, :tiny) %></th>
       <td colspan="2" class="text">
-        <%= users.uniq.to_sentence %> tagged this photo as <%= shot %>
+        <%= user_link(users.first) %> <%= 'and %s others' % (users.count - 1) if users.count > 1 %> flagged this photo as <%= shot %>
       </td>
     </tr>
     <% end %>

@@ -7,7 +7,7 @@ class LikeFlag < MomentFlag
 
   class CreateCause < Cause
     include Cause::HasNotifications
-    def verb; 'tagged'; end
+    def verb; 'flagged'; end
   end
 
   after_create :create_cause
