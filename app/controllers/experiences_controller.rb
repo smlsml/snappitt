@@ -55,14 +55,11 @@ class ExperiencesController < ApplicationController
       file.original_filename = attachment.filename
       file.content_type = attachment.mime_type
 
-      asset = PhotoAsset.new(:data => file)
+      asset = PhotoAsset.create(:user => @user, :source => @source, :data => file)
 
       if asset
-        asset.user = @user
-        asset.source = @source
-        profile = @user.profile
-        profile.photo_asset = asset
-        profile.save!
+        @user.profile.photo_asset = asset
+        @user.profile.save!
       end
 
       return head(:created)
@@ -91,7 +88,7 @@ class ExperiencesController < ApplicationController
 
     @message.attachments.each do |attachment|
       moment = Moment.new
-      moment.create_caption(:text => (params[:plain].blank? && !@experience.new_record?) ? @subject : params[:plain], :user => @user)
+      moment.create_caption(:text => @subject, :user => @user)
       moment.user = @user
       moment.source = @source
 
@@ -100,19 +97,14 @@ class ExperiencesController < ApplicationController
       file.original_filename = attachment.filename
       file.content_type = attachment.mime_type
 
-      asset = PhotoAsset.new(:data => file)
-
-      if asset
-        asset.user = @user
-        asset.source = @source
-        moment.asset = asset
-      end
+      asset = PhotoAsset.create(:user => @user, :source => @source, :data => file)
+      moment.asset = asset if asset
 
       @experience.moments << moment
     end
 
     @experience.save!
-    ExperienceMailer.upload_notification(@experience, @user).deliver
+    ExperienceMailer.upload_notification(@experience, @user).deliver rescue nil
 
     head(:created)
   end

@@ -1,10 +1,8 @@
-<fieldset style="width: 400px; margin: 0 auto; margin-bottom: 15px">
+<fieldset style="text-align: left; margin: 0 auto; margin-bottom: 15px">
   <legend>New stuff!</legend>
   <ul>
-    <li>Instant update photo tags (no page reload)</li>
-    <li>Change Like to photo tags like "Nice!", "Artsy", etc</li>
-    <li>Shrink pages to 640px wide</li>
-    <li>Added <%= link_to('email notification settings', user_settings_path(current_user, :anchor => 'email')) %></li>
+    <li>Added <%= link_to('time zone selection', user_settings_path(current_user, :anchor => 'profile')) %> to settings</li>
+    <li>All dates and times now shown in Pacific time by default</li>
   </ul>
 </fieldset>
 

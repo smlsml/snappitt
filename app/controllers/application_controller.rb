@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :set_nav
+  before_filter :set_timezone
   before_filter :force_reset
   before_filter :downcase
 
@@ -21,6 +22,11 @@ class ApplicationController < ActionController::Base
 
     def set_nav
       @nav_location = self.class.name.to_s.gsub('Controller', '').gsub('::','_').downcase
+    end
+
+    def set_timezone
+      tz = current_user.try(:profile).try(:timezone)
+      Time.zone = tz if tz
     end
 
     def previous_page

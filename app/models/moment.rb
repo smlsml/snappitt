@@ -49,7 +49,7 @@ class Moment < ActiveRecord::Base
   end
 
   def time
-    self.created_at.getlocal.to_formatted_s(:timem).downcase
+    self.created_at.to_formatted_s(:timem).downcase
   end
 
   def grouped_flags

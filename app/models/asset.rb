@@ -20,7 +20,12 @@ class Asset < ActiveRecord::Base
                       :storage => :s3,
                       :s3_credentials => "#{Rails.root}/config/s3.yml",
                       :path => ":id/:style_:extension",
-                      :bucket => "snappitt0"
+                      :bucket => lambda { |attachment|
+                        id = attachment.instance.id
+                        num = 0
+                        num = id % 3 if id.to_i > 510
+                        "snappitt#{num}"
+                      }
   else
     has_attached_file :data,
                       :styles => {:tiny => "24x24#",

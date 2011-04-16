@@ -42,6 +42,7 @@
 
   </fieldset>
 
+  <a name="profile"></a>
   <fieldset>
     <legend><%= image_tag( @profile.photo_url, :alt => @user ) %>Profile</legend>
 
@@ -57,6 +58,12 @@
         <%= p.label :realname %>
         <%= p.text_field :realname %>
         <span>Helps friends to find you</span>
+      </li>
+
+      <li>
+        <%= p.label :timezone %>
+        <%= p.time_zone_select(:timezone, ActiveSupport::TimeZone.us_zones, :default => "Pacific Time (US & Canada)") %>
+        <span>Correct times for you</span>
       </li>
 
       <li>
