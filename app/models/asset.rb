@@ -23,7 +23,7 @@ class Asset < ActiveRecord::Base
                       :bucket => lambda { |attachment|
                         id = attachment.instance.id
                         num = 0
-                        num = id % 3 if id.to_i > 510
+                        num = id % 3 if id.to_i > 525
                         "snappitt#{num}"
                       }
   else
