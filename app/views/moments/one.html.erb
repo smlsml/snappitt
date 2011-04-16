@@ -70,7 +70,8 @@
       <th></th>
       <td colspan="2">
         <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
-          <textarea name="comment" rows="1" cols="55" class="auto"></textarea>
+          <%= select(:moment, :quick, ['Nice!','omg','lol','wtf?','Wow','Cool','Meh'], {:prompt => 'Quick:'}, {:onchange => 'this.form.submit()'}) %>
+          <textarea name="comment" rows="1" cols="45" class="auto"></textarea>
           <input type="submit" value="Add Comment"/><br/>
         <% end %>
       </td>

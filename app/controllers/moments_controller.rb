@@ -42,8 +42,9 @@ class MomentsController < ApplicationController
   def comment
     @user = current_user
     @moment = Moment.find(params[:id])
+    @quick = params[:moment][:quick]
 
-    MomentComment.create!(:user => @user, :moment => @moment, :text => params[:comment].to_s.strip)
+    MomentComment.create!(:user => @user, :moment => @moment, :text => (@quick.blank? ? params[:comment] : @quick).to_s.strip)
 
     flash[:success] = 'Added comment'
 

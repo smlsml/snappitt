@@ -27,6 +27,8 @@ class Moment < ActiveRecord::Base
 
   #--
 
+  attr_accessor :quick
+
   def photo_url(type = :thumb)
     url = asset.data.url(type) if asset
     url || PhotoAsset.default_url(type)
