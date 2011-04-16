@@ -2,6 +2,13 @@ class MomentsController < ApplicationController
   before_filter :authenticate_user!, :only => [:like, :comment]
 
   def show
+    @moment = Moment.find(params[:id])
+  end
+
+  def one
+    @moment = Moment.find(params[:id])
+    @experience = @moment.experience
+    render :one, :layout => false
   end
 
   def publish

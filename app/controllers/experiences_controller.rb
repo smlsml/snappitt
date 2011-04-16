@@ -121,6 +121,8 @@ class ExperiencesController < ApplicationController
     @causes = Cause.reject_deleted(Cause.for_experience(@experience).limit(20))
 
     @experience.increment!(:views, 1) unless is_bot?
+
+    render :grid if params[:grid]
   end
 
   def create
