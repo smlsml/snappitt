@@ -27,6 +27,8 @@ class Moment < ActiveRecord::Base
 
   #--
 
+  attr_accessor :quick
+
   def photo_url(type = :thumb)
     url = asset.data.url(type) if asset
     url || PhotoAsset.default_url(type)
@@ -49,7 +51,7 @@ class Moment < ActiveRecord::Base
   end
 
   def time
-    self.created_at.getlocal.to_formatted_s(:timem).downcase
+    self.created_at.to_formatted_s(:timem).downcase
   end
 
   def grouped_flags

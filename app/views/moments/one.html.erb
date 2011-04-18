@@ -1,0 +1,81 @@
+<% m = @moment %>
+<div class="moment_card">
+  <h2>
+    <span class="time"><%= m.time %></span>
+    <small><%= m.created_at.to_formatted_s(:mdyz) %></small>
+  </h2>
+
+  <div class="moment">
+    <div class="photo"><%= image_tag(m.photo_url(:large), :class => 'photo') %>
+      <%= ('<img src="%s" class="published"/>' % SiteAssets[:published]).html_safe if m.published? %>
+    </div>
+
+    <p class="metadata">
+      <% if m.asset %>
+        <%= 'Taken' if m.asset.taken_at || m.asset.device || m.asset.lat %>
+        <%= ' with %s' % m.asset.device if m.asset.device %>
+        <%= (' near <a href="http://maps.google.com/?q=%s,%s" target="_blank">%s</a>' % [m.asset.lat, m.asset.lng, m.asset.geolocation]).html_safe if m.asset.lat %>
+      <% end %>
+    </p>
+
+    <div class="actions">
+      <div class="button l">
+        <%= link_to('Publish', publish_experience_moment_path(@experience, m)) if !m.published? && can_publish? %>
+      </div>
+
+      <% if current_user %>
+      <%= select(:like,
+                 :shot,
+                 LikeFlag::SHOTS,
+                 {:prompt => "Flag Photo:",
+                  :selected => m.likes.by_user(current_user).first.try(:shot)},
+                 {:id => 'like_%s' % m.id,
+                  :onchange => "new Ajax.Request('%s?shot='+this.value, {method: 'get', onSuccess: function(transport) {new Effect.Highlight(this.up())}.bind(this)})" % like_experience_moment_path(@experience, m)}) %>
+      <% end %>
+
+      <div class="button r">
+        <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
+      </div>
+    </div>
+
+  </div>
+
+  <table class="comment" width="100%">
+    <tr>
+      <th><%= user_icon(m.user, :tiny) %></th>
+      <td colspan="2">
+        <%= user_link(m.user) %> <%= quoted_comment(m.caption) || 'uploaded this moment via %s' % m.source.short.html_safe if m.source %>
+      </td>
+    </tr>
+  <% if m.likes.count > 0 %>
+    <% m.grouped_flags.each do |shot, users| %>
+    <tr>
+      <th><%= user_icon(users.first, :tiny) %></th>
+      <td colspan="2" class="text">
+        <%= user_link(users.first) %> <%= 'and %s others' % (users.count - 1) if users.count > 1 %> flagged this photo as <%= shot %>
+      </td>
+    </tr>
+    <% end %>
+  <% end %>
+  <% m.comments.each do |c| %>
+    <tr>
+      <th><%= user_icon(c.user, :tiny) %></th>
+      <td colspan="2" class="text">
+        <span class="user"><%= user_link(c.user) %></span>
+        <%= quoted_comment(c.text) %>
+      </td>
+    </tr>
+  <% end %>
+    <tr>
+      <th></th>
+      <td colspan="2">
+        <%= form_for(:moment, :url => comment_experience_moment_path(@experience, m)) do %>
+          <%= select(:moment, :quick, ['Nice!','omg','lol','wtf?','Wow','Cool','Meh'], {:prompt => 'Quick:'}, {:onchange => 'this.form.submit()'}) %>
+          <textarea name="comment" rows="1" cols="45" class="auto"></textarea>
+          <input type="submit" value="Add Comment"/><br/>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+</div>

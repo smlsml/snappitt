@@ -24,6 +24,7 @@ Photo::Application.routes.draw do
     resources :moments, :only => [:show, :destroy] do
       get 'publish', :on => :member
       get 'like', :on => :member
+      get 'one', :on => :member
       post 'comment', :on => :member
     end
   end

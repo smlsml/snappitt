@@ -2,6 +2,13 @@ class MomentsController < ApplicationController
   before_filter :authenticate_user!, :only => [:like, :comment]
 
   def show
+    @moment = Moment.find(params[:id])
+  end
+
+  def one
+    @moment = Moment.find(params[:id])
+    @experience = @moment.experience
+    render :one, :layout => false
   end
 
   def publish
@@ -35,8 +42,9 @@ class MomentsController < ApplicationController
   def comment
     @user = current_user
     @moment = Moment.find(params[:id])
+    @quick = params[:moment][:quick]
 
-    MomentComment.create!(:user => @user, :moment => @moment, :text => params[:comment].to_s.strip)
+    MomentComment.create!(:user => @user, :moment => @moment, :text => (@quick.blank? ? params[:comment] : @quick).to_s.strip)
 
     flash[:success] = 'Added comment'
 

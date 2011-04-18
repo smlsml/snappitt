@@ -1,3 +1,4 @@
+
 require "RMagick"
 
 class Asset < ActiveRecord::Base
@@ -19,7 +20,14 @@ class Asset < ActiveRecord::Base
                       :storage => :s3,
                       :s3_credentials => "#{Rails.root}/config/s3.yml",
                       :path => ":id/:style_:extension",
-                      :bucket => "snappitt0"
+                      :bucket => lambda { |attachment|
+                        id = attachment.instance.id
+                        #p attachment.class
+                        #p attachment.instance
+                        num = 0
+                        #num = id % 3 if id.to_i > 526
+                        "snappitt#{num}"
+                      }
   else
     has_attached_file :data,
                       :styles => {:tiny => "24x24#",
@@ -41,7 +49,7 @@ class Asset < ActiveRecord::Base
   after_create :request_geocode
 
   def post_process
-    imgfile = ::Magick::Image.read(data.queued_for_write[:original].path).first
+    imgfile = ::Magick::Image.read(data.queued_for_write[:original].path).first rescue nil
 
     return unless imgfile
 
