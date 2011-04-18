@@ -28,21 +28,21 @@
 }
 
 /* line 4, sass/controllers/_experience.sass */
-.experience_controller #page_middle_box fieldset.upload {
+.experience_controller #page_middle_box fieldset.upload_email, .experience_controller #page_middle_box .upload_form {
   width: 600px;
   margin: 0 auto;
 }
 /* line 5, sass/controllers/_experience.sass */
-.experience_controller #page_middle_box fieldset.upload label {
+.experience_controller #page_middle_box fieldset.upload_email label, .experience_controller #page_middle_box .upload_form label {
   display: block;
 }
 /* line 9, sass/controllers/_experience.sass */
-.experience_controller #page_middle_box fieldset.upload textarea {
+.experience_controller #page_middle_box fieldset.upload_email textarea, .experience_controller #page_middle_box .upload_form textarea {
   width: auto;
   height: auto;
 }
 /* line 12, sass/controllers/_experience.sass */
-.experience_controller #page_middle_box fieldset.upload input[type="submit"] {
+.experience_controller #page_middle_box fieldset.upload_email input[type="submit"], .experience_controller #page_middle_box .upload_form input[type="submit"] {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -moz-linear-gradient(top, #c1e445 0%, #a7d727 100%);
   background-image: linear-gradient(top, #c1e445 0%, #a7d727 100%);
@@ -68,7 +68,7 @@
   margin: 10px auto;
 }
 /* line 46, sass/application.sass */
-.experience_controller #page_middle_box fieldset.upload input[type="submit"]:hover {
+.experience_controller #page_middle_box fieldset.upload_email input[type="submit"]:hover, .experience_controller #page_middle_box .upload_form input[type="submit"]:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #cbf048), color-stop(100%, #b3e529));
   background-image: -moz-linear-gradient(top, #cbf048 0%, #b3e529 100%);
   background-image: linear-gradient(top, #cbf048 0%, #b3e529 100%);
@@ -76,7 +76,7 @@
   text-decoration: none;
 }
 /* line 50, sass/application.sass */
-.experience_controller #page_middle_box fieldset.upload input[type="submit"]:active {
+.experience_controller #page_middle_box fieldset.upload_email input[type="submit"]:active, .experience_controller #page_middle_box .upload_form input[type="submit"]:active {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b3e529), color-stop(100%, #cbf048));
   background-image: -moz-linear-gradient(top, #b3e529 0%, #cbf048 100%);
   background-image: linear-gradient(top, #b3e529 0%, #cbf048 100%);
@@ -85,6 +85,42 @@
 /* line 16, sass/controllers/_experience.sass */
 .experience_controller #page_middle_box fieldset textarea {
   vertical-align: middle;
+}
+/* line 19, sass/controllers/_experience.sass */
+.experience_controller #page_middle_box .thebasics ul {
+  position: relative;
+  width: 630px;
+}
+/* line 23, sass/controllers/_experience.sass */
+.experience_controller #page_middle_box .thebasics ul img {
+  margin-bottom: 5px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: #666666 0 1px 2px 0;
+  -webkit-box-shadow: #666666 0 1px 2px 0;
+  -o-box-shadow: #666666 0 1px 2px 0;
+  box-shadow: #666666 0 1px 2px 0;
+}
+/* line 27, sass/controllers/_experience.sass */
+.experience_controller #page_middle_box .thebasics ul li {
+  float: left;
+  width: 190px;
+  padding: 10px;
+  text-align: left;
+}
+/* line 32, sass/controllers/_experience.sass */
+.experience_controller #page_middle_box .thebasics ul li h2 {
+  font-weight: bold;
+  font-size: 15px;
+}
+/* line 35, sass/controllers/_experience.sass */
+.experience_controller #page_middle_box .thebasics ul li p {
+  font-size: 13px;
+  line-height: 1.3em;
 }
 
 /* line 3, sass/controllers/_session.sass */
@@ -723,89 +759,90 @@ h1 {
   font-size: 24px;
   color: #666666;
   text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
+  font-weight: bold;
 }
 
-/* line 13, sass/shared/_base.sass */
+/* line 15, sass/shared/_base.sass */
 h2 {
   font-size: 20px;
   color: #666666;
   text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* line 18, sass/shared/_base.sass */
+/* line 20, sass/shared/_base.sass */
 h3 {
   font-size: 18px;
   color: #666666;
   text-shadow: 0px -1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* line 23, sass/shared/_base.sass */
+/* line 25, sass/shared/_base.sass */
 a {
   color: #009ad7;
   text-decoration: none;
 }
-/* line 26, sass/shared/_base.sass */
+/* line 28, sass/shared/_base.sass */
 a:visited {
   color: #009ad7;
 }
-/* line 28, sass/shared/_base.sass */
+/* line 30, sass/shared/_base.sass */
 a:hover {
   text-decoration: underline;
 }
-/* line 30, sass/shared/_base.sass */
+/* line 32, sass/shared/_base.sass */
 a:focus {
   color: #009ad7;
 }
 
-/* line 33, sass/shared/_base.sass */
+/* line 35, sass/shared/_base.sass */
 textarea.auto {
   height: auto;
   width: auto;
 }
 
-/* line 37, sass/shared/_base.sass */
+/* line 39, sass/shared/_base.sass */
 dl {
   margin: 0;
   line-height: 1.2em;
 }
-/* line 40, sass/shared/_base.sass */
+/* line 42, sass/shared/_base.sass */
 dl dt {
   font-weight: normal;
   margin: 0;
 }
-/* line 43, sass/shared/_base.sass */
+/* line 45, sass/shared/_base.sass */
 dl dd {
   margin: 0;
 }
 
-/* line 47, sass/shared/_base.sass */
+/* line 49, sass/shared/_base.sass */
 table td {
   border: none !important;
 }
-/* line 49, sass/shared/_base.sass */
+/* line 51, sass/shared/_base.sass */
 table td img {
   margin: 0;
 }
 
-/* line 52, sass/shared/_base.sass */
+/* line 54, sass/shared/_base.sass */
 img {
   border: none;
 }
 
-/* line 55, sass/shared/_base.sass */
+/* line 57, sass/shared/_base.sass */
 p {
   margin: 0;
   padding: 0;
 }
 
-/* line 59, sass/shared/_base.sass */
+/* line 61, sass/shared/_base.sass */
 label {
   display: inline;
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 64, sass/shared/_base.sass */
+/* line 66, sass/shared/_base.sass */
 fieldset {
   background: #efefef;
   border: none;
@@ -818,12 +855,12 @@ fieldset {
   -khtml-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 70, sass/shared/_base.sass */
+/* line 72, sass/shared/_base.sass */
 fieldset legend {
   font-style: oblique;
 }
 
-/* line 73, sass/shared/_base.sass */
+/* line 75, sass/shared/_base.sass */
 a.button {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -moz-linear-gradient(top, #efefef 0%, #d8d8d8 100%);
@@ -863,7 +900,7 @@ a.button:active {
   box-shadow: none;
 }
 
-/* line 76, sass/shared/_base.sass */
+/* line 78, sass/shared/_base.sass */
 a.big_button {
   background: none repeat scroll 0 0 #97ca00;
   -moz-border-radius: 4px;
@@ -889,13 +926,13 @@ a.big_button:hover {
   background: none repeat scroll 0 0 #90c100;
 }
 
-/* line 79, sass/shared/_base.sass */
+/* line 81, sass/shared/_base.sass */
 var {
   font-size: 13px;
   font-style: normal;
 }
 
-/* line 83, sass/shared/_base.sass */
+/* line 85, sass/shared/_base.sass */
 li {
   list-style: none;
   font-size: 13px;

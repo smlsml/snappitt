@@ -1,6 +1,6 @@
 <h1>Upload</h1>
 
-<fieldset class="upload">
+<fieldset class="upload_email">
   <legend>Via Email</legend>
   <h2><a href="mailto:<%= @upload_email %>?subject=<Enter a Title>"><%= @upload_email %></a></h2>
   <p>Send an email with a subject and attached photos</p>
@@ -8,23 +8,13 @@
 
 <br/>
 
-<fieldset class="upload">
+<fieldset class="upload_form">
   <legend>Via Form</legend>
   <%= form_for @moment, :url => experiences_path, :html => { :multipart => true } do |m| %>
 
     <%= fields_for :asset do |a| %>
       <%= a.label :data, 'Photo:' %>
       <%= a.file_field :data %>
-    <% end %>
-
-    <%= fields_for :thing do |t| %>
-      <%= t.label 'name', 'What:' %>
-      <%= t.text_field :name %><br/>
-    <% end %>
-
-    <%= fields_for :location do |l| %>
-      <%= l.label 'name', 'Where:' %>
-      <%= l.text_field :name %><br/>
     <% end %>
 
     <%= m.fields_for :caption do |c| %>
@@ -69,3 +59,42 @@
 </fieldset>
 
 <br/><br/>
+
+<div class="thebasics">
+  <h1>The Basics</h1>
+
+  <div class="thebasics_body">
+    <ul>
+      <li class="create">
+        <%= image_tag(SiteAssets[:thebasics_create]) %>
+        <h2>Create an experience</h2>
+        <p>
+          Simply email a photo to post@snappitt.com to create a new experience.
+          Give it a title and snap some more photos.
+          It's that simple.
+        </p>
+      </li>
+
+      <li class="friends">
+        <%= image_tag(SiteAssets[:thebasics_add]) %>
+        <h2>Add some friends</h2>
+        <p>
+          This a group photo-stream after all.
+          You and friends can collaborate on your experience by sending photos to your custom email address (post[##]@snappitt.com).
+          Now everyone's photo's are in one place. NICE!
+        </p>
+      </li>
+
+      <li class="enjoy">
+        <%= image_tag(SiteAssets[:thebasics_enjoy]) %>
+        <h2>Enjoy</h2>
+        <p>
+          After polishing off that bloody mary to cure that hangover, log on to Snappitt.com and enjoy last nights debauchery.
+          Comment, share and simply enjoy your group experience.
+        </p>
+      </li>
+    </ul>
+    <br style="clear: both"/>
+  </div>
+</div>
+<br/>

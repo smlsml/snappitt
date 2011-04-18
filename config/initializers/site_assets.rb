@@ -4,7 +4,10 @@ class SiteAssets
   MAP = {
     :header_bg => '/header/header-bg.jpg',
     :published => '/icons/published.png',
-    :loading => '/icons/loading.gif'
+    :loading => '/icons/loading.gif',
+    :thebasics_create => '/icons/create.png',
+    :thebasics_add => '/icons/add.png',
+    :thebasics_enjoy => '/icons/enjoy.png'
   }
 
   def self.[](name)

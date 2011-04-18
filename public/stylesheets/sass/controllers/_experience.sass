@@ -1,7 +1,7 @@
 .experience_controller
   
   #page_middle_box
-    fieldset.upload
+    fieldset.upload_email,.upload_form
       label
         display: block
       width: 600px
@@ -15,3 +15,23 @@
     fieldset
       textarea
         vertical-align: middle
+    .thebasics
+      ul
+        position: relative
+        width: 630px
+
+        img
+          margin-bottom: 5px
+          @include border-radius(4px)
+          @include box-shadow(#666, 0, 1px, 2px, 0)
+        li
+          float: left
+          width: 190px
+          padding: 10px
+          text-align: left
+          h2
+            font-weight: bold
+            font-size: 15px
+          p
+            font-size: 13px
+            line-height: 1.3em
