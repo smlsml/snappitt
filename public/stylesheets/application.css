@@ -1127,7 +1127,7 @@ div.experience_card .stats dfn:hover {
 
 /* line 92, sass/shared/_experiences.sass */
 div.experience_header {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   position: relative;
 }
 /* line 95, sass/shared/_experiences.sass */
@@ -1226,6 +1226,69 @@ div.experience_header fieldset.header .side .add {
   margin-bottom: 15px;
 }
 
+/* line 158, sass/shared/_experiences.sass */
+div.toolbar {
+  width: 630px;
+  padding-bottom: 10px;
+  position: relative;
+  height: 35px;
+}
+/* line 163, sass/shared/_experiences.sass */
+div.toolbar ul.actions {
+  right: 0;
+  float: right;
+  position: relative;
+  margin: 0;
+}
+/* line 168, sass/shared/_experiences.sass */
+div.toolbar ul.actions li {
+  display: inline;
+  margin: 0 0 0 5px;
+}
+/* line 171, sass/shared/_experiences.sass */
+div.toolbar ul.actions li ul.view_buttons {
+  display: inline-block;
+}
+/* line 173, sass/shared/_experiences.sass */
+div.toolbar ul.actions li ul.view_buttons .grid_view {
+  margin: 0;
+}
+/* line 175, sass/shared/_experiences.sass */
+div.toolbar ul.actions li ul.view_buttons .grid_view a {
+  position: relative;
+  padding-left: 25px;
+  border-radius: 3px 0 0 3px;
+  border-right: none;
+}
+/* line 180, sass/shared/_experiences.sass */
+div.toolbar ul.actions li ul.view_buttons .grid_view a span {
+  background: url("http://snappitt-assets.s3.amazonaws.com/icons/assets.png") no-repeat scroll -102px -38px transparent;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 3px;
+  left: 5px;
+}
+/* line 187, sass/shared/_experiences.sass */
+div.toolbar ul.actions li ul.view_buttons .all_view {
+  margin: 0;
+}
+/* line 189, sass/shared/_experiences.sass */
+div.toolbar ul.actions li ul.view_buttons .all_view a {
+  position: relative;
+  padding-left: 25px;
+  border-radius: 0 3px 3px 0px;
+}
+/* line 193, sass/shared/_experiences.sass */
+div.toolbar ul.actions li ul.view_buttons .all_view a span {
+  background: url("http://snappitt-assets.s3.amazonaws.com/icons/assets.png") no-repeat scroll -102px -6px transparent;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 3px;
+  left: 5px;
+}
+
 /* line 1, sass/shared/_users.sass */
 .user_card {
   position: relative;
@@ -1315,7 +1378,7 @@ table.network td, table.split td {
 
 /* line 5, sass/shared/_moment.sass */
 .moment_card {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   position: relative;
 }
 /* line 8, sass/shared/_moment.sass */

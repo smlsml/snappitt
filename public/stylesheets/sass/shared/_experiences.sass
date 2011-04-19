@@ -90,7 +90,7 @@ div.experience_card
         color: #02b7ff
 
 div.experience_header
-  margin-bottom: 50px
+  margin-bottom: 25px
   position: relative
   .stats
     z-index: 5
@@ -154,3 +154,46 @@ div.experience_header
       .add
         margin-top: 5px
         margin-bottom: 15px
+
+div.toolbar
+  width: 630px
+  padding-bottom: 10px
+  position: relative
+  height: 35px
+  ul.actions
+    right: 0
+    float: right
+    position: relative
+    margin: 0
+    li
+      display: inline
+      margin: 0 0 0 5px
+      ul.view_buttons
+        display: inline-block
+        .grid_view
+          margin: 0
+          a
+            position: relative
+            padding-left: 25px
+            border-radius: 3px 0 0 3px
+            border-right: none
+            span
+              background: url('#{$asset_url}/icons/assets.png') no-repeat scroll -102px -38px transparent
+              position: absolute
+              height: 20px
+              width: 20px
+              top: 3px
+              left: 5px
+        .all_view
+          margin: 0
+          a
+            position: relative
+            padding-left: 25px
+            border-radius: 0 3px 3px 0px
+            span
+              background: url('#{$asset_url}/icons/assets.png') no-repeat scroll -102px -6px transparent
+              position: absolute
+              height: 20px
+              width: 20px
+              top: 3px
+              left: 5px

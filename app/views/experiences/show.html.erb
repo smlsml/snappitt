@@ -26,14 +26,37 @@
           <span>Email more photos to</span>
           <h3><a href="mailto:<%= 'post%s@snappitt.com' % @experience.id %>"><%= 'post%s@snappitt.com' % @experience.id %></a></h3>
         </div>
-        <%= link_to('Add Moment', edit_experience_path(@experience), :class => 'button') %>
-        <%= link_to('Delete Experience', experience_path(@experience), :class => 'button', :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.user) %>
-        <h3 style="padding-top: 5px"><%= link_to('Try GRID View', experience_path(@experience, :grid => 1)) %></h3>
+
       </div>
 
     </div>
 
   </fieldset>
+</div>
+
+<div class="toolbar">
+  <ul class="actions">
+    <li>
+      <%= link_to('Delete Experience', experience_path(@experience), :class => 'button', :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.user) %>
+    </li>
+    <li>
+      <%= link_to('Add Moment', edit_experience_path(@experience), :class => 'button') %>
+    </li>
+    <li class="views">
+      <ul class="view_buttons">
+        <li class="grid_view">
+          <a href="<%= experience_path(@experience, :grid => 1) %>" class="button grid">Grid
+            <span></span>
+          </a>
+        </li>
+        <li class="all_view">
+          <a href="<%= experience_path(@experience, :normal => 1) %>" class="button all">All
+            <span></span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
 <% cnt = @experience.moments.count + 1 %>
