@@ -60,6 +60,10 @@ module ApplicationHelper
     t(:lq).html_safe << text << t(:rq).html_safe unless text.to_s.strip.blank?
   end
 
+  def current_url(overwrite={})
+    url_for :only_path => false, :params => params.merge(overwrite)
+  end
+
   def container(options = {}, &block)
     out = ""
     main_content = capture(&block)
