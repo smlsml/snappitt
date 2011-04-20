@@ -7,6 +7,15 @@
 
   <meta name="viewport" content="width=640"/>
 
+  <% if @fbmeta %>
+  <meta property="og:title" content="<%= @fbmeta.title %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="<%= @fbmeta.url %>" />
+  <meta property="og:image" content="<%= @fbmeta.image %>" />
+  <meta property="og:site_name" content="Snappitt" />
+  <meta property="fb:admins" content="1685572751" />
+  <% end %>
+
   <!--[if lte IE 8]>
   <%= stylesheet_link_tag('ie.css', :media => 'screen, projection') %>
   <![endif]-->

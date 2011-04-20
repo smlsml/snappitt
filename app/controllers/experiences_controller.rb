@@ -119,6 +119,7 @@ class ExperiencesController < ApplicationController
     end
 
     @causes = Cause.reject_deleted(Cause.for_experience(@experience).limit(20))
+    @fbmeta = FbMeta.new(:title => @experience.title, :image => @experience.photo_url(:avatar), :url => experience_url(@experience))
 
     @experience.increment!(:views, 1) unless is_bot?
 
