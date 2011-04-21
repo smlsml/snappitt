@@ -25,6 +25,7 @@ Photo::Application.routes.draw do
       get 'publish', :on => :member
       get 'like', :on => :member
       get 'one', :on => :member
+      get 'cover', :on => :member
       post 'comment', :on => :member
     end
   end

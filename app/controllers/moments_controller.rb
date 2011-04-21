@@ -51,6 +51,17 @@ class MomentsController < ApplicationController
     redirect_to experience_path(@moment.experience, :anchor => @moment.id)
   end
 
+  def cover
+    @moment = Moment.find(params[:id])
+    @experience = @moment.experience
+    @experience.cover = @moment
+    @experience.save
+
+    flash[:success] = 'Changed Cover'
+
+    redirect_to experience_path(@moment.experience, :anchor => @moment.id)
+  end
+
   def destroy
     @user = current_user
     @moment = Moment.find(params[:id])

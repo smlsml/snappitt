@@ -11,6 +11,7 @@
     </div>
 
     <p class="metadata">
+      <%= link_to( 'Set this photo to experience cover', cover_experience_moment_path(@experience, m)) %><br/>
       <% if m.asset %>
         <%= 'Taken' if m.asset.taken_at || m.asset.device || m.asset.lat %>
         <%= ' with %s' % m.asset.device if m.asset.device %>
