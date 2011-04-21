@@ -2,25 +2,36 @@ class Experience < ActiveRecord::Base
 
   belongs_to :user, :counter_cache => true
   has_one :event, :inverse_of => :experience
-  has_many :moments, :order => 'moments.id', :order => 'created_at DESC', :dependent => :destroy
+  has_many :moments, :dependent => :destroy do
+    def fifo
+      order('id')
+    end
+
+    def filo
+      order('created_at DESC')
+    end
+  end
   has_many :comments, :through => :moments, :readonly => true
   has_many :likes, :class_name => 'LikeFlag', :through => :moments, :readonly => true
   has_many :collaborators, :class_name => 'ExperienceCollaborator'
+
+  belongs_to :cover, :class_name => 'Moment', :foreign_key => 'moment_id_cover'
 
   validates :user, :presence => true
 
   attr_accessor :newly_created
   after_create :set_new
   after_create :add_collaborator
+  before_save :set_cover
 
   scope :user_feed, lambda { |user|
-    includes(:user => :profile, :moments => :asset).
+    includes(:user => :profile, :cover => :asset).
     where(:visibility.ne => 'private', :users => {:confirmed_at.ne => nil}).
-    order('experiences.created_at DESC, moments.id')
+    order('experiences.created_at DESC')
   }
 
   scope :by_user, lambda { |user|
-    includes(:user => :profile, :moments => :asset).
+    includes(:user => :profile, :cover => :asset).
     where("user_id = ?", user.id).
     order('created_at DESC')
   }
@@ -49,7 +60,7 @@ class Experience < ActiveRecord::Base
   end
 
   def photo_url(type = :feed)
-    m = moments.first
+    m = cover
     m = Moment.new unless m
     m.photo_url(type)
   end
@@ -63,6 +74,11 @@ class Experience < ActiveRecord::Base
   end
 
   protected
+
+  def set_cover
+    self.cover = moments.first unless self.cover
+    true
+  end
 
   def set_new
     self.newly_created = true

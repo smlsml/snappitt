@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110415225439) do
+ActiveRecord::Schema.define(:version => 20110420223242) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -113,14 +113,15 @@ ActiveRecord::Schema.define(:version => 20110415225439) do
 
   create_table "experiences", :force => true do |t|
     t.string   "title"
-    t.integer  "user_id",                                           :null => false
-    t.string   "visibility",     :limit => 7, :default => "public", :null => false
+    t.integer  "user_id",                                            :null => false
+    t.string   "visibility",      :limit => 7, :default => "public", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "views",                       :default => 0
-    t.integer  "moments_count",               :default => 0
-    t.integer  "likes_count",                 :default => 0
-    t.integer  "comments_count",              :default => 0
+    t.integer  "views",                        :default => 0
+    t.integer  "moments_count",                :default => 0
+    t.integer  "likes_count",                  :default => 0
+    t.integer  "comments_count",               :default => 0
+    t.integer  "moment_id_cover"
   end
 
   create_table "geocodes", :force => true do |t|
