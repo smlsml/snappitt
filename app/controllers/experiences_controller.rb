@@ -123,7 +123,7 @@ class ExperiencesController < ApplicationController
 
     @experience.increment!(:views, 1) unless is_bot?
 
-    render :grid unless params[:normal]
+    @view = params[:normal] ? 'all' : 'grid'
   end
 
   def create

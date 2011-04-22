@@ -12,4 +12,8 @@ class String
     1 == cnt.to_i ? self : self.pluralize
   end
 
+  def is_email?
+    self.strip.match(/^(.+)@(.+\..+)$/)
+  end
+
 end

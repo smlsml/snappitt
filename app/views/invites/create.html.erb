@@ -1,0 +1,20 @@
+<%= render :partial => '/experiences/header' %>
+
+<h2>Invite these people to this experience</h2>
+
+<fieldset>
+  <legend>Uncheck people to remove them from the invite</legend>
+
+  <% @users.each do |u| %>
+  <ul>
+    <li><%= render u %></li>
+  </ul>
+  <% end %>
+
+  <% @emails.each do |e| %>
+  <ul>
+    <li><h3><%= e %></h3></li>
+  </ul>
+  <% end %>
+
+</fieldset>
