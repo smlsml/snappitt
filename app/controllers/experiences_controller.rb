@@ -87,10 +87,8 @@ class ExperiencesController < ApplicationController
     @experience.visibility = 'private' if params[:to].to_s.downcase.include?('private')
 
     @message.attachments.each do |attachment|
-      moment = Moment.new
+      moment = Moment.new(:user => @user, :source => @source)
       moment.create_caption(:text => @subject, :user => @user)
-      moment.user = @user
-      moment.source = @source
 
       file = StringIO.new(attachment.decoded)
       file.class.class_eval { attr_accessor :original_filename, :content_type }
