@@ -5,11 +5,11 @@ class LikeFlag < MomentFlag
   belongs_to :user, :inverse_of => :likes, :counter_cache => :likes_count
   belongs_to :moment, :inverse_of => :likes, :counter_cache => :likes_count
 
-#  class CreateCause < Cause
-#    include Cause::HasNotifications
-#    def verb; 'flagged'; end
-#  end
-#
+  class CreateCause < Cause
+    include Cause::HasNotifications
+    def verb; 'flagged'; end
+  end
+
 #  after_create :create_cause
 #
 #  protected
