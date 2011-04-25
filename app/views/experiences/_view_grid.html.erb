@@ -9,10 +9,9 @@
 </div>
 
 <%= javascript_tag do %>
-  if( location.hash ) {
-    var u = '<%= one_experience_moment_url(@experience,0) %>';
-    u = u.replace('/0/','/'+location.hash.substr(1)+'/');
-    $('m').show().update('<img src="<%= SiteAssets[:loading] %>"/>');
-    new Ajax.Updater('m',u,{method: 'get'});
-  }
+  var u = '<%= one_experience_moment_url(@experience,0) %>';
+  if( location.hash ) u = u.replace('/0/','/'+location.hash.substr(1)+'/');
+  else u = u.replace('/0/','/<%= @experience.moments.first.try(:id) %>/');
+  $('m').show().update('<img src="<%= SiteAssets[:loading] %>"/>');
+  new Ajax.Updater('m',u,{method: 'get'});
 <% end %>
