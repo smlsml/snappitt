@@ -49,14 +49,12 @@
       </td>
     </tr>
   <% if m.likes.count > 0 %>
-    <% m.grouped_flags.each do |shot, users| %>
     <tr>
-      <th><%= user_icon(users.first, :tiny) %></th>
+      <th><%= image_tag(PhotoAsset.default_url(:tiny)) %></th>
       <td colspan="2" class="text">
-        <%= user_link(users.first) %> <%= 'and %s others' % (users.count - 1) if users.count > 1 %> flagged this photo as <%= shot %>
+        viewers have flagged this photo as <%= m.flags.to_sentence %>
       </td>
     </tr>
-    <% end %>
   <% end %>
   <% m.comments.each do |c| %>
     <tr>
