@@ -40,7 +40,7 @@ class InvitesController < ApplicationController
     end
 
     @invites.each do |i|
-      InviteMailer.invite(i)
+      InviteMailer.invite(i).deliver rescue nil
     end
 
     flash[:success] = "Invites sent!"
