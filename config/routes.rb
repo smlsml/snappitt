@@ -30,7 +30,10 @@ Photo::Application.routes.draw do
     end
   end
 
-  resources :invites
+  resources :invites do
+    post 'go', :on => :collection
+  end
+
   resources :events, :only => [:index, :show, :create, :new]
 
   # The priority is based upon order of creation:

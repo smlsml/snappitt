@@ -1,0 +1,10 @@
+Hello!
+
+<%= @invite.user.username_realname %> is using Snappitt.com to capture experiences as they happen using mobile photos.
+<%= @invite.user.profile.he_she %> would like to invite you to join in and provide your unique perspective.
+
+<% if @invite.experience %>
+  Get started by emailing a photo to post<%= @invite.experience.id %>@snappitt.com
+<% end %>
+
+Happy Snapping!

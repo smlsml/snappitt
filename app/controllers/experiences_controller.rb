@@ -98,6 +98,11 @@ class ExperiencesController < ApplicationController
       asset = PhotoAsset.create(:user => @user, :source => @source, :data => file)
       moment.asset = asset if asset
 
+      unless @user.profile.has_photo?
+        @user.profile.proto_asset = asset
+        @user.save
+      end
+
       @experience.moments << moment
     end
 

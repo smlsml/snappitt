@@ -8,7 +8,8 @@
   <%= form_for @invite do |i| %>
     <input type="hidden" name="experience" value="<%= @experience.id %>"/>
     <%= text_area(:contact, :data, :size => '50x5', :style => 'height: auto; width: auto') %>
-    <%= submit_tag(:invite) %>
+
+    <%= submit_tag('Next Step') %>
   <% end %>
 
 </fieldset>

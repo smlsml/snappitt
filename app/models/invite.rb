@@ -5,4 +5,9 @@ class Invite < ActiveRecord::Base
   belongs_to :contact
   belongs_to :experience
 
+  def email
+    return(self.to.email) if self.to
+    contact.email
+  end
+
 end

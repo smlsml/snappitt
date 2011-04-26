@@ -40,6 +40,17 @@ class Profile < ActiveRecord::Base
     end
   end
 
+  def he_she
+    case gender.to_s.downcase
+      when 'm'
+        'he'
+      when 'f'
+        'she'
+      else
+        'they'
+    end
+  end
+
   def zodiac_chinese
     return nil if self.birthday.blank?
     @zc ||= Zodiac::Chinese.from_year(self.birthday.year)

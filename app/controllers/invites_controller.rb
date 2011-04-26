@@ -27,4 +27,26 @@ class InvitesController < ApplicationController
     @users = @users.flatten.compact.uniq
   end
 
+  def go
+    new
+    @invites = []
+
+    params[:u].to_a.each do |uid|
+      @invites << Invite.new(:user => @user, :to => User.find_by_id(uid.to_i), :experience => @experience)
+    end
+
+    params[:e].to_a.each do |email|
+      @invites << Invite.new(:user => @user, :contact => Contact.find_or_create_by_email(email.strip), :experience => @experience)
+    end
+
+    @invites.each do |i|
+      InviteMailer.invite(i)
+    end
+
+    flash[:success] = "Invites sent!"
+
+    redirect_to experience_path(@experience)
+  end
+
+
 end
