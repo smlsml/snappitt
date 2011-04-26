@@ -99,7 +99,7 @@ class ExperiencesController < ApplicationController
       moment.asset = asset if asset
 
       unless @user.profile.has_photo?
-        @user.profile.proto_asset = asset
+        @user.profile.photo_asset = asset
         @user.save
       end
 
