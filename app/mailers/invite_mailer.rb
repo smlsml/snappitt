@@ -7,7 +7,7 @@ class InviteMailer < ActionMailer::Base
     p @invite.email
     p @invite.user.email
 
-    mail :to => @invite.email,
+    p mail :to => @invite.email,
          :bcc => @invite.user.email,
          :subject => '%s invites you to help capture your experience' % @invite.user
   end
