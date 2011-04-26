@@ -18,7 +18,7 @@
 
     <% @emails.each do |e| %>
       <tr>
-        <th><input type="checkbox" name="e[]" value="<%= e.id %>" checked="checked"/></th>
+        <th><input type="checkbox" name="e[]" value="<%= e %>" checked="checked"/></th>
         <td><h2><%= e %></h2></td>
       </tr>
     <% end %>
