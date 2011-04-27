@@ -1,6 +1,6 @@
 <div class="grid">
 <% @experience.moments.fifo.each do |m| %>
-  <%= image_tag(m.photo_url(:thumb), :class => 'photo') %>
+  <%= image_tag(m.photo_url(:avatar), :alt => '', :class => 'photo', :onclick => "location.hash = '#%s'" % m.id) %>
 <% end %>
 </div>
 

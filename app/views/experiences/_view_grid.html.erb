@@ -1,6 +1,6 @@
 <div class="grid">
 <% @experience.moments.fifo.each do |m| %>
-  <%= image_tag(m.photo_url(:avatar), :class => 'photo', :onclick => "$('m').show().update('<img src=\"#{SiteAssets[:loading]}\"/>'); new Ajax.Updater('m','#{one_experience_moment_url(@experience,m)}',{method: 'get'})") %>
+  <%= image_tag(m.photo_url(:avatar), :alt => '', :class => 'photo', :onclick => "$('m').show().update('<img src=\"#{SiteAssets[:loading]}\"/>'); new Ajax.Updater('m','#{one_experience_moment_url(@experience,m)}',{method: 'get'})") %>
 <% end %>
 </div>
 
@@ -11,7 +11,7 @@
 <%= javascript_tag do %>
   var u = '<%= one_experience_moment_url(@experience,0) %>';
   if( location.hash ) u = u.replace('/0/','/'+location.hash.substr(1)+'/');
-  else u = u.replace('/0/','/<%= @experience.moments.first.try(:id) %>/');
+  else u = u.replace('/0/','/<%= @experience.moments.fifo.first.try(:id) %>/');
   $('m').show().update('<img src="<%= SiteAssets[:loading] %>"/>');
   new Ajax.Updater('m',u,{method: 'get'});
 <% end %>

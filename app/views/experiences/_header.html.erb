@@ -24,7 +24,7 @@
       <div class="side">
         <div class="add">
           <span>Email more photos to</span>
-          <h3><a href="mailto:<%= 'post%s@snappitt.com' % @experience.id %>"><%= 'post%s@snappitt.com' % @experience.id %></a></h3>
+          <h3><a href="mailto:<%= @experience.upload_email %>"><%= @experience.upload_email %></a></h3>
         </div>
       </div>
 

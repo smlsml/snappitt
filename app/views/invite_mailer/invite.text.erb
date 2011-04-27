@@ -4,7 +4,7 @@ Hello!
 <%= @invite.user.profile.he_she %> would like to invite you to join in and provide your unique perspective.
 
 <% if @invite.experience %>
-  Get started by emailing a photo to post<%= @invite.experience.id %>@snappitt.com
+  Get started by emailing a photo to <%= @invite.experience.upload_email %>
 <% end %>
 
 Happy Snapping!

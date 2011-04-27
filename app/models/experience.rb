@@ -73,6 +73,11 @@ class Experience < ActiveRecord::Base
     moments.collect{|m| m.notify_users}.flatten.compact.uniq
   end
 
+  def upload_email
+    return ('%s@%s' % [self.event.hashtag, I18n.translate('app.host')]) if self.event
+    'post%s@%s' % [@experience.id, I18n.translate('app.host')]
+  end
+
   protected
 
   def set_cover

@@ -11,7 +11,7 @@ class ExperiencesController < ApplicationController
   def edit
     @experience = Experience.find_by_id(params[:id])
     new
-    @upload_email = ('post%s@%s' % [@experience.id, t('app.host')]) if @experience
+    @upload_email = @experience.upload_email if @experience
     render :new
   end
 
