@@ -75,7 +75,7 @@ class Experience < ActiveRecord::Base
 
   def upload_email
     return ('%s@%s' % [self.event.hashtag, I18n.translate('app.host')]) if self.event
-    'post%s@%s' % [@experience.id, I18n.translate('app.host')]
+    'post%s@%s' % [self.id, I18n.translate('app.host')]
   end
 
   protected
