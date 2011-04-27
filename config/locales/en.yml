@@ -5,6 +5,7 @@ en:
   app:
     name: 'Snappitt'
     host: 'snappitt.com'
+    blog: 'blog.snappitt.com'
     tagline: 'Capture experiences as they happen with group photo sharing'
   nav:
     home: 'Home'

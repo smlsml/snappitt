@@ -6,7 +6,7 @@
   </div>
 
   <fieldset class="header">
-    <legend>Experience #<%= @experience.id %>&nbsp;&nbsp;<small><%= link_to('(delete)', experience_path(@experience), :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.user) %></small></legend>
+    <legend><%= @experience.created_at.to_formatted_s(:mdy) %>&nbsp;</legend>
 
     <div class="main">
       <h1><%= link_to(@experience.title, experience_path(@experience)) %></h1>
@@ -21,11 +21,15 @@
         <% end %>
       </div>
 
-      <div class="side">
-        <div class="add">
-          <span>Email more photos to</span>
-          <h3><a href="mailto:<%= @experience.upload_email %>"><%= @experience.upload_email %></a></h3>
-        </div>
+      <div class="add">
+        <span>Email more photos to</span>
+        <h3><a href="mailto:<%= @experience.upload_email %>"><%= @experience.upload_email %></a></h3>
+      </div>
+
+      <div class="actions">
+        <%= link_to('Add', add_experience_path(@experience), :class => 'button') %>&nbsp;&nbsp;
+        <%= link_to('Edit', edit_experience_path(@experience), :class => 'button') %>&nbsp;&nbsp;
+        <%= link_to('Invite', new_invite_path(:experience => @experience.id), :class => 'button') %>
       </div>
 
     </div>

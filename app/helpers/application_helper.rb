@@ -45,6 +45,7 @@ module ApplicationHelper
   def footer_links
     links = [link_to('Home', root_path)]
     links << link_to('Events', events_path) if user_signed_in?
+    links << link_to('Blog', 'http://%s' % t('app.blog'))
     links
   end
 

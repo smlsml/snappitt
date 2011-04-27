@@ -1,8 +1,8 @@
 <h1>Settings</h1>
 
-<%= form_for @profile, :url => user_settings_path, :html => { :multipart => true } do |p| %>
+<%= form_for @profile, :url => user_settings_path, :html => {:multipart => true} do |p| %>
 
-  <fieldset>
+  <fieldset class="form">
     <legend>Account</legend>
 
     <ol>
@@ -43,7 +43,7 @@
   </fieldset>
 
   <a name="profile"></a>
-  <fieldset>
+  <fieldset class="form">
     <legend><%= image_tag( @profile.photo_url, :alt => @user ) %>Profile</legend>
 
     <ol>
@@ -101,7 +101,7 @@
   </fieldset>
 
   <a name="email"></a>
-  <fieldset>
+  <fieldset class="form">
     <legend>Email Notifications</legend>
     <p>Send me an email notification when others...</p>
     <ol>
@@ -130,7 +130,7 @@
 
   <p class="submit"><%= submit_tag 'Save Changes' %></p>
 
-  <fieldset>
+  <fieldset class="form">
     <legend>Login Security</legend>
     <p>You've logged in <var><%= current_user.sign_in_count %></var> times!</p>
     <p>Current login at <var><%= current_user.current_sign_in_at %></var> from <var><%= current_user.current_sign_in_ip %></var></p>

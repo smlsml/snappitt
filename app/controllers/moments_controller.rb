@@ -59,7 +59,7 @@ class MomentsController < ApplicationController
 
     flash[:success] = 'Changed Cover'
 
-    redirect_to experience_path(@moment.experience, :anchor => @moment.id)
+    redirect_to previous_page || experience_path(@moment.experience, :anchor => @moment.id)
   end
 
   def destroy

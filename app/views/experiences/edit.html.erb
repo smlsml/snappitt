@@ -1,0 +1,39 @@
+<%= render :partial => '/experiences/header' %>
+
+<h2>Editing Experience</h2>
+
+<%= form_for @experience do |f| %>
+
+  <fieldset class="form">
+    <legend>Change...</legend>
+
+    <ol>
+      <li>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </li>
+      <li>
+        <%= f.label :visibility %>
+        <%= f.select :visibility, ['public','private','group'] %><span>todo: explain these =)</span>
+      </li>
+    </ol>
+  </fieldset>
+
+  <p class="submit"><%= submit_tag 'Save Changes' %></p>
+
+  <fieldset class="form">
+    <legend><%= image_tag( @experience.cover.photo_url, :alt => @experience.cover ) %>Set Cover Image</legend>
+    <% @experience.moments.fifo.each do |m| %>
+       <%= link_to( image_tag(m.photo_url(:thumb)), cover_experience_moment_path(@experience, m)) %>
+    <% end %>
+  </fieldset>
+
+  <fieldset class="form">
+    <legend>Delete</legend>
+    <p>Removing this experience will delete all moments attached to it, including those uploaded by others.</p>
+    <p class="submit">
+      <%= link_to('Delete Experience', experience_path(@experience), :class => 'button', :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.user) %>
+    </p>
+  </fieldset>
+
+<% end %>

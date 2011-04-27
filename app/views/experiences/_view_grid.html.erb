@@ -15,3 +15,7 @@
   $('m').show().update('<img src="<%= SiteAssets[:loading] %>"/>');
   new Ajax.Updater('m',u,{method: 'get'});
 <% end %>
+
+<div class="view">
+  <%= link_to('View All', experience_path(@experience, :all => 1)) %>
+</div>

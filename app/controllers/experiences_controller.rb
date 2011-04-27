@@ -10,6 +10,16 @@ class ExperiencesController < ApplicationController
 
   def edit
     @experience = Experience.find_by_id(params[:id])
+  end
+
+  def update
+    @experience = Experience.find_by_id(params[:id])
+    flash[:success] = "Updated" if @experience.update_attributes(params[:experience])
+    redirect_to experience_path(@experience)
+  end
+
+  def add
+    @experience = Experience.find_by_id(params[:id])
     new
     @upload_email = @experience.upload_email if @experience
     render :new
@@ -126,7 +136,7 @@ class ExperiencesController < ApplicationController
 
     @experience.increment!(:views, 1) unless is_bot?
 
-    @view = params[:grid] ? 'grid' : 'all'
+    @view = params[:all] ? 'all' : 'grid'
   end
 
   def create

@@ -21,6 +21,10 @@ Photo::Application.routes.draw do
       post 'create_mail'
     end
 
+    member do
+      get 'add'
+    end
+
     resources :moments, :only => [:show, :destroy] do
       get 'publish', :on => :member
       get 'like', :on => :member

@@ -2,10 +2,11 @@
 
 <h2>Invite these people to this experience</h2><br/><br/>
 
+<%= form_for :invite, :url => go_invites_path, :method => :post do %>
+
 <fieldset>
   <legend>Uncheck people to remove them from the invite</legend>
 
-  <%= form_for :invite, :url => go_invites_path, :method => :post do %>
     <input type="hidden" name="experience" value="<%= @experience.id %>"/>
 
     <table class="invite">
@@ -24,8 +25,11 @@
     <% end %>
     </table>
 
-    <p>Note: You will receive a copy of all invite emails as we test the system.</p>
-    <%= submit_tag :invite %>
-  <% end %>
-
 </fieldset>
+
+<p class="submit">
+  <span>Note: You will receive a copy of all invite emails as we test the system.</span>
+  <%= submit_tag :invite %>
+</p>
+
+<% end %>

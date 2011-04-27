@@ -2,14 +2,18 @@
 
 <h2>Invite others to <%= @experience.blank? ? 'Snappitt' : 'join experience #%s' % @experience.id %></h2>
 
+<%= form_for @invite do |i| %>
+
 <fieldset>
   <legend>Enter email addresses and Snappitt usernames to invite</legend>
 
-  <%= form_for @invite do |i| %>
     <input type="hidden" name="experience" value="<%= @experience.id %>"/>
     <%= text_area(:contact, :data, :size => '50x5', :style => 'height: auto; width: auto') %>
 
-    <%= submit_tag('Next Step') %>
-  <% end %>
-
 </fieldset>
+
+<p class="submit">
+  <%= submit_tag('Next') %>
+</p>
+
+<% end %>

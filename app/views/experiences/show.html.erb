@@ -1,31 +1,11 @@
 <%= render :partial => '/experiences/header' %>
 
-<div class="toolbar">
-  <ul class="actions">
-    <li>
-      <%= link_to('Invite Others', new_invite_path(:experience => @experience.id), :class => 'button') %>
-    </li>
-    <li>
-      <%= link_to('Add Moment', edit_experience_path(@experience), :class => 'button') %>
-    </li>
-    <li class="views">
-      <ul class="view_buttons">
-        <li class="grid_view">
-          <a href="<%= experience_path(@experience, :grid => 1) %>" class="button grid">Grid
-            <span></span>
-          </a>
-        </li>
-        <li class="all_view">
-          <a href="<%= experience_path(@experience, :normal => 1) %>" class="button all">All
-            <span></span>
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
-
 <%= render :partial => '/experiences/view_%s' % @view %>
+
+<fieldset>
+  <legend>Share (super-beta, use at your own risk)</legend>
+  <iframe src="http://www.facebook.com/plugins/like.php?href=<%= u current_url %>&amp;layout=standard&amp;sho.w_faces=true&amp;width=600&amp;action=like&amp;font&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+</fieldset>
 
 <% if @causes %>
 
@@ -41,5 +21,3 @@
 </fieldset>
 
 <% end %>
-
-<iframe src="http://www.facebook.com/plugins/like.php?href=<%= u current_url %>&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;font&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>

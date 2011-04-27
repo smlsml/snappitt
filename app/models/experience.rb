@@ -56,6 +56,7 @@ class Experience < ActiveRecord::Base
 
   def title
     rtitle = read_attribute(:title).strip
+    rtitle = self.event.name if self.event
     rtitle.blank? || rtitle == '@' ? 'Snaps on %s' % created_at.to_formatted_s(:mdy) : rtitle
   end
 
