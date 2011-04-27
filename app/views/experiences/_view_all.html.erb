@@ -1,5 +1,5 @@
 <% cnt = @experience.moments.count + 1 %>
-<% @experience.moments.fifo.each do |m| %>
+<% @experience.moments.filo.each do |m| %>
   <% @moment = m %>
   <a name="<%= m.id %>"></a>
   <%= render :file => '/moments/one.html.erb' %>

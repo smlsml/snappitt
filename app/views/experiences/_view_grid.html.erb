@@ -3,7 +3,7 @@
 </div>
 
 <div class="grid">
-<% @experience.moments.filo.each do |m| %>
+<% @experience.moments.fifo.each do |m| %>
   <%= image_tag(m.photo_url(:avatar), :class => 'photo', :onclick => "$('m').show().update('<img src=\"#{SiteAssets[:loading]}\"/>'); new Ajax.Updater('m','#{one_experience_moment_url(@experience,m)}',{method: 'get'})") %>
 <% end %>
 </div>
