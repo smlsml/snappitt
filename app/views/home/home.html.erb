@@ -1,8 +1,8 @@
 <fieldset style="text-align: left; margin: 0 auto; margin-bottom: 15px">
   <legend>New stuff!</legend>
   <ul>
-    <li>Added Experience edit page</li>
-    <li>Improved Event support - try denverstreetart@snappitt.com</li>
+    <li>Added ability to edit experiences <%= link_to(' (try)', edit_experience_path(Experience.last)) if Experience.last %></li>
+    <li>Improved Event support <%= link_to(' (view)', experience_path(Event.last.experience)) if Event.last.try(:experience) %></li>
     <li>Added basic email invites - see 'Invite Others' in an experience</li>
     <li>Added <%= link_to('time zone selection', user_settings_path(current_user, :anchor => 'profile')) %> to settings</li>
   </ul>

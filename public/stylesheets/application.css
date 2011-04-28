@@ -130,8 +130,8 @@
 }
 /* line 39, sass/controllers/_experience.sass */
 .experience_controller #page_middle_box .view {
-  padding: 10px;
-  margin: 10px;
+  padding: 15px;
+  margin: 25px;
   background-color: white;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;

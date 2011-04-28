@@ -62,6 +62,7 @@ class Experience < ActiveRecord::Base
 
   def photo_url(type = :feed)
     m = cover
+    m = moments.fifo.first unless m
     m = Moment.new unless m
     m.photo_url(type)
   end
