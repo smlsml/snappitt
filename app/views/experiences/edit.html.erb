@@ -23,7 +23,7 @@
   <p class="submit"><%= submit_tag 'Save Changes' %></p>
 
   <fieldset class="form">
-    <legend><%= image_tag( @experience.cover.photo_url, :alt => @experience.cover ) %>Set Cover Image</legend>
+    <legend><%= image_tag( @experience.photo_url, :alt => @experience.cover ) %>Set Cover Image</legend>
     <% @experience.moments.filo.each do |m| %>
        <%= link_to( image_tag(m.photo_url(:thumb)), cover_experience_moment_path(@experience, m)) %>
     <% end %>
