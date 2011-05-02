@@ -64,14 +64,19 @@ class MomentsController < ApplicationController
 
   def destroy
     @user = current_user
+    @ok = false
     @moment = Moment.find(params[:id])
 
-    @moment.destroy if @moment
-    flash[:success] = "Deleted Moment: #{@moment}" if @moment
+    @ok = @moment.destroy if @moment
 
-    url = experience_path(@moment.experience) if @moment && @moment.experience
-
-    redirect_to previous_page || url || root_path
+    if request.xhr?
+      @id = @moment ? @moment.id : 0
+      render :destroy, :format => :js
+    else
+      flash[:success] = "Deleted Moment: #{@moment}" if @ok
+      url = experience_path(@moment.experience) if @moment && @moment.experience
+      redirect_to previous_page || url || root_path
+    end
   end
 
 end

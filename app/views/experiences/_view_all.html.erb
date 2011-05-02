@@ -1,6 +1,10 @@
 <div class="grid">
 <% @experience.moments.filo.each do |m| %>
-  <%= image_tag(m.photo_url(:avatar), :alt => '', :class => 'photo', :onclick => "location.hash = '#%s'" % m.id) %>
+  <%= image_tag(m.photo_url(:avatar),
+                :alt => '',
+                :id => 'thumb_%s' % m.id,
+                :class => 'photo',
+                :onclick => "location.hash = '#%s'" % m.id) %>
 <% end %>
 </div>
 
@@ -10,6 +14,8 @@
   <a name="<%= m.id %>"></a>
   <%= render :file => '/moments/one.html.erb' %>
 <% end %>
+
+<div id="m"></div>
 
 <div class="view">
   <%= link_to('View One', experience_path(@experience, :one => 1)) %>

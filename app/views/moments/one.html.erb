@@ -1,5 +1,5 @@
 <% m = @moment %>
-<div class="moment_card">
+<div id="moment_<%= m.id %>" class="moment_card">
   <h2>
     <span class="time"><%= m.time %></span>
     <small><%= m.created_at.to_formatted_s(:mdyz) %></small>
@@ -35,7 +35,7 @@
       <% end %>
 
       <div class="button r">
-        <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
+        <%= link_to('Delete', experience_moment_path(@experience, m), :method => :delete, :remote => true, :confirm => 'Are you sure?') if can_edit?(m.user) || can_edit?(@experience.user) %>
       </div>
     </div>
 

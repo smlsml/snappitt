@@ -1,0 +1,3 @@
+page.hide 'moment_%s' % @id
+page.hide 'thumb_%s' % @id
+page.hide 'm'
