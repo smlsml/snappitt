@@ -22,7 +22,8 @@ class Experience < ActiveRecord::Base
   attr_accessor :newly_created
   after_create :set_new
   after_create :add_collaborator
-  before_save :set_cover
+  after_create :set_cover
+  before_save :set_missing_cover
 
   scope :user_feed, lambda { |user|
     includes(:user => :profile, :cover => :asset).
@@ -83,6 +84,11 @@ class Experience < ActiveRecord::Base
   protected
 
   def set_cover
+    save
+  end
+
+  def set_missing_cover
+    return true if new_record?
     self.cover = moments.first unless self.cover
     true
   end

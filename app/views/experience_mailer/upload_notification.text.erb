@@ -19,7 +19,8 @@ Once activated, you will be prompted to choose a password and provide other prof
 
 <% end %>
 <% unless @user.profile.has_photo? %>
-[Did you know?] You can set a profile image by email, just send your photo to avatar@<%= I18n.translate('app.host') %>.
+[Did you know?] You can set a profile image by email, just send your photo to <%= I18n.translate('email.profile') %>.
+Also, if you provide text in the subject line, it will become your bio!
 
 <% end %>
 <% if @experience.event %>

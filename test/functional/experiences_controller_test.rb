@@ -40,7 +40,8 @@ class ExperiencesControllerTest < ActionController::TestCase
     @experience = get_experience
     assert_kind_of Experience, @experience
     assert_equal 1, @experience.moments.count
-    assert_equal @params[:plain], @experience.moments.first.caption.text
+    assert_equal @params[:subject], @experience.moments.first.caption.text
+    assert_equal @experience.moments.first, @experience.cover
   end
 
   test "create_mail: strips Re and Fwd from subject" do
@@ -78,22 +79,39 @@ class ExperiencesControllerTest < ActionController::TestCase
     sign_in(@snoop)
 
     @params[:from] = @snoop.email
-    @params[:plain] = 'second exp!'
-    @params[:to] = 'exp%s@snappitt.com' % @experience.id
+    @params[:subject] = 'second exp!'
+    @params[:to] = 'post%s@snappitt.com' % @experience.id
     setup_mail
 
     post :create_mail, @params
     assert_response :success
 
-    @second = get_experience(:user => @user)
-    assert_kind_of Experience, @second
-    assert_equal @params[:plain], @experience.moments.second.caption.to_s
+    @experience.reload
+    assert_equal @params[:subject], @experience.moments.second.caption.to_s
     assert_equal 2, @experience.moments.count
     assert_equal @snoop, @experience.moments.second.user
   end
 
-  test "create_mail: avatar at snappitt updates user image" do
-    @params[:to] = 'avatar@snappitt.com'
+  test "create_mail: mail in avatar photo" do
+    subject = 'this is a bio yo'
+    @params[:to] = 'AVATAR@snappitt.com'
+    @params[:subject] = subject
+    setup_mail
+
+    assert_nil @user.profile.photo_asset
+
+    post :create_mail, @params
+    assert_response :success
+
+    @user.reload
+
+    assert_kind_of PhotoAsset, @user.profile.photo_asset
+    assert_nil get_experience
+    assert_equal subject, @user.profile.bio
+  end
+
+  test "create_mail: mail in avatar photo using profile" do
+    @params[:to] = 'Profile@snappitt.com'
     setup_mail
 
     assert_nil @user.profile.photo_asset

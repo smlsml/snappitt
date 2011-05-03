@@ -5,7 +5,7 @@ class ExperiencesController < ApplicationController
   def new
     @moment = Moment.new
     @moment.caption = CaptionComment.new
-    @upload_email = 'post@%s' % t('app.host')
+    @upload_email = t('email.post')
   end
 
   def edit
@@ -37,6 +37,10 @@ class ExperiencesController < ApplicationController
     @from = params[:x_forwarded_for].to_s.downcase.strip if params[:x_forwarded_for]
     @from = @message.header['Reply-to'].addresses.first.to_s.downcase if @message.header['Reply-to']
 
+    @subject = params[:subject].to_s.strip
+    while @subject.gsub!(/^re:/i,''); @subject.strip!; end
+    while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end
+
     @user = User.find_by_email(@from)
 
     if !@user
@@ -56,7 +60,7 @@ class ExperiencesController < ApplicationController
     return head(:unauthorized) unless @user
     return head(:forbidden) if @user.disabled
 
-    if @to =~ /avatar@snappitt.com/i
+    if @to.match(t('email.avatar')) || @to.match(t('email.profile'))
       attachment = @message.attachments.first
       return head(:bad_request) unless attachment
 
@@ -67,17 +71,12 @@ class ExperiencesController < ApplicationController
 
       asset = PhotoAsset.create(:user => @user, :source => @source, :data => file)
 
-      if asset
-        @user.profile.photo_asset = asset
-        @user.profile.save!
-      end
+      @user.profile.bio = @subject if @subject
+      @user.profile.photo_asset = asset if asset
+      @user.profile.save!
 
       return head(:created)
     end
-
-    @subject = params[:subject].to_s.strip
-    while @subject.gsub!(/^re:/i,''); @subject.strip!; end
-    while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end
 
     @experience = Experience.find_by_id($1) if @to =~ /post([0-9]+)@/i
 

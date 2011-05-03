@@ -7,6 +7,11 @@ en:
     host: 'snappitt.com'
     blog: 'blog.snappitt.com'
     tagline: 'Capture experiences as they happen with group photo sharing'
+  email:
+    avatar: 'avatar@snappitt.com'
+    profile: 'profile@snappitt.com'
+    post: 'post@snappitt.com'
+    noreply: 'noreply@snappitt.com'
   nav:
     home: 'Home'
     profile: 'Profile'

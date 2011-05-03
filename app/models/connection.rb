@@ -22,7 +22,7 @@ class Connection < ActiveRecord::Base
   end
 
   def not_self
-    errors.add_to_base('Can not follow self') if user_id_to == user_id_from
+    errors.add(:base, 'Can not follow self') if user_id_to == user_id_from
   end
 
 end
