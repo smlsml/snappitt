@@ -28,3 +28,5 @@ Photo::Application.configure do
 
   config.site_assets_prefix = 'http://snappitt-assets.s3.amazonaws.com'
 end
+
+ENV['PANDASTREAM_URL'] = 'http://b49280ee59fc206caf3f:42d8516f159fc45cb9fa@api.pandastream.com:80/c2604c067706fb61964a41b3dca915b4'

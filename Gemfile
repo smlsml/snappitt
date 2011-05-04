@@ -15,6 +15,7 @@ gem 'aws-s3'
 gem 'rmagick', :require => false
 gem 'geokit'
 gem 'geokit-rails3'
+gem 'panda'
 
 # Deploy with Capistrano
 # gem 'capistrano'
