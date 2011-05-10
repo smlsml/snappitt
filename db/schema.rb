@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110425223509) do
+ActiveRecord::Schema.define(:version => 20110510202443) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20110425223509) do
     t.float    "lng"
     t.datetime "taken_at"
     t.string   "device"
+    t.string   "tmp_url"
+    t.string   "panda_id"
   end
 
   create_table "causes", :force => true do |t|

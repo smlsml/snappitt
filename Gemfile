@@ -24,10 +24,10 @@ gem 'panda'
 # gem 'bj'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
 
 group :test do
   gem 'ruby-debug'
+  gem 'ruby-prof'
   # gem 'ruby-debug19', :require => 'ruby-debug'  # Ruby 1.9.2+
 end
 
