@@ -8,7 +8,7 @@
 <div class="section activity">
   <h2>Notifications</h2>
   <ul>
-    <% @user.notifications.each do |n| %>
+    <% @user.notifications.recent.each do |n| %>
       <li><%= n.cause.summary(Cause::Decorator.new(@user)) %><%= ' (new)' unless n.seen %></li>
       <% n.update_attribute(:seen, true) unless n.seen %>
     <% end %>

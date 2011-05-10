@@ -48,8 +48,9 @@ class Cause < ActiveRecord::Base
 
   scope :for_user, lambda { |user|
     includes(:user, :subject, :action).
-    where(:user => user).
-    order('created_at DESC')
+    where({:user => user} & {:created_at.gt => 1.weeks.ago}).
+    order('created_at DESC').
+    limit(10)
   }
 
   def self.reject_deleted(results)

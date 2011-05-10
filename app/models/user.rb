@@ -50,10 +50,17 @@ class User < ActiveRecord::Base
            :order => 'experiences.created_at DESC'
 
 
-  has_many :notifications, :order => 'created_at DESC' do
+  has_many :notifications,
+           :order => 'created_at DESC' do
+
     def unseen
       where(:seen => false)
     end
+
+    def recent
+      where(:created_at.gt => 1.weeks.ago)
+    end
+
   end
 
   #--
