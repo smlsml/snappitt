@@ -3,7 +3,7 @@
   <%= image_tag(m.photo_url(:avatar),
                 :alt => '',
                 :id => 'thumb_%s' % m.id,
-                :class => 'photo',
+                :class => 'thumb',
                 :onclick => "location.hash = '#%s'" % m.id) %>
 <% end %>
 </div>
