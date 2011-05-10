@@ -7,7 +7,14 @@
 
   <div class="moment">
     <div class="photo">
-      <%= image_tag(m.photo_url(:large), :class => 'photo') %>
+      <% if m.asset.is_a?(VideoAsset) %>
+        <video id="movie" width="630" preload="true" poster="<%= m.asset.v.screenshots.first %>" controls>
+          <source src="<%= m.asset.v.encodings.find_by_profile_name('h264').url %>" type="video/mp4">
+          <source src="<%= m.asset.v.encodings.find_by_profile_name('ogg').url %>" type="video/ogg">
+        </video>
+      <% else %>
+          <%= image_tag(m.photo_url(:large), :class => 'photo') %>
+       <% end %>
       <%= ('<img src="%s" class="published"/>' % SiteAssets[:published]).html_safe if m.published? %>
     </div>
 

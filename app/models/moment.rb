@@ -30,7 +30,8 @@ class Moment < ActiveRecord::Base
   attr_accessor :quick
 
   def photo_url(type = :thumb)
-    url = asset.data.url(type) if asset
+    url = asset.data.url(type) if asset && asset.is_a?(PhotoAsset)
+    url = asset.v.screenshots.first if asset && asset.is_a?(VideoAsset) && asset.v.status == 'success'
     url || PhotoAsset.default_url(type)
   end
 
