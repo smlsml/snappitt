@@ -9,13 +9,6 @@
     <div class="photo">
       <%= image_tag(m.photo_url(:large), :class => 'photo') %>
       <%= ('<img src="%s" class="published"/>' % SiteAssets[:published]).html_safe if m.published? %>
-      <% if @cnt && @cnt < 2 %>
-      <br/>
-      <video id="movie" width="320" height="240" preload="none" poster="http://snappitt-vid.s3.amazonaws.com/59e33b0b494fc29e186db547eecab802_1.jpg" controls>
-        <source src="http://snappitt-vid.s3.amazonaws.com/eea893042a3e2c54a45541cf0bf84d18.mp4" type="video/mp4">
-        <source src="http://snappitt-vid.s3.amazonaws.com/0dde0afe66c15f36f8d79058349f0860.ogv" type="video/ogg">
-      </video>
-      <% end %>
     </div>
 
     <p class="metadata">

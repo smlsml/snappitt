@@ -1,10 +1,17 @@
 <div class="grid">
 <% @experience.moments.filo.each do |m| %>
+  <% if m.asset.is_a?(VideoAsset) %>
+    <video id="movie" width="320" height="240" preload="none" poster="<%= m.asset.screenshots.first %>" controls>
+      <source src="<%= m.asset.encodings.find_by_profile_name('mp4') %>" type="video/mp4">
+      <source src="<%= m.asset.encodings.find_by_profile_name('ogg') %>" type="video/ogg">
+    </video>
+  <% else %>
   <%= image_tag(m.photo_url(:avatar),
                 :alt => '',
                 :id => 'thumb_%s' % m.id ,
                 :class => 'photo',
                 :onclick => "$('m').show().update('<img src=\"#{SiteAssets[:loading]}\"/>'); new Ajax.Updater('m','#{one_experience_moment_url(@experience,m)}',{method: 'get'})") %>
+   <% end %>
 <% end %>
 </div>
 
