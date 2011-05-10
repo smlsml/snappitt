@@ -12,7 +12,7 @@ class VideoAsset < Asset
   #rescue # catch url errors with validations instead of exceptions (Errno::ENOENT, OpenURI::HTTPError, etc...)
   end
 
-  def self.perform
+  def encode
     return unless tmp_url
     video = Panda::Video.create(:source_url => tmp_url)
     self.update_attribute(:panda_id, video.id) if video
