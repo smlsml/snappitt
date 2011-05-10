@@ -18,4 +18,9 @@ class VideoAsset < Asset
     self.update_attribute(:panda_id, video.id) if video
   end
 
+  def v
+    @video ||= Panda::Video.find(panda_id)
+  end
+
+
 end
