@@ -2,8 +2,8 @@
 <% @experience.moments.filo.each do |m| %>
   <% if m.asset.is_a?(VideoAsset) %>
     <video id="movie" width="320" height="240" preload="none" poster="<%= m.asset.v.screenshots.first %>" controls>
-      <source src="<%= m.asset.v.encodings.find_by_profile_name('mp4') %>" type="video/mp4">
-      <source src="<%= m.asset.v.encodings.find_by_profile_name('ogg') %>" type="video/ogg">
+      <source src="<%= m.asset.v.encodings.find_by_profile_name('h264').url %>" type="video/mp4">
+      <source src="<%= m.asset.v.encodings.find_by_profile_name('ogg').url %>" type="video/ogg">
     </video>
   <% else %>
   <%= image_tag(m.photo_url(:avatar),
