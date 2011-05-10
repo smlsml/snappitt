@@ -3,7 +3,7 @@
   <%= image_tag(m.photo_url(:avatar),
                 :alt => '',
                 :id => 'thumb_%s' % m.id ,
-                :class => 'photo',
+                :class => 'thumb',
                 :onclick => "$('m').show().update('<img src=\"#{SiteAssets[:loading]}\"/>'); new Ajax.Updater('m','#{one_experience_moment_url(@experience,m)}',{method: 'get'})") %>
 <% end %>
 </div>

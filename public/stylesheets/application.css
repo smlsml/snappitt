@@ -1394,47 +1394,52 @@ table.network td, table.split td {
   padding: 5px;
   margin-bottom: 25px;
 }
-
 /* line 4, sass/shared/_moment.sass */
+.grid .thumb {
+  width: 72px;
+  height: 72px;
+}
+
+/* line 7, sass/shared/_moment.sass */
 .moment_card {
   margin-bottom: 25px;
   position: relative;
 }
-/* line 7, sass/shared/_moment.sass */
+/* line 10, sass/shared/_moment.sass */
 .moment_card h2 {
   color: #999999;
   text-align: left;
   font-size: 26px;
 }
-/* line 11, sass/shared/_moment.sass */
+/* line 14, sass/shared/_moment.sass */
 .moment_card h2 small {
   font-size: 14px;
 }
-/* line 13, sass/shared/_moment.sass */
+/* line 16, sass/shared/_moment.sass */
 .moment_card .moment {
   padding: 5px 0px;
   background-color: #efefef;
 }
-/* line 16, sass/shared/_moment.sass */
+/* line 19, sass/shared/_moment.sass */
 .moment_card .moment .photo {
   background: url("http://snappitt-assets.s3.amazonaws.com/icons/loading.gif") no-repeat center center;
   min-height: 50px;
   position: relative;
   text-align: center;
 }
-/* line 21, sass/shared/_moment.sass */
+/* line 24, sass/shared/_moment.sass */
 .moment_card .moment .photo img {
   max-width: 630px;
   margin: 0;
 }
-/* line 24, sass/shared/_moment.sass */
+/* line 27, sass/shared/_moment.sass */
 .moment_card .moment .photo img.published {
   width: 100px;
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-/* line 29, sass/shared/_moment.sass */
+/* line 32, sass/shared/_moment.sass */
 .moment_card .number {
   position: absolute;
   right: 0;
@@ -1443,34 +1448,34 @@ table.network td, table.split td {
   color: #999999;
   text-align: right;
 }
-/* line 36, sass/shared/_moment.sass */
+/* line 39, sass/shared/_moment.sass */
 .moment_card textarea {
   height: 1.2em;
   vertical-align: middle;
 }
-/* line 39, sass/shared/_moment.sass */
+/* line 42, sass/shared/_moment.sass */
 .moment_card .comment {
   margin: 0;
 }
-/* line 41, sass/shared/_moment.sass */
+/* line 44, sass/shared/_moment.sass */
 .moment_card .comment th {
   padding: 3px;
 }
-/* line 43, sass/shared/_moment.sass */
+/* line 46, sass/shared/_moment.sass */
 .moment_card .comment td {
   padding: 3px;
   text-align: left;
 }
-/* line 46, sass/shared/_moment.sass */
+/* line 49, sass/shared/_moment.sass */
 .moment_card p {
   font-size: 13px;
   text-align: center;
 }
-/* line 49, sass/shared/_moment.sass */
+/* line 52, sass/shared/_moment.sass */
 .moment_card p.links {
   text-align: right;
 }
-/* line 51, sass/shared/_moment.sass */
+/* line 54, sass/shared/_moment.sass */
 .moment_card p.links a {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -webkit-linear-gradient(top, #efefef, #d8d8d8);
@@ -1515,16 +1520,16 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #e3e3e3, #f6f6f6);
   box-shadow: none;
 }
-/* line 53, sass/shared/_moment.sass */
+/* line 56, sass/shared/_moment.sass */
 .moment_card p.admin {
   text-align: right;
 }
-/* line 55, sass/shared/_moment.sass */
+/* line 58, sass/shared/_moment.sass */
 .moment_card p.metadata {
   font-size: 11px;
   font-color: #999999;
 }
-/* line 59, sass/shared/_moment.sass */
+/* line 62, sass/shared/_moment.sass */
 .moment_card input[type="submit"] {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -webkit-linear-gradient(top, #c1e445, #a7d727);
@@ -1571,11 +1576,11 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #b3e529, #cbf048);
   box-shadow: none;
 }
-/* line 63, sass/shared/_moment.sass */
+/* line 66, sass/shared/_moment.sass */
 .moment_card span.source {
   border-bottom: 1px dotted lightBlue;
 }
-/* line 66, sass/shared/_moment.sass */
+/* line 69, sass/shared/_moment.sass */
 .moment_card .actions {
   position: relative;
   text-align: center;
@@ -1583,13 +1588,13 @@ table.network td, table.split td {
   margin-right: 125px;
   padding: 5px;
 }
-/* line 72, sass/shared/_moment.sass */
+/* line 75, sass/shared/_moment.sass */
 .moment_card .actions .button {
   position: absolute;
   width: 125px;
   bottom: 10px;
 }
-/* line 76, sass/shared/_moment.sass */
+/* line 79, sass/shared/_moment.sass */
 .moment_card .actions .button a {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -webkit-linear-gradient(top, #efefef, #d8d8d8);
@@ -1634,12 +1639,12 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #e3e3e3, #f6f6f6);
   box-shadow: none;
 }
-/* line 78, sass/shared/_moment.sass */
+/* line 81, sass/shared/_moment.sass */
 .moment_card .actions .button.l {
   left: -115px;
   text-align: left;
 }
-/* line 81, sass/shared/_moment.sass */
+/* line 84, sass/shared/_moment.sass */
 .moment_card .actions .button.r {
   right: -115px;
   text-align: right;
