@@ -127,6 +127,20 @@ class User < ActiveRecord::Base
     (1..len).collect{|a| chars[rand(chars.size)] }.join
   end
 
+  def self.create_from_email(email)
+    password = User.generate_password
+    username = email.to_s.downcase.strip.split('@')[0]
+    username = username << Time.now().to_i.to_s if User.find_by_username(username)
+
+    new_user = User.new(:email => @from,
+                        :password => password,
+                        :password_confirmation => password,
+                        :username => username)
+
+    new_user.force_reset = 1 # not working in .new, wtf?
+    new_user.save!
+  end
+
   def self.find_for_database_authentication(conditions)
      login = conditions.delete(:login)
      where(conditions).where(["username = :value OR email = :value", {:value => login }]).first

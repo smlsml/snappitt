@@ -15,10 +15,10 @@ class ExperiencesControllerTest < ActionController::TestCase
       :plain => 'this is a caption!' # passed by cloudmailin
     }
 
-    setup_mail
+    setup_email
   end
 
-  def setup_mail
+  def setup_email
     @mail = Mail.new
     @mail.from = @user.email
     @mail.to = @params[:to]
@@ -81,7 +81,7 @@ class ExperiencesControllerTest < ActionController::TestCase
     @params[:from] = @snoop.email
     @params[:subject] = 'second exp!'
     @params[:to] = 'post%s@snappitt.com' % @experience.id
-    setup_mail
+    setup_email
 
     post :create_mail, @params
     assert_response :success
@@ -96,7 +96,7 @@ class ExperiencesControllerTest < ActionController::TestCase
     subject = 'this is a bio yo'
     @params[:to] = 'AVATAR@snappitt.com'
     @params[:subject] = subject
-    setup_mail
+    setup_email
 
     assert_nil @user.profile.photo_asset
 
@@ -112,7 +112,7 @@ class ExperiencesControllerTest < ActionController::TestCase
 
   test "create_mail: mail in avatar photo using profile" do
     @params[:to] = 'Profile@snappitt.com'
-    setup_mail
+    setup_email
 
     assert_nil @user.profile.photo_asset
 
@@ -131,7 +131,7 @@ class ExperiencesControllerTest < ActionController::TestCase
     @event.save!
 
     @params[:to] = '%s@snappitt.com' % @event.hashtag
-    setup_mail
+    setup_email
 
     post :create_mail, @params
     assert_response :success
@@ -148,6 +148,25 @@ class ExperiencesControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal @experience, get_experience(:title => @event.name)
     assert_equal 2, @experience.reload.moments_count
+  end
+
+  test "create_mail: s3 attachments" do
+    url = 'http://test.host/test.jpg'
+    @params[:attachments] = {'0' =>
+                               {:file_name => 'test.jpg',
+                                :content_type => 'image/jpg',
+                                :url => url,
+                                :size => '123',
+                                :disposition => 'attachment'}}
+
+    post :create_mail, @params
+    assert_response :success
+
+    @experience = get_experience
+    assert_kind_of Experience, @experience
+    assert_kind_of Moment, @experience.moments.first
+    assert_kind_of PhotoAsset, @experience.moments.first.asset
+    assert_equal url, @experience.moments.first.asset.tmp_url
   end
 
 

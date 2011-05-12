@@ -60,4 +60,13 @@ class Profile < ActiveRecord::Base
     (user.profile.bio.blank? ? nil:user.profile.bio) || user.profile.zodiac_western || user.profile.zodiac_chinese
   end
 
+  def set_avatar_from_email_attachment(attachment, source = nil)
+    file = StringIO.new(attachment.decoded)
+    file.class.class_eval { attr_accessor :original_filename, :content_type }
+    file.original_filename = attachment.filename
+    file.content_type = attachment.mime_type
+
+    self.create_photo_asset(:user => self.user, :source => source, :data => file)
+  end
+
 end

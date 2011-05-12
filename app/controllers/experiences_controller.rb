@@ -26,8 +26,6 @@ class ExperiencesController < ApplicationController
   end
 
   def create_mail
-    @source = Source.find_or_create_from_request(request)
-
     @message = Mail.new(params[:message])
     return head(:bad_request) unless @message
 
@@ -42,38 +40,16 @@ class ExperiencesController < ApplicationController
     while @subject.gsub!(/^fwd:/i,''); @subject.strip!; end
 
     @user = User.find_by_email(@from)
-
-    if !@user
-      password = User.generate_password
-      username = @from.to_s.downcase.strip.split('@')[0]
-      username = username << Time.now().to_i.to_s if User.find_by_username(username)
-
-      @user = User.new(:email => @from,
-                       :password => password,
-                       :password_confirmation => password,
-                       :username => username)
-
-      @user.force_reset = 1 # not working in .new, wtf?
-      @user.save!
-    end
+    @user = User.create_from_email(@from) unless @user
 
     return head(:unauthorized) unless @user
     return head(:forbidden) if @user.disabled
 
+    @source = Source.find_or_create_from_request(request)
+
     if @to.match(t('email.avatar')) || @to.match(t('email.profile'))
-      attachment = @message.attachments.first
-      return head(:bad_request) unless attachment
-
-      file = StringIO.new(attachment.decoded)
-      file.class.class_eval { attr_accessor :original_filename, :content_type }
-      file.original_filename = attachment.filename
-      file.content_type = attachment.mime_type
-
-      asset = PhotoAsset.create(:user => @user, :source => @source, :data => file)
-
-      @user.profile.bio = @subject if @subject
-      @user.profile.photo_asset = asset if asset
-      @user.profile.save!
+      @user.profile.set_avatar_from_email_attachment(@message.attachments.first, @source)
+      @user.profile.update_attribute(:bio, @subject) if @subject
 
       return head(:created)
     end
@@ -95,6 +71,19 @@ class ExperiencesController < ApplicationController
 
     @experience.visibility = 'private' if params[:to].to_s.downcase.include?('private')
 
+    if params[:attachments]
+      params[:attachments].each do |index, attachment|
+        moment = Moment.new(:user => @user, :source => @source)
+        moment.build_caption(:text => @subject, :user => @user)
+
+        type = PhotoAsset
+        type = VideoAsset if attachment[:content_type].to_s.starts_with?('video')
+        moment.asset = type.create(:user => @user, :source => @source, :tmp_url => attachment[:url])
+
+        @experience.moments << moment
+      end
+    end
+
     @message.attachments.each do |attachment|
       moment = Moment.new(:user => @user, :source => @source)
       moment.create_caption(:text => @subject, :user => @user)
@@ -109,7 +98,7 @@ class ExperiencesController < ApplicationController
 
       unless @user.profile.has_photo?
         @user.profile.photo_asset = asset
-        @user.save
+        @user.profile.save
       end
 
       @experience.moments << moment
