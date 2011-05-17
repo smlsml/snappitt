@@ -65,7 +65,7 @@ GEM
       geokit (~> 1.5.0)
       rails (~> 3.0.4)
     haml (3.1.1)
-    heroku (2.1.1)
+    heroku (2.1.4)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
       term-ansicolor (~> 1.0.5)

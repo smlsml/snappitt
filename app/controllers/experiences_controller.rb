@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create]
+  before_filter :authenticate_user!, :only => [:new, :create, :edit, :update]
   skip_before_filter :verify_authenticity_token
 
   def new
