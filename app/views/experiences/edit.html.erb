@@ -30,7 +30,23 @@
   </fieldset>
 
   <fieldset class="form">
-    <legend>Delete</legend>
+    <legend>Delete Moments</legend>
+    <div id="m"></div>
+    <% @experience.moments.filo.each do |m| %>
+      <div id="thumb_<%= m.id %>">
+        <%= image_tag(m.photo_url(:thumb)) %>
+        <%= link_to('Delete',
+                    experience_moment_path(@experience, m),
+                    :method => :delete,
+                    :remote => true,
+                    :confirm => 'Are you sure?') %>
+        <span id="moment_<%= m.id %>"></span>
+      </div>
+    <% end %>
+  </fieldset>
+
+  <fieldset class="form">
+    <legend>Delete Experience</legend>
     <p>Removing this experience will delete all moments attached to it, including those uploaded by others.</p>
     <p class="submit">
       <%= link_to('Delete Experience', experience_path(@experience), :class => 'button', :method => :delete, :confirm => 'Are you sure?') if can_edit?(@experience.user) %>
