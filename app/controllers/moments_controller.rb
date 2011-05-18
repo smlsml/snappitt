@@ -1,5 +1,6 @@
 class MomentsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:like, :comment]
+  before_filter :authenticate_user!, :only => [:like, :comment, :cover]
+  before_filter :must_be_owner, :only => [:cover]
 
   def show
     @moment = Moment.find(params[:id])

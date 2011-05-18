@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+    def must_be_owner
+      head :unauthorized unless can_edit?(current_user)
+    end
+
     def force_reset
       @force_reset = true if user_signed_in? && current_user.force_reset? && !is_account_page?
     end

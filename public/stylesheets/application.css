@@ -2,7 +2,7 @@
 /* line 177, ../../../../.rvm/gems/ree-1.8.7-2011.03/gems/fancy-buttons-1.1.1/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png?1301005384') repeat-x bottom left;
+  background: url('/images/button_bg.png?1305650573') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -1462,20 +1462,29 @@ table.network td, table.split td {
   padding: 3px;
 }
 /* line 46, sass/shared/_moment.sass */
+.moment_card .comment th img {
+  overflow: hidden;
+  width: 24px;
+  height: 24px;
+  display: block;
+  text-align: center;
+  background: white;
+}
+/* line 53, sass/shared/_moment.sass */
 .moment_card .comment td {
   padding: 3px;
   text-align: left;
 }
-/* line 49, sass/shared/_moment.sass */
+/* line 56, sass/shared/_moment.sass */
 .moment_card p {
   font-size: 13px;
   text-align: center;
 }
-/* line 52, sass/shared/_moment.sass */
+/* line 59, sass/shared/_moment.sass */
 .moment_card p.links {
   text-align: right;
 }
-/* line 54, sass/shared/_moment.sass */
+/* line 61, sass/shared/_moment.sass */
 .moment_card p.links a {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -webkit-linear-gradient(top, #efefef, #d8d8d8);
@@ -1520,16 +1529,16 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #e3e3e3, #f6f6f6);
   box-shadow: none;
 }
-/* line 56, sass/shared/_moment.sass */
+/* line 63, sass/shared/_moment.sass */
 .moment_card p.admin {
   text-align: right;
 }
-/* line 58, sass/shared/_moment.sass */
+/* line 65, sass/shared/_moment.sass */
 .moment_card p.metadata {
   font-size: 11px;
   font-color: #999999;
 }
-/* line 62, sass/shared/_moment.sass */
+/* line 69, sass/shared/_moment.sass */
 .moment_card input[type="submit"] {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c1e445), color-stop(100%, #a7d727));
   background-image: -webkit-linear-gradient(top, #c1e445, #a7d727);
@@ -1576,11 +1585,11 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #b3e529, #cbf048);
   box-shadow: none;
 }
-/* line 66, sass/shared/_moment.sass */
+/* line 73, sass/shared/_moment.sass */
 .moment_card span.source {
   border-bottom: 1px dotted lightBlue;
 }
-/* line 69, sass/shared/_moment.sass */
+/* line 76, sass/shared/_moment.sass */
 .moment_card .actions {
   position: relative;
   text-align: center;
@@ -1588,13 +1597,13 @@ table.network td, table.split td {
   margin-right: 125px;
   padding: 5px;
 }
-/* line 75, sass/shared/_moment.sass */
+/* line 82, sass/shared/_moment.sass */
 .moment_card .actions .button {
   position: absolute;
   width: 125px;
   bottom: 10px;
 }
-/* line 79, sass/shared/_moment.sass */
+/* line 86, sass/shared/_moment.sass */
 .moment_card .actions .button a {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #efefef), color-stop(100%, #d8d8d8));
   background-image: -webkit-linear-gradient(top, #efefef, #d8d8d8);
@@ -1639,12 +1648,12 @@ table.network td, table.split td {
   background-image: linear-gradient(top, #e3e3e3, #f6f6f6);
   box-shadow: none;
 }
-/* line 81, sass/shared/_moment.sass */
+/* line 88, sass/shared/_moment.sass */
 .moment_card .actions .button.l {
   left: -115px;
   text-align: left;
 }
-/* line 84, sass/shared/_moment.sass */
+/* line 91, sass/shared/_moment.sass */
 .moment_card .actions .button.r {
   right: -115px;
   text-align: right;
